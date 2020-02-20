@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mime</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <!-- <link rel="stylesheet" href="./rme.css"> -->
+</head>
+
+<body>
+    <div class="container">
+        <header>Mime Type</header>
+        <div class="counter">1</div>
+        <main>
+            <ul>
+                <li>Multipurpose Internet Mail Extension</li>
+                <li>Indicates the nature and format of a document</li>
+            </ul>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>type/subtype</code></li>
+                    <li><code>type/subtype;parameter=value;</code></li>
+                </ol>
+                <p><em>type</em> is general category</p>
+                <p><em>subtype</em> is exact type of data</p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <ol>
+                    <li><code>text/html</code></li>
+                    <li><code>text/plain;charset=UTF-8</code></li>
+                    <li><code>&lt;form action="http://localhost:8000/" method="post"
+                            <span class="highlight">enctype="multipart/form-data"></span>
+                        </code>
+                    </li>
+                </ol>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <ol>
+                    <li>Two classes of type: <em>discrete</em> and <em>multipart</em></li>
+                    <li>Generic binary data has type of <code>application/octet-stream</code></li>
+                    <li><em>Multipart: </em>Composite document broken into pieces, each of which
+                        may have individual MIME type</li>
+                </ol>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

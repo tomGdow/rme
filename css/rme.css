@@ -1,0 +1,149 @@
+:root {
+    --bg-color: aquamarine;
+    --sans-one: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-main: 1.1rem/1.5 var(--sans-one);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: 1.1rem/1.5 var(--sans-one);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 700 small-caps 1.4rem/1.2em var(--sans-one);
+    margin-bottom: 5px;
+    min-height: 10vh;
+}
+
+div.container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto auto auto auto auto auto auto;
+    width: 100vw;
+    height: 100%;
+    border: 2px solid var(--bg-color);
+}
+
+header {
+    grid-column: span 10;
+}
+
+main {
+    grid-column: span 10;
+    font: var(--font-main);
+}
+
+nav {
+    grid-column: span 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.syntax {
+    grid-column: span 10;
+}
+
+div.examples {
+    grid-column: span 10;
+}
+
+code {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+div.notes {
+    grid-column: span 10;
+}
+
+footer {
+    grid-column: span 10;
+}
+
+details {
+    margin-left: 10px;
+}
+
+details>summary {
+    font-size: 0.9rem;
+}
+
+details>p {
+    padding: 2px 5px 2px 10px;
+    font-size: 1rem;
+    margin-left: 4vw;
+    font-size: 0.9rem;
+    /* background-color: #eee; */
+}
+
+details p>em {
+    font-size: inherit;
+    font-style: italic;
+}
+
+details>ol>li>em {
+    font-size: inherit;
+    font-style: italic;
+}
+
+details>ol {
+    padding: 2px 5px 2px 10px;
+    list-style-position: outside;
+}
+
+details>ol>li {
+    background: #eee;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+details>ol>li>code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+details>ol {
+    margin-left: 4vw;
+}
+
+code span.highlight {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline 2px blue;
+    color: blue;
+    font-size: 1rem;
+}
+
+button {
+    background-color: white;
+    padding: 0 1rem;
+    border: none;
+
+}
+
+button:hover {
+    color: tomato;
+}
+
+.counter {
+    font-size: 1rem;
+    color: maroon;
+}
+
+.bold {
+    font-weight: bold;
+}
+@media screen and (min-width:600px) {
+
+    main,
+    nav,
+    div.syntax,
+    div.examples,
+    div.notes,
+    footer {
+        grid-column: 2 / span 8;
+    }
+}
