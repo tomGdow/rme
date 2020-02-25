@@ -1,6 +1,7 @@
 :root {
     --bg-color: aquamarine;
     --sans-one: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --mono-one: "Inconsolata", monospace;
     --font-main: 1.1rem/1.5 var(--sans-one);
 }
 
@@ -8,14 +9,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font: 1.1rem/1.5 var(--sans-one);
+    font: 1.1rem/1.5em var(--sans-one);
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font: 700 small-caps 1.4rem/1.2em var(--sans-one);
+    font: 700 small-caps 1.2rem/1.2em var(--sans-one);
     margin-bottom: 5px;
     min-height: 10vh;
 }
@@ -27,6 +28,7 @@ div.container {
     width: 100vw;
     height: 100%;
     border: 2px solid var(--bg-color);
+    margin: 2px 10px;
 }
 
 header {
@@ -38,11 +40,35 @@ main {
     font: var(--font-main);
 }
 
+main ul {
+    list-style-type: none;
+}
+
 nav {
     grid-column: span 10;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+.item-two {
+    border: 2px solid green;
+}
+
+#open_all, #close_all {
+    font-size: 0.8rem;
+    font-family: var(--sans-one);
+}
+.item-one > #open_all > .triangle_icon,
+.item-three > #close_all > .triangle_icon {
+    opacity:0;
+    color: tomato;
+    font-size:0.9em;
+    transition: opacity 0.5s ease-in;
+}
+.item-one > #open_all:hover > .triangle_icon,
+.item-three>#close_all:hover > .triangle_icon {
+    opacity: 1;
+    color: tomato;
 }
 
 div.syntax {
@@ -54,7 +80,9 @@ div.examples {
 }
 
 code {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: var(--mono-one);
+    font-size: 0.95rem;
+    color:maroon;
 }
 div.notes {
     grid-column: span 10;
@@ -62,6 +90,14 @@ div.notes {
 
 footer {
     grid-column: span 10;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+footer > span {
+    font-family: var(--mono-one);
+    font-size: 0.8rem;
+    color: maroon;
 }
 
 details {
@@ -79,13 +115,13 @@ details>p {
     font-size: 0.9rem;
     /* background-color: #eee; */
 }
-
-details p>em {
-    font-size: inherit;
-    font-style: italic;
+details p {
+    font-size: 0.9rem;
+    font-family: -sans-one;
+    color:black;
 }
 
-details>ol>li>em {
+em {
     font-size: inherit;
     font-style: italic;
 }
@@ -96,13 +132,8 @@ details>ol {
 }
 
 details>ol>li {
-    background: #eee;
+    /* background: #eee; */
     padding-left: 10px;
-    font-size: 1rem;
-}
-
-details>ol>li>code {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
 }
 
@@ -111,10 +142,13 @@ details>ol {
 }
 
 code span.highlight {
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: underline 2px blue;
-    color: blue;
+    font-family: var(--mono-one);
+    display:inline-block;
+    padding: 2px;
+    /* text-decoration: underline 2px maroon; */
     font-size: 1rem;
+    /* color: var(--bg-color); */
+    background-color: orange;
 }
 
 button {
@@ -136,6 +170,7 @@ button:hover {
 .bold {
     font-weight: bold;
 }
+
 @media screen and (min-width:600px) {
 
     main,
@@ -147,3 +182,4 @@ button:hover {
         grid-column: 2 / span 8;
     }
 }
+/*  */
