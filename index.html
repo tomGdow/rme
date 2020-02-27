@@ -11,14 +11,18 @@
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
     <link rel="stylesheet" href="./css/rme.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">  -->
 </head>
 
 <body>
     <div class="container">
-        <!-- <header
-            r id ="myheader"></header> -->
-        <header></header>
+        <header>
+            <span></span>
+            <span>
+                <label for="dlist_search">Search</label>
+                <input type="text" list="dlist_data" id="dlist_search">
+                <datalist id="dlist_data"></datalist>
+            </span>
+        </header>
         <nav>
             <span class="item-one">
                 <button id="open_all">
@@ -26,6 +30,12 @@
                         &#9660;
                     </span>
                     Open All
+                </button>
+                <button id="close_all_two">
+                    Close All
+                    <span class="triangle_icon">
+                        &#x25B6;
+                    </span>
                 </button>
             </span>
             <span class="item-two">
@@ -40,13 +50,21 @@
                         &#x25B6;
                     </span>
                 </button>
+                <button id="open_all_two">
+                    <span class="triangle_icon">
+                        &#9660;
+                    </span>
+                    Open All
+                </button>
             </span>
         </nav>
         <main></main>
         <div class="syntax"></div>
         <div class="examples"></div>
         <div class="notes"></div>
-        <footer><span class="file_name"></span></footer>
+        <footer>
+            <span class="file_name"></span>
+        </footer>
     </div>
     <script src="./js/rme.js"></script>
 </body>

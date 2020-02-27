@@ -1,53 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
         <header>Link</header>
         <div class="counter">xx</div>
         <main>
-            <ul>
-                <li>
-                    The 
-                    <em>HTML External Resource Link Element</em>
+            <dl>
+                <dt>link</dt>
+                <dd>
+                    The
+                    HTML External Resource Link Element
                     or
                     <code>&lt;link&gt;</code>
                     specifies the relationship between the current document
                     and an external resource
-                </li>
-            </ul>
+                </dd>
+                <dd>
+                    Usually, links to stylesheet but may also link to icons, such as favicon
+                </dd>
+                <dd>
+                    Can also include media query
+                </dd>
+                <dd>
+                    May occur in body or head (stylesheet is 'body-OK') but not good practice.
+                </dd>
+            </dl>
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
                 <ol>
-                    <li><code>code</code></li>
+                    <li>
+                        <code>
+                            &lt;link href="main.css" rel="stylesheet"&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;link href="bonnie.ico" rel="icon"&gt;
+                        </code>
+                    </li>
                 </ol>
-                <p></p>
             </details>
         </div>
         <div class="examples">
             <details>
                 <summary>Examples</summary>
                 <ol>
-                    <li><code>code</code></li>
+                    <li>
+                        <code>
+                            &lt;link href="print.css" rel="stylesheet" media="print"&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)"&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-icon-114.png"
+                            type="image/png"&gt;
+                        </code>
+                    </li>
                 </ol>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>
-                        <code>href</code>
-                        <em>Link</em> is a href-ie</li>
-                </ol>
+                <dl>
+                    <dt>href</dt>
+                    <dd>Link is a href-ie</dd>
+                    <dt>sizes</dt>
+                    <dd>Specifies icon size (<code>sizes="114x114</code>)</dd>
+                    <dt>type</dt>
+                    <dd>Specifies MIME type (<code>type="image/png"</code>)</dd>
+                    <dt>title</dt>
+                    <dd>Special semantic meaning in link tag. Specifies a preferred or alternative stylesheet</dd>
+                    <dt>disabled</dt>
+                    <dd>For <code>rel="stylesheet"</code> only</dd>
+                    <dt>preload</dt>
+                    <dd>If <code>rel="preload"</code> then may use <code>as</code> attribute</dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
