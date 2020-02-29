@@ -1,44 +1,124 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>table</header>
+        <header>ul</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>ul</dt>
+                <dd>Represents an unordered list of items</dd>
             </dl>
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-                <p></p>
+                <dl>
+                    <dt>unordered list</dt>
+                    <dd>
+                        <code>
+                            &lt;ul&gt;
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &lt;li&gt;&lt;/li>
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &lt;li&gt;&lt;/li>
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &lt;li&gt;&lt;/li>
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/ul&gt;</code>
+                    </dd>
+                </dl>
             </details>
         </div>
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <dl>
+                    <dt>html-1</dt>
+                    <dd><code>&lt;ul class="square-bullets"&gt;</code></dd>
+                    <dd><code>&lt;li&gt;Javascript&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;li&gt;Cascading Style Sheets&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;li&gt;C Programming&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;/ul&gt;</code></dd>
+                    <dt>html-2</dt>
+
+                    <dd><code>&lt;ul class="image-bullets"&gt;</code></dd>
+                    <dd><code>&lt;li&gt;Javascript&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;li&gt;Cascading Style Sheets&gt;&lt;/li&gt;</code>
+                    </dd>
+                    <dd><code>&lt;li&gt;C Programming&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;/ul&gt;</code></dd>
+                    <dt>css</dt>
+                    <dd><code>ul.square-bullets {</code></dd>
+                    <dd><code>list-style-type: square;</code></dd>
+                    <dd><code>float:left;</code></dd>
+                    <dd><code>}</code></dd>
+                    <dd><code>ul.image-bullets {</code></dd>
+                    <dd><code>list-style-image: url(http://xu/tgdfiles/png/go.png);</code></dd>
+                    <dd><code>clear:both;</code></dd>
+                    <dd><code>}</code></dd>
+                </dl>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>list-style-type</dt>
+                    <dd><code>
+                            disc
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            circle
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            square
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            none
+                        </code>
+                    </dd>
+                    <dt>list-style-image</dt>
+                    <dd>
+                        <code>
+                            list-style-image: url(my-url); // CSS
+                        </code>
+                    </dd>
+                    <dt>Markers</dt>
+                    <dd>Markers are in left padded area of content box</dd>
+                    <dt>list-style</dt>
+                    <dd>
+                    <code>list-style</code> is a shorthand for <code>list-style-type</code>,
+                    <code>list-style-image</code> and <code>list-style-position</code>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,20 +7,28 @@
 </head>
 <body>
     <div class="container">
-        <header>Closing Tag</header>
+        <header>Doctype</header>
         <div class="counter">xx</div>
         <main>
-            <dt>
-                <dl></dl>
-                <dd></dd>
-            </dt>
-
+           <dl>
+               <dt>doctype</dt>
+               <dd>Must come first in HTML document</dd>
+               <dd>Not a HTML tag but an instruction to the 
+                   browser about what version of HTML the 
+                   page is written in.
+               </dd>
+               <dd>Stops browser from switching to "quirks mode"</dd>
+           </dl> 
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
                 <ol>
-                    <li><code>code</code></li>
+                    <li>
+                        <code>
+                         &lt;!DOCTYPE html&gt;
+                    </code>
+                </li>
                 </ol>
                 <p></p>
             </details>
@@ -27,16 +36,13 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
                 <ol>
-                    <li>Note-1</li>
+                    <li>DOCTYPE is not case-sensitive</li>
                 </ol>
             </details>
         </div>

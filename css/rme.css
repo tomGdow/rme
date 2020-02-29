@@ -204,6 +204,11 @@ dd {
 }
 
 
+.attr_as_content::after {
+    content: attr(href);
+}
+
+
 @media screen and (min-width:600px) {
 
     main,

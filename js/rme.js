@@ -8,12 +8,16 @@
         "2_rme_noscript_tag.html",
         "3_rme_link.html",
         "4_meta_tag.html",
-        "5_doctype_and_html_tag.html",
+        "5_doctype.html",
+        "5b_html_tag.html",
         "6_head_tag.html",
         "7_body_tag.html",
-        "8_closing_tag.html",
+        "8_void_self_closing_tag.html",
         "9_entities.html",
         "10_comments.html",
+        "10b_title_tag.html",
+        "x_2_rme_validation.html",
+        "x_3_href_and_src.html",
         "11_table_tags.html",
         "12_table_attributes.html",
         "13_heading_tag.html",
@@ -211,9 +215,10 @@
     // populateDatalist();
 
     function selectFromDatalist() {
-        if (document.getElementById('dlist_search').value) {
+        if (document.getElementById('dlist_search').value.length>4) {
             makeRequest(`./html/${document.getElementById('dlist_search').value}`, insertContents(callback));
             pageCounter = parseInt(pageOrder.indexOf(document.getElementById('dlist_search').value), 10);
+            console.log(document.getElementById('dlist_search').value.length);
         }
     }
 
@@ -228,7 +233,7 @@
     document.getElementById('close_all_two').addEventListener('click', closeAllTwo);
     document.getElementById('close_all').addEventListener('click', closeAll);
     document.getElementById('open_all_two').addEventListener('click', openAllTwo);
-    document.getElementById('dlist_search').addEventListener('select', selectFromDatalist);
+    document.getElementById('dlist_search').addEventListener('input', selectFromDatalist);
     document.getElementById('dlist_search').addEventListener('blur', resetInputBox);
     window.addEventListener('DOMContentLoaded', function () {
         makeRequest(`./html/${pageOrder[0]}`, insertContents(callback));

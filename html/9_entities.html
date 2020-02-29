@@ -1,44 +1,172 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
         <header>Entities</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>Entity</dt>
+                <dd>A HTML entity is a piece of text ("String")
+                    that begins with an ampersand (<code>&amp;</code>)
+                    and ends with a semicolon (
+                    &semi;
+                    )
+                </dd>
+                <dd>
+                    Frequently used to display
+                    reserved characters (which are parsed as HTML) and
+                    invisible characters such as non-breaking space;
+                </dd>
             </dl>
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
                 <ol>
-                    <li><code>code</code></li>
+                    <li>
+                        <code>
+                            &amp;entity_name&semi;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &amp;#entity_number&semi;
+                        </code>
+                    </li>
                 </ol>
-                <p></p>
             </details>
         </div>
         <div class="examples">
             <details>
                 <summary>Examples</summary>
                 <ol>
-                    <li><code>code</code></li>
+                    <li>
+                        <code>
+                            &amp;amp&semi;
+                        </code>
+                        or
+                        <code>
+                            &amp;#38&semi;
+                        </code>
+                        (Ampersand, <code>&amp;</code>)
+                    </li>
+                    <li>
+                        <code>
+                            &amp;lt&semi;
+                        </code>
+                        or
+                        <code>
+                            &amp;#60&semi;
+                        </code>
+                        (less-than,
+                        <code> &lt;</code>
+                        )
+                    </li>
+                    <li>
+                        <code>
+                            &amp;gt&semi;
+                        </code>
+                        or
+                        <code>
+                            &amp;#62&semi;
+                        </code>
+                        (greater-than,
+                        <code>&gt;</code>
+                        )
+                    </li>
+                    <li>
+                        <code>
+                            &amp;quot&semi;
+                        </code>
+                        or
+                        <code>
+                            &amp;#34&semi;
+                        </code>
+                        (quotation,
+                        <code>
+                            &quot;
+                        </code>
+                        )
+                    </li>
                 </ol>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>More Useful Entities</dt>
+                    <dd>
+                        <code>
+                            &amp;pound&semi; (&pound;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;reg&semi; (&reg;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;nbsp&semi; (&nbsp;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;euro&semi; (&euro;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;alpha&semi; (&alpha;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;bull&semi; (&bull;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;clubs&semi; (&clubs;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;commat&semi; (&commat;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;dollar&semi; (&dollar;)
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            &amp;hellip&semi; (&hellip;)
+                        </code>
+                    </dd>
+                    <dt>Official list of entities</dt>
+                    <dd>
+                        <cite>
+                            <a
+                                href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references">w3c
+                                Named Character References
+                            </a>
+                        </cite>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
