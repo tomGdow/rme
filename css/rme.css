@@ -25,8 +25,8 @@ header>span:first-of-type {
     font: 700 small-caps 1.2rem/1.2em var(--sans-one);
 }
 
-header>span:nth-of-type(2)  {
-    display:flex;
+header>span:nth-of-type(2) {
+    display: flex;
     justify-content: space-around;
     align-items: center;
 }
@@ -66,36 +66,39 @@ nav {
     align-items: center;
 }
 
-#open_all, #close_all, #close_all_two, #open_all_two {
+#open_all,
+#close_all,
+#close_all_two,
+#open_all_two {
     font-size: 0.8rem;
     font-family: var(--sans-one);
 }
 
-.item-one > #open_all > .triangle_icon,
-.item-three > #close_all > .triangle_icon,
-.item-one > #close_all_two > .triangle_icon,
-.item-three > #open_all_two > .triangle_icon {
-    opacity:0;
-    display:inline;
+.item-one>#open_all>.triangle_icon,
+.item-three>#close_all>.triangle_icon,
+.item-one>#close_all_two>.triangle_icon,
+.item-three>#open_all_two>.triangle_icon {
+    opacity: 0;
+    display: inline;
     color: tomato;
-    font-size:0.9em;
+    font-size: 0.9em;
     transition: opacity 0.5s ease-in;
 }
 
-.item-one >  #open_all:hover  > .triangle_icon,
-.item-three > #close_all:hover > .triangle_icon,
-.item-one > #close_all_two:hover > .triangle_icon,
-.item-three > #open_all_two:hover > .triangle_icon {
+.item-one>#open_all:hover>.triangle_icon,
+.item-three>#close_all:hover>.triangle_icon,
+.item-one>#close_all_two:hover>.triangle_icon,
+.item-three>#open_all_two:hover>.triangle_icon {
     opacity: 1;
     color: tomato;
 }
 
-.item-one > #close_all_two {
-    display:none;
+.item-one>#close_all_two {
+    display: none;
 }
 
-.item-three > #open_all_two {
-    display:none;
+.item-three>#open_all_two {
+    display: none;
 }
 
 div.syntax {
@@ -109,19 +112,21 @@ div.examples {
 code {
     font-family: var(--mono-one);
     font-size: 0.95rem;
-    color:maroon;
+    color: maroon;
 }
+
 div.notes {
     grid-column: span 10;
 }
 
 footer {
     grid-column: span 10;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-footer > span {
+
+footer>span {
     font-family: var(--mono-one);
     font-size: 0.8rem;
     color: maroon;
@@ -141,10 +146,11 @@ details>p {
     margin-left: 4vw;
     /* font:var(--sans-one); */
 }
+
 details p {
     font-size: 1rem;
     font-family: -sans-one;
-    color:black;
+    color: black;
 }
 
 em {
@@ -168,7 +174,7 @@ details>ol {
 
 code span.highlight {
     font-family: var(--mono-one);
-    display:inline-block;
+    display: inline-block;
     padding: 2px;
     font-size: 1rem;
     background-color: orange;
@@ -208,6 +214,61 @@ dd {
     content: attr(href);
 }
 
+
+.table-one {
+    table-layout: fixed;
+    margin: auto;
+}
+
+.table-one caption {
+    font-size: 0.8rem;
+}
+
+.table-one .class-a {
+    background-color: aqua;
+    font-size: 0.8rem;
+}
+
+.table-one .class-b {
+    background-color: var(--bg-color);
+}
+
+.table-one thead tr th {
+    background-color: yellow;
+    text-align: center;
+    vertical-align: middle;
+    /* font-size: 0.8rem; */
+}
+
+.table-one th, .table-one td {
+    font-size: 0.8rem;
+}
+
+.table-one tfoot {
+    background-color: red;
+    text-align: center;
+}
+
+.table-one tbody td[colspan="2"] {
+    background-color: lime;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-one tbody td[rowspan="2"] {
+    background-color: olive;
+    vertical-align: middle;
+}
+
+video {
+    width:100%;
+    height:auto;
+}
+
+.video-container {
+    width:60vw;
+    margin:auto;
+}
 
 @media screen and (min-width:600px) {
 
