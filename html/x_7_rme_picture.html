@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,13 +7,20 @@
 </head>
 <body>
     <div class="container">
-        <header>table</header>
+        <header>picture</header>
         <div class="counter">xx</div>
         <main>
-            <dl>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <div class="picture-container">
+                <figure>
+                    <picture>
+                        <source srcset="./image/kitten-large.png"
+                        media="(min-width:600px)">
+                        <source srcset="./image/kitten-medium.png"
+                        media="(min-width: 500px">
+                        <img src="./image/kitten-small.png" alt="Picture of Kitten">
+                    </picture>
+                </figure>
+            </div>
         </main>
         <div class="syntax">
             <details>

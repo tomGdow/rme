@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Mime</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
-    <!-- <link rel="stylesheet" href="./rme.css"> -->
 </head>
 
 <body>
@@ -36,8 +35,13 @@
                 <ol>
                     <li><code>text/html</code></li>
                     <li><code>text/plain;charset=UTF-8</code></li>
-                    <li><code>&lt;form action="http://localhost:8000/" method="post"
+                    <li><code>video/mp4</code></li>
+                    <li><code>audio/mpeg</code> (mp3)</li>
+                    <li><code>application/octet-stream</code> (generic binary data)</li>
+                    <li><code>
+                            &lt;form action="http://localhost:8000/" method="post"
                             <span class="highlight">enctype="multipart/form-data"></span>
+                            &gt;
                         </code>
                     </li>
                 </ol>
@@ -46,12 +50,30 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Two classes of type: <em>discrete</em> and <em>multipart</em></li>
-                    <li>Generic binary data has type of <code>application/octet-stream</code></li>
-                    <li><em>Multipart: </em>Composite document broken into pieces, each of which
-                        may have individual MIME type</li>
-                </ol>
+
+                <dl>
+                    <dt>Mime types</dt>
+                    <dd>
+                        <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">
+                            Common Mime Types(mdn)
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.sitepoint.com/mime-types-complete-list/">Full List of Mime Types
+                            (SitePoint)</a>
+                    </dd>
+
+                    <dt>classes</dt>
+                    <dd>Two classes of type: <em>discrete</em> and <em>multipart</em></dd>
+
+                    <dt>Multipart</dt>
+                    <dd>Composite document broken into pieces, each of which may have individual MIME type
+                    <dd>
+
+                    <dt>mp4</dt>
+                    <dd> see <a href="https://stackoverflow.com/a/10453505/499167">here</a> for Mime type reference</dd>
+                </dl>
             </details>
         </div>
     </div>

@@ -140,6 +140,10 @@ details>summary {
     font-size: 0.9rem;
 }
 
+q {
+    font: 0.9rem var(--sans-one);
+}
+
 details>p {
     padding: 2px 5px 2px 10px;
     font-size: 1rem;
@@ -209,7 +213,6 @@ dd {
     font-size: 0.9rem;
 }
 
-
 .attr_as_content::after {
     content: attr(href);
 }
@@ -267,7 +270,18 @@ video {
 
 .video-container {
     width:60vw;
+    max-width: 500px;
     margin:auto;
+}
+
+::cue {
+    color: white;
+    background-color:blue;
+    font-size: 1rem;
+}
+a {
+    font-size: 0.9rem;
+    text-decoration:none;
 }
 
 @media screen and (min-width:600px) {

@@ -1,32 +1,38 @@
+<!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>table</header>
+        <header>Video</header>
         <div class="counter">xx</div>
         <main>
-            <dl>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <div class="video-container">
+                <video controls>
+                    <source src="../video/flower.mp4" type="video/mp4">
+                    <source src="./video/flower.mp4" type="video/mp4">
+                    <source src="./video/flower.webm" type="video/webm">
+                    <track src="./vtt/flower-caption.vtt" kind="subtitles" srclang="en" default>
+                    Your browser does not support HTML-5 video
+                </video>
+            </div>
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
                 <dl>
-                    <dt>html</dt>
+                    <dt>html (generic syntax)</dt>
                     <dd><code>&lt;video controls poster="poster.jpg"&gt;</code></dd>
-                        <dd><code>&lt;source src="video.mp4" type="video/mp4"&gt;</code></dd>
-                        <dd><code>&lt;source src="video.ogv" type="video/ogv"&gt;</code></dd>
-                        <dd><code>&lt;source src="video.webm" type="video/webm"&gt;</code></dd>
-                        <dd><code>&lt;source src="video.avi" type="video/avi"&gt;</code></dd>
-                        <dd><code>&lt;track src="my-track.vtt"&gt;</code></dd>
-                    <dd><code> Your browser does not support HTML5 video </code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="video.ogv" type="video/ogv"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="video.webm" type="video/webm"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="video.avi" type="video/avi"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;track src="mycaption.vtt" kind="captions" srclang="en"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;Your browser does not support HTML5 video </code></dd>
                     <dd><code>&lt;/video&gt;</code></dd>
                 </dl>
             </details>
@@ -34,24 +40,62 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <div class="video-container">
-                    <video controls>
-                      <source src="../video/flower.mp4" type="video/mp4">
-                      <source src="./video/flower.mp4" type="video/mp4">
-                      <source src="./video/flower.webm" type="video/webm">
-                        Your browser does not support mp4 format
-                    </video>
-                </div>
+                <dl>
+                    <dt>html (opening example)</dt>
+                    <dd><code>&lt;video controls&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="../video/flower.mp4" type="video/mp4"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="./video/flower.mp4" type="video/mp4"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source src="./video/flower.webm" type="video/webm"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;track src="./vtt/flower-caption.vtt" kind="subtitles" srclang="en"
+                            default&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;Your browser does not support HTML-5 video</code></dd>
+                    <dd><code>&lt;/video&gt;</code></dd>
+
+                    <dt>VTT (opening example)</dt>
+                    <dd><code>WEBVTT</code></dd>
+                    <dd>&nbsp;</dd>
+                    <dd><code>NOTE Writen by tomgdow</code></dd>
+                    <dd>&nbsp;</dd>
+                    <dd><code>1</code></dd>
+                    <dd><code>00:00:01.000 --&gt; 00:00:05.000</code></dd>
+                    <dd><code>Hello, This video is produced by tomgdow</code></dd>
+
+                </dl>
+
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>default</dt>
+                    <dd>To enable captions/subtitles by default, include
+                        <code>default</code>
+                        attribute in the
+                        <code>track</code>
+                        element
+                    </dd>
+                    <dt>cue pseudo-class</dt>
+                    <dd>To format cues using css, use
+                        <code>::cue</code>
+                        pseudo-class
+                    </dd>
+                    <dt>Browser subtitles mode</dt>
+                    <dd>
+                        <code>
+                            document.getElementsByTagName('video')[0].textTracks[0].mode
+                        </code>
+                        <code>
+                            document.getElementsByTagName('video')[0].textTracks[0].mode="disabled"
+                        </code>
+                        <code>
+                            document.getElementsByTagName('video')[0].textTracks[0].mode="showing"
+                        </code>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
