@@ -106,9 +106,10 @@
         "92_percentages_and_pixes.html",
         "93_frameworks_and_templates.html",
         "94_max_width_property.html",
+        "x_8_rme_css_variables.html"
     ];
 
-
+    5
     //Functions
     function insertContents(cb) {
         return function insert() {
@@ -121,6 +122,7 @@
             document.getElementsByClassName('examples')[0].innerHTML = htmlDoc.body.firstElementChild.children[4].innerHTML;
             document.getElementsByClassName('notes')[0].innerHTML = htmlDoc.body.firstElementChild.children[5].innerHTML;
             document.getElementsByClassName('file_name')[0].innerHTML = pageOrder[pageCounter];
+            drawOnCanvas();
             cb();
             closeAllTwo();
         };
@@ -218,7 +220,7 @@
     // populateDatalist();
 
     function selectFromDatalist() {
-        if (document.getElementById('dlist_search').value.length>4) {
+        if (document.getElementById('dlist_search').value.length > 4) {
             makeRequest(`./html/${document.getElementById('dlist_search').value}`, insertContents(callback));
             pageCounter = parseInt(pageOrder.indexOf(document.getElementById('dlist_search').value), 10);
             console.log(document.getElementById('dlist_search').value.length);
@@ -241,5 +243,33 @@
     window.addEventListener('DOMContentLoaded', function () {
         makeRequest(`./html/${pageOrder[0]}`, insertContents(callback));
     });
+
+    function drawOnCanvas() {
+
+            let el = document.getElementsByTagName('canvas')[0] || null;
+        if (el && el.getContext) {
+            let ctx = el.getContext('2d');
+            ctx.fillStyle = "red";
+            ctx.fillRect(25, 50, 50, 50);
+            ctx.clearRect(37.5, 62.5, 25, 25);
+            ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--stroke-style')
+            ctx.beginPath();
+            ctx.arc(150, 75, 25, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+            // ctx.fillStyle="green";
+            ctx.arc(150, 75, 12.5, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.moveTo(250, 50);
+            ctx.lineTo(275, 100);
+            ctx.lineTo(225, 100);
+            ctx.fill();
+            ctx.closePath();
+
+        }
+    }
 
 })();

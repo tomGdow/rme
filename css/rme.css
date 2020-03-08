@@ -3,6 +3,7 @@
     --sans-one: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --mono-one: "Inconsolata", monospace;
     --font-main: 1.1rem/1.5 var(--sans-one);
+    --stroke-style: blue;
 }
 
 * {
@@ -282,6 +283,12 @@ video {
 a {
     font-size: 0.9rem;
     text-decoration:none;
+}
+
+canvas {
+    margin:auto;
+    display:block;
+    border: 2px solid aquamarine;
 }
 
 @media screen and (min-width:600px) {

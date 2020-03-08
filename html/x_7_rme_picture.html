@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
         <header>picture</header>
@@ -13,10 +15,8 @@
             <div class="picture-container">
                 <figure>
                     <picture>
-                        <source srcset="./image/kitten-large.png"
-                        media="(min-width:600px)">
-                        <source srcset="./image/kitten-medium.png"
-                        media="(min-width: 500px">
+                        <source srcset="./image/kitten-large.png" media="(min-width:600px)">
+                        <source srcset="./image/kitten-medium.png" media="(min-width: 500px">
                         <img src="./image/kitten-small.png" alt="Picture of Kitten">
                     </picture>
                 </figure>
@@ -25,28 +25,112 @@
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-                <p></p>
+                <dl>
+                    <dt>html</dt>
+                    <dd><code>&lt;picture&gt;</code></dd>
+                    <dd>
+                        <code>&nbsp;&nbsp;&lt;source</code>
+                        <code>media=""</code>
+                        <code>srcset=""</code>
+                        <code>sizes=""</code>
+                        <code>type=""&gt;</code>
+                    </dd>
+                    <dd><code>&nbsp;&nbsp;&lt;img </code>
+                        <code>srcset=""</code>
+                        <code>alt=""&gt;</code></dd>
+                    <dd><code>&lt;/picture&gt;</code></dd>
+                </dl>
+                <dt>srcset</dt>
+                <dd>required</dd>
+                <dd>Accepts a single image file-path or
+                    comma-delimited list of image file-paths with
+                    pixel-density descriptors
+                </dd>
+                <dt>media</dt>
+                <dd>optional</dd>
+                <dd>accepts any valid media query</dd>
+                <dt>sizes</dt>
+                <dd>optional</dd>
+                <dd><code>
+                        sizes="(max-width: 30em) 100vw, (max-width: 50em) 50vw"
+                    </code>
+                </dd>
+                <dt>type</dt>
+                <dd>optional</dd>
+                <dd>mime type</dd>
             </details>
         </div>
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <dl>
+                    <dt>Opening example</dt>
+
+                    <dd><code>&lt;picture&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source srcset="./image/kitten-large.png" media="(min-width:600px)"&gt;</code></dd>     
+                    <dd><code>&nbsp;&nbsp;&lt;source srcset="./image/kitten-medium.png" media="(min-width: 500px"&gt;</code></dd>     
+                    <dd><code>&nbsp;&nbsp;&lt;img src="./image/kitten-small.png" alt="Picture of Kitten"&gt;</code></dd>     
+                    <dd><code>&lt;/picture&gt;</code></dd>
+
+                    <dt>example 2</dt>
+                    <dd><code>&lt;picture&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp; media="(min-width: 650px)"</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp; srcset="images/kitten-stretching.png,</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; images/kitten-stretching@1.5x.png
+                            1.5x,</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; images/kitten-stretching@2x.png
+                            2x"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;source</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;media="(min-width: 465px)" </code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;srcset="images/kitten-sitting.png,</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/kitten-sitting@1.5x.png 1.5x</code>
+                    </dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/kitten-sitting@2x.png
+                            2x"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;img</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;src="images/kitten-curled.png"</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;srcset="images/kitten-curled@1.5x.png 1.5x,</code></dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images/kitten-curled@2x.png 2x"</code>
+                    </dd>
+                    <dd><code>&nbsp;&nbsp;&nbsp;&nbsp;alt="a cute kitten"&gt;</code></dd>
+                    <dd><code>&lt;picture&gt;</code></dd>
+                </dl>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>img</dt>
+                    <dd>The
+                        <code>img</code> element
+                        <em>must</em>
+                        be present, and should appear last (
+                        after the final
+                        <code>source</code>
+                        element
+                        )
+                    </dd>
+                    <dd>The image defined in a matching
+                        <code>source</code>
+                        element is substituted into the
+                        <code>src</code>
+                        attribute of the image
+                        <code>element</code>
+                    </dd>
+                    <dd>
+                        <code>width</code>
+                        and
+                        <code>height</code>
+                        are defined by the
+                        <code>img</code>
+                        element values
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

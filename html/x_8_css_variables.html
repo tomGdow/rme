@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>Variables (CS</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt>css</dt>
+                    <dd><code> :root {</code></dd>
+                    <dd><code> &nbsp;&nbsp;--bg-color: aquamarine;</code></dd>
+                    <dd><code> &nbsp;&nbsp;--sans-one: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</code></dd>
+                    <dd><code> &nbsp;&nbsp;--fill-color: red;</code></dd>
+                    <dd><code> }</code></dd>
+                    <dt>css-2 </dt>
+                    <dd><code> header {</code></dd>
+                    <dd><code> &nbsp; &nbsp; font-family: var(--sans-one);</code></dd>
+                    <dd><code> }</code></dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>Retrieve with JS
+                    </dt>
+                    <dd>
+                        <code>
+                        ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--fill-color');
+                        </code>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

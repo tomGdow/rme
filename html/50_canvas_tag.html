@@ -1,44 +1,99 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>table</header>
+        <header>Canvas</header>
         <div class="counter">xx</div>
         <main>
-            <dl>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <canvas></canvas>
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-                <p></p>
+                <dl>
+                    <dt>html</dt>
+                    <dd><code>&lt;canvas&gt;fall back text&lt;/canvas&gt;</code></dd>
+                    <dt>javascript</dt>
+                    <dd><code> let el=document.getElementById('my-canvas');</code></dd>
+                    <dd><code> let ctx=el.getContext('2d');</code></dd>
+                    <dd><code> ctx.fillStyle="color";</code></dd>
+                    <dd><code> ctx.fillRect(x,y, width,height);</code></dd>
+                </dl>
             </details>
         </div>
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <dl>
+                    <dt>JS (Opening Example)</dt>
+<dd><code>function drawOnCanvas() {</code></dd>
+
+<dd><code>&nbsp;&nbsp; let el = document.getElementsByTagName('canvas')[0] || null;</code></dd>
+<dd><code>&nbsp;&nbsp; if (el && el.getContext) {</code></dd>
+<dd><code>&nbsp;&nbsp; let ctx = el.getContext('2d');</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.fillStyle = "red";</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.fillRect(25, 50, 50, 50);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.clearRect(37.5, 62.5, 25, 25);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--stroke-style')</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.beginPath();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.arc(150, 75, 25, 0, 2 * Math.PI);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.stroke();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.closePath();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.beginPath();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.arc(150, 75, 12.5, 0, 2 * Math.PI);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.fill();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.closePath();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.beginPath();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.moveTo(250, 50);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.lineTo(275, 100);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.lineTo(225, 100);</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.fill();</code></dd>
+<dd><code>&nbsp;&nbsp; ctx.closePath();</code></dd>
+
+<dd><code>&nbsp;&nbsp; }</code></dd>
+<dd><code> }</code></dd>
+                </dl>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>default size</dt>
+                    <dd>The default size of canvas is 300 (width) by 150 (height)</dd>
+                    <dd>Preserve aspect ratio, otherwise distorts</dd>
+                    <dd><code>(x,y)=(0,0)</code>is at upper-right corner of canvas</dd>
+                    <dt>Primitives</dt>
+                    <dd>Two basic primitives:
+                        <code>rectangles</code> 
+                        and
+                        <code>path</code>
+                    </dd>
+                    <dt>Useful commands</dt>
+                    <dd><code>el.getContext('2d')</code></dd>
+                    <dd><code>ctx.strokeStyle="color</code></dd>
+                    <dd><code>ctx.fillStyle='color'</code></dd>
+                    <dd><code>ctx.fillRect(x,y,width, height)</code></dd>
+                    <dd><code>ctx.strokeRect(x,y,width,height)</code></dd>
+                    <dd><code>ctx.beginPath()</code></dd>
+                    <dd><code>ctx.closePath()</code></dd>
+                    <dd><code>ctx.moveTo(x,y)</code></dd>
+                    <dd><code>ctx.lineTo(x,y)</code></dd>
+                    <dd><code>ctx.stroke()</code></dd>
+                    <dd><code>ctx.fill()</code></dd>
+                    <dd><code>ctx.arc(x,y, radius, begin-angle, end-angle, clockwise)</code></dd>
+                    <dd><code>ctx.fillText(text,x,y)</code></dd>
+                    <dd><code>ctx.strokeText(text,x,y)</code></dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
