@@ -291,6 +291,14 @@ canvas {
     border: 2px solid aquamarine;
 }
 
+embed#rme-svg{
+    /* border: 2px solid blue; */
+    width:550px;
+    height:150px;
+    margin:auto;
+    display:block;
+}
+
 @media screen and (min-width:600px) {
 
     main,
