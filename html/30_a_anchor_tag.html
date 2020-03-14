@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>anchor element</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>anchor</dt>
+                <dd>The
+                    <code>&lt;a&gt;</code>
+                    element, with its
+                    <code>href</code>
+                    attribute, creates a hyperlink to
+                    webpages,files, email addresses, locations in the
+                    same page, or anything else a URL can address
+                </dd>
+
+
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <ol>
+                    <li>
+                        <code>
+                            &lt;a href="https://www.mozilla.com"&gt;Mozilla&lt;/a&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;a href="#Section_further_down"&gt; Jump to the heading below &lt;/a&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;a href="mailto:nowhere@mozilla.org"&gt;Send email to nowhere&lt;/a&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;a href="tel:+49.157.0156"&gt;+49 157 0156&lt;/a&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;a href="http://www.company.com" target="iframe_inline"&gt;&lt;/a&gt;
+                        </code><br>
+                        <code>
+                            &lt;iframe src="products.html" name="iframe_inline"&gt;&lt;/iframe&gt;
+                        </code>
+                    </li>
+                </ol>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>download attr</dt>
+                    <dd>Prompts to save linked URL,
+                        instead of navigating to it
+                    </dd>
+                    <dd>can be used with/without a value</dd>
+                    <dd>
+                        <code>
+                            &lt;a href="" download="my_painting.png"&gt;
+                        </code>
+                    </dd>
+                    <dt>href attr</dt>
+                    <dd>The URL that hyperlink points to</dd>
+                    <dd>--section of webpage</dd>
+                    <dd>telephone number with
+                        <code>tel:</code>
+                    </dd>
+                    <dd>email addresses with
+                        <code>mailto:</code>
+                    </dd>
+                    <dt>rel attr</dt>
+                    <dd>The relationship of the linked URL
+                        as space-separated link types
+                    </dd>
+                    <dt>target attribute</dt>
+                    <dd>Where to display the linked URL, as the
+                        name of a
+                        <em>browsing context</em>
+                    </dd>
+                    <dd>This may be a tab, a window or an iframe</dd>
+                    <dd>
+                        <code>_self</code>
+                        is the current browsing context (default)
+                    </dd>
+                    <dd>
+                        <code>_blank</code>
+                        usually opens a new tab, but user may decide to
+                        make open a new window
+                    </dd>
+                    <dd>
+                        <code>_parent</code>
+                        is the parent browsing context (If no parent,
+                        behaves as
+                        <code>_self</code>
+                        )
+                    </dd>
+                    <dd>
+                        <code>_top</code>
+                        is the topmost browsing context. In no ancestors,
+                        behaves as
+                        <code>_self</code>
+                    </dd>
+                    <dt>Note on
+                        <code>target</code>
+                    </dt>
+                    <dd>add
+                        <code>rel="norefferer noopener"</code> to
+                        stop possible exploitation.
+                    </dd>
+                    <dd>With
+                        <code>target=_blank</code>, the above will also
+                        stop JS on target page running in same process as
+                        anchor-containing page.
+                    </dd>
+                    <dt>TODO</dt>
+                    <dd>Mozilla hava a nice Canvas app to download a painting!</dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

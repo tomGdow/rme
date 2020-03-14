@@ -38,7 +38,7 @@
         "27_figure_tag.html",
         "28_caption_tag.html",
         "29_img_tag.html",
-        "30_a_tag.html",
+        "30_a_anchor_tag.html",
         "31_targets.html",
         "32_bookmarks.html",
         "33_relative_vs_absolute.html",
@@ -106,10 +106,13 @@
         "92_percentages_and_pixes.html",
         "93_frameworks_and_templates.html",
         "94_max_width_property.html",
-        "x_8_rme_css_variables.html"
+        "x_8_rme_css_variables.html",
+        "x_9_rme_css_selectors.html",
+        "x_10_rme_semantic_markup.html",
+        "x_11_rme_css_measure_units.html",
+        "x_12_rme_form_one.html"
     ];
 
-    5
     //Functions
     function insertContents(cb) {
         return function insert() {
@@ -125,6 +128,7 @@
             drawOnCanvas();
             cb();
             closeAllTwo();
+            form();
         };
     }
 
@@ -246,7 +250,7 @@
 
     function drawOnCanvas() {
 
-            let el = document.getElementsByTagName('canvas')[0] || null;
+        let el = document.getElementsByTagName('canvas')[0] || null;
         if (el && el.getContext) {
             let ctx = el.getContext('2d');
             ctx.fillStyle = "red";
@@ -269,6 +273,66 @@
             ctx.fill();
             ctx.closePath();
 
+        }
+    }
+
+    // Form processing (Get and Put)
+    function ajaxCallMe() {
+        return function ajax() {
+            let response = this.responseText.split(',');
+            console.log("%c %s", "background-color:green",response);
+            let responseString=`Greetings from PHP Server (POST Method),
+             ${upperCaseFirstLetter(response[0])}`;
+             let responseString2=`Your email address is ${response[1]}`;
+            document.getElementById('out-name').value=responseString;
+            document.getElementById('out-email').value=responseString2;
+            // }
+
+        };
+    }
+
+    function generateParams(...args) {
+        var tmp = "";
+        if (args.length < 3) {
+            tmp += `${args[0]}=${args[1]}`;
+        }
+        else {
+            tmp += `${args[0]}=${args[1]}`;
+            for (let i = 2; i < args.length; i += 2) {
+                tmp += `&${args[i]}=${args[i + 1]}`;
+            }
+        }
+        return tmp;
+    }
+    // console.log(generateParams('lorem', 'ipsum', 'corona', 'virux'))
+
+    function makePostRequest(url, params) {
+        let oReq = new XMLHttpRequest();
+        //oReq.onreadystatechange = ajaxCallMe
+        oReq.addEventListener("load", ajaxCallMe());
+        oReq.open('POST', url);
+        oReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // oReq.setRequestHeader("Content-length", params.length);
+        // oReq.setRequestHeader("Connection", "close");
+        oReq.send(params);
+        console.log("%c %s", "color:blue", params);
+    }
+
+    function upperCaseFirstLetter(str) {
+        return `${str.trim().charAt(0).toUpperCase()}${str.trim().substring(1)}`;
+    }
+
+    function form() {
+        if (document.getElementById('form_one')) {
+            document.getElementById('form_one').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var name = document.getElementById('form_one')[1].value;
+                var param2 = document.getElementById('form_one')[2].value;
+                var params = generateParams('name', name, 'param2', param2);
+                // makeRequest("http://xu/php/basicformthree.php", params);
+                makePostRequest("http://php.tomgdow.com", params);
+                // console.log("%c %s", "color=red",params);
+            });
         }
     }
 

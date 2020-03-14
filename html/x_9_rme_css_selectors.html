@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>CSS Selectors</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>CSS selectors</dt>
+                <dd>Define the elements to which a set of
+                    CSS rules apply
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>descendent combinator (space)</dt>
+                    <dd>Selects nodes that are descendents
+                        of first element
+                    </dd>
+                    <dd>
+                        <code>div span</code>
+                        will select all
+                        <code>span</code>
+                        elements that are inside a
+                        <code>div</code>
+                        element
+                    </dd>
+                    <dt>Child combinator (
+                        <code>&gt;</code>
+                        )
+                    </dt>
+                    <dd>Selects nodes that are direct
+                        children of the first element
+                    </dd>
+                    <dd>
+                        <code>ul>li</code>
+                        will match all
+                        <code>ul</code>
+                        elements that are nested
+                        directly inside a
+                        <code>ul</code>
+                        element
+                    </dd>
+                    <dt>General sibling combinator (
+                        <code>~</code>
+                        )
+                    </dt>
+                    <dd>
+                        Selects siblings
+                    </dd>
+                    <dd>The second element
+                        follows the first (though not
+                        necessarily immediately)
+                    </dd>
+                    <dd><em>and</em> both elements
+                        have the same parent</dd>
+                    <dd>
+                        <code>p~span</code>
+                        will match all
+                        <code>span</code>
+                        elements that follow a
+                        <code>p</code>,
+                        immediately or not
+                    </dd>
+                    <dt>Adjacent sibling combinator (
+                        <code>+</code>
+                        )
+                    </dt>
+                    <dd>Selects adjacent siblings</dd>
+                    <dd>The second element must directly follow
+                        the first
+                    </dd>
+                    <dd>
+                        <code>h2+p</code>
+                        will mathc all
+                        <code>p</code>
+                        elements that directly follow a
+                        <code>h2</code>
+                        element
+                    </dd>
+
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

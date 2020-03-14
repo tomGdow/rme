@@ -244,7 +244,8 @@ dd {
     /* font-size: 0.8rem; */
 }
 
-.table-one th, .table-one td {
+.table-one th,
+.table-one td {
     font-size: 0.8rem;
 }
 
@@ -265,38 +266,88 @@ dd {
 }
 
 video {
-    width:100%;
-    height:auto;
+    width: 100%;
+    height: auto;
 }
 
 .video-container {
-    width:60vw;
+    width: 60vw;
     max-width: 500px;
-    margin:auto;
+    margin: auto;
 }
 
 ::cue {
     color: white;
-    background-color:blue;
+    background-color: blue;
     font-size: 1rem;
 }
+
 a {
     font-size: 0.9rem;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 canvas {
-    margin:auto;
-    display:block;
+    margin: auto;
+    display: block;
     border: 2px solid aquamarine;
 }
 
-embed#rme-svg{
-    /* border: 2px solid blue; */
-    width:550px;
-    height:150px;
-    margin:auto;
-    display:block;
+embed#rme-svg {
+    width: 550px;
+    height: 150px;
+    margin: auto;
+    display: block;
+}
+
+form {
+    max-width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    /* font-size: 0.9rem; */
+}
+
+fieldset {
+    font-size: 0.9rem;
+}
+
+fieldset label {
+    display: inline-block;
+    width: 10vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
+}
+
+fieldset legend {
+    font-size: 0.9rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1vw;
+}
+
+input[type="submit"] {
+    background-color: #eee;
+    margin: 0 0.5rem 0.25rem 0;
+    padding: 0.25rem;
+    border: none;
+    float: right;
+}
+
+input[type="text"],
+input[type="email"] {
+    font-size: 0.9rem;
+    font-family: var(--sans-one);
+}
+
+output {
+    font-size: 0.9rem;
+    font-family: var(--sans-one);
+}
+
+fieldset.output {
+
+    padding: 0 0 2vh 2vw;
+    min-height: 10vh;
 }
 
 @media screen and (min-width:600px) {

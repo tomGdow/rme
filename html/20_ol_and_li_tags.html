@@ -21,53 +21,17 @@
                 <summary>Syntax</summary>
                 <dl>
                     <dt>html</dt>
-                    <dd>
-                        <code>
-                            &lt;ol start="1" &gt;
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>
-                            &lt;li&gt;&lt;/li&gt;
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>
-                            &lt;li&gt;&lt;/li&gt;
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>
-                            &lt;li&gt;&lt;/li&gt;
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>&lt;/ol&gt;</code>
-                    </dd>
+                    <dd><code>&lt;ol start="1"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;/ol&gt;</code></dd>
                     <dt>Alternative Syn</dt>
-                    <dd>
-                        <code>
-                            &lt;ol start="1" &gt;
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>
-                            &lt;li&gt;a
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>
-                            &lt;li&gt;b
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>
-                            &lt;li&gt;c
-                        </code>
-                    </dd>
-                    <dd>
-                        <code>&lt;/ol&gt;</code>
-                    </dd>
+                    <dd><code> &lt;ol start="1"&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;a</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;b</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;c</code></dd>
+                    <dd><code>&lt;/ol&gt;</code></dd>
                 </dl>
             </details>
         </div>
@@ -77,13 +41,20 @@
                 <dl>
                     <dt>html</dt>
                     <dd><code>&lt;ol id="list-2" start="4"&gt;</code></dd>
-                    <dd><code>&lt;li&gt;Lion&lt;/li&gt;</code></dd>
-                    <dd><code>&lt;li&gt;Springbok&lt;/li&gt;</code></dd>
-                    <dd><code>&lt;li&gt;Brown Haret;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;Lion&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;Springbok&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;Brown Haret;/li&gt;</code></dd>
                     <dt>css</dt>
                     <dd><code>ol#list-2{</code></dd>
-                    <dd><code>list-style-type:upper-roman;</code></dd>
+                    <dd><code>&nbsp;&nbsp;list-style-type:upper-roman;</code></dd>
                     <dd><code>}</code></dd>
+                    <dt>Example 2</dt>
+                    <dd><code>&lt;ol type="I" start="4" reversed&gt;</code></dd>
+                        <dd><code>&nbsp;&nbsp;&lt;li&gt;First Item&lt;/li&gt;</code></dd>
+                        <dd><code>&nbsp;&nbsp;&lt;li&gt;Second Item&lt;/li&gt;</code></dd>
+                        <dd><code>&nbsp;&nbsp;&lt;li&gt;Third Item&lt;/li&gt;</code></dd>
+                    <dd><code>&lt;/ol&gt;</code></dd>
+
                 </dl>
             </details>
         </div>
@@ -151,9 +122,56 @@
                             element is immediately followed by another
                             <code>li</code>
                             element or if there is no more content in the parent element.
-
                         </q>
                     </dd>
+                    <dt>start</dt>
+                    <dd>Value is always an Arabic number</dd>
+                    <dt>type</dt>
+                    <dd>
+                        <code>a</code>
+                        is lower-case letter
+                    </dd>
+                    <dd>
+                        <code>A</code>
+                        is upper-case letter
+                    </dd>
+                    <dd>
+                        <code>i</code>
+                        is Roman numeral (lower)
+                    </dd>
+                    <dd>
+                        <code>I</code>
+                        is Upper-Roman
+                    </dd>
+                    <dd>
+                        <code>1</code>
+                        is decimal (default)
+                    </dd>
+                    <dt>reversed</dt>
+                    <dd>
+                        <code>&lt;ol reversed &gt;</code>
+                    </dd>
+                    <dd>
+                        reverses the order
+                    </dd>
+                    <dt>
+                        <code>value</code>
+                        vs
+                        <code>start</code>
+                    </dt>
+                    <dd>It seems that
+                        <code>value</code>
+                        may be used instead of
+                        <code>start</code>
+                        as an attribute of the
+                        <em>first</em>
+                        <code>li</code>
+                        tag
+                    </dd>
+                    <dd><code>&lt;ul value="2"&gt;</code>
+                    </dd>
+                    <dd>
+                        (MeasureUp, but idiosyncratic)</dd>
                 </dl>
             </details>
         </div>
