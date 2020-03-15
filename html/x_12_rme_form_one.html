@@ -19,20 +19,21 @@
                         <div>
                             <label for="uid">Name</label>
                             <input type="text" name="uname" id="uid" placeholder=" name">
+                            <span id="msg_name"></span>
                         </div>
                         <div>
                             <label for="eid">email</label>
-                            <input type="email" name="ename" id="eid" placeholder=" email">
+                            <input type="email" name="ename" id="eid" placeholder=" email" required>
                             <input type="submit" value="submit">
                         </div>
                     </fieldset>
                     <fieldset class="output">
                         <legend>Response</legend>
                         <div>
-                            <output id="out-name"></output>
+                            <output for="uid" id="out-name"></output>
                         </div>
                         <div>
-                            <output id="out-email"></output>
+                            <output for="eid" id="out-email"></output>
                         </div>
                     </fieldset>
                 </form>

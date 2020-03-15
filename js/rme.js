@@ -298,7 +298,7 @@
         }
         else {
             tmp += `${args[0]}=${args[1]}`;
-            for (let i = 2; i < args.length; i += 2) {
+           for (let i = 2; i < args.length; i += 2) {
                 tmp += `&${args[i]}=${args[i + 1]}`;
             }
         }
@@ -315,7 +315,6 @@
         // oReq.setRequestHeader("Content-length", params.length);
         // oReq.setRequestHeader("Connection", "close");
         oReq.send(params);
-        console.log("%c %s", "color:blue", params);
     }
 
     function upperCaseFirstLetter(str) {
@@ -325,15 +324,41 @@
     function form() {
         if (document.getElementById('form_one')) {
             document.getElementById('form_one').addEventListener('submit', function (event) {
+                if(checkField(event)) {
                 event.preventDefault();
                 var name = document.getElementById('form_one')[1].value;
                 var param2 = document.getElementById('form_one')[2].value;
                 var params = generateParams('name', name, 'param2', param2);
-                // makeRequest("http://xu/php/basicformthree.php", params);
                 makePostRequest("http://php.tomgdow.com", params);
-                // console.log("%c %s", "color=red",params);
+
+                }
             });
         }
+    document.getElementById('uid').addEventListener('focus', function () {
+        document.getElementById('msg_name').style.backgroundColor="white"
+        document.getElementById('msg_name').innerText=""; 
+        document.getElementById('out-name').innerText=""; 
+        document.getElementById('out-email').innerText=""; 
+    })
     }
+    
+    function checkField (event) {
+        event.preventDefault();
+
+        let tmp=document.getElementById('uid');
+
+        if(tmp.value==='') {
+
+            var msgName=document.getElementById('msg_name');
+            msgName.innerHTML="!Required field";
+            msgName.style.backgroundColor="red";
+            return false;
+        }
+        return true;
+    }
+        document.getElementById('myname').addEventListener('focus', function () {
+        document.getElementById('mynameout').style.backgroundColor="white"
+        document.getElementById('mynameout').innerText=""; 
+    })
 
 })();
