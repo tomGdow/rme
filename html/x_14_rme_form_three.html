@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
-
 <body>
     <div class="container">
-        <header>Form [Ajax/Post/email]</header>
+        <header>table</header>
         <div class="counter">xx</div>
         <main>
-            <div class="form-one-container">
-                <form name="form_one" id="form_one">
-                    <fieldset>
-                        <legend>Information</legend>
+            <form name="form_three" id="form_three">
+                <fieldset>
+                    <legend>Information</legend>
                         <div>
                             <label for="uid">Name</label>
-                            <input type="text" name="uname" id="uid" placeholder=" name">
+                            <input type="text" name="uname2" id="uname2" placeholder=" name">
                             <span class="msg_name"></span>
                         </div>
                         <div>
-                            <label for="eid">email</label>
-                            <input type="email" name="ename" id="eid" placeholder=" email" required>
+                            <p class="radio-message">What is your fav color?</p>
+                            <div class="radio-lst">
+                                <label for="blue">Blue</label>
+                                <input type="radio" name="color" id="blue" value="blue">
+                                <label for="green">Green</label>
+                                <input type="radio" name="color" id="green" value="green">
+                                <label for="red">Red</label>
+                                <input type="radio" name="color" id="red" checked value="red">
+                            </div>
                             <input type="submit" value="submit">
                         </div>
-                    </fieldset>
+                </fieldset>
                     <fieldset class="output">
                         <legend>Response</legend>
                         <div>
-                            <output for="uid" id="out-name"></output>
+                            <output for="uname2" id="out-name-two"></output>
+                            <output for="blue green red" id="name-color"></output>
                         </div>
-                        <div>
-                            <output for="eid" id="out-email"></output>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+            </form>
         </main>
         <div class="syntax">
             <details>
@@ -66,5 +66,4 @@
         </div>
     </div>
 </body>
-
 </html>
