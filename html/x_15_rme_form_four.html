@@ -1,18 +1,47 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>table</header>
+        <header>[Form/Checkbox]</header>
         <div class="counter">xx</div>
         <main>
-            <dl>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <form name="form_four" id="form_four">
+                <fieldset>
+                    <legend>Information</legend>
+                    <div>
+                        <label for="uname4">Name</label>
+                        <input type="text" name="uname4" id="uname4" placeholder="name">
+                            <span class="msg_name"></span>
+                    </div>
+                    <div class="checkbox-group">
+                        <p class="checkbox-message">What are your favourite languages?</p>
+                        <label for="clang-html">HTML</label>
+                        <input type="checkbox" class="clang-checkbox" name="clang-one" id="clang-html" value="html" checked>
+
+                        <label for="clang-css">CSS</label>
+                        <input type="checkbox" class="clang-checkbox" name="clang-two" id="clang-css" value="css">
+
+                        <label for="clang-js">JavaScript</label>
+                        <input type="checkbox" class="clang-checkbox" name="clang-three" id="clang-js"
+                            value="javascript">
+                    </div>
+                    <div>
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+                    <fieldset class="output">
+                        <legend>Response</legend>
+                        <div>
+                            <output for="name clang-html clang-css clang-js" id="out-name-clang"></output>
+                        </div>
+                        </fieldset>
+            </form>
         </main>
         <div class="syntax">
             <details>
@@ -40,5 +69,7 @@
             </details>
         </div>
     </div>
+
 </body>
+
 </html>

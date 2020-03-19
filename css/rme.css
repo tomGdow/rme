@@ -355,7 +355,7 @@ fieldset.output {
 }
 
 
-.radio-message {
+.radio-message, .checkbox-message {
     font-size: 0.9rem;
     padding: 1vw 0 0 1vw;
     /* color:red; */
@@ -364,7 +364,7 @@ fieldset.output {
 .radio-lst {
     float:left;
 }
-fieldset .radio-lst label {
+fieldset .radio-lst label, fieldset .checkbox-group label {
     display: inline-block;
     min-width: 1vw; 
     text-align:right;

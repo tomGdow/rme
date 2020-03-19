@@ -1,5 +1,5 @@
-let pageData= (function() {
-     return [
+let pageData = (function () {
+    return [
         "x_1_rme_mime.html",
         "1_rme_script_tag.html",
         "2_rme_noscript_tag.html",
@@ -119,7 +119,7 @@ let pageData= (function() {
 (function (arg) {
     'use strict';
     var pageCounter = 0;
-    const pageOrder=arg;
+    const pageOrder = arg;
 
     //Functions
     function insertContents(cb) {
@@ -348,6 +348,30 @@ let pageData= (function() {
                     // console.log('%c %s', 'color:red', params);
                     makePostRequest("http://php.tomgdow.com", params, ajaxCallMe3());
                 }
+
+            });
+        }
+
+        if (document.getElementById('form_four')) {
+            document.getElementById('form_four').addEventListener('submit', function (event) {
+                if (checkField(event, 'uname4')) {
+                    event.preventDefault();
+                    var name = document.getElementById('form_four')[1].value;
+                    let cbox = document.querySelectorAll('.clang-checkbox');
+
+                    var tmparr = [];
+                    for (let i = 0; i < cbox.length; i++) {
+                        if (cbox[i].checked) {
+                            tmparr.push(cbox[i].name);
+                            tmparr.push(cbox[i].value);
+                        }
+                    }
+                    
+                    makeRequest(
+                        addQueryStringToUrl('http://phptwo.tomgdow.com', 'name', name, ...tmparr), ajaxCallMe4()
+                    );
+                }
+
             });
         }
 
@@ -374,6 +398,14 @@ let pageData= (function() {
                 document.getElementsByClassName('msg_name')[0].innerText = "";
                 document.getElementById('out-name-two').innerText = "";
                 document.getElementById('name-color').innerText = "";
+            });
+        }
+
+        if (document.getElementById('uname4')) {
+            document.getElementById('uname4').addEventListener('focus', function () {
+                document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white"
+                document.getElementsByClassName('msg_name')[0].innerText = "";
+                document.getElementById('out-name-clang').innerText = "";
             });
         }
     }
@@ -432,6 +464,39 @@ let pageData= (function() {
             document.getElementById('out-name-two').value = responseString;
             document.getElementById('name-color').value = responseString2;
         };
+    }
+    function ajaxCallMe4() {
+        return function ajax2() {
+            let response = this.responseText.substring(2).split('&');
+            console.log(response);
+            let responseStringName = `Greetings from the PHP Server (GET Method), ${(response[0].split('=')[1]).toUpperCase()}. `
+            document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response) 
+        };
+    }
+
+    function favLangHelper(arr) {
+        let tmp = "";
+        let responseStringNone = "Your have not chosen any favourite language! ";
+        let responseStringSingular = "Your favourite language is ";
+        let responseStringPlural = "Your favourite languages are ";
+        if (arr.length === 1) {
+            tmp = responseStringNone;
+        }
+        if (arr.length === 2) {
+            tmp = responseStringSingular + arr[1].split('=')[1];
+        }
+        if (arr.length > 2) {
+            tmp = `${responseStringPlural} ${arr[1].split('=')[1]}`;
+            
+            if(arr.length>3) { 
+                for(let i=2; i<arr.length-1;i++) {
+                    tmp+=`, ${arr[i].split('=')[1]}`
+                }
+            }
+            tmp += ` and ${arr[arr.length-1].split('=')[1]}`;
+            }
+            
+        return tmp;
     }
 
 })(pageData);
