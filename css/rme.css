@@ -355,7 +355,7 @@ fieldset.output {
 }
 
 
-.radio-message, .checkbox-message {
+.radio-message, .checkbox-message, .select-message {
     font-size: 0.9rem;
     padding: 1vw 0 0 1vw;
     /* color:red; */
@@ -364,11 +364,24 @@ fieldset.output {
 .radio-lst {
     float:left;
 }
+
 fieldset .radio-lst label, fieldset .checkbox-group label {
     display: inline-block;
     min-width: 1vw; 
     text-align:right;
     padding-right: 2px;
+    font-size: 0.9rem;
+}
+
+select {
+    margin-left: 2vw;
+    font-size: 0.9rem;
+}
+select option {
+    /* background:red; */
+    font-size: 0.7rem;
+}
+select >optgroup {
     font-size: 0.9rem;
 }
 

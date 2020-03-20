@@ -110,7 +110,9 @@ let pageData = (function () {
         "x_12_rme_form_one.html",
         "x_13_rme_form_two.html",
         "x_14_rme_form_three.html",
-        "x_15_rme_form_four.html"
+        "x_15_rme_form_four.html",
+        "x_16_rme_form_five.html",
+        "x_17_rme_form_six.html",
 
     ];
 
@@ -366,10 +368,28 @@ let pageData = (function () {
                             tmparr.push(cbox[i].value);
                         }
                     }
-                    
+
                     makeRequest(
                         addQueryStringToUrl('http://phptwo.tomgdow.com', 'name', name, ...tmparr), ajaxCallMe4()
                     );
+                }
+
+            });
+        }
+        
+        if (document.getElementById('form_five')) {
+            document.getElementById('form_five').addEventListener('submit', function (event) {
+                if (checkField(event, 'uname5')) {
+                    event.preventDefault();
+                    let name = document.getElementById('form_five')[1].value;
+                    let county=document.getElementById('form_five')[2].value;
+                    
+                    console.log("%c %s", "color:red", name);
+                    var param2 = county;
+                    var params = generateParams('name', name, 'param2', param2);
+                    // console.log('%c %s', 'color:red', params);
+                    makePostRequest("http://php.tomgdow.com", params, ajaxCallMe5());
+
                 }
 
             });
@@ -406,6 +426,14 @@ let pageData = (function () {
                 document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white"
                 document.getElementsByClassName('msg_name')[0].innerText = "";
                 document.getElementById('out-name-clang').innerText = "";
+            });
+        }
+
+        if (document.getElementById('uname5')) {
+            document.getElementById('uname5').addEventListener('focus', function () {
+                document.getElementsByClassName('msg_name')[0].style.backgroundColor = "white"
+                document.getElementsByClassName('msg_name')[0].innerText = "";
+                document.getElementById('out-county').innerText = "";
             });
         }
     }
@@ -465,12 +493,32 @@ let pageData = (function () {
             document.getElementById('name-color').value = responseString2;
         };
     }
+
     function ajaxCallMe4() {
         return function ajax2() {
             let response = this.responseText.substring(2).split('&');
             console.log(response);
             let responseStringName = `Greetings from the PHP Server (GET Method), ${(response[0].split('=')[1]).toUpperCase()}. `
             document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response) 
+        };
+    }
+
+    function ajaxCallMe4() {
+        return function ajax2() {
+            let response = this.responseText.substring(2).split('&');
+            console.log(response);
+            let responseStringName = `Greetings from the PHP Server (GET Method), ${(response[0].split('=')[1]).toUpperCase()}. `
+            document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response) 
+        };
+    }
+
+    function ajaxCallMe5() {
+        return function ajax2() {
+            let response = this.responseText.split(',');
+            // console.log("%c %s", "color:green", response);
+            let responseStringName = `Greetings from the PHP Server (POST Method), ${upperCaseFirstLetter(response[0])}. `
+            let responseStringFavCounty=`Your favourite county is ${upperCaseFirstLetter(response[1])}`;
+            document.getElementById('out-county').value = responseStringName + responseStringFavCounty;
         };
     }
 
