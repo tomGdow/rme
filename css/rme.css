@@ -385,6 +385,43 @@ select >optgroup {
     font-size: 0.9rem;
 }
 
+textarea {
+    display:block;
+    margin:  5vh auto 0 auto;
+    width: 70%;
+    /* font-size: 0.8rem; */
+    /* padding-left: 2vw; */
+    /* background:red; */
+}
+textarea:invalid {
+    border: 5px solid red;
+}
+textarea:valid {
+    border: 2px solid yellow;
+}
+
+div.grandchildren-selector {
+    width: 50vw;
+    background-color: #eee;
+    padding-bottom: 1vw;
+}
+div.grandchildren-selector ul * li {
+    background-color:var(--bg-color);
+}
+
+/* div.grandchildren-selector ul>li+ul>li {
+    background-color:blue;
+} */
+
+div.grandchildren-selector li {
+    width: 100px;
+}
+div.grandchildren-selector ul {
+    padding-left: 5vw;
+    padding-top: 1vh;
+
+
+
 @media screen and (min-width:600px)
 {
     main,

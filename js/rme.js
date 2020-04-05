@@ -14,7 +14,7 @@ let pageData = (function () {
         "10_comments.html",
         "10b_title_tag.html",
         "x_2_rme_validation.html",
-        "x_3_href_and_src.html",
+        "x_3_rme_href_and_src.html",
         "11_tables.html",
         "13_heading_tag.html",
         "14_p_tag.html",
@@ -377,18 +377,34 @@ let pageData = (function () {
             });
         }
         
-        if (document.getElementById('form_five')) {
+       if (document.getElementById('form_five')) {
             document.getElementById('form_five').addEventListener('submit', function (event) {
                 if (checkField(event, 'uname5')) {
                     event.preventDefault();
                     let name = document.getElementById('form_five')[1].value;
                     let county=document.getElementById('form_five')[2].value;
                     
-                    console.log("%c %s", "color:red", name);
+                    // console.log("%c %s", "color:red", name);
                     var param2 = county;
                     var params = generateParams('name', name, 'param2', param2);
-                    // console.log('%c %s', 'color:red', params);
                     makePostRequest("http://php.tomgdow.com", params, ajaxCallMe5());
+
+                }
+
+            });
+        }
+
+       if (document.getElementById('form_six')) {
+            document.getElementById('form_six').addEventListener('submit', function (event) {
+                if (true) {
+                    event.preventDefault();
+                    let name = document.getElementById('form_six')[1].value;
+                    let txt=document.getElementById('form_six')[2].innerHTML;
+                    
+                    console.log("%c %s", "background-color:blue", name);
+                    var param2 = txt;
+                    var params = generateParams('name', name, 'param2', param2);
+                    makePostRequest("http://php.tomgdow.com", params, ajaxCallMe6());
 
                 }
 
@@ -521,6 +537,19 @@ let pageData = (function () {
             document.getElementById('out-county').value = responseStringName + responseStringFavCounty;
         };
     }
+
+    function ajaxCallMe6() {
+        return function ajax2() {
+            let response = this.responseText.split(',');
+            // console.log("%c %s", "color:green", response);
+            let responseStringName = `Greetings from the PHP Server (POST Method), ${upperCaseFirstLetter(response[0])}. `
+            let responseStringCommentPreamble=`Your comment is: `; 
+            let responseStringComment=response[1];
+            document.getElementById('out-txtarea').value = responseStringName + responseStringCommentPreamble;
+            document.getElementById('out-txtarea-user-comment').value =responseStringComment;
+        };
+    }
+
 
     function favLangHelper(arr) {
         let tmp = "";

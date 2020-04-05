@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="container">
-        <header>table</header>
+        <header>form/textarea</header>
         <div class="counter">xx</div>
         <main>
             <form  name="form_six" id="form_six">
@@ -14,18 +14,22 @@
                     <legend>Information</legend>
                     <div>
                         <label for="uname6">Name</label>
-                        <input type="text" name="uname6" id="uname6">
-                        <span class="msg_namge"></span>
+                        <input type="text" name="uname6" id="uname6" autofocus>
+                        <span class="msg_nam e"></span>
                     </div>
-                    <textarea name="txtarea" id="txtarea" cols="30" rows="10"></textarea>
+                    <label for="txtarea">Comment</label>
+                    <textarea name="txtarea" id="txtarea" cols="30" rows="3" maxlength="250">Type a comment
+                    </textarea>
                     <div>
-                        <input type="submit" value="submit">
+                        <!-- <input type="submit" value="submit"> -->
+                        <input type="image" src="http://xu/tgdfiles/png/go.png" alt="Go!">
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Response</legend>
-                    <div>
+                    <div class="output">
                         <output for="txtarea" id="out-txtarea"></output>
+                        <output for="txtarea" id="out-txtarea-user-comment"></output>
                     </div>
                 </fieldset>
             </form>

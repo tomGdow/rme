@@ -23,7 +23,9 @@
                 <summary>Syntax</summary>
                 <ol>
                     <li><code>code</code></li>
+                    </code></li>
                 </ol>
+
                 <p></p>
             </details>
         </div>
@@ -31,8 +33,100 @@
             <details>
                 <summary>Examples</summary>
                 <ol>
-                    <li><code>code</code></li>
-                </ol>
+                    <li><code> a[title] {color: purple; } </code></li>
+                    <li><code> a[href&#61;&quot;https://example.org&quot;]</code></li>
+                    <li>
+                        <code>
+                            a&#91;href*=&quot;example&quot;&#93;
+                        </code>
+                        <div>
+                            // href <code>attr</code>
+                            containing
+                            <code>example</code>
+                            anywhere in the string
+                        </div>
+                    </li>
+                    <li><code>a[href$=".org"]</code></li>
+                    <div>
+                        // href <code>attr</code>
+                        ending in
+                        <code>org</code>
+                    </div>
+                    <li><code>a[class~="logo"]</code></li>
+                    <div>
+                        class
+                        <code>attr</code>
+                        that contains the word
+                        <code>logo</code>
+                        anywhere in the space-separated
+                        string
+                    </div>
+                    <li><code>a[href*="insensitive" i]</code></li>
+                    <div>case-insensitive comparison</div>
+                    <li>
+                        <details>
+                            <summary><code>A * B</code></summary>
+                            <dl>
+                                <dt>CSS</dt>
+                                <dd><code>A * B { background-color:aquamarine;}</code></dd>
+                            </dl>
+                            <dl>
+                                <dt>Output</dt>
+                                <dd>
+                                    <div class="grandchildren-selector">
+                                        <ul>
+                                            <li>One</li>
+                                            <ul>
+                                                <li>Two</li>
+                                                <ul>
+                                                    <li>Three</li>
+                                                </ul>
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>HTML</dt>
+                                <dd>
+                                    <code>&lt;ul&gt;</code>
+                                </dd>
+                                <dd>
+                                    &nbsp;&nbsp;
+                                    <code>&lt;li&gt;One&lt;/li&gt;</code>
+                                </dd>
+                                <dd>&nbsp;&nbsp;
+                                    <code>&lt;ul&gt;</code>
+                                </dd>
+                                <dd>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <code>&lt;li&lt;Two&lt;/li&gt;</code>
+                                </dd>
+                                <dd>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <code>&lt;ul&gt;</code>
+                                </dd>
+                                <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <code>&lt;li&lt;Three&lt;/li&gt;</code>
+                                </dd>
+                                <dd>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <code>&lt;/ul&gt;</code>
+                                </dd>
+                                <dd>&nbsp;&nbsp;
+                                    <code>&lt;/ul&gt;</code>
+                                </dd>
+                                <dd>
+                                    <code>&lt;/ul&gt;</code>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>Comment</dt>
+                                <dd>
+                                    <code> ul>li+ul>li { }</code>
+                                    produces the same effect
+                                </dd>
+                            </dl>
+                        </details>
+                    </li>
+                </ol> <!-- comment -->
             </details>
         </div>
         <div class="notes">
@@ -98,11 +192,94 @@
                     </dd>
                     <dd>
                         <code>h2+p</code>
-                        will mathc all
+                        will match all
                         <code>p</code>
                         elements that directly follow a
                         <code>h2</code>
                         element
+                    </dd>
+                    <dt><code>[attr]</code></dt>
+                    <dd>
+                        Elements with the attribute name of
+                        <code>attr</code>
+                    </dd>
+                    <dt><code>[attr=value]</code></dt>
+                    <dd>
+                        Element with the
+                        <code>attr</code>
+                        name of
+                        <code>value</code>
+                    </dd>
+                    <dt><code>[attr~=value]</code>
+                    <dt>
+                    <dd>
+                        <code>attr</code>
+                        value is a whitespace-separated list of words
+                        <code>one of which</code>
+                        equals
+                        <code>value</code>
+                    </dd>
+                    <dt><code>[attr|=value]</code></dt>
+                    <dd>
+                        <code>attr</code>
+                        value can be exactly
+                        <code>value</code>
+                        or
+                        <code>can begin</code>
+                        with
+                        <code>value</code>
+                    </dd>
+                    <dt><code>[attr^=value]</code></dt>
+                    <dd>
+                        <code>attr</code>
+                        whose value is prefixed with
+                        <code>value</code>
+                    </dd>
+                    <dt><code>[attr$=value]</code></dt>
+                    <dd>
+                        <code>attr</code>
+                        is suffixed with
+                        <code>value</code>
+                    </dd>
+                    <dt>
+                        <code>[attr*=value]</code>
+                    </dt>
+                    <dd>
+                        <code>attr</code>
+                        whose value contains
+                        <em>at least one</em>
+                        of
+                        <code>value</code>
+                        within the string
+                    </dd>
+                    <dt><code>[attr operator value i]</code></dt>
+                    <dd>Inclusion of
+                        <code>i</code>
+                        or
+                        <code>I</code>
+                        makes comparison case-insensitive
+                    </dd>
+                    <dt><code> A * B </code></dt>
+                    <dd>Selects grandchildren (and great-grandchildren, great-great-grandchildren,etc)</dd>
+                    <dd>Spaces are descendant selectors and are important</dd>
+                    <dt>Pseudo class</dt>
+                    <dd>The
+                        <code>:</code>
+                        pseudo allows the selection of elements based on
+                        state information not contained in document tree
+                        (
+                        <code>a:visited</code>,
+                        for example
+                        )
+                    </dd>
+                    <dt>Pseudo element</dt>
+                    <dd>The
+                        <code>::</code>
+                        pseudo represents elements not included in HTML
+                        (
+                        <code>p::first-line</code>,
+                        for example
+                        )
                     </dd>
 
                 </dl>

@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="container">
-        <header>table</header>
+        <header>box model margins</header>
         <div class="counter">xx</div>
         <main>
             <dl>
@@ -34,9 +34,17 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>inline margin</dt>
+                    <dd><div>
+                        inline elements cannot have top/bottom margins
+                        but <em>can</em> have right/left margin. 
+                        </div>
+                        <div>
+                        (Contrast with padding) [net ninja]
+                        </div>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
