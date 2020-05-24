@@ -75,9 +75,11 @@ let pageData = (function () {
         "64_web_safe_fonts.html",
         "65_height_width.html",
         "66_max-width_uses.html",
-        "67_float_positioning.html",
-        "68_relative_position.html",
-        "69_absolute_position.html",
+        "67_positioning_float.html",
+        "68_positioning_relative.html",
+        "69_positioning_absolute.html",
+        "x_20_rme_positioning_fixed.html",
+        "x_21_rme_positioning_sticky.html",
         "70_overflow_settings.html",
         "71_alignment.html",
         "72_inline_vs_block.html",
@@ -113,6 +115,8 @@ let pageData = (function () {
         "x_15_rme_form_four.html",
         "x_16_rme_form_five.html",
         "x_17_rme_form_six.html",
+        "x_18_rme_shorthands_trbl.html",
+        "x_22_rme_position_txt_vertically.html",
 
     ];
 
@@ -139,6 +143,12 @@ let pageData = (function () {
             cb();
             closeAllTwo();
             form();
+            toggleClass('div-two', 'relative', 'Relative');
+            toggleClass('div-one', 'relative', 'Relative');
+            toggleClass('div-three', 'relative', 'Relative');
+            toggleClass('div-four', 'absolute', 'Absolute');
+            toggleClass('div-five', 'absolute', 'Absolute');
+            toggleClass('div-six', 'absolute', 'Absolute');
         };
     }
 
@@ -228,6 +238,38 @@ let pageData = (function () {
         document.getElementById('close_all').style.display = 'inline';
         document.getElementById('open_all_two').style.display = 'none';
     }
+
+
+    function toggleClass(id,toggleClass,toggleMsg) {
+        if (document.getElementById(id)) {
+            document.getElementById(id).addEventListener('click', function () {
+                if (this.classList.contains(toggleClass)) {
+                    this.classList.remove(toggleClass);
+                    this.innerHTML = "Static";
+
+                } else {
+                    this.classList.add(toggleClass);
+                    this.innerHTML = toggleMsg;
+
+                }
+            });
+        }
+    }
+
+    // function toggleClass(id, toggleClass, toggleMsg) {
+    //     document.getElementById(id).addEventListener('click', function () {
+    //         if (this.classList.contains(toggleClass)) {
+    //             this.classList.remove(toggleClass);
+    //             this.innerHTML = "Static";
+
+    //         } else {
+    //             this.classList.add(toggleClass);
+    //             this.innerHTML = toggleMsg;
+
+    //         }
+    //     })
+
+    // }
 
     (function populateDatalist() {
         for (let i = 0; i < pageOrder.length; i++) {
@@ -376,14 +418,14 @@ let pageData = (function () {
 
             });
         }
-        
-       if (document.getElementById('form_five')) {
+
+        if (document.getElementById('form_five')) {
             document.getElementById('form_five').addEventListener('submit', function (event) {
                 if (checkField(event, 'uname5')) {
                     event.preventDefault();
                     let name = document.getElementById('form_five')[1].value;
-                    let county=document.getElementById('form_five')[2].value;
-                    
+                    let county = document.getElementById('form_five')[2].value;
+
                     // console.log("%c %s", "color:red", name);
                     var param2 = county;
                     var params = generateParams('name', name, 'param2', param2);
@@ -394,13 +436,13 @@ let pageData = (function () {
             });
         }
 
-       if (document.getElementById('form_six')) {
+        if (document.getElementById('form_six')) {
             document.getElementById('form_six').addEventListener('submit', function (event) {
                 if (true) {
                     event.preventDefault();
                     let name = document.getElementById('form_six')[1].value;
-                    let txt=document.getElementById('form_six')[2].innerHTML;
-                    
+                    let txt = document.getElementById('form_six')[2].innerHTML;
+
                     console.log("%c %s", "background-color:blue", name);
                     var param2 = txt;
                     var params = generateParams('name', name, 'param2', param2);
@@ -515,7 +557,7 @@ let pageData = (function () {
             let response = this.responseText.substring(2).split('&');
             console.log(response);
             let responseStringName = `Greetings from the PHP Server (GET Method), ${(response[0].split('=')[1]).toUpperCase()}. `
-            document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response) 
+            document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response)
         };
     }
 
@@ -524,7 +566,7 @@ let pageData = (function () {
             let response = this.responseText.substring(2).split('&');
             console.log(response);
             let responseStringName = `Greetings from the PHP Server (GET Method), ${(response[0].split('=')[1]).toUpperCase()}. `
-            document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response) 
+            document.getElementById('out-name-clang').value = responseStringName + favLangHelper(response)
         };
     }
 
@@ -533,7 +575,7 @@ let pageData = (function () {
             let response = this.responseText.split(',');
             // console.log("%c %s", "color:green", response);
             let responseStringName = `Greetings from the PHP Server (POST Method), ${upperCaseFirstLetter(response[0])}. `
-            let responseStringFavCounty=`Your favourite county is ${upperCaseFirstLetter(response[1])}`;
+            let responseStringFavCounty = `Your favourite county is ${upperCaseFirstLetter(response[1])}`;
             document.getElementById('out-county').value = responseStringName + responseStringFavCounty;
         };
     }
@@ -543,10 +585,10 @@ let pageData = (function () {
             let response = this.responseText.split(',');
             // console.log("%c %s", "color:green", response);
             let responseStringName = `Greetings from the PHP Server (POST Method), ${upperCaseFirstLetter(response[0])}. `
-            let responseStringCommentPreamble=`Your comment is: `; 
-            let responseStringComment=response[1];
+            let responseStringCommentPreamble = `Your comment is: `;
+            let responseStringComment = response[1];
             document.getElementById('out-txtarea').value = responseStringName + responseStringCommentPreamble;
-            document.getElementById('out-txtarea-user-comment').value =responseStringComment;
+            document.getElementById('out-txtarea-user-comment').value = responseStringComment;
         };
     }
 
@@ -564,15 +606,15 @@ let pageData = (function () {
         }
         if (arr.length > 2) {
             tmp = `${responseStringPlural} ${arr[1].split('=')[1]}`;
-            
-            if(arr.length>3) { 
-                for(let i=2; i<arr.length-1;i++) {
-                    tmp+=`, ${arr[i].split('=')[1]}`
+
+            if (arr.length > 3) {
+                for (let i = 2; i < arr.length - 1; i++) {
+                    tmp += `, ${arr[i].split('=')[1]}`
                 }
             }
-            tmp += ` and ${arr[arr.length-1].split('=')[1]}`;
-            }
-            
+            tmp += ` and ${arr[arr.length - 1].split('=')[1]}`;
+        }
+
         return tmp;
     }
 

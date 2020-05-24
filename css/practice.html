@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sticky Practice</title>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 5vw;
+            left: 5vw;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 5vw;
+            left: 5vw;
+        }
+
+        div.fixed-container {
+            border: 5px solid red;
+            width: 60%;
+            margin: auto;
+        }
+
+        div.rel-container,
+        div.absolute-container {
+            margin: 5px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        div.fixed-container {
+            position: relative;
+        }
+
+        div.absolute-container #div-seven,
+        div.absolute-container #div-eight,
+        div.absolute-container #div-nine,
+        div.fixed-container #div-seven,
+        div.fixed-container #div-eight,
+        div.fixed-container #div-nine,
+        div.fixed-container #div-x {
+            width: 10vw;
+            line-height: 10vw;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            margin: 1vw;
+            font-size: 2vw;
+        }   
+
+        #div-seven {
+            background: red;
+            text-decoration: underline dotted;
+        }
+
+        #div-eight {
+            left: 5vw;
+            background: lime;
+            text-decoration: underline dotted;
+        }
+
+        #div-nine {
+            background: blue;
+            color: white;
+            text-decoration: underline dotted;
+        }
+
+        #div-x {
+            visibility: hidden
+        }
+        button#toggleValue {
+            /* width: 12vw; */
+            line-height: 10vw;
+            /* display: inline-block; */
+            vertical-align: middle;
+            text-align: center;
+            margin: 1vw;
+            font-size: 1.5vw;
+            border: none;
+            float:right;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-container">
+        <div id="div-seven">Static</div>
+        <div id="div-eight" class="fixed">Fixed</div>
+        <div id="div-nine">Static</div>
+        <div id="div-x">No Click</div>
+    <button id="toggleValue">Go Absolute</button>
+    </div>
+    <!-- <button id="toggleValue">Go Absolute</button> -->
+    <script>
+        var isFixed = true;
+
+        function toggleClass(id, toggleClass, msg) {
+            let tmp = document.getElementById(id);
+            if (tmp && tmp.classList.contains(toggleClass)) {
+                tmp.classList.remove(toggleClass);
+                tmp.innerHTML = "Static";
+            } else {
+                tmp.className = "";
+                tmp.classList.add(toggleClass);
+                tmp.innerHTML = msg;
+            }
+        }
+
+        function toggleBtn() {
+            let tmp = document.getElementById('toggleValue');
+            if (isFixed) {
+                isFixed = false;
+                tmp.innerHTML = "Go Fixed";
+            } else {
+                isFixed = true;
+                tmp.innerHTML = "Go Absolute";
+            }
+        }
+
+        function chooseEvent(id) {
+            isFixed ? toggleClass(id, 'fixed', 'Fixed') : toggleClass(id, 'absolute', 'Absolute');
+        }
+
+        //EventListeners
+        document.getElementById('div-seven').addEventListener('click', function () {
+            chooseEvent(this.id)
+        });
+        document.getElementById('div-eight').addEventListener('click', function () {
+            chooseEvent(this.id)
+        })
+        document.getElementById('div-nine').addEventListener('click', function () {
+            chooseEvent(this.id)
+        })
+        document.getElementById('toggleValue').addEventListener('click', function () {
+            toggleBtn();
+        });
+    </script>
+</body>
+
+</html>

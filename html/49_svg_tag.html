@@ -11,68 +11,306 @@
         <header>svg</header>
         <div class="counter">xx</div>
         <main>
-            <embed id="rme-svg" src="./svg/rme.svg" type="image/svg+xml">
+            <embed class="rme-svg" src="./svg/rme.svg" type="image/svg+xml">
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-                <p></p>
-            </details>
-        </div>
-        <div class="examples">
-            <details>
-                <summary>Examples</summary>
-                <dl>
-                    <dt>svg (opening example)</dt>
-                    <dd><code>&lt;?xml version="1.0" encoding="utf-8" ?&gt;</code></dd>
-                    <dd><code>&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
-                            viewBox="0 0 550 150" preserveAspectRatio="none"&gt;</code></dd>
-                    <dd><code>&nbsp;&nbsp;&lt;rect x="25" y="50" width="50" height="50" rx="5" ry="5" fill="#F00"
-                            stroke="#0F0"
-                            stroke-width="6" /&gt;</code></dd>
-                    <dd><code>&nbsp;&nbsp;&lt;circle cx="150" cy="75" r="25" fill="#F00" stroke="#0F0" stroke-width="6"
-                            /&gt;</code>
+                <dl class="number-one">
+                    <dt>xml header</dt>
+                    <dd class="number-none">
+                        <code>
+                            &lt;?xml version="" encoding="utf-8" ?/&gt;
+                        </code>
                     </dd>
-                    <dd><code>&nbsp;&nbsp;&lt;polygon points="250,50 275,100 225,100" fill="#F00" stroke="#0F0"
-                            stroke-width="6"
-                            /&gt;</code></dd>
-                    <dd><code>&lt;/svg&gt;</code></dd>
+                    <dt>svg</dt>
+                    <dd class="number-two">
+                        <code>
+                            &lt;svg width="" height="" xmlns="" viewBox=""&gt;&lt;/svg&gt;
+                        </code>
+                    </dd>
+                    <dd><code>&lt;rect x="" y="" width="" height="" rx="" ry=""/&gt;</code></dd>
+                    <dd><code>&lt;circle cx="" cy="" r=""/&gt;</code></dd>
+                    <dd><code>&lt;polygon points="x1,y1 x2,y2 x3,y3"/&gt;</code></dd>
+                    <dd><code>&lt;text x="" y="" &gt;Text&lt;/text&gt;</code></dd>
+                    <dd><code>&lt;line x1="" y1="" x2="" y2="" stroke="" stroke-width=""/&gt;</code></dd>
+                    <dt>html</dt>
+                    <dd class="number-two">
+                        <code>&lt;embed src="./svg/rme.svg" type="image/svg+xml"&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;img src="./svg/rme.svg" alt=""&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;object data="./svg/rme.svg" type="image/svg+xml"&gt;&lt;/object&gt;</code>
+                    </dd>
+                    <dt>CSS</dt>
+                    <dd class="number-none">
+                        <code>
+                            .myclass {
+                            background: url('../svg/rme.svg')
+                            }
+                        </code>
+                    </dd>
                 </dl>
             </details>
         </div>
+
+
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl class="number-one">
+                    <dt>opening example</dt>
+                    <dd class="number-none"><code>&lt;?xml version="1.0" encoding="utf-8" ?&gt;</code></dd>
+                    <dd class="number-none"><code>&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                            height="100%"
+                            viewBox="0 0 550 150" preserveAspectRatio="none"&gt;</code></dd>
+                    <dd class="number-none"><code>&nbsp;&nbsp;&lt;rect x="25" y="50" width="50" height="50" rx="5"
+                            ry="5" fill="#F00"
+                            stroke="#0F0"
+                            stroke-width="6" /&gt;</code></dd>
+                    <dd class="number-none">
+                        <code>&nbsp;&nbsp;&lt;circle cx="150" cy="75" r="25" fill="#F00"
+                            stroke="#0F0" stroke-width="6"
+                            /&gt;</code>
+                    </dd>
+                    <dd class="number-none">
+                        <code>&nbsp;&nbsp;&lt;polygon points="250,50 275,100 225,100" fill="#F00"
+                            stroke="#0F0"
+                            stroke-width="6"
+                            /&gt;</code>
+                        </dd>
+                    <dd class="number-none">
+                        <code>&nbsp;&nbsp;&lt;text x="280" y="75" class="txt" transform="rotate(40,280
+                            75)"&gt;Hello&lt;/text&gt;</code>
+                    </dd>
+                    <dd class="number-none">
+                        <code>&nbsp;&nbsp;&lt;line x1="330" y1="75" x2="430" y2="75" stroke="red" stroke-width="8" /&gt;</code>
+                    </dd>
+                    <dd class="number-none"><code>&lt;/svg&gt;</code></dd>
+                    <dt>rectangle</dt>
+                    <dd class="number-none"><code>&nbsp;&nbsp;&lt;rect x="25" y="50" width="50" height="50" rx="5"
+                            ry="5" fill="#F00"
+                            stroke="#0F0"
+                            stroke-width="6" /&gt;</code>
+                    </dd>
+                    <dt>circle</dt>
+                    <dd class="number-none"><code>&nbsp;&nbsp;&lt;circle cx="150" cy="75" r="25" fill="#F00"
+                            stroke="#0F0" stroke-width="6"
+                            /&gt;</code>
+                    </dd>
+                    <dt>triangle</dt>
+                    <dd class="number-none"><code>&nbsp;&nbsp;&lt;polygon points="250,50 275,100 225,100" fill="#F00"
+                            stroke="#0F0"
+                            stroke-width="6"
+                            /&gt;</code>
+                    </dd>
+                    <dt>text</dt>
+                    <dd class="number-none">
+                        <code>&nbsp;&nbsp;&lt;text x="280" y="75" class="txt" transform="rotate(40,280
+                            75)"&gt;Hello&lt;/text&gt;</code>
+                    </dd>
+                    <dt>line</dt>
+                    <dd class="number-none">
+                        <code>&nbsp;&nbsp;&lt;line x1="330" y1="75" x2="430" y2="75" stroke="red"
+                            stroke-width="8"/&gt;</code>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+
+
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <dl>
+                <dl class="number-one">
                     <dt>elements in xml</dt>
-                    <dd>All elements must be closed</dd>
-                    <dd><code>&lt;rect /&gt;</code></dd>
+                    <dd class="number-none">All elements must be closed:
+                        <code>&lt;rect /&gt;</code>
+                    </dd>
                     <dt>Comments in xml</dt>
-                    <dd>Same as in html</dd>
-                    <dd> <code> &lt--comment--&gt;</code></dd>
+                    <dd class="number-none">Same as in html:
+                        <code> &lt--comment--&gt;</code></dd>
+                    </dd>
                     <dt>?xml</dt>
-                    <dd>no spaces between
+                    <dd class="number-two">no spaces between
                         <code>?</code>
                         and
                         <code>xml</code>
                     </dd>
                     <dd><code>&lt;?xml version="1.0" encoding="utf-8" ?&gt;</code></dd>
+                    <dt>viewport</dt>
+                    <dd class="number-two">Like window</dd>
+                    <dd>Set with
+                        <code>width</code>
+                        and
+                        <code>height</code>
+                        attributes in the
+                        <code>svg</code>
+                        tag
+                    </dd>
+                    <dt class="vbox">viewBox</dt>
+                    <dd class="number-two">
+                        <code>viewBox</code>
+                        is like a telescope
+                    </dd>
+                    <dd>Can use to 'pan' and 'zoom'</dd>
+                    <dd>Add
+                        <code>viewBox</code>
+                        attribute to the
+                        <code>svg</code>
+                        element
+                    </dd>
+                    <dd>Syntax is four space-separated numbers
+                        <div>
+                            <code>
+                                &emsp;&emsp;viewBox = "x y width height"
+                            </code>
+                        </div>
+                    </dd>
+                    <dd>The first two numbers control 'panning'</dd>
+                    <dd>The second two numbers control 'zoom'</dd>
+                    <dd>To pan-right (pan-left), increase (decrease)
+                        <code>x</code>
+                    </dd>
+                    <dd>To pan-down (pan-up) increase (decrease)
+                        <code>y</code>
+                    </dd>
+                    <dd>Make
+                        <code>width </code>
+                        and
+                        <code>height</code>
+                        larger than those of the
+                        <code>viewport</code>
+                        to
+                        <code>
+                            zoom out
+                        </code>
+                    </dd>
+                    <dd>Make these last two parameters smaller
+                        than those of
+                        <code>viewport</code>
+                        to
+                        <code>
+                            zoom in
+                        </code>
+                    </dd>
                     <dt>
+                        <code>object</code>
+                    </dt>
+                    <dd class="number-none">Note that
+                        <code>object</code>
+                        takes the
+                        <code>data</code>
+                        attribute
+                    </dd>
+                    <dt>
+                        <code>rect</code>
+                    </dt>
+                    <dd class="number-two">
+                        <code>x</code>
+                        and
+                        <code>y</code>
+                        are the (x, y) coordinates of
+                        the rectangle, relative to the top left
+                        corner of the
+                        <code>svg</code>
+                        viewport
+                    </dd>
+                    <dd>
                         <code>rx</code>
                         and
                         <code>ry</code>
                         signify rounded corners
-                    </dt>
-                    <dt>Useful code</dt>
-                    <dd><code>&lt;rect x="25" y="50" width="50" height="50" /&gt;</code></dd>
-                    <dd><code>&lt;circle cx="50" cy="50" r="25"/&gt;</code></dd>
-                    <dd><code>&lt;polygon points="250,50 275,100 225,100"/&gt;</code></dd>
+                    </dd>
+                    <dd>Use
+                        <code>width</code>
+                        and
+                        <code>height</code>
+                        to specify dimensions
+                    </dd>
+                    <dt>circle</dt>
+                    <dd class="number-two">
+                        <code>cx</code>
+                        and
+                        <code>cy</code>
+                        are the (x,y) coordinates
+                    </dd>
+                    <dd>
+                        <code>r</code>
+                        is the radius
+                    </dd>
+                    <dt>polyon</dt>
+                    <dd class="number-none">
+                        Use
+                        <code>points=""</code>
+                        attribute to give a space-separated list
+                        of (x,y) coordinates
+                    </dd>
+                    <dt>text</dt>
+                    <dd class="number-two">The 
+                        <code>y</code>
+                        coordinate refers to
+                        <em>bottom</em>
+                        of the text.
+                    </dd>
+                    <dd>Text is anchored by default at 
+                        <code>(x,y)</code>. 
+                    </dd>
+                    <dd>
+                        This may be changed for 
+                        <code>x</code>
+                        coordinate with the
+                        <code>text-anchor</code>
+                        attribute, taking values of 
+                        <code>start</code>,
+                        <code>middle</code>
+                        and
+                        <code>end</code>
+                    </dd>
+                    <dd>To make text vertical, 
+                         one possibility is:
+                         <code>writing-mode:tb</code>, 
+                         where 
+                         <code>tb</code> 
+                         is 'top-to-bottom'
+                    </dd>
+                    <dt>glyph</dt>
+                    <dd class="number-none">A visual representation of letter or symbol</dd>
+                    <dt>font</dt>
+                    <dd class="number-none">A collection of glyphs</dd>
+                    <dt>character</dt>
+                    <dd class="number-none">A binary representation of letter or symbol</dd>
 
                 </dl>
             </details>
+
+            <details>
+                <summary>References</summary>
+                <dl class="number-one">
+                    <dt>
+                        <a
+                            href="https://webdesign.tutsplus.com/tutorials/svg-viewport-and-viewbox-for-beginners--cms-30844">SVG
+                            Viewport and viewBox (For Complete Beginners)
+                        </a>
+                    </dt>
+                    <dt>
+                        <a href="https://vecta.io/blog/best-way-to-embed-svg">
+                            The Best Way to Embed SVG on HTML (2020)
+                        </a>
+                    </dt>
+                    <dt>
+                        <a href="http://tutorials.jenkov.com/svg/text-element.html">SVG Text Element
+                        </a>
+                    </dt>
+                    <dd class="number-none">
+                        (See
+                        <a href="http://tutorials.jenkov.com/svg/index.html">jenkov.com</a>
+                        )
+                    </dd>
+                </dl>
+
         </div>
     </div>
 </body>

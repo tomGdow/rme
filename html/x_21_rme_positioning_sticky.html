@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>position sticky</header>
+        <div class="counter">xx</div>
+        <main>
+            <div id="stky-container">
+                <dl>
+                    <div class="stky-parent">
+                        <dt class="stky bg-orange">Item One</dt>
+                        <dd>Definition-1-1</dd>
+                        <dd>Definition-1-2</dd>
+                        <dd>Definition-1-3</dd>
+                        <dd>Definition-1-4</dd>
+                        <dd>Definition-1-5</dd>
+                        <dd>Definition-1-6</dd>
+                        <dd>Definition-1-7</dd>
+                        <dd>Definition-1-8</dd>
+                        <dd>Definition-1-9</dd>
+                        <dd>Definition-1-10</dd>
+                    </div>
+                    <div class="stky-parent">
+                        <dt class="stky bg-olive">Item Two</dt>
+                        <dd>Definition 2-1</dd>
+                        <dd>Definition 2-2</dd>
+                        <dd>Definition 2-3</dd>
+                        <dd>Definition 2-4</dd>
+                        <dd>Definition 2-5</dd>
+                        <dd>Definition 2-6</dd>
+                        <dd>Definition 2-7</dd>
+                        <dd>Definition 2-8</dd>
+                        <dd>Definition 2-9</dd>
+                        <dd>Definition 2-10</dd>
+                    </div>
+                    <div class="stky-parent">
+
+                        <dt class="stky bg-aquamarine">Item 3</dt>
+                        <dd>Definition-3-1</dd>
+                        <dd>Definition-3-2</dd>
+                        <dd>Definition-3-3</dd>
+                        <dd>Definition-3-4</dd>
+                        <dd>Definition-3-5</dd>
+                        <dd>Definition-3-6</dd>
+                        <dd>Definition-3-7</dd>
+                        <dd>Definition-3-8</dd>
+                        <dd>Definition-3-9</dd>
+                        <dd>Definition-3-10</dd>
+                    </div>
+                </dl>
+            </div>
+            <dl>
+                <dt>Sticky</dt>
+                <dd>
+                    A stickily positioned element is
+                    treated as relatively positioned until its
+                    containing block crosses a specific threshold within its flow
+                    root (or the container it scrolls within), at which
+                    point it is treated as 'stuck' until meeting the opposite
+                    edge of its containing block (ie until it reaches the boundary of its parent).
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt>css</dt>
+                    <dd><code>.stky {</code></dd>
+                    <dd><code class=code-indent>position: sticky;</code></dd>
+                    <dd><code class="code-indent">top: 0;</code></dd>
+                    <dd><code>}</code></dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Opening Example</dt>
+                    <dd>
+
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+&lt;div id="stky-container"&gt;
+    &lt;dl&gt;
+        &lt;div class="stky-parent"&gt;
+            &lt;dt class="stky bg-orange"&gt;Item One&lt;/dt&gt;
+            &lt;dd&gt;Definition-1-1&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-2&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-3&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-4&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-5&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-6&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-7&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-8&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-9&lt;/dd&gt;
+            &lt;dd&gt;Definition-1-10&lt;/dd&gt;
+        &lt;/div&gt;
+        &lt;div class="stky-parent"&gt;
+            &lt;dt class="stky bg-olive"&gt;Item Two&lt;/dt&gt;
+            &lt;dd&gt;Definition 2-1&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-2&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-3&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-4&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-5&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-6&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-7&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-8&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-9&lt;/dd&gt;
+            &lt;dd&gt;Definition 2-10&lt;/dd&gt;
+        &lt;/div&gt;
+        &lt;div class="stky-parent"&gt;
+            &lt;dt class="stky bg-aquamarine"&gt;Item 3&lt;/dt&gt;
+            &lt;dd&gt;Definition-3-1&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-2&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-3&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-4&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-5&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-6&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-7&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-8&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-9&lt;/dd&gt;
+            &lt;dd&gt;Definition-3-10&lt;/dd&gt;
+        &lt;/div&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+                            </pre>
+                        </details>
+
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+.stky {
+    position: sticky;
+    top: 0;
+    padding: 0 2vw 1vh ;
+}
+
+#stky-container {
+    height: 20vh;
+    overflow-y: scroll;
+    width: 50%;
+    margin: 5vh auto;
+}
+                            </pre>
+                        </details>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>Containing block</dt>
+                    <dd>
+                        For position
+                        <code>sticky</code>,
+                        the containing block is the same as that for
+                        position
+                        <code>relative</code>
+
+                    </dd>
+                    <dt>Positioned element</dt>
+                    <dd>A positioned element is an element
+                        whose computed position is one of
+                        <code>relative</code>,
+                        <code>absolute</code>,
+                        <code>fixed</code>
+                        or
+                        <code>sticky</code>.
+                    </dd>
+                    <dd>In other words, it's anything except
+                        <code>static</code>
+                    </dd>
+                    <dt>References</dt>
+                    <dd>CSS Positioning by Susan Simkins (Pluralsight)</dd>
+                    <dd>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">
+                        Position (MDN)
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -6,6 +6,12 @@
     --stroke-style: blue;
 }
 
+body {
+
+    /* counter-reset: counter-one; */
+    /* counter-reset: counter-two; */
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -110,7 +116,8 @@ div.examples {
     grid-column: span 10;
 }
 
-code {
+code,
+pre {
     font-family: var(--mono-one);
     font-size: 0.95rem;
     color: maroon;
@@ -293,7 +300,7 @@ canvas {
     border: 2px solid aquamarine;
 }
 
-embed#rme-svg {
+embed.rme-svg {
     width: 550px;
     height: 150px;
     margin: auto;
@@ -351,24 +358,28 @@ fieldset.output {
 }
 
 .msg_name {
-    font-size:0.8rem;
+    font-size: 0.8rem;
 }
 
 
-.radio-message, .checkbox-message, .select-message {
+.radio-message,
+.checkbox-message,
+.select-message {
     font-size: 0.9rem;
     padding: 1vw 0 0 1vw;
     /* color:red; */
     font-family: var(--sans-one);
 }
+
 .radio-lst {
-    float:left;
+    float: left;
 }
 
-fieldset .radio-lst label, fieldset .checkbox-group label {
+fieldset .radio-lst label,
+fieldset .checkbox-group label {
     display: inline-block;
-    min-width: 1vw; 
-    text-align:right;
+    min-width: 1vw;
+    text-align: right;
     padding-right: 2px;
     font-size: 0.9rem;
 }
@@ -377,25 +388,29 @@ select {
     margin-left: 2vw;
     font-size: 0.9rem;
 }
+
 select option {
     /* background:red; */
     font-size: 0.7rem;
 }
-select >optgroup {
+
+select>optgroup {
     font-size: 0.9rem;
 }
 
 textarea {
-    display:block;
-    margin:  5vh auto 0 auto;
+    display: block;
+    margin: 5vh auto 0 auto;
     width: 70%;
     /* font-size: 0.8rem; */
     /* padding-left: 2vw; */
     /* background:red; */
 }
+
 textarea:invalid {
     border: 5px solid red;
 }
+
 textarea:valid {
     border: 2px solid yellow;
 }
@@ -405,8 +420,9 @@ div.grandchildren-selector {
     background-color: #eee;
     padding-bottom: 1vw;
 }
+
 div.grandchildren-selector ul * li {
-    background-color:var(--bg-color);
+    background-color: var(--bg-color);
 }
 
 /* div.grandchildren-selector ul>li+ul>li {
@@ -416,14 +432,130 @@ div.grandchildren-selector ul * li {
 div.grandchildren-selector li {
     width: 100px;
 }
+
 div.grandchildren-selector ul {
     padding-left: 5vw;
     padding-top: 1vh;
+}
+
+.number-one {
+    counter-reset: counter-one counter-two;
+}
+
+.number-two {
+    counter-reset: counter-two;
+}
+
+.number-one dt::before {
+    counter-increment: counter-one;
+    content: "("counter(counter-one, decimal) ")\2003";
+    font-style: normal;
+}
+
+.number-one dd::before {
+    counter-increment: counter-two;
+    content: "("counter(counter-two, lower-alpha) ")\2003";
+    font-style: normal;
+}
+
+dd.number-none::before {
+    content: "\2003";
+    font-style: normal;
+}
+
+.bg-olive {
+    background: olive;
+}
+
+.bg-orange {
+    background: orange;
+}
+
+.bg-aquamarine {
+    background: aquamarine;
+}
+
+.stky {
+    position: sticky;
+    top: 0;
+    padding: 0 2vw 1vh;
+}
+
+#stky-container {
+    height: 20vh;
+    overflow-y: scroll;
+    width: 50%;
+    margin: 5vh auto;
+}
+
+.relative {
+    position: relative;
+    top: 3vw;
+    left: 5vw;
+}
+
+.absolute {
+    position: absolute;
+    top: 2vw;
+    left: 5vw;
+}
 
 
+div.rel-container,
+div.absolute-container {
+    margin: 5px auto;
+    width: 60%;
+    /* text-align: center; */
+}
 
-@media screen and (min-width:600px)
-{
+div.absolute-container {
+    border: 2px solid orange;
+    position: relative;
+}
+div.rel-container {
+    border:2px solid orange;
+}
+
+div.rel-container #div-one,
+div.rel-container #div-two,
+div.rel-container #div-three,
+div.absolute-container #div-four,
+div.absolute-container #div-five,
+div.absolute-container #div-six,
+div.absolute-container #div-x {
+    width: 8vw;
+    line-height: 8vw;
+    display: inline-block;
+    text-align: center;
+    margin: 1vw;
+    font-size: 1.8vw;
+}
+
+#div-one,
+#div-four {
+    background: red;
+    text-decoration: underline dotted;
+}
+
+#div-two,
+#div-five {
+    background: lime;
+    text-decoration: underline dotted;
+}
+
+#div-three,
+#div-six {
+    background: blue;
+    color: white;
+    text-decoration: underline dotted;
+}
+
+#div-x {
+    visibility: hidden;
+}
+
+@media screen and (min-width:600px) {
+
     main,
     nav,
     div.syntax,
@@ -432,26 +564,26 @@ div.grandchildren-selector ul {
     footer {
         grid-column: 2 / span 8;
     }
-    
-form {
-    max-width: 65vw;
-    margin-left: auto;
-    margin-right: auto;
-    /* background:green; */
-    /* font-size: 0.9rem; */
+
+    form {
+        max-width: 65vw;
+        margin-left: auto;
+        margin-right: auto;
+        /* background:green; */
+        /* font-size: 0.9rem; */
+    }
+
 }
 
-
-}
 
 
 @media screen and (min-width:700px) {
 
-form {
-    max-width: 55vw;
-    margin-left: auto;
-    margin-right: auto;
-    /* background:red; */
-    /* font-size: 0.9rem; */
-}
+    form {
+        max-width: 55vw;
+        margin-left: auto;
+        margin-right: auto;
+        /* background:red; */
+        /* font-size: 0.9rem; */
+    }
 }

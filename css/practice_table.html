@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="description" content="Scrimba course Table practice">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="table,scrimba, colspan">
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+
+    <!-- <link rel="stylesheet" href="https://latex.now.sh/style.css"> -->
+    <style>
+        :root {
+            --bg-color: aquamarine;
+            --font-one: small-caps 1.5em/1.2 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid green;
+            font: var(--font-one);
+            background: var(--bg-color);
+            min-height: 10vh;
+        }
+
+        main section {
+            width: 80%;
+            margin: auto;
+            border: 2px solid blue;
+            min-height: 20vh;
+            text-align: center;
+        }
+
+        footer {
+            width: 80%;
+            margin: auto;
+            border: 5px solid red;
+        }
+
+        table.styled {
+            margin: 0 auto;
+        }
+
+        table.styled .yella {
+            background: yellow;
+        }
+
+        table.styled .bloo {
+            background: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <header>My header</header>
+    <main>
+        <section>
+            My section
+        </section>
+    </main>
+    <footer>
+        <section>
+            <table class=styled>
+                <colgroup>
+                    <col class="yella">
+                    <col class="bloo">
+                </colgroup>
+                <thead>
+
+                    <tr>
+                        <th colspan="2">Work Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mon-Fri</td>
+                        <td>6am-7pm</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Sat</td>
+                        <td>Closed</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </footer>
+</body>
+
+</html>

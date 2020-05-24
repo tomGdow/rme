@@ -1,0 +1,174 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>position absolute</header>
+        <div class="counter">xx</div>
+        <main>
+            <div class="absolute-container">
+                <div id="div-four">Static</div>
+                <div id="div-five" class="absolute">Absolute</div>
+                <div id="div-six">Static</div>
+                <div id="div-x">No Click</div>
+            </div>
+            <dl>
+                <dt>Position Absolute</dt>
+                <dd>An absolutely positioned element is one whose computed position
+                    is either
+                    <code>absolute</code>
+                    or
+                    <code>fixed</code>
+                </dd>
+                <dd>
+                    <code>top</code>,
+                    <code>right</code>,
+                    <code>bottom</code>,
+                    <code>left</code>
+                    properties specify offsets from edges of containing block
+                </dd>
+                <dd>An an element with
+                    <code>position: absolute</code> is removed from normal document flow
+                </dd>
+                <dd>No space is created for element in page layout</dd>
+                <dd>Positioned relative to its closest positioned ancestor (an element
+                    that is statically positioned), if any.
+                </dd>
+                <dd>If there is no positioned ancestor, the element is positioned
+                    relative to initial containing block
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt>css</dt>
+                    <dd>
+                        <pre>
+
+.absolute {
+    position: absolute;
+    top: 3vw;
+    left: 5vw;
+}
+                        </pre>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Opening example</dt>
+                    <dd>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+&lt;div class="absolute-container"&gt;
+    &lt;div id="div-four"&gt;Static&lt;/div&gt;
+    &lt;div id="div-five" class="absolute"&gt;Absolute&lt;/div&gt;
+    &lt;div id="div-six"&gt;Static&lt;/div&gt;
+    &lt;div id="div-x"&gt;No Click&lt;/div&gt;
+&lt;/div&gt;
+                        </pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+
+div.absolute-container {
+    position:relative;  
+}
+
+#div-x {
+    visibility: hidden;
+}
+
+div.absolute-container #div-four,
+div.absolute-container #div-five,
+div.absolute-container #div-six,
+div.absolute-container #div-x {
+    width: 8vw;
+    line-height: 8vw;
+    display: inline-block;
+    text-align: center;
+    margin: 1vw;
+    font-size: 1.8vw;
+}
+                        </pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>js</summary>
+                            <pre>
+
+    function toggleClass(id,toggleClass,toggleMsg) {
+        if (document.getElementById(id)) {
+            document.getElementById(id).addEventListener('click', function () {
+                if (this.classList.contains(toggleClass)) {
+                    this.classList.remove(toggleClass);
+                    this.innerHTML = "Static";
+
+                } else {
+                    this.classList.add(toggleClass);
+                    this.innerHTML = toggleMsg;
+
+                }
+            });
+        }
+    }
+                        </pre>
+                        </details>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl class="number-one">
+                    <dt><code>auto</code>/no attr specified</dt>
+                    <dd>An element with
+                        <code>position:absolute</code>
+                        but where none of the
+                        <code>position</code>
+                        attributes have been assigned a value
+                        other than
+                        <code>auto</code>
+                        behaves as if it were assigned
+                        <code>position:static</code>, although it
+                        <em>is</em>
+                        absolutely positioned.
+                    </dd>
+                    <dd>
+                        <code>position:absolute; top:auto</code>
+                        for example,
+                        <em>behaves</em>
+                        as a normal static element
+                    </dd>
+                    <dt>References</dt>
+                    <dd class="number-two">CSS Positioning by Susan Simkins (Pluralsight)</dd>
+                    <dd><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">Position (MDN)</a></dd>
+                    <dd><a href="https://stackoverflow.com/q/5399708/499167">the behaviour of top: auto; bamboozles
+                            me</a></dd>
+                    <dd><a
+                            href="https://www.freecodecamp.org/news/how-to-understand-css-position-absolute-once-and-for-all-b71ca10cd3fd/">How
+                            to understand CSS Position Absolute once and for all</a></dd>
+
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

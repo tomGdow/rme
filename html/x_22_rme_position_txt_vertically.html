@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>Align vertically</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl class="number-one">
+                <dt>Methods Considered</dt>
+                <dd class="number-two">
+                    <code>display:table-cell</code>
+                    with
+                    <code>vertical-align:middle</code>
+                </dd>
+                <dd class="number-two">
+                    Set
+                    <code>line-height</code>
+                    equal to the height of the
+                    <code>div</code>
+                </dd>
+                <dd>Flexbox</dd>  
+                <dd>Align div vertically and horizontally</dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt>Method 1</dt>
+                    <dd><code>display:table-cell</code></dd>
+                    <dd>
+                        <pre>
+#my-div {
+    display:table-cell; 
+    vertical-align:middle;
+    text-align-center;
+    height: 10vh;
+    width: 10vh;
+}   
+                        </pre>
+                    </dd>
+                    <dt>Method 2</dt>
+                    <dd><code>line-height: height-of-div</code></dd>
+                    <dd>
+                        <pre>
+#my-div {    
+    line-height: 10vh;
+    text-align: center;
+    display: inline-block;
+    width: 10vh;
+}
+                        </pre>
+                    </dd>
+                    <dt>Method 3</dt>
+                    <dd>Flexbox </dd>
+                    <dd>
+                        <pre>
+#my-div {             
+    display:flex;
+    width: 10vh;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+                    </pre>
+                    </dd>  
+                    <dt>Method 4</dt>
+                    <dd>Align div  vertically and horizontally</dd>
+                    <dd>(Pluralsight)</dd>
+                    <dd>
+                        <details>
+                            <summary>html</summary> 
+                            <pre>
+
+&lt;div class="container"&gt;
+    &lt;div class="box blueBox"&gt;&lt;/div>
+&lt;/div&gt;
+                            </pre>
+                        </details>
+                    </dd>  
+                    <dd>
+                        <details>
+                            <summary>css</summary>
+                            <pre>
+.box {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.blueBox {
+    background: #627da0;
+    margin: 0 auto;
+}   
+
+div.container {
+    position:absolute;
+    top:50%;
+    margin-top: -50px;
+    left:0;
+    width:100%;
+}
+                            </pre>
+                        </details>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dt>References </dt>
+                <dd><a href="https://stackoverflow.com/questions/2939914/how-do-i-vertically-align-text-in-a-div">How do
+                        I vertically align text in a div?</a>
+                    </dd>
+                    <dd>
+                        CSS Positioning by Susan Simkins (Pluralsight)
+                    </dd>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

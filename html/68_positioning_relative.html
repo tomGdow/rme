@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+<body>
+    <div class="container">
+        <header>position relative</header>
+        <div class="counter">xx</div>
+        <main>
+
+    <div class="rel-container">
+        <div id="div-one">Static</div>
+        <div id="div-two" class="relative">Relative</div>
+        <div id="div-three">Static</div>
+    </div>
+    <dl>
+        <dt>Relative</dt>
+        <dd>The element is positioned according to the normal
+            flow of the document
+        </dd>
+        <dd>The element is then offset 
+            <em>relative to itself</em>
+            based on values of
+            <code>top</code>,
+            <code>right</code>,
+            <code>bottom</code>,
+            <code>left</code>
+        </dd>  
+        <dd>The offset does not affect other elements</dd>
+        <dd>Thus the space given to the element in the page
+            is the same same as if the position was 
+            <code>static</code>
+        </dd>
+    </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt>css</dt>
+                    <dd>
+                        <pre>
+
+.relative {
+    position: relative;
+    top: 3vw;
+    left: 5vw;
+}
+                        </pre>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Opening Example</dt>
+                    <dd>
+                        <details>
+                            <summary>html</summary>
+                            <pre>
+
+&lt;div class="rel-container"&gt;
+    &lt;div id="div-one"&gt;Static&lt;/div&gt;
+    &lt;div id="div-two" class="relative"&gt;Relative&lt;/div&gt;
+    &lt;div id="div-three"&gt;Static&lt;/div&gt;
+&lt;/div&gt;
+                            </pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>css (abridged)</summary>
+                            <pre>
+
+.relative {
+    position: relative;
+    top: 3vw;
+    left: 5vw;
+}
+
+div.rel-container  {
+    margin:5px auto;
+    width: 80%;     
+    text-align:center;
+}
+
+div.rel-container #div-one,
+div.rel-container #div-two,
+div.rel-container #div-three {
+    width: 8vw;
+    line-height: 8vw;
+    display: inline-block;
+    text-align: center;
+    margin: 1vw;
+    font-size: 1.8vw;
+}
+                            </pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                        <summary>js</summary>
+                        <pre>
+function toggle(id) {
+    if (document.getElementById(id)) {
+        document.getElementById(id).addEventListener('click', function () {
+            if (this.classList.contains('relative')) {
+                this.classList.remove('relative');
+                this.innerHTML = "Static";
+            } else {
+                this.classList.add('relative');
+                this.innerHTML = "Relative";
+            }
+        });
+    }
+}
+                        </pre>
+                        </details>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>Opening Example</dt>
+                    <dd>The coloured
+                        <code>divs</code>
+                        are clickable
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+</html>
