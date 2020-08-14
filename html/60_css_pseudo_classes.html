@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,37 +7,174 @@
 </head>
 <body>
     <div class="container">
-        <header>CSS Pseudo Classes</header>
+        <header>Pseudo Class and Pseudo Element</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>Pseudo class</dt>
+                <dd>
+                    A CSS pseudo-class is a keyword added to a selector
+                    that specifies
+                    <em> a special state </em> of the selected element(s).
+                </dd>
+                <dd>Denoted <code>:</code> </dd>
+                <dt>Pseudo element</dt>
+                <dd>
+                    A CSS pseudo-element is a keyword added to a
+                    selector that lets you style
+                    <em> a specific part </em> of the selected element(s)
+                </dd>
+                <dd>Denoted <code>::</code></dd>
             </dl>
         </main>
         <div class="syntax">
             <details>
-                <summary>Syntax</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-                <p></p>
+                <summary>syntax</summary>
+                <dl>
+                    <dt>Pseudo Element</dt>
+                    <dd>
+                        <pre>
+selector::pseudo-element {
+  property: value;
+}</pre>
+                    </dd>
+                    <dt>Pseudo Class</dt>
+                    <dd>
+                        <pre>
+selector:pseudo-class {
+  property: value;
+}</pre>
+                    </dd>
+                </dl>
             </details>
         </div>
         <div class="examples">
             <details>
-                <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-            </details>
+                <summary>examples</summary>
+                <details>
+                    <summary>pseudo-classes</summary>
+                    <pre>
+:active
+:checked
+:default
+:defined
+:disabled
+:empty
+:enabled
+:first
+:first-child
+:first-of-type
+:focus
+:focus-within
+:host
+:host()
+:hover
+:indeterminate
+:in-range
+:invalid
+:lang()
+:last-child
+:last-of-type
+:left
+:link
+:not()</pre>
+                    <details>
+                        <summary><code>:nth-child</code></summary>
+                        <p>
+                            matches elements based on their position in a group of siblings.
+                        </p>
+                        <details>
+                            <summary>syntax</summary>
+                            <p>
+                                The nth-child pseudo-class is specified with a single argument that describes a
+                                pattern for matching element indices in a list of siblings.
+                            </p>
+                            <p> Element indices are 1-based (but n is zero based)</p>
+                            <p><code>odd</code></p>
+                            <p><code>even</code></p>
+                            <p>
+                                <code>An+B</code>
+                                Represents elements in a list whose indices match those found in a custom
+                                pattern of numbers, defined by <code>An+B</code>, where:
+                                <code>A</code> is an integer step size,
+                                <code>B</code>is an integer offset,
+                                <code>n</code> is all positive integers, starting from 0.
+                                It can be read as the An+Bth element of a list.
+                            </p>
+                        </details><!-- syntax -->
+                        <details>
+                            <summary>examples</summary>
+                            <p><code>:nth-child(odd)</code>or <code>:nth-child(2n+1)</code></p>
+                            <p><code>:nth-child(even)</code> or <code>tr:nth-child(2n)</code></p>
+                            <p><code>:nth-child(7)</code> Represents the seventh element.</p>
+                            <p><code> :nth-child(5n)</code>
+                                Represents elements 5, 10, 15, etc.
+                                The first one to be returned as a result of the formula is 0 [=5x0],
+                                resulting in a no-match,
+                                since the elements are indexed from 1,
+                                whereas n starts from 0.
+                            </p>
+                        </details><!-- examples -->
+                    </details><!-- nth-child -->
+                            <pre>
+:nth-last-child()
+:nth-last-of-type()
+:nth-of-type()
+:only-child
+:only-of-type
+:optional
+:out-of-range
+:read-only
+:read-write
+:required
+:right
+:root
+:scope
+:target
+:valid
+:visited</pre>
+                </details><!-- pseudo-classes -->
+                <details>
+                <summary>pseudo-elements</summary> 
+                            <pre>
+::after (:after)
+::backdrop 
+::before (:before)
+::cue   
+::cue-region
+::first-letter (:first-letter)
+::first-line (:first-line)
+::selection
+::slotted()</pre>
+                </details><!-- pseudo-elements -->
+            </details><!-- examples -->
         </div>
         <div class="notes">
             <details>
-                <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <summary>notes</summary>
+                <dl>
+                    <dt>Pseudo Element syntax </dt>
+                    <dd>
+                        You can use only one pseudo-element in a selector.
+                        <p class="indent">
+                            It must appear after the simple selectors in the statement.
+                        </p>
+                    </dd>
+                    <dd>
+                        As a rule, double colons (::) should be used instead of a single colon (:).
+                        <p class="indent">
+                            This distinguishes pseudo-classes from pseudo-elements.
+                        </p>
+                        <p class="indent">
+                            However, since this distinction was not present in older versions of the W3C spec, most
+                            browsers support both syntaxes.
+                        </p>
+                    </dd>
+                    <dt>Pseudo Class syntax</dt>
+                    <dd>
+                        Like regular classes, you can chain together as many pseudo-classes as you want in a selector.
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>

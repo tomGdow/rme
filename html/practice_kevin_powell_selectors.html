@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My practice</title>
+    <meta name="description" content="a bit of practice">
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <link rel="stylesheet" href="../css/css_selectors.css">
+    <link rel="stylesheet" href="../css/adjacent_sibling_selector.css">
+    <link rel="stylesheet" href="../css/general_sibling_selector.css" disabled="true">
+    <link rel="stylesheet" href="../css/grandchild_selector.css" disabled="true">
+    <link rel="stylesheet" href="../css/great-grandchildren_selector.css" disabled="true">
+    <link rel="stylesheet" href="../css/great_great_grand_children_selector.css" disabled="true">
+    <link rel="stylesheet" href="../css/first_child_selector.css" disabled="true">
+    <style>
+        button:not([disabled="false"]) {
+            background-color:red;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <nav>
+        <button id="btn_adjacent_sibling">Adjacent Sibling (A + B)</button>
+        <button id="btn_general_sibling">General Sibling (A &tilde; B)</button>
+        <button id="btn_grandchild_selector">Grand Child (A * B)</button>
+        <button id="btn_great-grandchildren_selector">Great GrandChild (A * * B)</button>
+        <button id="btn_great_great_grand_children_selector">Great GrandChild (A * * * B)</button>
+        <button id="btn_first_child_selector">First Child (A > B)</button>
+    </nav>
+    <section>
+        <div>Parent (div-1)
+            <div>Child (div-1 &RightTeeArrow; div)
+                <div>Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; div)
+                    <div>div-1 &RightTeeArrow; div &RightTeeArrow; div&RightTeeArrow;div
+                        <div>div-1 &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div</div>
+                    </div>
+                </div>
+            </div>
+            <div>Child(div-1 &RightTeeArrow; div)
+                <p>Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; p)</p>
+            </div>
+        </div>
+
+        <div>Parent (div-2)
+            <div>Child (div-2 &RightTeeArrow; div)</div>
+            <div>Child (div-2 &RightTeeArrow; div)
+                <div>div-2 &RightTeeArrow; div &RightTeeArrow; div
+                    <div>div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow;div </div>
+                </div>
+            </div>
+            <div>Child (div-2 &RightTeeArrow; div</div>
+            <p>Child (div-2 &RightTeeArrow; p)</p>
+        </div>
+
+        <div>Parent (div-4)</div>
+        <p>Parent (p-4)</p>
+        <div>Parent (div-5)</div>
+        <div>Parent (div-6)</div>
+        <div>Parent (div-7)</div>
+
+    </section>
+
+    <script>
+        document.getElementById('btn_general_sibling').addEventListener('click',
+            function (event) {
+                switchStyleSheet(event.target.id)
+            }
+        );
+        document.getElementById('btn_adjacent_sibling').addEventListener('click',
+            function (event) {
+                switchStyleSheet(event.target.id)
+            }
+        );
+        document.getElementById('btn_grandchild_selector').addEventListener('click',
+            function (event) {
+                switchStyleSheet(event.target.id)
+            }
+        );
+        document.getElementById('btn_great-grandchildren_selector').addEventListener('click',
+            function (event) {
+                switchStyleSheet(event.target.id)
+            }
+        );
+        document.getElementById('btn_great_great_grand_children_selector').addEventListener('click',
+            function (event) {
+                switchStyleSheet(event.target.id)
+            }
+        );
+        document.getElementById('btn_first_child_selector').addEventListener('click',
+            function (event) {
+                switchStyleSheet(event.target.id)
+            }
+        );
+
+
+        var testStrings = ["general_sibling", "adjacent_sibling", "grandchild_selector",
+            "great-grandchildren_selector", "great_great_grand_children_selector", "first_child_selector"
+        ];
+
+        function switchStyleSheet(x) {
+
+            // var temp = document.querySelectorAll('[rel=stylesheet]')
+
+            // for (var i = 0; i < temp.length; i++) {     
+            //     for(var j=0; j< testStrings.length;j++) {
+            //         if (new RegExp(testStrings[j]).test(temp[i].href)) {
+            //             styleSheetList.push(temp[i].href)
+            //         }
+            //     }
+            // }
+
+            for (var i = 0; i < testStrings.length; i++) {
+                if (new RegExp(testStrings[i]).test(x)) {
+                    document.querySelector(`[href*=${testStrings[i]}]`).disabled = false;
+                } else {
+                    document.querySelector(`[href*=${testStrings[i]}]`).disabled = true;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

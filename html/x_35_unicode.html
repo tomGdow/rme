@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Template</title>
+        <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+<body>
+        <div class="container">
+                <header>Unicode</header>
+                <div class="counter">xx</div>
+                <main>
+                        <dl>
+                                <dt>Unicode</dt>
+                                <dd>In Unicode, a letter maps to <em> a code point </em></dd>
+                                <dd>A code point is a theoretical concept, a 'platonic ideal' (Joel Spolsky)</dd>
+                                <dd>How a code point is represented in memory is another, entirely separate, problem
+                                        (encoding)</dd>
+                                <dd> Every letter in every alphabet is assigned a magic number or
+                                        <em>code point</em> by the Unicode consortium (Joel Spolsky)
+                                </dd>
+                                <dd><code>U+0639</code></dd>
+                                <dd>The U+ means “Unicode”</dd>
+                                <dd>The numbers <em>are hexadecimal</em></dd>
+                                <dd>UTF-8 is <em> one</em> example of character encoding</dd>
+                                <dd>An HTML document is a sequence of Unicode characters (wikipedia)</dd>
+                        </dl>
+                </main>
+                <div class="syntax">
+                        <details>
+                                <summary>Syntax</summary>
+                                <ol>
+                                        <li><code>code</code></li>
+                                </ol>
+                                <p></p>
+                        </details>
+                </div>
+                <div class="examples">
+                        <details>
+                                <summary>Examples</summary>
+                                <dl>
+                                        <dt>JavaScript</dt>
+                                        <dd>
+                                                <code>
+                                                        document.getElementById('myid').innerHTML="hello
+                                                        \u{0061}\u{0062}" // "ab"
+                                                </code>
+                                        </dd>
+                                        <dd>
+                                                <code>
+                                                        document.getElementById('myid').innerHTML="\u{0048} \u{0065}
+                                                        \u{006C} \u{006C} \u{006F}"
+                                                        // hello
+                                                </code>
+                                        </dd>
+                                </dl>
+                                <ol>
+                                        <li><code>code</code></li>
+                                </ol>
+                        </details>
+                </div>
+                <div class="notes">
+                        <details>
+                                <summary>Notes</summary>
+                                <dl>
+                                        <dt>References</dt>
+                                        <dd>
+                                                <p>
+                                                        <a href="https://flaviocopes.com/javascript-unicode/">Unicode in
+                                                                JavaScript</a>
+                                                </p>
+                                        </dd>
+                                        <dd>
+                                                <p>
+                                                        <a
+                                                                href="https://dev.to/honeybadger/a-rubyist-s-introduction-to-character-encoding-unicode-and-utf-8-oj0">
+                                                                A Rubyist's Introduction to Character Encoding, Unicode
+                                                                and UTF-8</a>
+                                                </p>
+                                        </dd>
+                                        <dd>
+                                                <p>
+                                                        <a href="https://home.unicode.org/">Unicode (dot org)</a>
+                                                </p>
+                                        </dd>
+                                        <dd>
+                                                <p>
+                                                        <a
+                                                                href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">
+                                                                The Absolute Minimum Every Software Developer
+                                                                Absolutely, Positively Must Know About
+                                                                Unicode and Character Sets (No Excuses!)</a>
+                                                </p>
+                                        </dd>
+                                        <dd>
+                                                <p>
+                                                        <a href="https://en.wikipedia.org/wiki/Unicode_and_HTML">Unicode
+                                                                and HTML (Wikipedia)</a>
+                                                </p>
+                                        </dd>
+                                </dl>
+                        </details>
+                </div>
+        </div>
+</body>
+
+</html>

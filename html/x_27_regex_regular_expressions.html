@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        a:hover::before {
+            content: "\000A9 \000A9 \000035";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Regular Expressions</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Mathematica</dt>
+                    <dd>
+                        <p>
+                            <pre>
+StringSplit["ThomasDowling", RegularExpression["(?<=[a-z])(?=[A-Z])"]]
+>{Thomas, Dowling}
+                            </pre>
+                        </p>
+                        <p>
+                            <pre>
+StringSplit["atgc", RegularExpression["(?<=[t])(?=[g])"]]
+>{at, gc}                         
+                            </pre>
+                        </p>
+                        <p>
+                            <pre>
+StringCases["pre-12", RegularExpression["pre-\\K\\d{2}"]]
+>{12}
+                            </pre>
+                        </p>
+                        <p>
+                            <pre>
+StringCases["GGGAAAZZZZZZDDD", RegularExpression["A(?R)?Z"]]
+>{AAAZZZ}
+                            </pre>
+                        </p>
+                        <p>
+                            <pre>
+StringPattern`PatternConvert["\w"] //First
+>(?ms)\\w
+                            </pre>
+                        </p>
+                        <p>
+                            <pre>
+StringCases["That is is that that with repeats", RegularExpression["([A-Za-z]+)\\s+\\1"]]
+                        </pre>
+                    </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>Lookahead and Lookbehind</dt>
+                    <dd>
+                        <pre>
+(?=)  // Positive lookahead
+(?!)  // Negative lookahead
+(?<=) // Positive lookbehind
+(?<&#33;) // Negative lookbehind
+                        </pre>
+                    </dd>
+                    <dt>Character Class: 5 Characters to Escape Inside</dt>
+                    <dd>[Robert Elder]</dd>
+                    <dd>
+                        <ol>
+                            <li><code>[  // Optional in JS!</code></li>
+                            <li><code>]</code></li>
+                            <li><code>\</code></li>
+                            <li><code>- // Optional at beginning/end character range</code></li>
+                            <li><code>^ // only has special meaning if first character in character class</code></li>
+                        </ol>
+                    </dd>
+                    <dt>Grep -P</dt>
+                    <dd>&#91;Robert Elder&#93;</dd>
+                    <dd>Perl-compatible grep search</dd>
+                    <dt><code>[=-_</code></dt>
+                    <dd>&#91;Robert Elder&#93;</dd>
+                    <dd>In JS, matches the ascii character range 61-95</dd>
+                    <dt>The Three Meanings of Caret (<code>^</code>)</dt>
+                    <dd>&#91;Robert Elder&#93;</dd>
+                    <dd>
+                        <ol>
+                            <li>Negation (as first character in character class)</li>
+                            <li>character literal</li>
+                            <li>beginning anchor</li>
+                        </ol>
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://reference.wolfram.com/language/ref/RegularExpression.html">
+                            Wolfram/RegularExpression</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://reference.wolfram.com/language/tutorial/WorkingWithStringPatterns.html">
+                                Wolfram/Working With String Patterns
+                                </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.rexegg.com/regex-lookarounds.html">RexEgg</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.regular-expressions.info">Regular-Expressions.info</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://mathematica.stackexchange.com/a/72739/106">WReach on Named Patterns</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <a href="https://blog.robertelder.org/regular-expressions/">Robert Elder: Guide To Regular Expressions</a>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://blog.robertelder.org/regular-expression-visualizer/">Robert Elder: Visualizer Tool</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://blog.robertelder.org/character-class-visualizer/">Robert Elder: Character Class Visualizer Tool</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+        /* {
+                margin:0
+            } */
+
+        /* * + * {
+                margin: 1em 0 0 0;
+            } */
+        /* div.container div:nth-child(odd) {
+                background-color: lightgoldenrodyellow;
+                margin: 1em 0;
+            } */
+
+         div + div {
+            border: solid lightcoral;
+            width: 50%;
+            margin: 10px;
+            padding: 10px;
+
+        }

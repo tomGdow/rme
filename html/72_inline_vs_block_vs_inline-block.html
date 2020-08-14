@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>inline vs block vs Inline-block</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>block</dt>
+                <dd>Expand horizontally to take up a whole line</dd>
+                <dd>Can apply vertical margins</dd>
+                <dd>Typically displayed with a newline both before and after the element</dd>
+                <dd>Always start on a new line</dd>
+                <dt>inline</dt>
+                <dd>Expand horizontally just enough to contain content</dd>
+                <dd>Examples are <code>strong</code> and <code>em</code></dd>
+                <dd>Cannot apply vertical margins</dd>
+                <dt>inline-block</dt>
+                <dd>Like inline, but <em>can</em> apply vertical margins</dd>
+                <dd><code>inline-block</code> is now considered legacy</dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <details class="indent">
+                    <summary>All Block elements</summary>
+                    <pre>
+&lt;address&gt;
+&lt;article&gt;
+&lt;aside&gt;
+&lt;blockquote&gt;
+&lt;details&gt;
+&lt;dialog&gt;
+&lt;dd&gt;
+&lt;div&gt;
+&lt;dl&gt;
+&lt;dt&gt;
+&lt;fieldset&gt;
+&lt;figcaption&gt;
+&lt;figure&gt;
+&lt;footer&gt;
+&lt;form&gt;
+&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;
+&lt;header&gt;
+&lt;hgroup&gt;
+&lt;hr&gt;
+&lt;li&gt;
+&lt;main&gt;
+&lt;nav&gt;
+&lt;ol&gt;
+&lt;p&gt;
+&lt;pre&gt;
+&lt;section&gt;
+&lt;table&gt;
+&lt;ul&gt;
+                </pre>
+                </details>
+                <details class="indent">
+                    <summary>All Inline Elements</summary>
+                    <pre>&lt;a&gt;
+&lt;abbr&gt;
+&lt;acronym&gt;
+&lt;audio&gt; (if it has visible controls)
+&lt;b&gt;
+&lt;bdi&gt;
+&lt;bdo&gt;
+&lt;big&gt;
+&lt;br&gt;    
+&lt;button&gt;
+&lt;canvas&gt;
+&lt;cite&gt;
+&lt;code&gt;
+&lt;data&gt;
+&lt;datalist&gt;
+&lt;del&gt;
+&lt;dfn&gt;
+&lt;em&gt;
+&lt;embed&gt;
+&lt;i&gt;
+&lt;iframe&gt;
+&lt;img&gt;
+&lt;input&gt;
+&lt;ins&gt;
+&lt;kbd&gt;
+&lt;label&gt;
+&lt;map&gt;
+&lt;mark&gt;
+&lt;meter&gt;
+&lt;noscript&gt;
+&lt;object&gt;
+&lt;output&gt;
+&lt;picture&gt;
+&lt;progress&gt;
+&lt;q&gt;
+&lt;ruby&gt;
+&lt;s&gt;
+&lt;samp&gt;
+&lt;script&gt;
+&lt;select&gt;
+&lt;slot&gt;
+&lt;small&gt;
+&lt;span&gt;
+&lt;strong&gt;
+&lt;sub&gt;
+&lt;sup&gt;
+&lt;svg&gt;
+&lt;template&gt;
+&lt;textarea&gt;
+&lt;time&gt;
+&lt;u&gt;
+&lt;tt&gt;
+&lt;var&gt;
+&lt;video&gt;
+&lt;wbr&gt;
+                </pre>
+                </details>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>HTML-5</dt>
+                    <dd>
+                        The distinction of block-level vs. inline elements was used in HTML specifications up to 4.01.
+                    </dd>
+                    <dd>
+                        In HTML5, this binary distinction is replaced with a more complex set of content categories
+                        (<em>qv</em>)
+                    </dd>
+
+                    <dt>block</dt>
+                    <dd>
+                        the "block-level" category doesn't directly correspond to any HTML5 content category
+                    </dd>
+                    <dd>
+                        "block-level" and "inline" elements combined together correspond to the flow content in HTML5.
+                    </dd>
+                    <dd>
+                        <code>hr</code> is block-level (but <code>br</code> is inline)
+                    </dd>
+
+                    <dt>Inline</dt>
+                    <dd>The<code>img</code> element is by default <em>inline</em></dd>
+                    <dd>Maybe use
+                        <code>img { display: block; max-width: 100%; }</code>
+                    </dd>
+                    <dd><code>video</code> is inline</dd>
+                    <dd>Generally, inline elements may contain only data and other inline elements.</dd>
+                    <dd>You can't put block elements inside inline elements.</dd>
+                    <dd>
+                        inline elements cannot have top/bottom margins
+                        but <em>can</em> have right/left margin. 
+                        (Contrast with padding) [net ninja]
+                    </dd>
+                    <dd>
+                        inline elements can have padding on all four sides
+                    </dd>
+
+                    <dt>display</dt>
+                    <dd>Using
+                        <code>display:block</code> does <em>not</em> category and the content model of the element.
+                    </dd>
+                    <dd>
+                        Even if the display of the <code>span</code> element is changed to "block",
+                        it still would not allow to nest a <code>div</code> element inside it.
+                    </dd>
+                    <dd>
+                        <code>inline</code> roughly corresponds to the new HTML5 category of phrasing content
+                    </dd>
+
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://cssfordesigners.com/articles/things-i-wish-id-known-about-css">
+                                Thinks I wish I'd known about CSS</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">MDN:
+                                Block-level Elements</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

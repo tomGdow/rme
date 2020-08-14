@@ -10,7 +10,10 @@ let pageData = (function () {
         "6_head_tag.html",
         "7_body_tag.html",
         "8_void_self_closing_tag.html",
-        "9_entities.html",
+        "9_html_entities_entity.html",
+        "x_35_unicode.html",
+        "x_38_utf-8.html",
+        "x_37_0Aa_mnemonic.html",
         "10_comments.html",
         "10b_title_tag.html",
         "x_2_rme_validation.html",
@@ -82,10 +85,8 @@ let pageData = (function () {
         "x_21_rme_positioning_sticky.html",
         "70_overflow_settings.html",
         "71_alignment.html",
-        "72_inline_vs_block.html",
+        "72_inline_vs_block_vs_inline-block.html",
         "73_visibility.html",
-        "74_box_model_margins.html",
-        "75_box_model_padding.html",
         "76_font_family.html",
         "77_color.html",
         "78_font_style.html",
@@ -117,7 +118,19 @@ let pageData = (function () {
         "x_17_rme_form_six.html",
         "x_18_rme_shorthands_trbl.html",
         "x_22_rme_position_txt_vertically.html",
-
+        "x_23_rme_dom_document_object_model.html",
+        "x_24_rme_disabled_attribute.html",
+        "x_25_content_type_categories_html.html",
+        "x_26_css_cascade_specificity.html",
+        "x_27_regex_regular_expressions.html",
+        "x_28_mnemonics.html",
+        "x_29_box_model.html",
+        "x_30_responsive_site_media.html",
+        "x_31_text_decoration.html",
+        "x_32_shorthand_properties_trbl.html",
+        "x_33_margin_collapse.html",
+        "x_34_border_shorthand.html",   
+        "x_36_html5_w3c_css.html",
     ];
 
 })();
@@ -240,7 +253,7 @@ let pageData = (function () {
     }
 
 
-    function toggleClass(id,toggleClass,toggleMsg) {
+    function toggleClass(id, toggleClass, toggleMsg) {
         if (document.getElementById(id)) {
             document.getElementById(id).addEventListener('click', function () {
                 if (this.classList.contains(toggleClass)) {

@@ -1,65 +1,118 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .table-one,
+        .table-two {
+            table-layout: fixed;
+            margin: auto;
+        }
+
+        .table-one caption,
+        .table-two caption {
+            font-size: 0.8rem;
+            caption-side: bottom;
+        }
+
+        .table-one .class-a {
+            background-color: aqua;
+            font-size: 0.8rem;
+        }
+
+        .table-one .class-b {
+            background-color: var(--bg-color);
+        }
+
+        .table-one thead tr th {
+            background-color: yellow;
+            text-align: center;
+            vertical-align: middle;
+            /* font-size: 0.8rem; */
+        }
+
+        .table-one th,
+        .table-one td {
+            font-size: 0.8rem;
+        }
+
+        .table-one tfoot {
+            background-color: red;
+            text-align: center;
+        }
+
+        .table-one tbody td[colspan="2"] {
+            background-color: lime;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-one tbody td[rowspan="2"] {
+            background-color: olive;
+            vertical-align: middle;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>Table</header>
         <div class="counter">xx</div>
         <main>
-                <!-- example code-->
-        <table class="table-one">
-            <caption>Cols with Table</caption>
-            <colgroup>
-                <col class="class-a">
-                <col class="class-a">
-                <col class="class-a">
-            </colgroup>
-            <colgroup>
-                <col class="class-b">
-                <col class="class-b">
-                <col class="class-b">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th colspan="6">Table Header</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="2">Cell 1.1
-                    <td>Cell 1.2
-                    <td>Cell 1.3
-                    <td>Cell 1.4
-                    <td>Cell 1.5
-                    <td>Cell 1.6
-                </tr>
-                <tr>
-                    <!-- <td>Cell 2.1 -->
-                    <td>Cell 2.1
-                    <td>Cell 2.1
-                    <td>Cell 2.1
-                    <td>Cell 2.1
-                    <td>Cell 2.1
-                </tr>
-                <tr>
-                    <td>Cell 3.1
-                    <td>Cell 3.2
-                    <td>Cell 3.3
-                    <td>Cell 3.4
-                    <td colspan="2">Cell 3.5
-                        <!-- <td>Cell 3.6 -->
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="6">Footer</td>
-                </tr>
-            </tfoot>
-        </table>
-                <!--end code-->
+            <!-- example code-->
+            <table class="table-one">
+                <caption>Table Example</caption>
+                <colgroup>
+                    <col class="class-a">
+                    <col class="class-a">
+                    <col class="class-a">
+                </colgroup>
+                <colgroup>
+                    <col class="class-b">
+                    <col class="class-b">
+                    <col class="class-b">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="6">Table Header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Cell 1.1
+                        <td>Cell 1.2
+                        <td>Cell 1.3
+                        <td>Cell 1.4
+                        <td>Cell 1.5
+                        <td>Cell 1.6
+                    </tr>
+                    <tr>
+                        <!-- <td>Cell 2.1 -->
+                        <td>Cell 2.1
+                        <td>Cell 2.1
+                        <td>Cell 2.1
+                        <td>Cell 2.1
+                        <td>Cell 2.1
+                    </tr>
+                    <tr>
+                        <td>Cell 3.1
+                        <td>Cell 3.2
+                        <td>Cell 3.3
+                        <td>Cell 3.4
+                        <td colspan="2">Cell 3.5
+                            <!-- <td>Cell 3.6 -->
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">Footer</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <!--end code-->
             <dl>
                 <dt>Table</dt>
                 <dd>Represents tabular data, in terms of 2D rows and columns</dd>
@@ -84,12 +137,12 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-<dl>
-    <dt>Opening Example</dt>
-    <dd>
-        <details>
-            <summary>Html</summary>
-            <pre>
+                <dl>
+                    <dt>Opening Example</dt>
+                    <dd>
+                        <details>
+                            <summary>Html</summary>
+                            <pre>
 &lt;table class="table-one"&gt;
     &lt;caption&gt;Cols with Table&lt;/caption&gt;
     &lt;colgroup&gt;
@@ -140,12 +193,12 @@
     &lt;/tfoot&gt;
 &lt;/table&gt;
             </pre>
-        </details>
-    </dd>
-    <dd>
-        <details>
-            <summary>CSS</summary>
-            <pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
 :root {
     --bg-color: aquamarine;
 }
@@ -196,9 +249,9 @@
 }
 
             </pre>
-        </details>
-    </dd>
-</dl>
+                        </details>
+                    </dd>
+                </dl>
 
             </details>
         </div>
@@ -206,111 +259,147 @@
             <details>
                 <summary>Notes</summary>
                 <dl>
-                <dt>rowspan</dt>
-                <dt>colspan</dt>
-                <dd>Make it possible for table data elements to span across columns and rows</dd>
-                <dt>vertical-align</dt>
-                <dd>
-                 May take values of 
-                 <code>top</code>,
-                 <code class="highlight">middle</code>
-                 and 
-                 <code>bottom</code>
-                </dd>
-                <dt>text-align</dt>
-                 <dd>May take values of 
-                     <code>left</code> <code class="highlight">center</code>,
-                     and
-                     <code>right</code>
-                 </dd>
-                 <dt>table-layout</dt>
-                 <dd>Use <code>table-layout:fixed</code> for faster rendering of tables</dd>
-                 <dt>tfoot</dt>
-                 <dd>In HTML-5, must go 
-                     <span class="highlight">after</span>
-                    <code>tbody</code>
-                    (Otherwise, will not validate)
-                </dd>
-                <dt>colgroup</dt>
-                <dd>Group together columns of data,
-                    typically for formatting purposes.
-                </dd>
-                <dd>May use 
-                    <code>span</code>
-                    attribute or
-                    <code>&lt;col&gt;</code>
-                </dd>
-                <dd>The 
-                    <code>&lt;col&gt;</code>
-                    element is void element and enclosing
-                    <code>colgroup</code> must not have a 
-                    <code>span</code> attribute 
-                    (but 
-                    <code>&lt;col&gt;</code>
-                    may take 
-                    <code>span</code> attribute. 
-                    )
-                </dd>
-                <dd>
-                    <q>
-                        <code>col</code>
-                        has no end tag and must be a child of
-                        <code>colgroup</code> 
-                        which has no 
+                    <dt>rowspan, colspan</dt>
+                    <dd>Make it possible for table data elements to span across columns and rows</dd>
+                    <dt>vertical-align</dt>
+                    <dd>
+                        May take values of <code>top</code>,
+                        <code class="highlight">middle</code>
+                        and <code>bottom</code>
+                    </dd>
+                    <dt>text-align</dt>
+                    <dd>May take values of
+                        <code>left</code> <code class="highlight">, center</code>
+                        and
+                        <code>right</code>
+                    </dd>
+                    <dt>table-layout</dt>
+                    <dd>Use <code>table-layout:fixed</code> for faster rendering of tables</dd>
+                    <dt>tfoot</dt>
+                    <dd>In HTML-5, must go
+                        <span class="highlight">after</span>
+                        <code>tbody</code>
+                        (Otherwise, will not validate)
+                    </dd>
+                    <dt>colgroup</dt>
+                    <dd>Group together columns of data,
+                        typically for formatting purposes.
+                    </dd>
+                    <dd>May use
                         <code>span</code>
-                        attribute
-                    </q>
-                </dd>
-                <dt>table border</dt>
-                <dd>Both 
-                    <code>border:none</code>
-                    and 
-                    <code>border:0</code> are acceptable ways of not showing a border (but they do subtly different
-                    things: <code>border:0</code> sets the value of <code>border-width</code> to zero. 
-                </dd>
-                <dt>border-collapse</dt>
-                <dd>Possible values are 
-                    <code>collapse</code>
-                    and
-                    <code>separate</code>
-                </dd>
-                <dt>empty-cells</dt>
-                <dd>Possible values are 
-                    <code>hide</code>
-                    and
-                    <code>show</code>
-                </dd>
-                <dt>border-spacing</dt>
-                <dd>May take two values (space-separated) 
-                    representing horizontal and vertical spacing.
-                </dd>
-                <dt>caption</dt>
-               <dd>Specifies 
-                   <code>table</code>
-                   title. 
-               </dd>
-               <dd>Note the css rule 
-                   <code>caption-side</code>
-                   which may take values of 
-                   <code>top</code>
-                   and  
-                   <code>bottom</code>
-               </dd>
-               <dt>Mnemonic</dt>
-               <dd>
-                   <code>th</code>
-                   it equivalent to
-                   <code>td</code>
-                   (
-                       <code>th</code>omas,
-                       <code>td</code>ow
-                   )
-               </dd>
-               <dt>Center a table</dt>
-               <dd>Use <code>margin: 0 auto</code></dd>
+                        attribute or
+                        <code>&lt;col&gt;</code>
+                    </dd>
+                    <dd>The
+                        <code>&lt;col&gt;</code>
+                        element is void element and enclosing
+                        <code>colgroup</code> must not have a
+                        <code>span</code> attribute
+                        (but
+                        <code>&lt;col&gt;</code>
+                        may take
+                        <code>span</code> attribute.
+                        )
+                    </dd>
+                    <dd>
+                        <q>
+                            <code>col</code>
+                            has no end tag and must be a child of
+                            <code>colgroup</code>
+                            which has no
+                            <code>span</code>
+                            attribute
+                        </q>
+                    </dd>
+                    <dd>The <code>colgroup</code> element must <em> not</em>
+                        appear inside the <code> thead</code> element</dd>
+                    <dd><code>colgroup</code> element must appear <em>before</em>
+                        <code>thead</code> and <em>after</em> the <code>caption</code>
+                        element, if there is one </dd>
+                        <dd>May have multiple <code>colgroup</code>elements</dd>
+
+
+                    <dt>table border</dt>
+                    <dd>Both
+                        <code>border:none</code>
+                        and
+                        <code>border:0</code> are acceptable ways of not showing a border (but they do subtly different
+                        things: <code>border:0</code> sets the value of <code>border-width</code> to zero.
+                    </dd>
+                    <dd>From within HTML, use 'border=1' as attribute to <code>table</code> tag (deprecated)</dd>
+                    <dt>border-collapse</dt>
+                    <dd>Possible values are
+                        <code>collapse</code>
+                        and
+                        <code>separate</code>
+                    </dd>
+                    <dt>empty-cells</dt>
+                    <dd>Possible values are
+                        <code>hide</code>
+                        and
+                        <code>show</code>
+                    </dd>
+                    <dt>border-spacing</dt>
+                    <dd>May take two values (space-separated)
+                        representing horizontal and vertical spacing.
+                    </dd>
+                    <dt>caption</dt>
+                    <dd>Specifies
+                        <code>table</code>
+                        title.
+                    </dd>
+                    <dd>Note the css rule
+                        <code>caption-side</code>
+                        which may take values of
+                        <code>top</code>
+                        and
+                        <code>bottom</code>
+                    </dd>
+                    <dd><code>caption</code>, if present, <em> must</em> be
+                        a first-child of the <code> table</code> element </dd>
+                    <dt>Mnemonic</dt>
+                    <dd>
+                        <code>th</code>
+                        it equivalent to
+                        <code>td</code>
+                        (
+                        <code>th</code>omas,
+                        <code>td</code>ow
+                        )
+                    </dd>
+                    <dt>Center a table</dt>
+                    <dd>Use <code>margin: 0 auto</code></dd>
+                    <dt>tbody</dt>
+                    <dd>May have multiple <code>tbody</code> elements</dd>
+                    <dd>But cells with colspan must "not extend past the end of its row group established by a 
+                        <code>tbody</code> element" 
+                        (
+                          <a href="https://validator.w3.org/"> W3C Markup Validation Service </a>
+                        )
+                    </dd>
+                    <dt>Permitted Content (<code>table</code>)</dt>
+                    <dd>
+                        In this order:
+                        <ul>
+                            <li>an optional &lt;caption&gt; element,</li>
+                            <li>zero or more &lt;colgroup&gt; elements,</li>
+                            <li>an optional &lt;thead&gt; element, </li>
+                            <li>either one of the following:
+                                <ul>
+                                    <li>zero or more &lt;tbody&gt; elements</li>
+                                    <li>one or more &lt;tr&gt; elements</li>
+                                </ul>
+                            </li>
+                            <li>an optional &lt;tfoot&gt; element</li>
+                        </ul>
+                        (see 
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">MDN: The Table element</a>
+                        )
+                    </dd>
                 </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

@@ -226,12 +226,14 @@ dd {
 }
 
 
-.table-one {
+.table-one,
+.table-two {
     table-layout: fixed;
     margin: auto;
 }
 
-.table-one caption {
+.table-one caption,
+.table-two caption {
     font-size: 0.8rem;
 }
 
@@ -270,6 +272,11 @@ dd {
 .table-one tbody td[rowspan="2"] {
     background-color: olive;
     vertical-align: middle;
+}
+
+.table-two .aa {
+    background: gray;
+    font-size: .8rem;
 }
 
 video {
@@ -512,8 +519,9 @@ div.absolute-container {
     border: 2px solid orange;
     position: relative;
 }
+
 div.rel-container {
-    border:2px solid orange;
+    border: 2px solid orange;
 }
 
 div.rel-container #div-one,
@@ -553,6 +561,139 @@ div.absolute-container #div-x {
 #div-x {
     visibility: hidden;
 }
+
+.indent {
+    text-indent: 2vw;
+}
+
+
+table#convert_0Aa {
+    border: 1px solid navy;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 1rem auto 0 auto;
+
+}
+
+
+table#convert_0Aa {
+    border: 1px solid navy;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 1rem auto 0 auto;
+
+}
+
+table#convert_0Aa caption {
+    caption-side: bottom;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+table#convert_0Aa td,
+table#convert_0Aa th {
+    text-align: left;
+    border: 1px solid black;
+    padding: 0.3rem;
+}
+
+
+table#convert_0Aa th {
+    font-size: 0.9rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table#convert_0Aa col:nth-child(even) {
+    background-color: lightgoldenrodyellow;
+}
+
+table#convert_0Aa th {
+    background-color: white;
+}
+
+table#convert_0Aa td:first-of-type {
+    width: 15%;
+    text-align: center;
+}
+
+table#convert_0Aa td:nth-child(2) {
+    width: 12%;
+}
+
+#char_ref_syntax_table,
+#char_ref_example_table {
+    border: 1px solid;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+    caption-side: bottom;
+}
+
+#char_ref_syntax_table th,
+#char_ref_syntax_table td,
+#char_ref_example_table th,
+#char_ref_example_table td {
+    border: 1px solid;
+    padding: 0 0.3em;
+}
+
+#char_ref_syntax_table caption,
+#char_ref_example_table caption {
+    margin-top: 0.5em;
+    font-size: 0.9rem;
+    color: black;
+    /* border: dashed; */
+}
+
+#char_ref_syntax_table th,
+#char_ref_example_table th {
+    background-color: white;
+    font-size: 0.9rem;
+}
+
+#char_ref_syntax_table col:nth-child(even) {
+    background-color: lightgoldenrodyellow;
+}
+
+#char_ref_example_table col:first-of-type {
+    width: 15%;
+
+}
+
+#char_ref_example_table col:nth-child(even) {
+    background-color: lightgoldenrodyellow;
+}
+
+tr:hover {
+    background-color: lightgray;
+}
+
+blockquote {
+    font-size: 0.8rem;
+}
+
+/* begin ere  */
+
+/* end hee  */
+/* div.wrapper_margin-collapse {
+    background: lightslategray;
+    margin: auto;
+    width: 30%;
+} */
+
+/* div.d1,
+div.d3 {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+}
+
+div.empty {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 10px 0 10px;
+} */
 
 @media screen and (min-width:600px) {
 

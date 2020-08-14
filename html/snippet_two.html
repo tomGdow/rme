@@ -1,0 +1,106 @@
+
+                <dl>
+                    <dt>
+                        <details>
+                            <summary>Pseudo classes</summary>
+                    <dd>
+
+                        <pre>
+                        :active
+                        :checked
+                        :default
+                        :defined
+                        :disabled
+                        :empty
+                        :enabled
+                        :first
+                        :first-child
+                        :first-of-type
+                        :focus
+                        :focus-within
+                        :host
+                        :host()
+                        :hover
+                        :indeterminate
+                        :in-range
+                        :invalid
+                        :lang()
+                        :last-child
+                        :last-of-type
+                        :left
+                        :link
+                        :not()
+                                            </pre>
+                    </dd> 
+                            <details>
+                                <summary><code>:nth-child</code></summary>
+                                <p>matches elements based on their position in a group of siblings.</p>
+                                <details>
+                                    <summary>syntax</summary>
+                                    <p>
+                                        The nth-child pseudo-class is specified with a single argument that describes a
+                                        pattern for matching element indices in a list of siblings.
+                                    </p>
+                                    <p> Element indices are 1-based (but n is zero based)</p>
+                                    <p><code>odd</code></p>
+                                    <p><code>even</code></p>
+                                    <p>
+                                        <code>An+B</code>
+                                        
+                                            Represents elements in a list whose indices match those found in a custom
+                                            pattern of numbers, defined by An+B, where:
+                                            A is an integer step size,
+                                            B is an integer offset,
+                                            n is all positive integers, starting from 0.
+                                            It can be read as the An+Bth element of a list.
+                                    </p>
+                                </details>
+                                <details>
+                                    <summary>Examples</summary>
+                                    <p><code>:nth-child(odd)</code>or <code>:nth-child(2n+1)</code></p>
+                                    <p><code>:nth-child(even)</code> or <code>tr:nth-child(2n)</code></p>
+                                    <p><code>:nth-child(7)</code> Represents the seventh element.</p>
+                                    <p><code> :nth-child(5n)</code>
+                                            Represents elements 5, 10, 15, etc.
+                                            The first one to be returned as a result of the formula is 0 [=5x0], 
+                                            resulting in a no-match, 
+                                            since the elements are indexed from 1, 
+                                            whereas n starts from 0. 
+                                    </p>
+                                </details>
+                            </details>
+                            <pre>
+    :nth-last-child()
+    :nth-last-of-type()
+    :nth-of-type()
+    :only-child
+    :only-of-type
+    :optional
+    :out-of-range
+    :read-only
+    :read-write
+    :required
+    :right
+    :root
+    :scope
+    :target
+    :valid
+    :visited</pre>
+                        </details>
+                    </dt>
+                    <dt>
+                        <details>
+                            <summary>Pseudo Elements</summary>
+                            <pre>
+::after (:after)
+::backdrop 
+::before (:before)
+::cue
+::cue-region
+::first-letter (:first-letter)
+::first-line (:first-line)
+::selection
+::slotted()</pre>
+                        </details>
+                    </dt>
+                </dl>

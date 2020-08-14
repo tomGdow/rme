@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>My Practice</title>
+        <meta name="description" content="Do I validate">
+        <meta name="keywords" content="thead, css-tricks, tfoot">
+        <link rel="stylesheet" href="http://xu/tgdfiles/icon/bonnie.ico">
+        <style>
+            table {
+                border: solid;
+                border-collapse: collapse;
+            }
+
+            table caption {
+                caption-side: bottom;
+            }
+            table tfoot {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <table>
+                <caption>My Practice table</caption>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="3">Heading</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td>Cell 1.1</td>
+                        <td>Cell 1.2</td>
+                        <td>Cell 1.3</td>
+                    </tr>
+                    <tr>
+                        <td>Cell 2.1</td>
+                        <td>Cell 2.2</td>
+                        <td>Cell 2.3</td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Footer</td>
+                        </tr>
+                    </tfoot>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-9">  
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="MDN download my painting example">
+        <meta name="keywords" content="canvas, href, mdn, anchor">
+        <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+        <style>
+            html {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            div.container {
+                margin: 0 auto 0 auto;
+                width: 80%;
+                border: 2px solid green;
+            }
+
+            div.container canvas {
+                background: #fff;
+                border: 1px dashed;
+
+            }
+
+            a {
+                display: inline-block;
+                background: #69c;
+                color: #fff;
+                padding: 5px 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p>Paint by holding down the mouse button and moving it
+                <a href="" download=my_painting.png>Download my painting</a>
+            </p>
+
+            <canvas width="300" height="300">
+            </canvas>
+        </div> 
+        <script>
+            var canvas=document.querySelector('canvas');
+            var c = canvas.getContext('2d');
+            var isDrawing;
+            c.fillStyle='hotpink';
+
+            function draw(x,y) {
+                if(isDrawing) {
+                    c.beginPath();
+                    c.arc(x,y,10,0,Math.PI*2);
+                    c.closePath();
+                    c.fill();
+                }
+            }
+            canvas.addEventListener('mousemove', function (event) {
+                draw(event.offsetX, event.offsetY)
+            })
+
+            canvas.addEventListener('mousedown', function () {
+                isDrawing =true;
+            });
+
+            canvas.addEventListener('mouseup', function () {
+                isDrawing=false;
+            })
+
+            document.querySelector('a').addEventListener('click', function (event) {
+                event.target.href=canvas.toDataURL();
+            })
+            
+        </script>
+    </body>
+</html>
