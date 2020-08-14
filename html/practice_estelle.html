@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="ie=edge">
+        <title>Estella Practice</title>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="my beautiful website">
+        <meta name="keywords" content="css,selectors,revisited">
+        <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+        <style>
+            div.container {
+                width: 80%;
+                margin: 0 auto;
+                border: solid;
+            }
+
+            div.container li ~ li {
+                border: 2px solid red;
+                background-color: lightgoldenrodyellow;
+                margin:5px;
+            }
+
+            a[href^="http"]::after {
+                content: ' (' attr(href) ')'
+            }
+
+            div[data|="name"]{
+                color:red;
+            }
+
+            input[type=checkbox]:checked + label {
+                background-color:red;
+            }
+
+            input[type=number]:valid {
+                background-color:green;
+            }
+
+            input[type=number]:invalid {
+                background:red;
+            }
+        </style>
+    </head>
+
+    <div class="container">
+        <ul>
+            <li>Item-1</li>
+            <li>Item-2</li>
+            <br>
+            <li>Item-3
+                <ol>
+                    <li>Inner-1</li>
+                    <li>Inner-2</li>
+                    <li>Inner-3</li>
+                    <li>Inner-4</li>
+                </ol>
+            </li>
+            <li>Item-4</li>
+        </ul>
+        <div>
+            <a href="http://www.google.ie">Google</a>
+        </div>
+        <div data="name-thomas">thomas</div>
+        <form action="">
+            <input type="checkbox" value="ham"  id="ham" checked>
+            <label for="ham">Ham</label>
+            <br>
+            <input type="checkbox" value="cheese" id="cheese">
+            <label for="cheese">Cheese</label>
+            <br>
+            <input type="number" value="22" min="5" max="40" id="number">
+            <label for="number">Between 5 and 40, please</label>
+        </form>
+    </div>
+</html>

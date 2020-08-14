@@ -14,6 +14,7 @@ let pageData = (function () {
         "x_35_unicode.html",
         "x_38_utf-8.html",
         "x_37_0Aa_mnemonic.html",
+        "x_39_punycode.html",
         "10_comments.html",
         "10b_title_tag.html",
         "x_2_rme_validation.html",
