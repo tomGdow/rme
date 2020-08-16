@@ -10,50 +10,40 @@
     <meta name="keywords" content="css,selectors,revisited">
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
     <style>
-        div.container {
+        div.triangle_container {
             width: 80%;
             margin: 0 auto;
-            border: solid red;
-            padding: 40px;
         }
-        .main {
-            color: red;
-            border: 5px solid #ccc;
-            padding: 1em;
-            /* background-color: lightgoldenrodyellow; */
+        div.triangle_container>p {
+            position:relative;
+        }
+        div.triangle_container>p>span {
+            background-color: lightgoldenrodyellow;
+            padding: 2px;
         }
 
-        .special {
-            color:black;
-            font-weight:bold;
+        /* p::before {
+            counter-increment:Section;
+            content: open-quote "Section" counter(Section) close-quote;
+            background:yellow;
+        } */
+
+        div.triangle_container>p:hover::after {
+            width:0;
+            height:0;
+            content: '';
+            position: absolute;
+            bottom:0;
+            border: 20px solid transparent;
+            border-bottom-color:red;
         }
 
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <ul class="main">
-            <li>item-1</li>
-            <li>item-2
-                <ul>
-                    <li>2.1</li>
-                    <li>2.2</li>
-                </ul>
-            </li>
-            <li>item-3
-                <ul class="special">
-                    <li>3.1
-                        <ul>
-                            <li>3.1.1</li>
-                            <li>3.1.2</li>
-                        </ul>
-                    </li>
-                    <li>3.2</li>
-                </ul>
-            </li>
-
-        </ul>
+    <div class="triangle_container">
+        <p><span>Hover to get triangle</span></p>
     </div>
 </body>
 
