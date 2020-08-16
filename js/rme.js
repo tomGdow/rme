@@ -109,6 +109,8 @@ let pageData = (function () {
         "94_max_width_property.html",
         "x_8_rme_css_variables.html",
         "x_9_rme_css_selectors.html",
+        "x_40_example_checkbox_label_adj_sibling_selector.html",
+        "x_41_inheritance_css.html",
         "x_10_rme_semantic_markup.html",
         "x_11_rme_css_measure_units.html",
         "x_12_rme_form_one.html",
@@ -130,7 +132,7 @@ let pageData = (function () {
         "x_31_text_decoration.html",
         "x_32_shorthand_properties_trbl.html",
         "x_33_margin_collapse.html",
-        "x_34_border_shorthand.html",   
+        "x_34_border_shorthand.html",
         "x_36_html5_w3c_css.html",
     ];
 
@@ -163,6 +165,10 @@ let pageData = (function () {
             toggleClass('div-four', 'absolute', 'Absolute');
             toggleClass('div-five', 'absolute', 'Absolute');
             toggleClass('div-six', 'absolute', 'Absolute');
+            createStyleSheet();
+            document.getElementById('inheritance_example_btn').addEventListener('click',
+                toggle_anchor_class);
+
         };
     }
 
@@ -318,6 +324,7 @@ let pageData = (function () {
     window.addEventListener('DOMContentLoaded', function () {
         makeRequest(`./html/${pageOrder[0]}`, insertContents(callback));
     });
+
 
     function drawOnCanvas() {
         let el = document.getElementsByTagName('canvas')[0] || null;
@@ -630,6 +637,31 @@ let pageData = (function () {
         }
 
         return tmp;
+    }
+
+    function createStyleSheet() {
+        if (document.getElementById('inheritance_example_btn')) {
+            var sheet = document.createElement('style');
+            var txt = document.createTextNode("a {color:red}");
+            sheet.appendChild(txt);
+            sheet.id = 'sheet';
+            document.getElementsByTagName('head')[0].appendChild(sheet);
+            sheet.disabled = true;
+        }
+
+    }
+
+    function toggle_anchor_class() {
+        var sheet = document.getElementById('sheet');
+        if (sheet.disabled === true) {
+            sheet.disabled = false;
+            this.innerHTML = "Remove Class"
+            document.getElementById('inheritance_added_css_class').style.visibility = "visible";
+        } else {
+            sheet.disabled = true;
+            this.innerHTML = 'Add Class';
+            document.getElementById('inheritance_added_css_class').style.visibility = "hidden";
+        }
     }
 
 })(pageData);

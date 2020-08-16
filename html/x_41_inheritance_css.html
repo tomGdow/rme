@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+
+    <style>
+         div.inheritance_example_container {
+            margin: auto;
+            width: 80%;
+            color: green;
+        }
+
+        .my-class-1 a {
+            color: inherit;
+        }
+
+        .my-class-2 a {
+            color: initial;
+        }
+
+        .my-class-3 a {
+            color: unset;
+        }
+
+        #inheritance_added_css_class {
+            visibility: hidden;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>table</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>Controlling Inheritance</dt>
+                <dd>CSS provides four special universal property values for controlling inheritance.</dd>
+                <dd>Every CSS property accepts these values.</dd>
+                <dt><code>inherit</code></dt>
+                <dd>Sets the property value applied to a selected element to be the same as that of its parent element
+                </dd>
+                <dd>Effectively, this "turns on inheritance".</dd>
+                <dt><code>initial</code></dt>
+                <dd>
+                    Sets the property value applied to a selected element to the initial (default) value of that
+                    property.
+                </dd>
+                <dt><code>unset</code></dt>
+                <dd>
+                    Resets the property to its natural value, which means that if the property is naturally inherited it
+                    acts like
+                    <code>inherit</code>,
+                    otherwise it acts like
+                    <code>initial</code>
+                </dd>
+                <dt><code>all</code></dt>
+                <dd>The CSS shorthand property all can be used to apply one of these inheritance values to (almost) all
+                    properties at once.
+                </dd>
+                <dd>
+                    Its value can be any one of the inheritance values
+                     (<code>inherit</code>, <code>initial</code>, <code>unset</code>, or <code>revert</code>)
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <p class="indent">
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#Controlling_inheritance">MDN:
+                        Controlling Inheritance</a>
+                </p>
+
+                <div class="inheritance_example_container">
+                    <ul>
+                        <li>Default <a href="#">link</a> color</li>
+                        <li class="my-class-1">Inherit the <a href="#">link</a> color</li>
+                        <li class="my-class-2">Reset the <a href="#">link</a> color</li>
+                        <li class="my-class-3">Unset the <a href="#">link</a> color</li>
+                    </ul>
+                    <div id="inheritance_added_css_class">
+                        <pre>a {color:red;} // with new stylesheet created with JS</pre>
+                    </div>
+                    <button id="inheritance_example_btn">Add class</button>
+                </div>
+                <details>
+                    <summary>HTML</summary>
+                    <pre>
+&lt;div class="inheritance_example_container"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Default &lt;a href="#"&gt;link&lt;/a&gt; color&lt;/li&gt;
+        &lt;li class="my-class-1"&gt;Inherit the &lt;a href="#"&gt;link&lt;/a&gt; color&lt;/li&gt;
+        &lt;li class="my-class-2"&gt;Reset the &lt;a href="#"&gt;link&lt;/a&gt; color&lt;/li&gt;
+        &lt;li class="my-class-3"&gt;Unset the &lt;a href="#"&gt;link&lt;/a&gt; color&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id="inheritance_added_css_class"&gt;
+        &lt;pre&gt;a {color:red;} // with new stylesheet created with JS&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;button id="inheritance_example_btn"&gt;Add class&lt;/button&gt;
+&lt;/div&gt;
+                </pre>
+                </details>
+                <details>
+                    <summary>CSS</summary>
+                    <pre>
+div.inheritance_example_container {
+    margin: auto;
+    width: 80%;
+    color: green;
+}
+
+.my-class-1 a {
+    color: inherit;
+}
+
+.my-class-2 a {
+    color: initial;
+}
+
+.my-class-3 a {
+    color: unset;
+}
+
+#inheritance_added_css_class {
+    visibility:hidden;
+
+}
+                </pre>
+                </details>
+                <details>
+                    <summary>JS</summary>
+                    <pre>
+createStyleSheet();
+
+function createStyleSheet() {
+    var sheet = document.createElement('style');
+    var txt = document.createTextNode("a {color:red}");
+    sheet.appendChild(txt);
+    sheet.id = 'sheet';
+    document.getElementsByTagName('head')[0].appendChild(sheet);
+    sheet.disabled = true;
+}
+
+function toggle_anchor_class() {
+    var sheet = document.getElementById('sheet');
+    if (sheet.disabled === true) {
+        sheet.disabled = false;
+        this.innerHTML = "Remove Class"
+        document.getElementById('inheritance_added_css_class').style.visibility="visible";
+    } else {
+        sheet.disabled = true;
+        this.innerHTML = 'Add Class';
+        document.getElementById('inheritance_added_css_class').style.visibility="hidden";
+    }
+}
+
+document.getElementById('inheritance_example_btn').addEventListener('click',
+    toggle_anchor_class)
+                </pre>
+                </details>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#Understanding_inheritance">MDN:
+                                Inheritance</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+
+    <script> 
+    /*
+        createStyleSheet();
+
+        function createStyleSheet() {
+            var sheet = document.createElement('style');
+            var txt = document.createTextNode("a {color:red}");
+            sheet.appendChild(txt);
+            sheet.id = 'sheet';
+            document.getElementsByTagName('head')[0].appendChild(sheet);
+            sheet.disabled = true;
+        }
+
+        function toggle_anchor_class() {
+            var sheet = document.getElementById('sheet');
+            if (sheet.disabled === true) {
+                sheet.disabled = false;
+                this.innerHTML = "Remove Class"
+                document.getElementById('inheritance_added_css_class').style.visibility = "visible";
+            } else {
+                sheet.disabled = true;
+                this.innerHTML = 'Add Class';
+                document.getElementById('inheritance_added_css_class').style.visibility = "hidden";
+            }
+        }
+
+        document.getElementById('inheritance_example_btn').addEventListener('click',
+            toggle_anchor_class)
+            */
+    </script>
+</body>
+
+</html>

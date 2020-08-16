@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+            #checkbox-example input[type=checkbox]:checked + label {
+                background-color: blueviolet;
+                color:white;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>checkbox-label/selector example</header>
+        <div class="counter">xx</div>
+        <main>
+            <div id="checkbox-example">
+                <form action="./example.com">
+                    <input type="checkbox" value="ham"  id="ham" checked>
+                    <label for="ham">Ham</label>
+                    <br>
+                    <input type="checkbox" value="cheese" id="cheese">
+                    <label for="cheese">Cheese</label>
+                    <br>
+                    <input type="checkbox" value="tomato" id="tomato">
+                    <label for="cheese">Tomato</label>
+                </form>
+            </div>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Opening Example</dt>
+                    <dd>
+                        <details>
+                        <summary>HTML</summary>
+                        <pre>
+&lt;form action="">
+    &lt;input type="checkbox" value="ham"  id="ham" checked>
+    &lt;label for="ham">Ham&lt;/label>
+    &lt;br>
+    &lt;input type="checkbox" value="cheese" id="cheese">
+    &lt;label for="cheese">Cheese&lt;/label>
+    &lt;br>
+    &lt;input type="checkbox" value="tomato" id="tomato">
+    &lt;label for="cheese">Tomato&lt;/label>
+&lt;/form>
+                        </pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                        <summary>CSS</summary>
+                        <pre>
+input[type=checkbox]:checked + label {
+    background-color: blueviolet;
+    color:white;
+}
+                        </pre>
+                        </details>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>
+                        References
+                    </dt>
+                    <dd>
+                        <p>
+                            <a href="https://estelle.github.io/CSS/selectors/#slide1">CSS Selectors (Estella Weyl - Pluralsight)</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+</html>

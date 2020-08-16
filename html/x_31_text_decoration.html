@@ -4,6 +4,22 @@
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .auto-center {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        #exam_ecollege_text_decoration_one {
+            text-decoration: overline red wavy;
+        }
+
+        #exam_ecollege_text_decoration_two {
+            text-decoration-line: underline;
+            text-decoration-style: double;
+            text-decoration-color: navy;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,22 +35,22 @@
                 <dd>
                     It is a shorthand for
                 </dd>
-                <dd>
+                <dd class="auto-center">
                     <code>
                         text-decoration-line
                     </code>
                 </dd>
-                <dd>
+                <dd class="auto-center">
                     <code>
-                        text-decoration-color 
+                        text-decoration-color
                     </code>
                 </dd>
-                <dd>
+                <dd class="auto-center">
                     <code>
                         text-decoration-style
                     </code>
                 </dd>
-                <dd>
+                <dd class="auto-center">
                     <code>
                         text-decoration-thickness
                     </code>
@@ -58,6 +74,15 @@
                     <dd>
                         <span style="text-decoration:overline underline red wavy">I am a decorated</span>
                     </dd>
+                    <dd>
+                        <details>
+                            <summary>Code</summary>
+                            <pre>
+&lt;span>I am a decorated&lt;/span>
+
+                        </pre>
+                        </details>
+                    </dd>
                     <dt>Css-1</dt>
                     <dd>
                         <pre>
@@ -68,9 +93,10 @@ span {
                     </dd>
                     <dt>Html-2</dt>
                     <dd>
-                        <span style="text-decoration-line:underline;text-decoration-color:navy;text-decoration-style:double">
-                        I am decorated
-                    </span>
+                        <span
+                            style="text-decoration-line:underline;text-decoration-color:navy;text-decoration-style:double">
+                            I am decorated
+                        </span>
                     </dd>
                     <dt>Css-2</dt>
                     <pre>
@@ -80,6 +106,35 @@ span {
     text-decoration-style:double;
 }
                     </pre>
+                    <dt>E-College Exam</dt>
+                     <h1 class="auto-center" id="exam_ecollege_text_decoration_one">Working at the computer</h1>
+                    <h1 class="auto-center" id="exam_ecollege_text_decoration_two">taking regular breaks</h1>
+                    <dd>
+                        <details>
+                            <summary>Code</summary>
+                            <details open>
+                                <summary>HTML</summary>
+                                <pre>
+&lt;h1 id="exam_ecollege_text_decoration_one"&gt;Working at the computer&lt;/h1&gt;
+&lt;h1 id="exam_ecollege_text_decoration_two"&gt;taking regular breaks&lt;/h1&gt;
+                                </pre>
+                            </details>
+                            <details open>
+                            <summary>CSS</summary>
+                            <pre>
+#exam_ecollege_text_decoration_one {
+    text-decoration: overline red wavy;
+}
+
+#exam_ecollege_text_decoration_two {
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: navy;
+}
+                            </pre>
+                            </details>
+                        </details>
+                    </dd>
                 </dl>
             </details>
         </div>
@@ -87,6 +142,8 @@ span {
             <details>
                 <summary>Notes</summary>
                 <dl>
+                    <dt>mnemonic</dt>
+                    <dd><code>*line:*line</code></dd>
                     <dt><code>text-decoration-line</code></dt>
                     <dd><code>none</code></dd>
                     <dd><code>underline</code></dd>
@@ -100,6 +157,13 @@ span {
                     <dd><code>wavy</code></dd>
                     <dt><code>text-decoration-thickness</code></dt>
                     <dd><code>1px</code></dd>
+                    <dt>References</dt>
+                    <dt>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration">MDN:
+                                text-decoration</a>
+                        </p>
+                    </dt>
                 </dl>
             </details>
         </div>

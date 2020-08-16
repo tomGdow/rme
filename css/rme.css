@@ -695,6 +695,64 @@ div.empty {
     padding: 0 10px 0 10px;
 } */
 
+div#checkbox-example {
+    margin: 0 auto;
+}
+
+#checkbox-example input[type=checkbox]+label {
+    padding: 1px 5px;
+    border-radius: 10%;
+}
+
+#checkbox-example input[type=checkbox]:checked+label {
+    background-color: blueviolet;
+    color: white;
+}
+
+
+.auto-center {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#exam_ecollege_text_decoration_one {
+    text-decoration: overline red wavy;
+}
+
+#exam_ecollege_text_decoration_two {
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: navy;
+}
+
+div.inheritance_example_container {
+    margin: auto;
+    width: 80%;
+    color: green;
+}
+
+.my-class-1 a {
+    color: inherit;
+}
+
+.my-class-2 a {
+    color: initial;
+}
+
+.my-class-3 a {
+    color: unset;
+}
+
+#inheritance_added_css_class {
+    visibility: hidden;
+
+}
+
+#inheritance_example_btn {
+    background:lightgray;
+    font-size: 0.8rem;
+}
+
 @media screen and (min-width:600px) {
 
     main,
