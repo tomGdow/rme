@@ -756,13 +756,14 @@ div.inheritance_example_container {
 figure#triangles_css_weil {
     margin: 0 auto;
     width: 70%;
-    border: 1px solid gray;
     padding: 2px;
 }
 
-figure#triangles_css_weil>img {
-    width: 100%;
-    height: 100%;
+figure#triangles_css_weil img {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    display: block;
 }
 
 figure#triangles_css_weil>figcaption {
@@ -795,6 +796,19 @@ dd.triangle_container>p:hover::after {
     border-bottom-color: red;
 }
 
+div.at_font_face_container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'apl';
+    min-height: 2em;
+    padding-top: 1em;
+}
+
+@font-face {
+    font-family: 'apl';
+    src: url('/font/APL386.ttf') format("truetype");
+}
+
 @media screen and (min-width:600px) {
 
     main,
@@ -810,8 +824,6 @@ dd.triangle_container>p:hover::after {
         max-width: 65vw;
         margin-left: auto;
         margin-right: auto;
-        /* background:green; */
-        /* font-size: 0.9rem; */
     }
 
 }

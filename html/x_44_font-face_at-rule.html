@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.at_font_face_container {
+            width: 80%;
+            margin: 0 auto;
+            font-family: 'apl';
+            min-height: 2em;
+            padding-top: 1em;
+        }
+
+        @font-face {
+            font-family: 'apl';
+            src: url('/font/APL386.ttf') format("truetype");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>&commat;font-face</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>&commat;font-face</dt>
+                <dd>
+                    The @font-face CSS at-rule specifies a custom font with which to display text
+                </dd>
+                <dd>
+                    The font can be loaded from either a remote server or a locally-installed font on the user's own
+                    computer.
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <pre>
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+       url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+}
+                </pre>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>APL font examples</dt>
+                    <dd>
+                        <div class="at_font_face_container">Hello World from APL font</div>
+                    </dd>
+                    <dt>Code</dt>
+                    <dd>
+                        <details>
+                            <summary>HTML</summary>
+                            <pre>
+&lt;div class="at_font_face_container"&gt;
+    Hello World from APL font
+&lt;/div&gt;
+                        </pre>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+
+div.at_font_face_container {
+    font-family: 'apl';
+}
+
+@font-face {
+    font-family: 'apl';
+    src: url('/font/APL386.ttf') format("truetype");
+}
+                      </pre>
+                        </details>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt><code>src</code></dt>
+                    <dd>
+                        Specifies the resource containing the font data.
+                    </dd>
+                    <dd>
+                        This can be a URL to a remote font file location or the name of a font on the user's computer.
+                    </dd>
+                    <dd>
+                        To provide the browser with a hint as to what format a font resource is — so it can select a
+                        suitable one — it is possible to include a
+                        <code>format</code>
+                        type inside a
+                        <code>format()</code>
+                        function:
+                    </dd>
+                    <dd>
+                        <pre>
+src: url(ideal-sans-serif.woff) format("woff"),
+     url(basic-sans-serif.ttf) format("truetype");
+                        </pre>
+                    </dd>
+                    <dt><code>local()</code></dt>
+                    <dd>
+                        The <code>local()</code> function may be used to specify a font name to look for on the user's computer
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">
+                                MDN: &commat;font-face
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <a href="https://abrudz.github.io/APL386/">APL386 Unicode</a>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

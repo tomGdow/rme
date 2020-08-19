@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>APL font face</title>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="font-face practice">
+        <meta name="keywords" content="apl, at-rule, font-face">
+        <style>
+            div.at_font_face_container {
+                width: 80%;
+                margin: 0 auto;
+                border: dashed red;
+                font-family: 'apl';
+                min-height: 100px;
+                padding-top: 20px;
+            }
+            @font-face {
+                font-family: 'apl';
+                src: url('/font/APL386.ttf') format("truetype");
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="at_font_face_container">
+            Hello World from APL font
+        </div>
+    </body>
+</html>

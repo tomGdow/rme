@@ -1,9 +1,60 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        figure#triangles_css_weil {
+            margin: 0 auto;
+            width: 70%;
+            padding: 2px;
+        }
+
+        figure#triangles_css_weil img {
+            width: 50%;
+            height: 50%;
+            margin: auto;
+            display: block;
+        }
+
+        figure#triangles_css_weil>figcaption {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+
+        dd.triangle_container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        dd.triangle_container>p {
+            position: relative;
+        }
+
+        dd.triangle_container>p>span {
+            background-color: lightgoldenrodyellow;
+            padding: 2px;
+        }
+
+        dd.triangle_container>p:hover::after {
+            width: 0;
+            height: 0;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            border: 20px solid transparent;
+            border-bottom-color: red;
+        }
+
+        #estelle_weil_on_triangles {
+            width: 80%;
+            margin:auto;
+            margin: 5px solid gray;
+        }
+    </style>
 </head>
 
 <body>
@@ -11,9 +62,15 @@
         <header>table</header>
         <div class="counter">xx</div>
         <main>
-            <figure id="triangles_css_weil">
-                <img src="./image/triangles_estelle_weil.png" alt="triangles with css image">
-                <figcaption>Estelle Weil on Css-Triangles</figcaption>
+            <figure id="estelle_weil_on_triangles">
+                <pre>
+    p::before { 
+        border: 20px solid transparent;
+        border-bottom-color:red;
+        content: '';
+    }
+                </pre>
+                <figcaption>Estelle Weil on CSS Triangles</figcaption>
             </figure>
         </main>
         <div class="syntax">
@@ -41,8 +98,8 @@
                     </dd>
                     <dd>
                         <details>
-                        <summary>CSS</summary>
-                        <pre>
+                            <summary>CSS</summary>
+                            <pre>
 
 dd.triangle_container {
     width: 80%;
@@ -70,6 +127,18 @@ dd.triangle_container>p:hover::after {
                         </pre>
                         </details>
                     </dd>
+                    <dd>
+                        <details>
+                            <summary>img (original)</summary>
+                            <figure id="triangles_css_weil">
+                                <picture>
+                                    <source srcset="../image/triangles_estelle_weil.png">
+                                    <img src="./image/triangles_estelle_weil.png" alt="triangles with css image">
+                                </picture>
+                                <figcaption>Estelle Weil on Css-Triangles</figcaption>
+                            </figure>
+                        </details>
+                    </dd>
                 </dl>
             </details>
         </div>
@@ -84,9 +153,6 @@ dd.triangle_container>p:hover::after {
                         </p>
                     </dd>
                 </dl>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
             </details>
         </div>
     </div>

@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.container_border_radius {
+            width: 50%;
+            margin: auto;
+            border: solid red;
+        }
+
+        div.container_border_radius>div {
+            border: 1em solid;
+            border-color: purple red blue green;
+
+            border-radius: 40%/5% 50%;
+            height: 4em;
+            width: 4em;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>table</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>border-radius</dt>
+                <dd>The border-radius CSS property rounds the corners of an element's outer border edge.</dd>
+                <dd>You can set a single radius to make circular corners, or two radii to make elliptical corners.</dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <div>
+                    <code>
+                        border-radius: 2em 1em 4em / 0.5em 3em;
+                    </code>
+                </div>
+                <p>is equivalent to</p>
+                <div>
+                    <code>border-top-left-radius: 2em 0.5em;</code>
+                </div>
+                <div>
+                    <code>border-top-right-radius: 1em 3em;</code>
+                </div>
+                <div>
+                    <code>border-bottom-right-radius: 4em 0.5em;</code>
+                </div>
+                <div>
+                    <code>border-bottom-left-radius: 1em 3em;</code>
+                </div>
+
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Example One</dt>
+                    <dt>
+                        <div class="container_border_radius">
+                            <div></div>
+                        </div>
+                    </dt>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>Constituent Properties</dt>
+                    <dd>
+                        <code>
+                            border-bottom-left-radius
+                        </code>
+                        <code>
+                            border-bottom-right-radius
+                        </code>
+                        <code>
+                            border-top-left-radius
+                        </code>
+                        <code>
+                            border-top-right-radius
+                        </code>
+                    </dd>
+                    <dt>
+                        heelo
+                    </dt>
+                    <dd>
+                        The two 
+                        <code>&lt;length-percentage&gt;</code> 
+                        values of the 
+                        <code>border-*-radius</code>
+                        properties define the radii of a quarter ellipse that defines the shape of the corner
+                        of the outer border edge (see the diagram below). 
+                    </dd>
+                    <dd>
+                        
+                    </dd>
+                    <dd>
+                            The first value is the horizontal radius, the second the vertical radius. If
+                            the second value is omitted it is copied from the first. If either length is zero, the
+                            corner is square, not rounded. Percentages for the horizontal radius refer to the width of
+                            the border box, whereas percentages for the vertical radius refer to the height of the
+                            border box. Negative values are not allowed.
+
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">MDN:
+                                border-radius</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://drafts.csswg.org/css-backgrounds-3/#border-radius">W3C Border Radius</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>My Site</title>
+        <style>
+            div.container_border_radius {
+                width:80%;
+                margin:auto;
+                /* border:solid red; */
+            }
+            div.container_border_radius>div {
+                border: 15px solid;
+                border-color: purple red blue green;
+                
+                border-radius: 40%/5% 50%;
+                height:100px;
+                width:100px;
+                margin:auto;
+        
+            }
+
+            /* div.container>div.border_image {
+                background-color: lightblue;
+                border: 36px solid orange;
+                margin: 30px;
+                padding: 10px;
+                border-radius:0;
+                  border-image: url(https://mdn.mozillademos.org/files/4127/border.png) 27  / 36px 28px 18px 8px / 18px 14px 9px 4px round;
+
+            }
+
+            div.container>div.border-image_two {
+                background-color: blueviolet;
+                border: 50px solid green;
+                border-radius:0;
+                border-image: url(../image/bonnie256.jpg) 50/69px/20px none;
+            }
+
+            div.container>div.gradient_make {
+                border-radius:0;
+                border:none;
+                /* border-style:solid; */
+                /* background:radial-gradient(circle at 100%,lightblue, lightblue 50%, blue 75%,blue 75%); */
+            /* } */
+
+            /* div.container>div.bonnie_bg {
+                border: 2px solid red;
+                background-image: url(../image/bonnie256.jpg);
+                transform: rotate(45deg);
+            }
+
+            div.new_container>div {
+                height:100px;
+                width:100px;
+                background-color: lightgoldenrodyellow;
+                transition:  border-right 1s, transform 2s;
+            }
+
+            div.new_container>div:hover {
+                border-right: 10px solid green;
+                transform: rotate(180deg);
+            } */ 
+
+        </style>
+    </head>
+    <body>
+        <div class="container_border_radius">           
+            <div></div>
+        </div>
+        <div class="container">
+            <div class="border_image">
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="border-image_two"></div>
+        </div>
+        <div class="container">
+            <div class="gradient_make"></div>
+        </div>
+        <div class="container">
+            <div class="bonnie_bg"></div>
+        </div>
+
+        <div class="new_container">
+            <div></div>
+        </div>
+        
+
+    </body>
+</html>
