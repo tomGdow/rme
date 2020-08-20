@@ -29,11 +29,20 @@
             <dl>
                 <dt>&commat;font-face</dt>
                 <dd>
-                    The @font-face CSS at-rule specifies a custom font with which to display text
+                    The &commat;font-face CSS at-rule specifies a custom font with which to display text
                 </dd>
                 <dd>
                     The font can be loaded from either a remote server or a locally-installed font on the user's own
                     computer.
+                </dd>
+                <dt>at-rule</dt>
+                <dd>At-rules are CSS statements that instructs CSS how to behave.</dd>
+                <dd>
+                    They begin with an at sign, '&commat;'
+                    (U+0040 COMMERCIAL AT), 
+                    followed by an identifier and includes everything up to the next semicolon, ';' 
+                    (U+003B SEMICOLON), 
+                    or the next CSS block, whichever comes first.
                 </dd>
             </dl>
         </main>
@@ -114,7 +123,8 @@ src: url(ideal-sans-serif.woff) format("woff"),
                     </dd>
                     <dt><code>local()</code></dt>
                     <dd>
-                        The <code>local()</code> function may be used to specify a font name to look for on the user's computer
+                        The <code>local()</code> function may be used to specify a font name to look for on the user's
+                        computer
                     </dd>
                     <dt>References</dt>
                     <dd>
