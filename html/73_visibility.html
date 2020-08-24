@@ -1,17 +1,67 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <!-- <link rel="stylesheet" href="../css/rme.css"> -->
+    <style>
+        .indent {
+            text-indent: 2vw;
+        }
+
+        .visibility_values {
+            counter-reset: visibility-values;
+        }
+
+        code.count::before {
+            counter-increment: visibility-values;
+            content: counter(visibility-values) "-";
+        }
+
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>visibility</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>visibility</dt>
+                <dd>
+                    The <code>visibility</code> CSS property shows or hides an element without changing the layout of a
+                    document.
+                </dd>
+                <dd>
+                    The property can also hide rows or columns in a <code>table</code>
+                </dd>
+                <dt class="visibility_values">values</dt>
+                <dd><code class="count">visible</code></dd>
+                <dd class="indent">The elemental box is visible</dd>
+                <dd><code class="count">hidden</code></dd>
+                <dd class="indent">
+                    The element box is invisible (not drawn), <em>but still affects layout as normal</em>.
+                </dd>
+                <dd class="indent">
+                    Descendants of the element will be visible if they have <code>visibility</code> set to <code>visible</code>.
+                </dd>
+                <dd class="indent">
+                    The element cannot receive focus (such as when navigating through tab indexes).</dd>
+                <dd><code class="count">collapse</code></dd>
+                <dd class="indent">
+                    For <code>table</code> rows, columns, column groups, and row groups, the row(s) or column(s) are hidden and the space they would have occupied is removed
+                </dd>
+                <dd class="indent">
+                    (It is as if <code>display: none</code> were applied to the column/row of the table).
+                </dd>
+                <dd class="indent">
+                    However, the size of other rows and columns is still calculated as though the cells in the collapsed
+                    row(s) or column(s) are present.
+                </dd>
+                <dd class="indent">
+                    For other elements, <code>collapse</code> is treated the same as <code>hidden</code>.
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +84,42 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt><code>collapse</code></dt>
+                    <dd>
+                        Support for <code>visibility: collapse</code> is missing or partially incorrect in some modern
+                        browsers.
+                    </dd>
+                    <dd>
+                        It may not be correctly treated like <code>visibility: hidden</code> on elements other than
+                        table rows and columns.
+                    </dd>
+                    <dt><code> display:none</code></dt>
+                    <dd>
+                        To both hide an element and remove it from the document layout, set the <code>display</code>
+                        property to <code>none</code> instead of using <code>visibility</code>.
+                    </dd>
+                    <dt>W3Schools Tip</dt>
+                    <dd>
+                        Tip: Hidden elements take up space on the page. Use the <code>display</code> property to both
+                        hide and remove an element from the document layout!
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/visibility">MDN: visibility</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3schools.com/CSSref/pr_class_visibility.asp">
+                                w3Schools: CSS visibility Property</a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
