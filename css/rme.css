@@ -4,6 +4,8 @@
     --mono-one: "Inconsolata", monospace;
     --font-main: 1.1rem/1.5 var(--sans-one);
     --stroke-style: blue;
+    --div-one-color: red;
+    --div-two-color: green;
 }
 
 body {
@@ -804,6 +806,59 @@ div.at_font_face_container {
     padding-top: 1em;
 }
 
+
+.visibility_values {
+    counter-reset: visibility-values;
+}
+
+.visibility_values~dd>code.count::before {
+    counter-increment: visibility-values;
+    content: counter(visibility-values) "-";
+}
+
+div.visibility_container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+div.vis_one,
+div.vis_two {
+    line-height: 10vh;
+    height: 10vh;
+    width: 10vw;
+    margin: auto;
+    text-align: center;
+    background-color: var(--div-one-color);
+    float: left;
+}
+
+div.vis_two {
+    background-color: var(--div-two-color);
+}
+
+.vis_btns_wrapper {
+    clear: both;
+}
+
+#tog_vis,
+#tog_display {
+    border: 0;
+    height: 8vh;
+    margin-top: 1vh;
+    background-color:lightgoldenrodyellow;
+}
+
+#tog_vis:hover, #tog_display:hover {
+    color: green;
+    background-color:lightgray;
+}
+
+#tog_vis:active, #tog_display:active {
+    background-color:white;
+    border: 1px solid lightgray;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
@@ -827,8 +882,6 @@ div.at_font_face_container {
     }
 
 }
-
-
 
 @media screen and (min-width:700px) {
 

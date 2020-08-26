@@ -6,6 +6,11 @@
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
     <!-- <link rel="stylesheet" href="../css/rme.css"> -->
     <style>
+        :root {
+            --div-one-color: red;
+            --div-two-color: green;
+        }
+
         .indent {
             text-indent: 2vw;
         }
@@ -14,12 +19,69 @@
             counter-reset: visibility-values;
         }
 
-        code.count::before {
+        .visibility_values~dd>code.count::before {
             counter-increment: visibility-values;
             content: counter(visibility-values) "-";
         }
 
+        div.visibility_container {
+            position: relative;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        div.vis_one,
+        div.vis_two {
+            line-height: 10vh;
+            height: 10vh;
+            width: 10vw;
+            margin: auto;
+            text-align: center;
+            background-color: var(--div-one-color);
+            float: left;
+        }
+
+        div.vis_two {
+            background-color: var(--div-two-color);
+        }
+
+        .vis_btns_wrapper {
+            clear: both;
+        }
+
+        #tog_vis,
+        #tog_display {
+            border: 2px solid gray;
+            height: 5vh;
+            margin-top: 1vh;
+            background-color: lightgray;
+        }
     </style>
+    <script>
+        function init() {
+
+            document.getElementById('tog_vis').addEventListener('click', function () {
+                toggleVis(document.getElementsByClassName('vis_one')[0]);
+            });
+
+            document.getElementById('tog_display').addEventListener('click', function () {
+                toggleDisplay(document.getElementsByClassName('vis_one')[0]);
+            });
+
+            function toggleVis(x) {
+                x.style.visibility !== 'hidden' ? x.style.visibility = 'hidden' : x.style.visibility = 'visible';
+            }
+
+            function toggleDisplay(x) {
+                x.style.display !== 'none' ? x.style.display = 'none' : x.style.display = '';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            init();
+        });
+    </script>
+
 </head>
 
 <body>
@@ -44,13 +106,15 @@
                     The element box is invisible (not drawn), <em>but still affects layout as normal</em>.
                 </dd>
                 <dd class="indent">
-                    Descendants of the element will be visible if they have <code>visibility</code> set to <code>visible</code>.
+                    Descendants of the element will be visible if they have <code>visibility</code> set to
+                    <code>visible</code>.
                 </dd>
                 <dd class="indent">
                     The element cannot receive focus (such as when navigating through tab indexes).</dd>
                 <dd><code class="count">collapse</code></dd>
                 <dd class="indent">
-                    For <code>table</code> rows, columns, column groups, and row groups, the row(s) or column(s) are hidden and the space they would have occupied is removed
+                    For <code>table</code> rows, columns, column groups, and row groups, the row(s) or column(s) are
+                    hidden and the space they would have occupied is removed
                 </dd>
                 <dd class="indent">
                     (It is as if <code>display: none</code> were applied to the column/row of the table).
@@ -76,9 +140,15 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+
+                <div class="visibility_container">
+                    <div class="vis_one"></div>
+                    <div class="vis_two"></div>
+                    <div class="vis_btns_wrapper">
+                        <button id="tog_vis">Toggle <code>visibility:hidden</code></button>
+                        <button id="tog_display">Toggle <code>display:none</code></button>
+                    </div>
+                </div>
             </details>
         </div>
         <div class="notes">

@@ -134,8 +134,8 @@ let pageData = (function () {
     "x_33_margin_collapse.html",
     "x_34_border_shorthand.html",
     "x_36_html5_w3c_css.html",
-    "x_42_triangles_css.html",  
-    "x_44_font-face_at-rule.html",  
+    "x_42_triangles_css.html",
+    "x_44_font-face_at-rule.html",
   ];
 
 })();
@@ -168,9 +168,9 @@ let pageData = (function () {
       toggleClass('div-five', 'absolute', 'Absolute');
       toggleClass('div-six', 'absolute', 'Absolute');
       createStyleSheet();
-      document.getElementById('inheritance_example_btn').addEventListener('click',
-        toggle_anchor_class);
-
+      inheritanceEventListener(); 
+      togVisEventListener();
+      togDisplayEventListener();
     };
   }
 
@@ -192,7 +192,7 @@ let pageData = (function () {
   }
 
   function callback() {
-    console.log('hello');
+    console.log('hello from callback');
   }
 
   function sectionForward() {
@@ -260,7 +260,6 @@ let pageData = (function () {
     document.getElementById('close_all').style.display = 'inline';
     document.getElementById('open_all_two').style.display = 'none';
   }
-
 
   function toggleClass(id, toggleClass, toggleMsg) {
     if (document.getElementById(id)) {
@@ -366,7 +365,6 @@ let pageData = (function () {
     }
     return tmp;
   }
-  // console.log(generateParams('lorem', 'ipsum', 'corona', 'virux'))
 
   function upperCaseFirstLetter(str) {
     return `${str.trim().charAt(0).toUpperCase()}${str.trim().substring(1)}`;
@@ -663,6 +661,40 @@ let pageData = (function () {
       sheet.disabled = true;
       this.innerHTML = 'Add Class';
       document.getElementById('inheritance_added_css_class').style.visibility = "hidden";
+    }
+  }
+
+  function inheritanceEventListener() {
+    let x = document.getElementById('inheritance_example_btn');
+    if (x) {
+      x.addEventListener('click', toggle_anchor_class);
+    }
+  }
+
+
+  function toggleVis(x) {
+    x.style.visibility !== 'hidden' ? x.style.visibility = 'hidden' : x.style.visibility = 'visible';
+  }
+  function toggleDisplay(x) {
+    x.style.display !== 'none' ? x.style.display = 'none' : x.style.display = '';
+  }
+  function togVisEventListener() {
+    let y = document.getElementById('tog_vis');
+    if (y) {
+      y.addEventListener('click', function (event) {
+        event.preventDefault();
+        toggleVis(document.getElementsByClassName('vis_one')[0]);
+      });
+    }
+
+  }
+
+  function togDisplayEventListener() {
+    let x = document.getElementById('tog_display');
+    if (x) {
+      x.addEventListener('click', function () {
+        toggleDisplay(document.getElementsByClassName('vis_one')[0]);
+      });
     }
   }
 
