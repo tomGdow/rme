@@ -156,7 +156,7 @@ let pageData = (function () {
       document.getElementsByClassName('syntax')[0].innerHTML = htmlDoc.body.firstElementChild.children[3].innerHTML;
       document.getElementsByClassName('examples')[0].innerHTML = htmlDoc.body.firstElementChild.children[4].innerHTML;
       document.getElementsByClassName('notes')[0].innerHTML = htmlDoc.body.firstElementChild.children[5].innerHTML;
-      document.getElementsByClassName('file_name')[0].innerHTML = pageOrder[pageCounter];
+      document.getElementsByClassName('file_name')[0].innerHTML = `<a href="../html/${pageOrder[pageCounter]}" target="_blank">${pageOrder[pageCounter]}</a>`;
       drawOnCanvas();
       cb();
       closeAllTwo();
@@ -168,9 +168,10 @@ let pageData = (function () {
       toggleClass('div-five', 'absolute', 'Absolute');
       toggleClass('div-six', 'absolute', 'Absolute');
       createStyleSheet();
-      inheritanceEventListener(); 
+      inheritanceEventListener();
       togVisEventListener();
       togDisplayEventListener();
+      viewportEventListenerHelper();
     };
   }
 
@@ -697,6 +698,46 @@ let pageData = (function () {
       });
     }
   }
+
+  function viewportTableHover(x, y, color) {
+    x.addEventListener('mouseover', function () {
+      x.style.backgroundColor = color;
+      y.style.backgroundColor = color;
+    })
+
+    y.addEventListener('mouseover', function () {
+      x.style.backgroundColor = color;
+      y.style.backgroundColor = color;
+    })
+
+    x.addEventListener('mouseout', function () {
+      x.style.backgroundColor = 'initial';
+      y.style.backgroundColor = 'initial';
+
+    })
+
+    y.addEventListener('mouseout', function () {
+      x.style.backgroundColor = 'initial';
+      y.style.backgroundColor = 'initial';
+
+    })
+  }
+
+  function viewportEventListenerHelper() {
+    if (document.getElementById('viewport_expt_3')) {
+      let temp = document.getElementById('viewport_expt_3');
+      let x = temp.querySelectorAll('tr')[1];
+      let y = temp.querySelectorAll('tr')[2];
+      let x2 = temp.querySelectorAll('tr')[3];
+      let y2 = temp.querySelectorAll('tr')[4];
+      let x3 = temp.querySelectorAll('tr')[5];
+      let y3 = temp.querySelectorAll('tr')[6];
+      viewportTableHover(x, y, 'lightgray');
+      viewportTableHover(x2, y2, 'lightgray');
+      viewportTableHover(x3, y3, 'lightgray');
+    }
+  }
+
 
 })(pageData);
 

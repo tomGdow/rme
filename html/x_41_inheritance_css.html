@@ -30,6 +30,39 @@
 
         }
     </style>
+    <script> 
+    function init () {
+        createStyleSheet();
+
+        function createStyleSheet() {
+            var sheet = document.createElement('style');
+            var txt = document.createTextNode("a {color:red}");
+            sheet.appendChild(txt);
+            sheet.id = 'sheet';
+            document.getElementsByTagName('head')[0].appendChild(sheet);
+            sheet.disabled = true;
+        }
+
+        function toggle_anchor_class() {
+            var sheet = document.getElementById('sheet');
+            if (sheet.disabled === true) {
+                sheet.disabled = false;
+                this.innerHTML = "Remove Class"
+                document.getElementById('inheritance_added_css_class').style.visibility = "visible";
+            } else {
+                sheet.disabled = true;
+                this.innerHTML = 'Add Class';
+                document.getElementById('inheritance_added_css_class').style.visibility = "hidden";
+            }
+        }
+
+        document.getElementById('inheritance_example_btn').addEventListener('click',
+            toggle_anchor_class)
+    }
+    document.addEventListener('DOMContentLoaded', (event) => {
+        init();
+    });
+    </script>
 </head>
 
 <body>
@@ -192,36 +225,6 @@ document.getElementById('inheritance_example_btn').addEventListener('click',
         </div>
     </div>
 
-    <script> 
-    /*
-        createStyleSheet();
-
-        function createStyleSheet() {
-            var sheet = document.createElement('style');
-            var txt = document.createTextNode("a {color:red}");
-            sheet.appendChild(txt);
-            sheet.id = 'sheet';
-            document.getElementsByTagName('head')[0].appendChild(sheet);
-            sheet.disabled = true;
-        }
-
-        function toggle_anchor_class() {
-            var sheet = document.getElementById('sheet');
-            if (sheet.disabled === true) {
-                sheet.disabled = false;
-                this.innerHTML = "Remove Class"
-                document.getElementById('inheritance_added_css_class').style.visibility = "visible";
-            } else {
-                sheet.disabled = true;
-                this.innerHTML = 'Add Class';
-                document.getElementById('inheritance_added_css_class').style.visibility = "hidden";
-            }
-        }
-
-        document.getElementById('inheritance_example_btn').addEventListener('click',
-            toggle_anchor_class)
-            */
-    </script>
 </body>
 
 </html>

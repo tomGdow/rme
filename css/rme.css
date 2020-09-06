@@ -846,17 +846,73 @@ div.vis_two {
     border: 0;
     height: 8vh;
     margin-top: 1vh;
-    background-color:lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow;
 }
 
-#tog_vis:hover, #tog_display:hover {
+#tog_vis:hover,
+#tog_display:hover {
     color: green;
-    background-color:lightgray;
+    background-color: lightgray;
 }
 
-#tog_vis:active, #tog_display:active {
-    background-color:white;
+#tog_vis:active,
+#tog_display:active {
+    background-color: white;
     border: 1px solid lightgray;
+}
+
+
+#viewport_img_one,
+#viewport_img_two {
+    transition: all 2s;
+}
+
+#viewport_img_one:hover,
+#viewport_img_two:hover {
+
+    width: 100%;
+    height: 100%;
+}
+
+table.viewport_expts {
+    caption-side: bottom;
+    margin-top: 1em;
+    font-size: 0.8rem;
+}
+
+table.viewport_expts caption {
+    margin-top: 1em;
+}
+
+table.viewport_expts,
+table.viewport_expts td,
+table.viewport_expts span,
+table.viewport_expts th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+table.viewport_expts span {
+    border:none;
+}
+
+
+table.viewport_expts td,
+table.viewport_expts th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.true_expt {
+    background-color: lightgoldenrodyellow;
+
+}
+
+table td.false_expt,
+table span.false_expt {
+    background-color: lightblue;
 }
 
 @font-face {

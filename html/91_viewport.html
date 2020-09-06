@@ -1,17 +1,192 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        #viewport_img_one,
+        #viewport_img_two {
+            transition: all 2s;
+        }
+
+        #viewport_img_one:hover,
+        #viewport_img_two:hover {
+            width: 100%;
+            height: 100%;
+        }
+
+        table.viewport_expts {
+            caption-side: bottom;
+            margin-top: 1em;
+            empty-cells: hide;
+        }
+
+        table.viewport_expts caption {
+            margin-top: 1em;
+        }
+
+        table.viewport_expts,
+        table.viewport_expts td,
+        table.viewport_expts th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0.2em;
+        }
+
+        table.viewport_expts td,
+        table.viewport_expts th {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .true_expt {
+            background-color: lightgoldenrodyellow;
+        }
+
+        table td.false_expt,
+        table span.false_expt {
+            background-color: lightblue;
+        }
+
+        table col.col_hidden {
+            background-color: red;
+            /* display:none; */
+        }
+
+        .hide_mobile {
+            display: none;
+        }
+
+        .make_yellow {
+            background-color:lightgoldenrodyellow;
+        }
+
+        @media screen and (min-width: 1105px) {
+            .hide_mobile {
+                display: inline;
+            }
+
+            .show_large {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+            .make_blue {
+                background-color: lightblue;
+            }
+        }
+
+        /* table.viewport_expts:hover tbody tr:nth-child(4n-2) td:nth-child(-n+4) {
+        /* table.viewport_expts:hover tr:nth-child(4n-2) td:nth-child(-n+4){ */
+    </style>
+    <script>
+        function viewportTableHover(x, y, color) {
+            x.addEventListener('mouseover', function () {
+                x.style.backgroundColor = color;
+                y.style.backgroundColor = color;
+            })
+
+            y.addEventListener('mouseover', function () {
+                x.style.backgroundColor = color;
+                y.style.backgroundColor = color;
+            })
+
+            x.addEventListener('mouseout', function () {
+                x.style.backgroundColor = 'initial';
+                y.style.backgroundColor = 'initial';
+
+            })
+
+            y.addEventListener('mouseout', function () {
+                x.style.backgroundColor = 'initial';
+                y.style.backgroundColor = 'initial';
+
+            })
+        }
+
+        function viewportEventListenerHelper() {
+            if (document.getElementById('viewport_expt_3')) {
+                let temp = document.getElementById('viewport_expt_3');
+                let x = temp.querySelectorAll('tr')[1];
+                let y = temp.querySelectorAll('tr')[2];
+                let x2 = temp.querySelectorAll('tr')[3];
+                let y2 = temp.querySelectorAll('tr')[4];
+                let x3 = temp.querySelectorAll('tr')[5];
+                let y3 = temp.querySelectorAll('tr')[6];
+                viewportTableHover(x, y, 'lightgray');
+                viewportTableHover(x2, y2, 'lightgray');
+                viewportTableHover(x3, y3, 'lightgray');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            viewportEventListenerHelper();
+             this.addEventListener('resize', function () {
+            document.getElementById('window_inner_width').value=window.innerWidth;
+        })
+
+        })
+    </script>
 </head>
+
 <body>
     <div class="container">
         <header>viewport</header>
         <div class="counter">xx</div>
         <main>
+            <div>innerWidth <output id="window_inner_width"></output></div>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>Rule One</dt>
+                <dd>
+                    <blockquote>
+                        If
+                        <code>&commat;media (min-width) &le; viewport-width</code>
+                        (meta tag defined), then
+                        <em>on mobile device</em>,
+                        the media query will work.
+                    </blockquote>
+                </dd>
+                <dt>Rule Two</dt>
+                <dd>
+                    <blockquote>
+                        If
+                        <code>&commat;media(max-width) &ge; viewport-width</code>
+                        (meta tag defined), then
+                        <em>on mobile device</em>,
+                        the media query will work.
+                    </blockquote>
+                </dd>
+                <dt>
+                    Rule Three
+                </dt>
+                <dd>
+                    <blockquote>
+                        <code>Rule One</code> and
+                        <code>Rule Two</code>
+                        do not apply to browsers,
+                        and <em>apparently</em> do not apply to iPad (768px)
+                    </blockquote>
+                </dd>
+                <dt>Rule Four</dt>
+                <dd>
+                    <blockquote>
+                        For
+                        <code>&commat;media(min-width:value)</code>, the media query will work (in browser) for values
+                        <em>greater than</em> <code>value</code>
+                    </blockquote>
+                </dd>
+                <dt>Rule Five</dt>
+                <dd>
+                    <blockquote>
+                        For
+                        <code>&commat;media(max-width:value)</code>, the media query will work (in browser) for values
+                        <em>less than</em> <code>value</code>
+                    </blockquote>
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -26,19 +201,628 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <dl>
+                    <dt>Experiment One</dt>
+                    <dd>
+                        <details>
+                            <summary>CSS</summary>
+                            <pre>
+div.container {
+    background-color: blue;
+}
+
+@media screen and (min-width: &lt;value&gt;) {
+    div.container {
+        background-color: lightgoldenrodyellow;
+    }
+}
+                     </pre>
+                        </details>
+                        <details>
+                            <summary>HTML</summary>
+                            <pre>
+&lt;meta name="viewport" content="width=&lt;value&gt;, initial-scale=1.0" &gt; 
+                    </pre>
+                        </details>
+                        <details>
+                            <summary>Experiment One (Results)</summary>
+                            <table class="viewport_expts">
+                                <caption><code>
+                                        &commat; media (min-width) &le; viewport-width ? True : False
+                                    </code></caption>
+                                <tr>
+                                    <th class="expt">Expt</th>
+                                    <th class="meta_tag">&lt;meta&gt;?</th>
+                                    <th class="viewport_width">viewport width</th>
+                                    <th class="at_media_width">&commat;media <br>(min-width)</th>
+                                    <th class="at_rule_one">&commat;media &le; VW?</th>
+                                    <th class="mobile">Mobile (iPhone)</th>
+                                    <th class="ipad">iPad (768px)</th>
+                                    <th class="browser">Browser</th>
+                                    <th class="expt_comment">comment</th>
+                                </tr>
+                                <tr>
+                                    <td class="expt">1</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">600</td>
+                                    <td class="at_media_width">598px</td>
+                                    <td class="at_rule_one true_expt">True (iPhone iPad)</td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 598, Blue below 598</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">2</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">660</td>
+                                    <td class="at_media_width">598px</td>
+                                    <td class="at_rule_one true_expt">True (iPhone, iPad)</td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 598, Blue below 598</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">3</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">598</td>
+                                    <td class="at_media_width">600px</td>
+                                    <td class="at_rule_one false_expt">False (iPhone)<span class="true_expt"> true
+                                            (iPad)</span></td>
+                                    <td class="mobile false_expt">Blue</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 600, Blue below 600</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">4</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">598</td>
+                                    <td class="at_media_width">700px</td>
+                                    <td class="at_rule_one false_expt">False (iPhone) <span class="true_expt">true
+                                            (iPad) </span></td>
+                                    <td class="mobile false_expt">Blue</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 700, Blue below 700</td>
+                                    <td class="expt_comment">Ok</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">5</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">598</td>
+                                    <td class="at_media_width">769px</td>
+                                    <td class="at_rule_one false_expt">False (iPhone, iPad)</td>
+                                    <td class="mobile false_expt">Blue</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow above 769, Blue below 769</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">6</td>
+                                    <td class="meta_tag">No! (&lt;!-- --&gt;)</td>
+                                    <td class="viewport_width">!not relevant</td>
+                                    <td class="at_media_width">600px</td>
+                                    <td class="at_rule_one true_expt">True (by default)</td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 600, Blue below 600</td>
+                                    <td class="expt_comment">defaults to 980</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">7</td>
+                                    <td class="meta_tag">No! (&lt;!-- --&gt;)</td>
+                                    <td class="viewport_width">!not relevant</td>
+                                    <td class="at_media_width">800px</td>
+                                    <td class="at_rule_one true_expt">True (iphone, default) <span
+                                            class="false_expt">false (iPad)</span></td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 800, Blue below 800</td>
+                                    <td class="expt_comment">!! iPad</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">9</td>
+                                    <td class="meta_tag">Yes</td>
+                                    <td class="viewport_width">device-width</td>
+                                    <td class="at_media_width">600px</td>
+                                    <td class="mobile false_expt">Blue</td>
+                                    <td class="at_rule_one false_expt">false (iphone),<span class="true_expt">true
+                                            (iPad) </span></td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow above 600, Blue below 600</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">10</td>
+                                    <td class="meta_tag">Yes</td>
+                                    <td class="viewport_width">device-width</td>
+                                    <td class="at_media_width">800px</td>
+                                    <td class="at_rule_one false_expt">False (iphone,iPad)</td>
+                                    <td class="mobile false_expt">Blue</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow above 800, Blue below 800</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                            </table>
+                        </details>
+                        <details>
+                            <summary>Description</summary>
+                            <p>Upload to Digital Ocean server a single html file with internal style sheet containing a
+                                single media query</p>
+                            <p>Page at <code>expt.tomgdow.com</code></p>
+                            <p>Observe behaviour on iPhone 7</p>
+                            <p>Observed behaviour on Firefox browser (with iPad and iPhone simulation)</p>
+                            <p>Background is yellow if &commat;media is working</p>
+                            <p>Background is blue if &commat;media is <em>not</em> working</p>
+                        </details>
+                        <details>
+                            <summary>Full Digital Ocean File (Sample)</summary>
+                            <pre>
+                    &lt;!DOCTYPE html&gt;	
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+     &lt;meta name="viewport" content="width=598, initial-scale=1.0" &gt; 
+    &lt;meta name="description" content="Viewport practice"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;meta name="keywords" content="viewport, device-width, apple"&gt;
+    &lt;style&gt;
+        body {
+          border: 2px solid black;
+          background-color: gray;
+        }
+          
+        div.container {
+            width: 600px;
+            border: 2px solid violet;
+            margin: 0 auto;
+            background-color: blue;
+        }
+
+		@media screen and (min-width: 600px) {
+            div.container {
+                background-color: lightgoldenrodyellow;
+            }
+        }
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h2&gt;Hello from &commat;min&lt;/h2&gt;
+        &lt;p&gt;
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit obcaecati et reprehenderit porro officiis
+            tenetur ex, optio totam vitae corporis dolorum sit quo sint quod illo quisquam repellat facilis eos, non
+            officia mollitia. Atque commodi, eos maiores provident excepturi quibusdam quis quae unde est, doloremque
+            perferendis nihil consequatur voluptas omnis repudiandae. Tempore recusandae modi dolore perspiciatis ipsum
+            quia eius nam, excepturi maxime, autem facere cumque eaque vitae, suscipit quam reprehenderit dicta sint
+            perferendis culpa reiciendis nihil. Ab, facere eaque? Minus numquam qui possimus maxime odio dolorum
+            blanditiis nisi magnam nihil ipsum sequi eos recusandae repudiandae accusamus, eaque iusto veniam ea,
+            impedit vitae rerum assumenda iste veritatis! Recusandae nostrum culpa voluptatum veritatis dolores optio
+            neque officia nobis repellat, laudantium nihil dolorem sequi, nulla odit amet veniam explicabo suscipit
+            fugiat, illo similique tenetur libero? Itaque, voluptatibus repellat? Repellat molestiae beatae id dolorum
+            et veritatis repudiandae quis magnam, modi in soluta vel debitis! Earum repellendus non ea laboriosam cumque
+            dignissimos dolor voluptatem consequuntur quaerat, magnam, quisquam illo quibusdam quia neque vel ut! Magnam
+            temporibus perferendis iste iusto ea quia ab? Minus, necessitatibus iure consequatur et quaerat at nemo?
+            Alias id quam, assumenda consectetur itaque eos laudantium eveniet iusto suscipit soluta ad aspernatur
+            dolorem porro veniam rem, reprehenderit odio reiciendis vero cumque. Repellendus quasi aliquid praesentium
+            iure odio alias provident, modi mollitia iusto officia? A nisi dolor, cupiditate quo obcaecati aliquam quam
+            sunt maxime! Perferendis aliquid est consequatur asperiores illum, vitae sunt porro unde. Rem, illum dolore?
+            Nobis alias obcaecati sed at est iste quos, debitis perferendis quasi? Earum praesentium quam sapiente, modi
+            nihil ipsa eius rem libero dolor eos laborum animi quis nam. Reiciendis doloremque nesciunt dolor rem,
+            voluptate doloribus suscipit? Aperiam delectus ducimus, ipsum dignissimos nobis doloribus. Eos vitae soluta
+            nisi assumenda ut magnam ad corporis saepe laboriosam quisquam nam, repudiandae recusandae veritatis
+            commodi. Velit enim repellendus sequi non adipisci aliquid aspernatur quidem vel libero blanditiis
+            consequuntur modi vitae natus amet, voluptate consectetur delectus nesciunt autem accusamus aliquam sed?
+            Alias harum incidunt quos perspiciatis deleniti, est recusandae. Accusantium quis dolorem temporibus soluta
+            alias tenetur iusto obcaecati similique! Aliquid ipsam, consequuntur voluptas, veritatis voluptatibus sit
+            facere ipsa ratione doloremque, ullam laudantium optio quas officia saepe! Ipsum laborum alias laboriosam
+            nemo veniam ducimus doloremque porro quae. Ipsa maxime, repudiandae rerum necessitatibus aliquid dicta
+            voluptatum sint blanditiis, illum qui nam saepe non provident, nesciunt quasi molestias. Sequi, saepe eos
+            eius quaerat sint possimus cupiditate assumenda? Animi quis dolorum praesentium blanditiis tempora inventore
+            sit tenetur beatae eos doloremque cum reprehenderit vitae recusandae, harum distinctio. Vitae voluptatibus
+            modi beatae repellat cumque reprehenderit quisquam aperiam ad consectetur, perferendis quaerat atque eius
+            nulla nemo tempora totam veritatis at ab, molestias et! Maxime inventore nesciunt ad hic ipsum amet
+            excepturi fuga tempora consectetur perspiciatis! Dignissimos consequuntur blanditiis itaque minima mollitia
+            laborum recusandae voluptates, tempore iusto nesciunt aspernatur? Reiciendis fuga sunt voluptatum ea quaerat
+            cupiditate illo. Reiciendis ullam nihil hic quis saepe illo dicta sunt quibusdam explicabo dolorum, cumque
+            officiis corporis voluptatum laboriosam! Assumenda officiis odio sunt quisquam, accusantium facere beatae
+            eveniet tempora, deserunt molestias pariatur obcaecati dolorum quos distinctio atque laudantium neque,
+            tempore recusandae natus ab id possimus. Cupiditate quis iure non molestiae ab velit ut earum sunt ducimus?
+            Labore ipsam optio commodi distinctio! Nemo laboriosam quam libero sapiente provident nihil accusantium
+            ratione. Reiciendis ducimus accusamus accusantium vero amet rem, omnis eaque unde et est eligendi. Adipisci,
+            architecto tenetur. Rerum, voluptates sint nulla numquam assumenda quas accusamus nam dicta doloribus
+            reiciendis quasi sapiente impedit fugiat, quia obcaecati libero veritatis dolor nesciunt aspernatur. Optio,
+            incidunt, amet nam commodi, tempore ipsam deleniti ab minima consequatur autem illo placeat deserunt ratione
+            quos? Recusandae voluptates cumque fuga quas iste pariatur nisi temporibus voluptate totam, quibusdam
+            ratione ut officia optio saepe voluptatem nesciunt repellat nobis at corporis, excepturi id consectetur
+            facere. Sit perferendis nulla itaque perspiciatis aliquam harum, quasi et nesciunt natus numquam vitae
+            obcaecati neque. Culpa dolores consectetur illo voluptatem, repudiandae aut maxime, similique laborum harum
+            eum error quaerat molestias? Doloribus eum ex, eligendi dolore porro nesciunt aperiam aspernatur, qui
+            laboriosam animi, tempore perspiciatis obcaecati deserunt molestias aliquid voluptatibus tempora. Ducimus
+            voluptates error, quisquam soluta officia atque est quia doloremque a commodi quas eius eveniet, itaque
+            animi placeat veritatis odio, consequuntur velit accusamus reiciendis beatae! Dolor ipsam quam magnam
+            numquam tempore accusamus, nisi obcaecati ex cupiditate itaque corporis at consequuntur aspernatur
+            doloremque fuga fugiat voluptatem illum porro et, delectus nesciunt pariatur! A, dolorem optio quod
+            repudiandae nisi hic ipsum expedita molestiae excepturi quae laboriosam labore asperiores architecto animi
+            aliquam? Numquam veritatis dolorem repudiandae temporibus, quisquam voluptates inventore praesentium in rem
+            modi veniam, aliquam earum illum. Quae, suscipit hic aliquid modi voluptatem tenetur similique totam aperiam
+            aliquam eius! Consequuntur quam, facere nostrum aperiam ad illo nisi. Harum, eius. Voluptatem quasi
+            assumenda mollitia veniam minus deleniti delectus odit dicta, porro alias amet, cupiditate natus pariatur
+            optio! Voluptas dolore expedita quo dolorum optio ipsam ipsum quaerat hic similique eveniet libero quas
+            quasi ducimus, unde blanditiis delectus tenetur asperiores temporibus cum tempore? Corrupti at doloribus
+            velit corporis. Quas illo tenetur nemo! Reprehenderit debitis ullam, aperiam dolor nobis similique pariatur
+            voluptate sed quisquam in corporis ab quas alias iusto quos nihil distinctio! Facere eius ipsam quod fugiat
+            ex nesciunt, molestias accusantium tenetur sapiente id nobis labore unde sequi veniam ut deserunt rerum,
+            nemo porro. Magnam voluptas veniam perspiciatis, praesentium dolor error animi quae qui alias, rerum
+            distinctio reiciendis? Quo odio vel dolorum expedita accusantium nisi quas voluptas doloribus numquam
+            tempore eos placeat, itaque obcaecati quidem ducimus est aperiam ipsa? Dicta hic voluptatum, nobis dolor
+            deserunt atque officia consequuntur repellat quasi at. Quaerat voluptatem fuga nisi minus necessitatibus.
+            Reprehenderit eligendi odit suscipit architecto distinctio reiciendis culpa officiis, omnis perferendis
+            tenetur repudiandae maxime asperiores! Ut eligendi nostrum aut sed quas vero architecto culpa nemo.
+            Voluptatum tempora enim possimus obcaecati tempore, maiores ullam modi ut impedit error dolorem earum eaque
+            eum laudantium similique rerum quaerat consequatur itaque non natus suscipit pariatur distinctio minima.
+            Minima obcaecati iusto ipsum voluptatibus fuga officia dicta magni sed quibusdam, minus odio, atque ea
+            soluta, vel enim autem!
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+                </pre>
+                        </details>
+                    </dd>
+                    <dt>Experiment Two</dt>
+                    <dd>
+                        <details>
+                            <summary>Results</summary>
+
+                            <table class="viewport_expts">
+                                <caption><code>
+                                        &commat;media (max-width) &le; viewport-width ? True : False
+                                    </code></caption>
+                                <tr>
+                                    <th class="expt">Experiment</th>
+                                    <th class="meta_tag">Meta tag active?</th>
+                                    <th class="viewport_width">viewport width</th>
+                                    <th class="at_media_width">&commat;media(min-width)</th>
+                                    <th class="at_rule_one">&commat;media &ge; VW?</th>
+                                    <th class="mobile">Mobile (iPhone)</th>
+                                    <th class="ipad">iPad (768px)</th>
+                                    <th class="browser">Browser</th>
+                                    <th class="expt_comment">comment</th>
+                                </tr>
+                                <tr>
+                                    <td class="expt">11</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">device-width</td>
+                                    <td class="at_media_width">600px</td>
+                                    <td class="at_rule_two true_expt">True (iphone) <span class="false_expt">false
+                                            (iPad)</span></td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow below 600, Blue > 600</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">12</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">device-width</td>
+                                    <td class="at_media_width">800px</td>
+                                    <td class="at_rule_two true_expt">True (iphone, iPad)</td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow below 600, Blue > 600</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">13</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">device-width</td>
+                                    <td class="at_media_width">598px</td>
+                                    <td class="at_rule_two false_expt">False (iphone, iPad)</td>
+                                    <td class="mobile false_expt">Blue</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow below 598, Blue > 598</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">14</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">600</td>
+                                    <td class="at_media_width">600px</td>
+                                    <td class="at_rule_two true_expt">True (iphone)
+                                        <span class="false_expt">false (iPad)</span></td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow below 600, Blue > 600</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">15</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">598</td>
+                                    <td class="at_media_width">600px</td>
+                                    <td class="at_rule_two true_expt">True (iphone) <span class="false_expt">false
+                                            (iPad)</span></td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow below 600, Blue > 600</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">16</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">598</td>
+                                    <td class="at_media_width">700px</td>
+                                    <td class="at_rule_two true_expt">True (iphone) <span class="false_expt">false
+                                            (iPad)</span></td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad false_expt">Blue</td>
+                                    <td class="browser">Yellow below 700, Blue > 700</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                                <tr>
+                                    <td class="expt">17</td>
+                                    <td class="meta_tag">yes</td>
+                                    <td class="viewport_width">598</td>
+                                    <td class="at_media_width">800px</td>
+                                    <td class="at_rule_two true_expt">True (iphone, iPad)</td>
+                                    <td class="mobile true_expt">Yellow</td>
+                                    <td class="ipad true_expt">Yellow</td>
+                                    <td class="browser">Yellow below 700, Blue > 700</td>
+                                    <td class="expt_comment">OK</td>
+                                </tr>
+                            </table>
+                        </details>
+                    </dd>
+                    <dt>Experiment Three</dt>
+                    <dd>
+                        <details>
+                            <summary>Results</summary>
+                            <table class="viewport_expts" id="viewport_expt_3">
+                                <caption>
+                                    <code>
+                                        &commat;media(min-width) &commat;media(max-width) comparison
+                                    </code>
+                                </caption>
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="expt">Expt</th>
+                                        <th class="viewport_width">viewport<span class="hide_mobile"> width</span></th>
+                                        <th class="at_media_width">&commat;media <span class="hide_mobile">rule</span>
+                                        </th>
+                                        <th class="at_rule_one">Compare</th>
+                                        <th class="mobile">Mobile <span class="hide_mobile">(iPhone)</span></th>
+                                        <th class="ipad">iPad <span class="hide_mobile">(768px)</span></th>
+                                        <th class="browser">Browser</th>
+                                        <th class="expt_comment"><span class="hide_mobile">comment</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="expt">x1</td>
+                                        <td class="viewport_width">500</td>
+                                        <td class="at_media_width">500px</td>
+                                        <td class="at_rule_one">
+                                            <span class="hide_mobile">
+                                                <code>&commat;media(min-width) &le; VW ?</code>
+                                            </span>
+                                            <span class="show_large">
+                                                <code>(max-width)&le; VW</code>
+                                            </span>
+                                        </td>
+                                        <td class="mobile true_expt">True <span class="hide_mobile">(500 &le; 500
+                                                ?)</span></td>
+                                        <td class="ipad true_expt">True <span class="hide_mobile">(500 &le; 768
+                                                ?)</span></td>
+                                        <td class="browser">
+                                            Yellow &gt 500
+                                            <span class="hide_mobile">Blue &lt; 500</span> </td> 
+                                            <td class="expt_comment">
+                                                    <span class="hide_mobile">OK</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="expt">x2</td>
+                                        <td class="viewport_width">500</td>
+                                        <td class="at_media_width">500px</td>
+                                        <td class="at_rule_one">
+                                            <span class="hide_mobile">
+                                                <code>&commat;media(max-width) &ge; VW ? </code>
+                                            </span>
+                                            <span class="show_large">
+                                                <code>(max-width)&ge; VW</code>
+                                            </span>
+                                        </td>
+                                        <td class="mobile true_expt">True <span class="hide_mobile">(500 &ge; 500
+                                                ?)</span></td>
+                                        <td class="ipad false_expt">False <span class="hide_mobile">(500 &ge; 768
+                                                ?)</span></td>
+                                        <td class="browser">
+                                            <span class="make_yellow">Yellow &lt; 500 </span>
+                                            <span class="hide_mobile make_blue">Blue &gt; 500</span>
+                                        </td>
+                                        <td class="expt_comment"><span class="hide_mobile">OK</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="expt">x3</td>
+                                        <td class="viewport_width">500</td>
+                                        <td class="at_media_width">499px</td>
+                                        <td class="at_rule_one">
+                                            <span class="hide_mobile">
+                                                <code>&commat;media(min-width) &le; VW ?</code>
+                                            </span>
+                                            <span class="show_large">
+                                                <code>(max-width) &le; VW</code>
+                                            </span>
+                                        </td>
+                                        <td class="mobile true_expt">True
+                                            <span class="hide_mobile">(499 &le; 500 ?)</span>
+                                        </td>
+                                        <td class="ipad true_expt">True
+                                            <span class="hide_mobile">(499 &le; 768 ?)</span>
+                                        </td>
+                                        <td class="browser">Yellow > 499.
+                                            <span class="hide_mobile">Blue &lt; 499</span>
+                                        </td>
+                                        <td class="expt_comment">
+                                            <span class="hide_mobile">OK</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="expt">x4</td>
+                                        <td class="viewport_width">500</td>
+                                        <td class="at_media_width">499px</td>
+                                        <td class="at_rule_one">
+                                            <span class="hide_mobile">
+                                                <code>&commat;media(max-width) &ge; VW ? </code>
+                                            </span>
+                                            <span class="show_large">
+                                                <code>(max-width) &ge; VW</code>
+                                            </span>
+                                        </td>
+                                        <td class="mobile false_expt">
+                                            False
+                                            <span class="hide_mobile">(499 &ge; 500 ?)</span>
+                                        </td>
+                                        <td class="ipad false_expt">
+                                            False
+                                            <span class="hide_mobile">(499 &ge; 768 ?)</span>
+                                        </td>
+                                        <td class="browser">Yellow &lt; 499
+                                            <span class="hide_mobile">Blue &gt; 499</span>
+                                        </td>
+                                        <td class="expt_comment">
+                                            <span class="hide_mobile">OK</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="expt">x5</td>
+                                        <td class="viewport_width">500</td>
+                                        <td class="at_media_width">501px</td>
+                                        <td class="at_rule_one">
+                                            <span class="hide_mobile">
+                                                <code>&commat;media(min-width) &le; VW ?</code>
+                                            </span>
+                                            <span class="show_large">
+                                                <code>(max-width) &le; VW</code>
+                                            </span>
+                                        </td>
+                                        <td class="mobile false_expt">
+                                            False
+                                            <span class="hide_mobile">(501 &le; 500 ?)</span>
+                                        </td>
+                                        <td class="ipad true_expt">
+                                            True
+                                            <span class="hide_mobile">(501 &le; 768 ?)</span>
+                                        </td>
+                                        <td class="browser">
+                                            Yellow &gt; 501
+                                            <span class="hide_mobile">Blue &lt; 501</span>
+                                        </td>
+                                        <td class="expt_comment">
+                                            <span class="hide_mobile">OK</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="expt">x6</td>
+                                        <td class="viewport_width">500</td>
+                                        <td class="at_media_width">501px</td>
+                                        <td class="at_rule_one">
+                                            <span class="hide_mobile">
+                                                <code>&commat;media(max-width) &ge; VW ? </code>
+                                            </span>
+                                            <span class="show_large">
+                                                <code>(max-width) &ge; VW</code>
+                                            </span>
+                                        </td>
+                                        <td class="mobile true_expt">
+                                            True
+                                            <span class="hide_mobile">(501 &ge; 500 ?)</span>
+                                        </td>
+                                        <td class="ipad false_expt">
+                                            False
+                                            <span class="hide_mobile">(501 &ge; 768 ?)</span>
+                                        </td>
+                                        <td class="browser">
+                                            Yellow &lt; 501.
+                                            <span class="hide_mobile">Blue > 501</span>
+                                        </td>
+                                        <td class="expt_comment">
+                                            <span class="hide_mobile">OK</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </dd>
+                </dl>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>MeasureUp Exam Question</dt>
+                    <dd>
+                        <details>
+                            <summary>Question</summary>
+                            <figure>
+                                <picture>
+                                    <source srcset="../image/1_viewport_measureup.png">
+                                    <img id="viewport_img_one" src="/image/1_viewport_measureup.png"
+                                        alt="Viewport Exam question (part 1)" width=600 height=350>
+                                </picture>
+                                <figcaption>MeasureUp Exam Question (Part 1)</figcaption>
+                            </figure>
+                        </details>
+                    </dd>
+                    <dd>
+                        <details>
+                            <summary>Answer</summary>
+                            <figure>
+                                <picture>
+                                    <source srcset="../image/2_viewport_measureup.png">
+                                    <img id="viewport_img_two" src="./image/2_viewport_measureup.png"
+                                        alt="Viewport Exam question (part 2)" width=600 height=350>
+                                </picture>
+                            </figure>
+                        </details>
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a
+                                href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html">
+                                Configuring the Viewport
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag">
+                                Using the viewport meta tag to control layout on mobile browsers
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
