@@ -1,9 +1,11 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
         <header>max-width</header>
@@ -34,11 +36,54 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>Rachel Andrew on max-width</dt>
+                    <dd>
+                        An image has fixed dimensions and if it is larger than the viewport will cause a scrollbar.
+                    </dd>
+                    <dd>
+                        A common way to deal with this problem is to give all images a max-width of 100%.
+                    </dd>
+                    <dd>
+                        This will cause the image to shrink to fit the space it has,
+                        should the viewport size be smaller than the image.
+                    </dd>
+                    <dd>
+                        However because the max-width, rather than the width is 100%, the image will not stretch larger
+                        than its natural size.
+                    </dd>
+                    <dd>
+                        It is generally safe to add the following to your stylesheet so that you
+                        will never have a problem with images causing a scrollbar.
+                    </dd>
+                    <dd>
+                        <pre>
+img {
+     max-width: 100%;
+     display: block;
+     }
+                        </pre>
+                    </dd>
+                    <dd>
+                        When using max-width: 100% you are overriding the natural dimensions of the image,
+                        however you should still use the <code>width</code> and <code>height</code> attributes on your &lt;img&gt; tag.
+                    </dd>
+                    <dd>
+                        This is because modern browsers will use this information to reserve space for the image before
+                        it loads in, this will help to avoid layout shifts as content loads.
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://web.dev/responsive-web-design-basics/#set-the-viewport">
+                                Responsive web design basics (Rachel Andrew)
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
