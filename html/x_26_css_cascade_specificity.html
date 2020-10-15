@@ -1,82 +1,262 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .table-two {
+            table-layout: fixed;
+            margin: auto;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        .table-two caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+        }
+
+        .table-two .aa {
+            background: lightgoldenrodyellow;
+            font-size: .8rem;
+        }
+
+
+        .table-two tr:hover {
+            background-color:#f5f5f5;
+        }
+        .table-two tfoot  {
+            margin-top: 4rem;
+        }
+        
+        .table-two tfoot {
+            border: 10px solid white;
+        }
+
+        .table-two tfoot tr {
+            background-color:antiquewhite;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>CSS Cascade and Specificity</header>
         <div class="counter">xx</div>
         <main>
-                    <table class='table-two'>
-                        <caption>Style Sheet Levels and Specificity</caption>
-                        <colgroup>
-                            <col class="aa">
-                            <col >
-                            <col>
-                        </colgroup>
+            <table class='table-two'>
+                <caption>Table 2. Style Sheet Levels and Specificity</caption>
+                <colgroup>
+                    <col class="aa">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <tr>
+                    <td>Level 5</td>
+                    <td>!important (User)</td>
+                    <td><code>&lt;</code></td>
+                    <td><code>h2</code></td>
+                    <td><code>&lt;</code></td>
+                    <td><code>.class</code></td>
+                    <td><code> &lt;</code> </td>
+                    <td><code>#id</code></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Level 4</td>
+                    <td>!important (Author)</td>
+                    <td><code>&lt;</code></td>
+                    <td><code>h2</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>.class</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>#id</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>inline-style</code></td>
+                </tr>
+                <tr>
+                    <td>Level 3</td>
+                    <td>Author</td>
+                    <td><code>&lt;</code></td>
+                    <td><code>h2</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>.class</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>#id</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>inline-style</code></td>
+                </tr>
+                <tr>
+                    <td>Level 2</td>
+                    <td>User</td>
+                    <td><code> &lt;</code></td>
+                    <td><code>h2</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>.class</code></td>
+                    <td><code> &lt;</code></td>
+                    <td><code>#id</code></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Level 1</td>
+                    <td>User Agent</td>
+                    <td></td>
+                    <td><code>h2</code></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div>
+                <table class=table-two>
+                    <caption>
+                        Table 3. Calculating a selector's specificity
+                    </caption>
+                    <tbody>
                         <tr>
-                            <td>Level 5</td>
-                            <td>!important (User)</td>
-                            <td><code><</code></td>
-                            <td><code>h2</code></td>
-                            <td><code><</code></td>
-                            <td><code>#id</code></td>
-                            <td><code><</code></td>
-                            <td><code>.class</code></td>
-                            <td></td>
-                            <td></td>
+                            <td>(1)</td>
+                            <td>
+                                count the number of ID selectors in the selector (
+                                <code>=a</code>
+                                )
+                            </td>
                         </tr>
                         <tr>
-                            <td>Level 4</td>
-                            <td>!important (Author) </td>
-                            <td><code><</code></td>
-                            <td><code>h2</code></td>
-                            <td><code><</code></td>
-                            <td><code>#id</code></td>
-                            <td><code><</code></td>
-                            <td><code>.class</code></td>
-                            <td><code><</code></td>
-                            <td><code>inline-style</code></td>
+                            <td>(2)</td>
+                            <td>
+                                count the number of class selectors, attributes selectors, and pseudo-classes in the
+                                selector (
+                                <code>=b</code>
+                                )
+                            </td>
                         </tr>
                         <tr>
-                            <td>Level 3</td>
-                            <td>Author</td>
-                            <td><code><</code></td>
-                            <td><code>h2</code></td>
-                            <td><code><</code></td>
-                            <td><code>#id</code></td>
-                            <td><code><</code></td>
-                            <td><code>.class</code></td>
-                            <td><code><</code></td>
-                            <td><code>inline-style</code></td>
+                            <td>(3)</td>
+                            <td>
+                                count the number of type selectors and pseudo-elements in the selector (= c)
+                            </td>
                         </tr>
                         <tr>
-                            <td>Level 2</td>
-                            <td>User</td>
-                            <td><code><</code></td>
-                            <td><code>h2</code></td>
-                            <td><code><</code></td>
-                            <td><code>#id</code></td>
-                            <td><code><</code></td>
-                            <td><code>.class</code></td>
-                            <td></td>
-                            <td></td>
+                            <td>(4)</td>
+                            <td>
+                                ignore the universal selector
+                            </td>
                         </tr>
                         <tr>
-                            <td>Level 1</td>
-                            <td>User Agent</td>
-                            <td></td>
-                            <td><code>h2</code></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>(5)</td>
+                            <td>Concatenate the three numbers a-b-c to get the specificity. </td>
                         </tr>
-                        
-                    </table>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Note</td>
+                            <td>Selectors inside the negation pseudo-class are counted like any other</td>
+                        </tr>
+                        <tr>
+                            <td></td><!--deliberately empty-->
+                            <td>negation itself does not count as a pseudo-class.</td>
+                        </tr>
+                        <tr>
+                            <td>Ref</td>
+                            <td><a href="https://www.w3.org/TR/selectors-3/#specificity">
+                                    Calculating a selector's specificity (W3C)
+                                </a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div>
+                <table class="table-two">
+                    <caption>Table 4. Types of Selectors (Summary)</caption>
+                    <thead>
+                        <tr>
+                            <th>Pattern</th>
+                            <th>Represents</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>*</code></td>
+                            <td>Any Element</td>
+                            <td>Universal Selector</td>
+                        </tr>
+                        <tr>
+                            <td><code>E</code></td>
+                            <td>An Element of type <code>E</code></td>
+                            <td>Type Selector</td>
+                        </tr>
+                        <tr>
+                            <td> <code>E[foo]</code></td>
+                            <td>an E element with a "foo" attribute</td>
+                            <td>Attribute selector</td>
+                        </tr>
+                        <tr>
+                            <td><code>E:root</code></td>
+                            <td>an E element, root of the document</td>
+                            <td>(Structural) pseudo-class</td>
+                        </tr>
+                        <tr>
+                            <td><code>E::first-line</code></td>
+                            <td>the first formatted line of an E element</td>
+                            <td>pseudo-element</td>
+                        </tr>
+                        <tr>
+                            <td><code>E.warning</code></td>
+                            <td>an E element whose class is "warning"</td>
+                            <td>Class selector</td>
+                        </tr>
+                        <tr>
+                            <td><code>E#myid</code></td>
+                            <td>an E element with ID equal to "myid".</td>
+                            <td>ID selector</td>
+                        </tr>
+                        <tr>
+                            <td><code>E:not(s)</code></td>
+                            <td>an E element that does not match simple selector</td>
+                            <td>Negation pseudo-class</td>
+                        </tr>
+                        <tr>
+                            <td><code>E F</code>/td>
+                            <td>an F element descendant of an E element</td>
+                            <td>Descendant combinator</td>
+                        </tr>
+                        <tr>
+                            <td><code>E > F</code></td>
+                            <td>an F element child of an E element</td>
+                            <td>Child combinator</td>
+                        </tr>
+                        <tr>
+                            <td><code>E + F</code></td>
+                            <td>an F element immediately preceded by an E element</td>
+                            <td> Next-sibling combinator</td>
+                        </tr>
+                        <tr>
+                            <td><code>E ~ F</code></td>
+                            <td>an F element preceded by an E element</td>
+                            <td>Subsequent-sibling combinator</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <div class="syntax">
             <details>
@@ -98,11 +278,32 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p><a href="https://www.w3.org/TR/selectors-3/#specificity">9.
+                                Calculating a selector's
+                                specificity (W3C)</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3.org/TR/selectors-3/">
+                                Selectors Level 3 (W3C Recommendation 06 November 2018)
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.youtube.com/watch?v=8ddxfbnaIv0&t=453s">
+                                CSS Selectors with Estelle Weyl
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
