@@ -922,7 +922,7 @@ div.container-economist {
 }
 
 div.container-economist h2 {
-    background-color:yellow;
+    margin-bottom: 1em;
 }
 p.economist {
     --my-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
