@@ -4,6 +4,30 @@
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+
+        div.container-economist {
+            margin: auto;
+            width: 80%;
+        }
+
+        p.economist {
+            --my-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12pt;
+            line-height: 1.2;
+            font: 12pt/1.2 var(--my-font);
+        }
+
+        p.economist::first-letter {
+            font-size: 300%;
+            float: left;
+            color:brown;
+        }
+
+        p.economist span {
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -51,8 +75,60 @@ selector:pseudo-class {
         <div class="examples">
             <details>
                 <summary>examples</summary>
+    <div class="container-economist">
+            <h2>Drop Cap Initial Letter</h2>
+        <p class="economist">
+            <span>The first</span> few letters in the Economist are like I've typed them, hopefully. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Ea aperiam ad corporis vero sit odio libero? Ratione quasi qui eaque
+            neque atque optio est? Corrupti impedit alias ratione et quibusdam perspiciatis repellendus cupiditate,
+            aliquam harum sequi molestiae voluptas fugiat quasi dolore, quas laborum provident, iste tenetur vel. Rem
+            consectetur ea aperiam voluptatibus porro voluptatum illum autem, iusto facilis iste similique impedit.
+            Illo, perferendis velit. Tenetur, optio odio expedita unde ipsa, molestiae, non eius iste illum quaerat
+            maxime facilis est aperiam perferendis et ex debitis suscipit. Tenetur quidem reprehenderit veniam.
+            Reiciendis adipisci facilis aspernatur eligendi alias voluptates atque perspiciatis rerum veritatis.
+        (
+            <a href="https://www.w3.org/TR/selectors-3/#application-in-css">W3C Ref</a>
+        )</p>
+    </div>
+            </details><!-- examples -->
+        </div>
+        <div class="notes">
+            <details>
+                <summary>notes</summary>
+                <dl>
+                    <dt>Pseudo Element syntax </dt>
+                    <dd>
+                        You can use only one pseudo-element in a selector.
+                        <p class="indent">
+                            It must appear after the simple selectors in the statement.
+                        </p>
+                    </dd>
+                    <dd>
+                        As a rule, double colons (::) should be used instead of a single colon (:).
+                        <p class="indent">
+                            This distinguishes pseudo-classes from pseudo-elements.
+                        </p>
+                        <p class="indent">
+                            However, since this distinction was not present in older versions of the W3C spec, most
+                            browsers support both syntaxes.
+                        </p>
+                    </dd>
+                    <dt>Pseudo Class syntax</dt>
+                    <dd>
+                        Like regular classes, you can chain together as many pseudo-classes as you want in a selector.
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3.org/TR/selectors-3/#application-in-css">W3C: Selectors 3 (Application in CSS)</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+
                 <details>
-                    <summary>pseudo-classes</summary>
+                    <summary>pseudo-classes (list)</summary>
                     <pre>
 :active
 :checked
@@ -135,7 +211,7 @@ selector:pseudo-class {
 :visited</pre>
                 </details><!-- pseudo-classes -->
                 <details>
-                <summary>pseudo-elements</summary> 
+                <summary>pseudo-elements (list)</summary> 
                             <pre>
 ::after (:after)
 ::backdrop 
@@ -147,36 +223,6 @@ selector:pseudo-class {
 ::selection
 ::slotted()</pre>
                 </details><!-- pseudo-elements -->
-            </details><!-- examples -->
-        </div>
-        <div class="notes">
-            <details>
-                <summary>notes</summary>
-                <dl>
-                    <dt>Pseudo Element syntax </dt>
-                    <dd>
-                        You can use only one pseudo-element in a selector.
-                        <p class="indent">
-                            It must appear after the simple selectors in the statement.
-                        </p>
-                    </dd>
-                    <dd>
-                        As a rule, double colons (::) should be used instead of a single colon (:).
-                        <p class="indent">
-                            This distinguishes pseudo-classes from pseudo-elements.
-                        </p>
-                        <p class="indent">
-                            However, since this distinction was not present in older versions of the W3C spec, most
-                            browsers support both syntaxes.
-                        </p>
-                    </dd>
-                    <dt>Pseudo Class syntax</dt>
-                    <dd>
-                        Like regular classes, you can chain together as many pseudo-classes as you want in a selector.
-                    </dd>
-                </dl>
-            </details>
-        </div>
     </div>
 </body>
 </html>

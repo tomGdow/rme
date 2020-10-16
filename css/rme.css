@@ -895,7 +895,7 @@ table.viewport_expts th {
 }
 
 table.viewport_expts span {
-    border:none;
+    border: none;
 }
 
 
@@ -913,6 +913,32 @@ table.viewport_expts th {
 table td.false_expt,
 table span.false_expt {
     background-color: lightblue;
+}
+
+
+div.container-economist {
+    margin: auto;
+    width: 80%;
+}
+
+div.container-economist h2 {
+    background-color:yellow;
+}
+p.economist {
+    --my-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+    line-height: 1.2;
+    font: 12pt/1.2 var(--my-font);
+}
+
+p.economist::first-letter {
+    font-size: 300%;
+    float: left;
+    color: brown;
+}
+
+p.economist span {
+    text-transform: uppercase;
 }
 
 @font-face {
