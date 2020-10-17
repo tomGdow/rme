@@ -924,6 +924,7 @@ div.container-economist {
 div.container-economist h2 {
     margin-bottom: 1em;
 }
+
 p.economist {
     --my-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12pt;
@@ -939,6 +940,36 @@ p.economist::first-letter {
 
 p.economist span {
     text-transform: uppercase;
+}
+
+dt.css-counter-refs {
+    counter-reset: css-refs-counter;
+}
+
+dt.css-counter-refs~dd {
+    counter-increment: css-refs-counter;
+}
+
+dt.css-counter-refs~dd p::before {
+    content: '('counter(css-refs-counter) ') ';
+}
+
+div.estelle-weil-counter-container {
+    counter-reset: invalid-count;
+    margin: auto;
+    width: 80%;
+}
+
+input[type="checkbox"]:checked+label {
+    background-color: red;
+}
+
+input[type]:invalid {
+    counter-increment: invalid-count;
+}
+
+p#icount::after {
+    content: counter(invalid-count, decimal-leading-zero);
 }
 
 @font-face {
