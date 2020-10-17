@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        dt.css-counter-refs {
+            counter-reset: css-refs-counter;
+        }
+
+        dt.css-counter-refs~dd {
+            counter-increment: css-refs-counter;
+        }
+
+        dt.css-counter-refs~dd p::before {
+            content: '('counter(css-refs-counter) ') ';
+        }
+
+        div.estelle-weil-counter-container {
+            counter-reset: invalid-count;
+            margin: auto;
+            width: 80%;
+        }
+
+        input[type="checkbox"]:checked+label {
+            background-color: red;
+        }
+
+        input[type]:invalid {
+            counter-increment: invalid-count;
+        }
+
+        p#icount::after {
+            content: counter(invalid-count, decimal-leading-zero);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>table</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>Components</dt>
+                <dd><code>counter-reset</code></dd>
+                <dd><code>counter-increment</code></dd>
+                <dd><code>counter(counter-name, &lt;style&gt;)</code></dd>
+                <dt><code>counter()</code></dt>
+                <dd>The
+                    <code>counter()</code>
+                    CSS function returns a string representing the current value of the named counter, if
+                    there is one.
+                </dd>
+                <dd>
+                    It is generally used with pseudo-elements, but can be used, theoretically, anywhere a
+                    &lt;string&gt; value is supported.
+                </dd>
+                <dt><code>counters()</code></dt>
+                <dd>
+                    The
+                    <code>counters()</code>
+                    CSS function enables nested counters, returning a concatenated string representing
+                    the current values of the named counters, if there are any.
+                </dd>
+                <dt><code>counter-increment</code></dt>
+                <dd>
+                    The counter-increment CSS property increases or decreases the value of a CSS counter by a given
+                    value
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt><code>counter()</code></dt>
+                    <dd>
+                        <pre>
+counter(countername);
+counter(countername, &lt;style&gt;);
+counter(countername, upper-roman);
+                    </pre>
+                    </dd>
+                    <dt><code>counters()</code></dt>
+                    <dd>
+                        <code>
+                            counters(countername, '-');
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>
+                            counters(countername, '.', upper-roman)
+                        </code>
+                    </dd>
+                    <dt><code>counter-reset</code></dt>
+                    <dd>
+                        <pre>
+counter-reset: my-counter;
+counter-reset: my-counter -1;
+counter-reset: counter1 1 counter2 4;
+                        </pre>
+                    </dd>
+                    <dt><code>counter-increment</code></dt>
+                    <dd>
+                        <pre>
+counter-increment: my-counter;
+counter-increment: my-counter -1;
+counter-increment: counter1 counter2 -4;
+counter-increment: none;
+                        </pre>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <dl>
+                    <dt>Estelle Weil on counters</dt>
+                    <dd>
+                        <div class="estelle-weil-counter-container">
+                            <input type="number" min="2" max="9" id="num">
+                            <label for="num">Num between 2 an 9</label>
+                            <br>
+                            <input type="email" id="email">
+                            <label for="myemail">email</label>
+                            <br>
+                            <p id="icount">Invalid Entries: </p>
+                        </div>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt class="css-counter-refs">References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://drafts.csswg.org/css-lists-3/#auto-numbering">csswd: Automatic Numbering
+                                With Counters</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://youtu.be/8ddxfbnaIv0?t=2832">
+                                YouTube: CSS Selectors with Estelle Weyl
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter">
+                                MDN counter()
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counters">
+                                MDN: counters()
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">
+                                MDN: Using CSS counters
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
+
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>
