@@ -972,6 +972,19 @@ p#icount::after {
     content: counter(invalid-count, decimal-leading-zero);
 }
 
+div.favteam-container {
+    margin: 10px auto;
+    width: 80%;
+}
+
+div.favteam-container input:default+label {
+    background-color: lightgoldenrodyellow;
+}
+
+div.favteam-container fieldset {
+    margin-bottom: 1rem;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
