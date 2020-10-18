@@ -15,56 +15,66 @@
     <link rel="stylesheet" href="../css/great_great_grand_children_selector.css" disabled>
     <link rel="stylesheet" href="../css/first_child_selector.css" disabled>
     <style>
+        div.container {
+            margin: 1rem auto;
+            width: 80%;
+        }
+
         button {
-            background-color:red;
-            color: yellow;
+            background-color: brown;
+            color: white;
         }
     </style>
 
 </head>
 
-
 <body>
-    <nav>
-        <button id="btn_adjacent_sibling">Adjacent Sibling (A + B)</button>
-        <button id="btn_general_sibling">General Sibling (A &tilde; B)</button>
-        <button id="btn_grandchild_selector">Grand Child (A * B)</button>
-        <button id="btn_great-grandchildren_selector">Great GrandChild (A * * B)</button>
-        <button id="btn_great_great_grand_children_selector">Great GrandChild (A * * * B)</button>
-        <button id="btn_first_child_selector">First Child (A > B)</button>
-    </nav>
-    <section>
-        <div>Parent (div-1)
-            <div>Child (div-1 &RightTeeArrow; div)
-                <div>Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; div)
-                    <div>div-1 &RightTeeArrow; div &RightTeeArrow; div&RightTeeArrow;div
-                        <div>div-1 &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div</div>
+    <div class="container">
+        <nav>
+            <button id="btn_adjacent_sibling">Adjacent Sibling (A + B)</button>
+            <button id="btn_general_sibling">General Sibling (A &tilde; B)</button>
+            <button id="btn_grandchild_selector">Grand Child (A * B)</button>
+            <button id="btn_great-grandchildren_selector">Great GrandChild (A * * B)</button>
+            <button id="btn_great_great_grand_children_selector">Great GrandChild (A * * * B)</button>
+            <button id="btn_first_child_selector">First Child (A > B)</button>
+        </nav>
+        <section>
+            <div>Parent (div-1)
+                <div>Child (div-1 &RightTeeArrow; div)
+                    <div>Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; div)
+                        <div>div-1 &RightTeeArrow; div &RightTeeArrow; div&RightTeeArrow;div
+                            <div>div-1 &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>Child(div-1 &RightTeeArrow; div)
-                <p>Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; p)</p>
-            </div>
-        </div>
-
-        <div>Parent (div-2)
-            <div>Child (div-2 &RightTeeArrow; div)</div>
-            <div>Child (div-2 &RightTeeArrow; div)
-                <div>div-2 &RightTeeArrow; div &RightTeeArrow; div
-                    <div>div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow;div </div>
+                <div>Child(div-1 &RightTeeArrow; div)
+                    <p>Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; p)</p>
                 </div>
             </div>
-            <div>Child (div-2 &RightTeeArrow; div</div>
-            <p>Child (div-2 &RightTeeArrow; p)</p>
-        </div>
 
-        <div>Parent (div-4)</div>
-        <p>Parent (p-4)</p>
-        <div>Parent (div-5)</div>
-        <div>Parent (div-6)</div>
-        <div>Parent (div-7)</div>
+            <div>Parent (div-2)
+                <div>Child (div-2 &RightTeeArrow; div)</div>
+                <div>Child (div-2 &RightTeeArrow; div)
+                    <div>div-2 &RightTeeArrow; div &RightTeeArrow; div
+                        <div>div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow;div </div>
+                    </div>
+                </div>
+                <div>Child (div-2 &RightTeeArrow; div</div>
+                <p>Child (div-2 &RightTeeArrow; p)</p>
+            </div>
 
-    </section>
+            <div>Parent (div-4)</div>
+            <p>Parent (p-4)</p>
+            <div>Parent (div-5)</div>
+            <div>Parent (div-6)</div>
+            <div>Parent (div-7)</div>
+
+        </section>
+
+
+    </div>
+
 
     <script>
         document.getElementById('btn_general_sibling').addEventListener('click',
