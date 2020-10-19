@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kevin Powell (x_46_selectors)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .container-details-summary {
+            margin: 1rem auto;
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Selectors (Kevin Powell)</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>Kevin Powell on Selectors</dt>
+                <dd>
+                    <a href="../practice-files/kevin_powell_selectors/practice_kevin_powell_selectors.html" target="_blank">
+                    Kevin Powell Practice (New Tab)
+                </a>
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <div class="container-details-summary">
+                    <details>
+                        <summary>adjacent sibling selector</summary>
+                        <pre>
+div + div {
+    border: solid lightcoral;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+                    </pre>
+                    </details>
+                    <details>
+                        <summary>general sibling selector</summary>
+                        <pre>
+div ~ div {
+    border: solid lightgreen;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+                </pre>
+                    </details>
+                    <details>
+                    <summary>grandchild selector</summary>
+                    <pre>
+div * div {
+    border: solid orange;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+                    </pre>
+                    </details>
+                    <details>
+                     <summary>great-grandchild selector</summary>
+                    <pre>
+div * *  div {
+    border: solid lightgoldenrodyellow;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+                    </pre>
+                    </details>
+                    <details>
+                    <summary>great-great-grandchild selector</summary>
+                    <pre>
+div * * * div {
+    border: solid lightgoldenrodyellow;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+                    </pre>
+                    </details>
+                    <details>
+                    <summary>HTML</summary>
+                    <pre>
+        &lt;section&gt;
+            &lt;div&gt;Parent (div-1)
+                &lt;div&gt;Child (div-1 &RightTeeArrow; div)
+                    &lt;div&gt;Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; div)
+                        &lt;div&gt;div-1 &RightTeeArrow; div &RightTeeArrow; div&RightTeeArrow;div
+                            &lt;div&gt;div-1 &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow; div
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div&gt;Child(div-1 &RightTeeArrow; div)
+                    &lt;p&gt;Grandchild (div-1 &RightTeeArrow; div &RightTeeArrow; p)&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;Parent (div-2)
+                &lt;div&gt;Child (div-2 &RightTeeArrow; div)&lt;/div&gt;
+                &lt;div&gt;Child (div-2 &RightTeeArrow; div)
+                    &lt;div&gt;div-2 &RightTeeArrow; div &RightTeeArrow; div
+                        &lt;div&gt;div &RightTeeArrow; div &RightTeeArrow; div &RightTeeArrow;div &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div&gt;Child (div-2 &RightTeeArrow; div&lt;/div&gt;
+                &lt;p&gt;Child (div-2 &RightTeeArrow; p)&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;Parent (div-4)&lt;/div&gt;
+            &lt;p&gt;Parent (p-4)&lt;/p&gt;
+            &lt;div&gt;Parent (div-5)&lt;/div&gt;
+            &lt;div&gt;Parent (div-6)&lt;/div&gt;
+            &lt;div&gt;Parent (div-7)&lt;/div&gt;
+
+        &lt;/section&gt;
+                    </pre>
+                    </details>
+                </div>
+            </details>
+
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://www.youtube.com/watch?v=Bcr70LIJcOk">Advanced CSS Selectors (You Tube, Kevin Powell)</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>
