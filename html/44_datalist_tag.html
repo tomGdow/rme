@@ -1,17 +1,61 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .container-datalist {
+            margin: 2rem auto;
+            width: 90%;
+            line-height: 1.2rem;
+        }
+        .emphasis-datalist-2 {
+            background-color:lightgoldenrodyellow;
+        }
+
+        .emphasis-datalist-3 {
+            background-color: lightblue;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>datalist</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>datalist</dt>
+                <dd>
+                    The
+                    <code>datalist</code>
+                    tag specifies a list of pre-defined options for an
+                    <code>input</code>
+                    element
+                </dd>
+                <dd>
+                    The
+                    <code>datalist</code>
+                        tag is used to provide an "autocomplete" feature for
+                        <code>input</code>
+                        elements.
+                </dd>
+                <dd>
+                    Users will see a drop-down list of pre-defined options as they input data.
+                </dd>
+                <dd>
+                    The
+                    <code>datalist</code>
+                    element's
+                    <code>id</code>
+                    attribute must be equal to the
+                    <code>input</code>
+                    element's list attribute (this binds them together).
+                </dd>
+                <dd>
+                    Note that the <code>input</code> markup does not contain the <code>type</code> attribute
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -26,19 +70,55 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <div class="container-datalist">
+                    <label for="browser">Choose Browser</label>
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                        <option value="edge">
+                        <option value="firefox">
+                        <option value="chrome">
+                        <option value="opera">
+                        <option value="safari">
+                    </datalist>
+                    <details>
+                        <summary>HTML</summary>
+                        <pre>
+    &lt;label <span class="emphasis-datalist-3">for="browser"</span>&gt;Choose Browser</label>  // note binding
+    &lt;input <span class=emphasis-datalist-2>list="browsers"</span> name="browser" <span class="emphasis-datalist-3">id="browser"</span>&gt; // note binding
+    &lt;datalist <span class="emphasis-datalist-2">id="browsers"</span>&gt; // note binding
+        &lt;option value="edge"&gt;
+        &lt;option value="firefox"&gt;
+        &lt;option value="chrome"&gt;
+        &lt;option value="opera"&gt;
+        &lt;option value="safari"&gt;
+    &lt;/datalist&gt;
+                        </pre>
+                    </details>
+                </div>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">
+                                &lt;datalist&gt;: The HTML Data List element
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3schools.com/tags/tag_datalist.asp">
+                                W3Schools: HTML &lt;datalist&gt; Tag</a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

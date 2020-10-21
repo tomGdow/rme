@@ -1110,6 +1110,20 @@ div.container-flexbox {
     vertical-align: top;
 }
 
+.container-datalist {
+    margin: 2rem auto;
+    width: 90%;
+    line-height: 1.2rem;
+}
+
+.emphasis-datalist-2 {
+    background-color: lightgoldenrodyellow;
+}
+
+.emphasis-datalist-3 {
+    background-color: lightblue;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
