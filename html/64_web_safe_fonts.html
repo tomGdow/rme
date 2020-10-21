@@ -1,9 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.container-webfonts {
+            margin: 1rem auto;
+            width: 80%;
+            counter-reset: table-counter;
+            counter-reset: item-counter;
+        }
+        .mock ol {
+            list-style-type: lower-roman;
+        }
+        .mock li::before {
+            content: ')   '
+        }
+
+        .table-template-four {
+            table-layout: fixed;
+            margin: auto;
+            empty-cells: hide;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+            counter-increment: table-counter;
+        }
+
+        .table-template-four td {
+            border: 1px solid lightblue;
+            padding: 0.2em 1em 0.2em 1em;
+        }
+
+        .table-template-four caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            counter-reset: item-counter;
+        }
+
+        .table-template-four tr>td:first-of-type {
+            counter-increment: item-counter;
+        }
+
+        .table-template-four tbody td:first-of-type::before {
+            content: counter(item-counter);
+        }
+
+        .table-template-four caption span:before {
+            content: '('counter(table-counter) ')';
+        }
+
+
+        .table-template-four tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table-template-four tfoot {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .table-template-four tfoot {
+            border: 10px solid white;
+        }
+
+        .table-template-four tfoot tr {
+            background-color: antiquewhite;
+        }
+
+        .table-template-four td[rowspan="9"] {
+            vertical-align: top;
+        }
+
+        .monaco-emphasis {
+            background-color: orange;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,54 +88,300 @@
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>Web-Safe Fonts</dt>
+                <dd>
+                    The font-family property should hold several font names as a "fallback" system, to ensure maximum
+                    compatibility between browsers/operating systems
+                </dd>
+                <dd>
+                    If the browser does not support the first font, it tries the next font.
+                </dd>
+                <dd>
+                    Start with the font you want, and end with a generic family, to let the browser pick a similar font
+                    in the generic family, if no other fonts are available
+                </dd>
             </dl>
-        </main>
-        <div class="syntax">
-            <details>
-                <summary>Syntax</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-                <p></p>
-            </details>
-        </div>
-        <div class="examples">
-            <details>
-                <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
-            </details>
-        </div>
-        <div class="notes">
-            <details>
-                <summary>Notes</summary>
-                <dl>
-                    <dt>Arial</dt>
-                    <dd><em>Arial</em> and <em>Helvetica</em> almost identical [Helvetica Documentary]</dd>
-                    <dd>
-                        The <em>Arial</em> typeface was designed in 1982 by Robin Nicholas
-                        and Patricia Saunders, for Monotype Typography.
-                    </dd>
-                    <dd>
-                        It was created to be metrically identical to the popular typeface
-                        <em>Helvetica</em>, with all character widths identical, 
-                        so that a document designed in <em>Helvetica</em> could be displayed and printed
-                        correctly without having to pay for a <em>Helvetica</em> license. (Wikipedia)
+            <div class="container-webfonts">
+                <table class="table-template-four">
+                    <caption>Table <span></span>. Serif Web-safe Combinations</caption>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td><code>"Times New Roman", Times, serif;</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>Georgia, serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>"Palatino Linotype", "Book Antiqua", Palatino, serif</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>
+                                    Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif</code>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                {Cambria, Times, Georgia}, Garamond, Palatino, serif;
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-                    </dd>
-                    <dt>References</dt>
-                    <dd>
-                        <a href="https://vimeo.com/398281319">Helvetica (Documentary)</a>
-                    </dd>
-                    <dd>
-                        <a href="https://en.wikipedia.org/wiki/Arial">Arial (Wikipedia)</a>
-                    </dd>
-                </dl>
-            </details>
-        </div>
+                <table class="table-template-four">
+                    <caption>Table <span></span>. Sans-Serif Web-safe Combinations</caption>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td><code>Arial, Helvetica, sans-serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>"Comic Sans MS", cursive, sans-serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>"Lucida Sans Unicode", "Lucida Grande", sans-serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>Tahoma, Geneva, sans-serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>"Trebuchet MS", Helvetica, sans-serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>Verdana, Geneva, sans-serif</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>'Segoe UI', Tahoma, Geneva, Verdana, sans-serif</code>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                {Arial, Helvetica, Geneva}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Calibri, Comic Sans
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {Segoe UI, Tahoma, Verdana} (mnemonic: stuv)
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <table class="table-template-four">
+                    <caption>Table <span></span>. Monospace Web-safe Combinations</caption>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>"Courier New", Courier, monospace</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>"Lucida Console", Monaco, monospace</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><code>Consolas, monaco, monospace</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <code>
+                                    Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace.
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Consolas, Courier, Lucida Sans, Monaco</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Mnemonic: <span class="monaco-emphasis">Mon</span>ac<span
+                                    class="monaco-emphasis">o</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table> </div> </main> <div class="syntax">
+                <details>
+                    <summary>Syntax</summary>
+                    <ol>
+                        <li><code>code</code></li>
+                    </ol>
+                    <p></p>
+                </details>
+            </div>
+            <div class="examples">
+                <details>
+                    <summary>Examples</summary>
+                    <dl class="mock">
+                        <dt>Mock Exam Question (ecollege)</dt>
+                        <dd>Which of the following are monospace fonts?</dd>
+                        <dd>Select one or more:</dd>
+                        <dd>
+                            <ol>
+                                <li>Tahoma, Arial, sans-serif</li>
+                                <li>Georgia, serif</li>
+                                <li> Courier New, Courier // Partially Correct </li>
+                                <li> Arial, Helvetica, sans-serif</li>
+                                <li>Lucinda Console, Monaco // Partially Correct </li>
+                            </ol>
+                        </dd>
+                    </dl>
+                </details>
+            </div>
+            <div class="notes">
+                <details>
+                    <summary>Notes</summary>
+                    <dl>
+                        <dt>Arial</dt>
+                        <dd><em>Arial</em> and <em>Helvetica</em> almost identical [<a
+                                href="https://en.wikipedia.org/wiki/Courier_(typeface)">Helvetica Documentary</a>]</dd>
+                        <dd>
+                            The <em>Arial</em> typeface was designed in 1982 by Robin Nicholas
+                            and Patricia Saunders, for Monotype Typography.
+                        </dd>
+                        <dd>
+                            It was created to be metrically identical to the popular typeface
+                            <em>Helvetica</em>, with all character widths identical,
+                            so that a document designed in <em>Helvetica</em> could be displayed and printed
+                            correctly without having to pay for a <em>Helvetica</em> license. (Wikipedia)
+
+                        </dd>
+                        <dd>(
+                            <em>Arial, Helvetica, Geneva</em> are all <code>serif</code>
+                            )
+                        </dd>
+                        <dt>Cursive</dt>
+                        <dd>
+                            Cursive (also known as script, among other names) is any style of penmanship in which some
+                            characters are written joined together in a flowing manner, generally for the purpose of
+                            making
+                            writing faster, in contrast to block letters (
+                            <a href="https://en.wikipedia.org/wiki/Cursive">
+                                wikipedia</a>
+                            )
+                        </dd>
+                        <dt>Monaco</dt>
+                        <dd>
+                            Monaco is a monospaced sans-serif typeface designed by Susan Kare and Kris Holmes.
+                            (
+                            <a href="https://en.wikipedia.org/wiki/Monaco_(typeface)">wikipedia</a>
+                            )
+                        </dd>
+                        <dd>mnemonic (almost an anagram): <span class="monaco-emphasis">Mon</span>ac<span
+                                class="monaco-emphasis">o</span></dd>
+                        <dt>Consolas</dt>
+                        <dd>
+                            Consolas is a monospaced typeface, designed by Luc(as) de Groot.
+                        </dd>
+                        <dd>
+                            It is a part of the ClearType Font Collection, a suite of fonts that take advantage of
+                            Microsoft's ClearType font
+                            rendering
+                            technology. (
+                            <a href="https://en.wikipedia.org/wiki/Consolas">wikipedia</a>
+                            )
+                        </dd>
+                        <dt>Courier</dt>
+                        <dd>Courier is a monospaced slab serif typeface. </dd>
+                        <dd>
+                            The typeface was designed by Howard "Bud"
+                            Kettler.
+                        </dd>
+                        <dd>Initially created for IBM's typewriters.</dd>
+                        <dd>Kettler was once quoted about how the name was chosen.</dd>
+                        <dd>
+                            The font was nearly released with the name "Messenger."
+                        </dd>
+                        <dd>
+                            After giving it some thought, Kettler said, "A letter can be just an
+                            ordinary messenger, or it can be the courier, which radiates dignity, prestige, and
+                            stability" (
+                            <a href="https://en.wikipedia.org/wiki/Courier_(typeface)">wikipedia</a>
+                            )
+                        </dd>
+                        <dt>References</dt>
+                        <dd>
+                            <p><a href="https://vimeo.com/398281319">Helvetica (Documentary)</a></p>
+                        </dd>
+                        <dd>
+                            <p><a href="https://en.wikipedia.org/wiki/Arial">Arial (Wikipedia)</a></p>
+                        </dd>
+                        <dd>
+                            <p>
+                                <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">
+                                    CSS Web Safe Font Combinations
+                                </a>
+                            </p>
+                        </dd>
+                        <dd>
+                            <p>
+                                <a href="https://kinsta.com/blog/web-safe-fonts/#what-fonts-are-web-safe">
+                                    30+ Best Web Safe Fonts for Your Next Design in 2020
+                                </a>
+                            </p>
+                        </dd>
+                    </dl>
+                </details>
+            </div>
     </div>
 </body>
 

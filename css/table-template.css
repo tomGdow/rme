@@ -1,0 +1,53 @@
+
+div.container-flexbox {
+    margin: 1rem auto;
+    width: 80%;
+    counter-reset: table-counter;
+}
+
+.table-template-three {
+    table-layout: fixed;
+    margin: auto;
+    empty-cells: hide;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+.table-template-three td {
+    border: 1px solid lightblue;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+.table-template-three caption {
+    font-size: 1rem;
+    background-color: lightcyan;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    counter-increment: table-counter;
+}
+
+.table-template-three caption span:before {
+    content: '('counter(table-counter) ')';
+}
+
+
+.table-template-three tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-template-three tfoot {
+    margin-top: 4rem;
+}
+
+.table-template-three tfoot {
+    border: 10px solid white;
+}
+
+.table-template-three tfoot tr {
+    background-color: antiquewhite;
+}
+
+.table-template-three td[rowspan="9"] {
+    vertical-align: top;
+}

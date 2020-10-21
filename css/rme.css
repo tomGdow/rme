@@ -1124,6 +1124,83 @@ div.container-flexbox {
     background-color: lightblue;
 }
 
+
+div.container-webfonts {
+    margin: 1rem auto;
+    width: 80%;
+    counter-reset: table-counter;
+    counter-reset: item-counter;
+}
+
+.mock ol {
+    list-style-type: lower-roman;
+}
+
+.mock li::before {
+    content: ')   '
+}
+
+.table-template-four {
+    table-layout: fixed;
+    margin: auto;
+    empty-cells: hide;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    caption-side: bottom;
+    counter-increment: table-counter;
+}
+
+.table-template-four td {
+    border: 1px solid lightblue;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+.table-template-four caption {
+    font-size: 1rem;
+    background-color: lightcyan;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    counter-reset: item-counter;
+}
+
+.table-template-four tr>td:first-of-type {
+    counter-increment: item-counter;
+}
+
+.table-template-four tbody td:first-of-type::before {
+    content: counter(item-counter);
+}
+
+.table-template-four caption span:before {
+    content: '('counter(table-counter) ')';
+}
+
+
+.table-template-four tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-template-four tfoot {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.table-template-four tfoot {
+    border: 10px solid white;
+}
+
+.table-template-four tfoot tr {
+    background-color: antiquewhite;
+}
+
+.table-template-four td[rowspan="9"] {
+    vertical-align: top;
+}
+
+.monaco-emphasis {
+    background-color: orange;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
