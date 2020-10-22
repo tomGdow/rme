@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,9 +20,7 @@
             <dl>
                 <dt>link</dt>
                 <dd>
-                    The
-                    HTML External Resource Link Element
-                    or
+                    The HTML External Resource Link Element or
                     <code>&lt;link&gt;</code>
                     specifies the relationship between the current document
                     and an external resource
@@ -31,6 +34,10 @@
                 <dd>
                     May occur in body or head (stylesheet is 'body-OK') but not good practice.
                 </dd>
+                <dd>
+                    Three key attributes: <code class="emphasize-me">rel</code>, <code class="emphasize-me">href</code> and <code class="emphasize-me">media</code>
+                </dd>
+                <dd>Both <code>href</code> and <code>rel</code> are compulsory</dd>
             </dl>
         </main>
         <div class="syntax">
@@ -83,7 +90,7 @@
                 <summary>Notes</summary>
                 <dl>
                     <dt>mnemonic</dt>
-                    <dd><code>anchor-area-base-link</code>all href</dd>
+                    <dd><code>anchor-area-base-link</code> all href</dd>
                     <dt>sizes</dt>
                     <dd>Specifies icon size (<code>sizes="114x114</code>)</dd>
                     <dt>type</dt>
@@ -97,9 +104,9 @@
                     <dt>rel</dt>
                     <dd>
                         The 
-                        <code>rel</code> attribute  (and the 
+                        <code>rel</code> attribute  and the 
                         <code>href</code> attribute
-                        ) is compulsory. 
+                        are compulsory. 
                     </dd>
                     <dd>Other values for 
                         <code>rel</code>
@@ -109,8 +116,8 @@
                         <code>stylesheet</code>,
                         <code>alternate</code>.
                     </dd>
-                    <dt><code>href</code>etymology</dt>
-                    <dd><code>href</code>stands for 
+                    <dt><code>href</code> etymology</dt>
+                    <dd><code>href</code> stands for 
                     <em>hypertext</em>-reference</dd>
                     <dd>Tim Benners-Lee: 
                         <quote>"A" is for "anchor", "HREF" is for "hypertext reference"</quote>

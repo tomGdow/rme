@@ -5,6 +5,60 @@
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.container-void-elements {
+            margin: 1rem auto;
+            width: 80%;
+            counter-reset: table-counter;
+        }
+
+        .table-template-six {
+            table-layout: fixed;
+            margin: auto;
+            empty-cells: hide;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        .table-template-six td {
+            border: 1px solid lightblue;
+            padding: 0.2em 1em 0.2em 1em;
+        }
+
+        .table-template-six caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            counter-increment: table-counter;
+        }
+
+        .table-template-six caption span:before {
+            content: '('counter(table-counter) ')';
+        }
+
+
+        .table-template-six tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table-template-six tfoot {
+            margin-top: 4rem;
+        }
+
+        .table-template-six tfoot {
+            border: 10px solid white;
+        }
+
+        .table-template-six tfoot tr {
+            background-color: antiquewhite;
+        }
+
+        .table-template-six td[rowspan="9"] {
+            vertical-align: top;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +69,7 @@
             <dl>
                 <dt>void (self-closing)</dt>
                 <dd>Void elements cannot have any content.</dd>
-                <dd>Void elements may be self-closing but the 
+                <dd>Void elements may be self-closing but the
                     <code><q>/</q></code> is optional.
                 </dd>
                 <dd>Thus
@@ -51,14 +105,14 @@
                 <summary>Syntax</summary>
                 <ol>
                     <li><code>
-                        &lt;img&gt;
-                    </code>
-                </li>
-                <li>
-                    <code>
-                        &lt;img /&gt;
-                    </code>
-                </li>
+                            &lt;img&gt;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            &lt;img /&gt;
+                        </code>
+                    </li>
                 </ol>
             </details>
         </div>
@@ -70,56 +124,119 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
+                <table class="table-template-six">
+                    <caption>Table <span></span>. Void Elements</caption>
+                    <thead>
+                        <tr>
+                            <td>Void Element</td>
+                            <td>Block/Inline</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>area</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>base</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>br</code></td>
+                            <td>inline</td>
+                        </tr>
+                        <tr>
+                            <td><code>col</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>embed</code></td>
+                            <td>inline</td>
+                        </tr>
+                        <tr>
+                            <td><code>hr</code></td>
+                            <td>block</td>
+                        </tr>
+                        <tr>
+                            <td><code>img</code></td>
+                            <td>inline</td>
+                        </tr>
+                        <tr>
+                            <td><code>input</code></td>
+                            <td>inline</td>
+                        </tr>
+                        <tr>
+                            <td><code>link</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>meta</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>param</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>source</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>track</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>wbr</code></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">
+                                    whatwg (void elements)
+                                </a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
                 <dl>
-                    <dt>List of Void Elements</dt>
+                    <dt>Inline vs Block</dt>
+                    <dd>An inline element cannot contain a block-level element!</dd>
+                    <dt>References</dt>
                     <dd>
-                        <code>area</code>,
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">
+                                MDN: Block-level elements
+                            </a>
+                        </p>
                     </dd>
                     <dd>
-                        <code>base</code>,
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">
+                                MDN: Inline elements
+                            </a>
+                        </p>
                     </dd>
                     <dd>
-                        <code>br</code>,
+                        <p>
+                            <a href="https://www.w3schools.com/htmL/html_blocks.asp">
+                                W3Schools: HTML Block and Inline Elements</a>
+                        </p>
                     </dd>
                     <dd>
-                        <code>col</code>,
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">
+                                WHATWG: Void Elements
+                            </a>
+                        </p>
                     </dd>
                     <dd>
-                        <code>embed</code>,
-                    </dd>
-                    <dd>
-                        <code>hr</code>,
-                    </dd>
-                    <dd>
-                        <code>img</code>,
-                    </dd>
-                    <dd>
-                        <code>input</code>,
-                    </dd>
-                    <dd>
-                        <code>link</code>,
-                    </dd>
-                    <dd>
-                        <code>meta</code>,
-                    </dd>
-                    <dd>
-                        <code>param</code>,
-                    </dd>
-                    <dd>
-                        <code>source</code>,
-                    </dd>
-                    <dd>
-                        <code>track</code>,
-                    </dd>
-                    <dd>
-                        <code>wbr</code>,
-                    </dd>
-                    <dd>
-                        See
-                        <cite>
-                            <a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">w3c</a>
-                        </cite>
-                        for this list.
+                        <p>
+                            <a href="https://www.tutorialchip.com/tutorials/html5-block-level-elements-complete-list/">
+                                HTML5 Block Level Elements: Complete List
+                            </a>
+                        </p>
                     </dd>
                 </dl>
             </details>
