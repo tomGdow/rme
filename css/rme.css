@@ -1201,6 +1201,10 @@ div.container-webfonts {
     background-color: orange;
 }
 
+.emphasize-me {
+    background-color: lightgoldenrodyellow;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
