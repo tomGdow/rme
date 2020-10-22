@@ -1,17 +1,24 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>p-tag</header>
+        <header>&lt;p&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt>name</dt>
-                <dd>content</dd>
+                <dt><code>p</code> tag</dt>
+                <dd>The &lt;p&gt; tag defines a paragraph.</dd>
+                <dd>Browsers automatically add a single blank line before and after each &lt;p&gt; element.</dd>
+                <dd> Paragraphs are block-level elements</dd>
+                <dd>A <code>p</code> tag notably will automatically close if another block-level
+                    element is parsed before the closing &lt;/p&gt;. See “Tag omission” note.
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +41,57 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>Tag Omission</dt>
+                    <dd>
+                        The start tag is required. </dd>
+                    <dd>
+                        The end tag may be omitted if the &lt;p&gt; element is immediately followed by:
+                    </dd>
+                    <dd>
+                        &lt;address&gt;,
+                        &lt;article&gt;,
+                        &lt;aside&gt;,
+                        &lt;blockquote&gt;,
+                        &lt;div&gt;,
+                        &lt;dl&gt;,
+                        &lt;fieldset&gt;,
+                        &lt;footer&gt;,
+                        &lt;form&gt;,
+                        &lt;h1&gt;,
+                        &lt;h2&gt;,
+                        &lt;h3&gt;,
+                        &gt;h4&gt;,
+                        &lt;h5&gt;,
+                        &lt;h6&gt;, &lt;header&gt;,
+                        &lt;hr&gt;,
+                        &lt;menu&gt;,
+                        &lt;nav&gt;,
+                        &lt;ol&gt;,
+                        &lt;pre&gt;,
+                        &lt;section&gt;,
+                        &lt;table&gt;,
+                        &lt;ul&gt;
+                    </dd>
+                    <dd>
+                        or another &lt;p&gt; element,
+                    </dd>
+                    <dd>
+                        or if there is no more content in the parent element and the parent element is not an
+                        &lt;a&gt; element.
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">
+                                MDN: <code>p</code> element
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
