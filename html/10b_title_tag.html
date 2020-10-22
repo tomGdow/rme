@@ -1,19 +1,21 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>Title</header>
+        <header>&lt;title&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-              <dt>title</dt>
-               <dd>Defines the document title which is shown in browser
-                   title bar or page tab
-               </dd>
+                <dt>&lt;title&gt;</dt>
+                <dd>Defines the document title which is shown in browser
+                    title bar or page tab
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -21,8 +23,8 @@
                 <summary>Syntax</summary>
                 <ol>
                     <li><code>
-                        &lt;title&gt;My Wonderful Site&lt;/title&gt;
-                    </code></li>
+                            &lt;title&gt;My Wonderful Site&lt;/title&gt;
+                        </code></li>
                 </ol>
                 <p></p>
             </details>
@@ -36,24 +38,34 @@
             <details>
                 <summary>Notes</summary>
                 <dl>
+                    <dt>Type of element</dt>
+                    <dd>
+                        <code>title</code> is an
+                        <a href="https://html.spec.whatwg.org/multipage/syntax.html#elements-2">
+                            escapable raw text
+                        </a> element, which means
+                        it can have text and character references, but the text must not
+                        contain an ambiguous ampersand (or contain other tags)
+                    </dd>
                     <dt>Validation</dt>
                     <dd>The title element (which must be in the
                         <code>head</code>
-                         section) is essential for
-                        HTML validation
+                        section) is essential for HTML validation
                     </dd>
+                    <dd>There may only be <em>one</em> title element per document (in head)</dd>
                     <dd>Is a significant factor in SEO</dd>
                     <dd>50-60 characters max, but make unique</dd>
                     <dd>May only contain text - no tags</dd>
-                    <dd>It may also be used used in 
+                    <dd>It may also be used used in
                         <code>bookmarks</code>,
                         <code>title bar</code>,
                         <code>nav bar</code>,
-                        <code>history</code>,
+                        <code>history</code>
                     </dd>
                 </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
