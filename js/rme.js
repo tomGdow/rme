@@ -6,6 +6,7 @@ let pageData = (function () {
     "3_rme_link.html",
     "4_meta_tag.html",
     "5_doctype.html",
+    "x_49_elements.html",
     "5b_html_tag.html",
     "6_head_tag.html",
     "7_body_tag.html",

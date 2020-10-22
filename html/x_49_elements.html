@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.container-elements {
+            margin: 1rem auto;
+            width: 80%;
+            counter-reset: table-counter;
+            counter-reset: item-counter;
+        }
+
+        .table-template-five {
+            table-layout: fixed;
+            margin: auto;
+            empty-cells: hide;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        .table-template-five td {
+            border: 1px solid lightblue;
+            padding: 0.2em 1em 0.2em 1em;
+        }
+
+        .table-template-five caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            counter-increment: table-counter;
+        }
+
+        .table-template-five caption span:before {
+            content: '('counter(table-counter) ')';
+        }
+
+
+        .table-template-five tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table-template-five tfoot {
+            margin-top: 4rem;
+        }
+
+        .table-template-five tfoot {
+            border: 10px solid white;
+        }
+
+        .table-template-five tfoot tr {
+            background-color: antiquewhite;
+        }
+
+        .table-template-five tbody tr {
+            counter-increment: item-counter;
+        }
+
+        .table-template-five tbody td:first-of-type::before {
+            content: counter(item-counter);
+        }
+
+        .table-template-five td[rowspan="9"] {
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>table</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>Elements</dt>
+                <dd>
+                    There are six different kinds of elements:
+                    <ol type="01">
+                        <li><code>void elements</code></li>
+                        <li><code>template element</code></li>
+                        <li><code>raw text elements</code></li>
+                        <li><code>escapable raw text elements</code></li>
+                        <li><code>foreign elements</code></li>
+                        <li><code>normal elements</code></li>
+                    </ol>
+                </dd>
+            </dl>
+            <div class="container-elements">
+                <table class="table-template-five">
+                    <caption>Table <span></span> Element types</caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>void</td>
+                            <td>
+                                <code>area</code>,
+                                <code>base</code>,
+                                <code>br</code>,
+                                <code>col</code>,
+                                <code>embed</code>,
+                                <code>hr</code>,
+                                <code>img</code>,
+                                <code>input</code>,
+                                <code>link</code>,
+                                <code>meta</code>,
+                                <code>source</code>,
+                                <code>tracks</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>template</td>
+                            <td><code>template</code></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>raw text</td>
+                            <td>
+                                <code>script</code>,
+                                <code>style</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>escapable raw text</td>
+                            <td>
+                                <code>textarea</code>,
+                                <code>title</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>foreign</td>
+                            <td>Elements from
+                                <code>MathMl</code>
+                                namespace and
+                                <code>SVG</code>
+                                namespace
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>normal</td>
+                            <td>All other allowed HTML elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+                <p></p>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <ol>
+                    <li><code>code</code></li>
+                </ol>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>raw text</dt>
+                    <dd>
+                        Raw text elements can have <code>text</code>, though it has restrictions
+                    </dd>
+                    <dt>escapable raw text</dt>
+                    <dd>
+                        Escapable raw text elements can have <code>text</code> and <code>character references</code>, but the text must not
+                        contain an <code>ambiguous ampersand</code>. (There are also further restrictions)
+                    </dd>
+                    <dt>Normal</dt>
+                    <dd>
+                        Normal elements can have <code>text</code>, <code>character references</code>, other elements, and <code>comments</code>, but the text
+                        must not contain the character U+003C LESS-THAN SIGN (&lt;) or an ambiguous ampersand.
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/syntax.html#elements-2">
+                                Elements: HTML Standard
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1205,6 +1205,68 @@ div.container-webfonts {
     background-color: lightgoldenrodyellow;
 }
 
+div.container-elements {
+    margin: 1rem auto;
+    width: 80%;
+    counter-reset: table-counter;
+    counter-reset: item-counter;
+}
+
+.table-template-five {
+    table-layout: fixed;
+    margin: auto;
+    empty-cells: hide;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+.table-template-five td {
+    border: 1px solid lightblue;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+.table-template-five caption {
+    font-size: 1rem;
+    background-color: lightcyan;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    counter-increment: table-counter;
+}
+
+.table-template-five caption span:before {
+    content: '('counter(table-counter) ')';
+}
+
+
+.table-template-five tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-template-five tfoot {
+    margin-top: 4rem;
+}
+
+.table-template-five tfoot {
+    border: 10px solid white;
+}
+
+.table-template-five tfoot tr {
+    background-color: antiquewhite;
+}
+
+.table-template-five tbody tr {
+    counter-increment: item-counter;
+}
+
+.table-template-five tbody td:first-of-type::before {
+    content: counter(item-counter);
+}
+
+.table-template-five td[rowspan="9"] {
+    vertical-align: top;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
