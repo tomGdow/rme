@@ -9,6 +9,7 @@ let pageData = (function () {
     "x_49_elements.html",
     "5b_html_tag.html",
     "6_head_tag.html",
+    "x_50_hgroup.html",
     "7_body_tag.html",
     "8_void_self_closing_tag.html",
     "9_html_entities_entity.html",
