@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>Head Tag</header>
+        <header>&lt;head&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
                 <dt>head</dt>
                 <dd>Contains machine-readable information
                     (
-                        <code>metadata</code>
+                    <code>metadata</code>
                     )
-                    about the document such as 
-                    <code>title</code>
-                    <code>scripts</code>
+                    about the document such as
+                    <code>title</code>,
+                    <code>scripts</code>,
                     <code>style sheets</code>
                 </dd>
+                <dd>
+                    HTML5-compliant browsers automatically create a
+                    &lt;head&gt;
+                    element if its tags are omitted in the markup.
+                </dd>
+                <dd>
+                    <q>
+                        Zero or more elements of 
+                        <code>metadata</code>
+                        content, of which no more than one is a 
+                        <code>title</code> 
+                        element and no more than one is a 
+                        <code>base</code> 
+                        element. </q>
+                        (
+                            <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">
+                            W3C</a>
+                        )
+                </dd>
+                <dd>
+                    <q>
+                        Otherwise: One or more elements of 
+                        <code>metadata</code>
+                        content, of which exactly one is a 
+                        <code>title</code>
+                        element and no more than one is a 
+                        <code>base</code>
+                        element. 
+                    </q>
+                        (
+                            <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">
+                            W3C</a>
+                        )
+                </dd>
             </dl>
-
         </main>
         <div class="syntax">
             <details>
                 <summary>Syntax</summary>
                 <ol>
-                    <li><code>
-                        &lt;html&gt;&lt;/html&gt;
-                    </code></li>
+                    <li>
+                        <code>
+                            &lt;html&gt;&lt;/html&gt;
+                        </code>
+                    </li>
                 </ol>
-                <p></p>
             </details>
         </div>
         <div class="examples">
@@ -46,11 +82,24 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head">
+                                MDN: &lt;head&gt;: The Document Metadata (Header) element</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">W3C: The
+                                head element</a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

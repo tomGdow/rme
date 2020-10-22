@@ -138,7 +138,8 @@ let pageData = (function () {
     "x_42_triangles_css.html",
     "x_44_font-face_at-rule.html",
     "x_45_css_counter.html",
-    "x_47_flexbox.html"
+    "x_47_flexbox.html",
+    "x_48_translate_attribute.html"
   ];
 
 })();
