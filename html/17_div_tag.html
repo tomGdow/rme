@@ -1,17 +1,81 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <header>div</header>
+        <header>&lt;div&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt><code>div</code></dt>
+                <dd>
+                    The HTML Content Division element (&lt;div&gt;) is the generic container for flow content.
+                </dd>
+                <dd>
+                    It has no effect on the content or layout until styled using CSS.
+                </dd>
+                <dd>
+                    As a "pure" container,
+                    the <code>div</code>
+                    element does not inherently represent anything.
+                </dd>
+                <dd>
+                    Instead, it's used
+                    to group content so it can be easily styled using the
+                    <code>class</code>
+                    or
+                    <code>id</code>
+                    attributes, marking a section
+                    of a document as being written in a different language (using the
+                    <code>lang</code>
+                    attribute), and so on.
+                </dd>
+                <dd>
+                    Both the starting and ending tags are mandatory (no tag omission)
+                </dd>
+                <dd>
+                    <q>
+                        The
+                        <code>div</code>
+                        element has no special meaning at all. It represents its children.
+                    </q>
+                </dd>
+                <dd>
+                    <q>
+                        It can be used with
+                        the
+                        <code>class</code>,
+                        <code>lang</code>,
+                        and
+                        <code>title</code>
+                        attributes to mark up semantics common to a group of consecutive
+                        elements.
+                    </q>
+                </dd>
+                <dd>
+                    <q>
+                        It can also be used in a
+                        <code>dl</code>
+                        element,
+                        <span class="emphasize-me">
+                            wrapping groups of
+                            <code>dt</code>
+                            and
+                            <code>dd</code>
+                            elements.
+                        </span>
+                    </q>
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +98,43 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>line break</dt>
+                    <dd>By default, browsers always place a line break before and after the
+                        <code>div</code> element.
+                    </dd>
+                    <dt>Semantic usage</dt>
+                    <dd>The <code>div</code> element should be used only when no other semantic element
+                        (such as <code>article</code> or <code>nav</code>
+                        ) is appropriate
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">
+                                MDN: &lt;div&gt;: The Content Division element
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3schools.com/Tags/tag_div.asp">
+                                W3C: HTML &lt;div&gt; Tag</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">
+
+                                whatwg: The div element
+                            </a>
+                        </p>
+                    </dd>
+
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
