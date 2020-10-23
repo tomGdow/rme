@@ -1,17 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>span</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <header>span</header>
+        <header>&lt;span&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt><code>span</code></dt>
+                <dd>
+                    The HTML
+                    <code>span</code>
+                    element is
+                    <span class="emphasize-me">
+                        a generic inline container for phrasing content
+                    </span>,
+                    which does not inherently represent anything.
+                </dd>
+                <dd>
+                    It can be used to group elements for styling purposes (using the
+                    <code>class</code>
+                    or
+                    <code>id</code>
+                    attributes), or because
+                    they share attribute values, such as
+                    <code>lang</code>
+                </dd>
+                <dd>
+                    <code>span</code>
+                    is very much like a
+                    <code>div</code>
+                    element, but
+                    <code>div</code>
+                    is a block-level element whereas a
+                    <code>span</code>
+                    is an inline element.
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +69,40 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>whatwg</dt>
+                    <dd>
+                        <q>
+                            The
+                            <code>span</code>
+                            element doesn't mean anything on its own, but can be useful when used together with the
+                            global attributes, e.g.
+                            <code>class</code>,
+                            <code>lang</code>,
+                            or
+                            <code>dir</code>.
+                            It represents its children.
+                        </q>
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span">
+                                MDN: <code>span</code>
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element">
+                                whatwg: The span element
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

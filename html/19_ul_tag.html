@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+
+    <style>
+        div.container-unordered-list {
+            width: 80%;
+            margin: 0 auto 10px auto;
+            border-width: 10px;
+            border-style: none none none solid;
+            border-color: lightblue;
+        }
+
+        div.container-unordered-list ul {
+            list-style-type: none;
+        }
+
+        div.container-unordered-list ul li:first-of-type {
+            list-style-type: disc;
+        }
+
+        div.container-unordered-list ul li:nth-of-type(2) {
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+
+        div.container-unordered-list ul li:nth-of-type(3) {
+            list-style-type: square;
+        }
+
+        div.container-unordered-list ul li:nth-of-type(4) {
+            list-style-type: circle;
+        }
+
+        div.container-unordered-list ul li:nth-of-type(5) {
+            list-style-image: url(../image/go.png);
+        }
+
+        div.container-unordered-list ul li::marker {
+            color: blue;
+        }
+
+        .table-template-six {
+            table-layout: fixed;
+            /* margin: auto; */
+            empty-cells: hide;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        .table-template-six td {
+            border: 1px solid lightblue;
+            padding: 0.2em 1em 0.2em 1em;
+        }
+
+        .table-template-six caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            counter-increment: table-counter;
+        }
+
+        .table-template-six caption span:before {
+            content: '('counter(table-counter) ')';
+        }
+
+
+        .table-template-six tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table-template-six tfoot {
+            margin-top: 4rem;
+        }
+
+        .table-template-six tfoot {
+            border: 10px solid white;
+        }
+
+        .table-template-six tfoot tr {
+            background-color: antiquewhite;
+        }
+
+        .table-template-six td[rowspan="9"] {
+            vertical-align: top;
+        }
+
+        details details {
+            padding-left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>&lt;ul&gt;</header>
+        <div class="counter">xx</div>
+        <main>
+            <dl>
+                <dt>ul</dt>
+                <dd>
+                    The HTML <code>ul</code> element represents an unordered list of items,
+                    typically rendered as a bulleted list.
+                </dd>
+                <dd>
+                    The <code>ul</code> element is for grouping a collection of items that do not have a numerical
+                    ordering, and their order in the list is meaningless
+                </dd>
+                <dd>
+                    The bullet style is not defined in the HTML description of the page, but in its associated CSS,
+                    using the
+                    <code>list-style-type</code>
+                    property.
+                </dd>
+                <dd>
+                    The <code>ul</code> and <code>ol</code> elements may be nested as deeply as desired.
+                </dd>
+                <dd>
+                    Moreover, the nested lists may alternate between <code>ol</code> and <code>ul</code> without
+                    restriction.
+                </dd>
+                <dd>
+                    Both the starting and ending tags are mandatory.
+                </dd>
+            </dl>
+            <div class="container-unordered-list">
+                <ul>
+                    <li>item-1 <code>&nbsp;&nbsp;&nbsp; //&nbsp;disc</code></li>
+                    <li>item-2 <code>&nbsp;&nbsp;//&nbsp;circle, inside (list-style-position)</code></li>
+                    <li>item-3 <code>&nbsp;&nbsp;&nbsp;&nbsp;// square</code></li>
+                    <li>item-4 <code>&nbsp;&nbsp;&nbsp;&nbsp;// circle</code></li>
+                    <li>item-5 <code>&nbsp;&nbsp;&nbsp;&nbsp;// list-style-image</code></li>
+                </ul>
+            </div>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <dl>
+                    <dt>html</dt>
+                    <dd>
+                        <pre>
+&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+                    </pre>
+                    </dd>
+                    <dt>alternative syntax</dt>
+                    <dd>
+                        <pre>
+&lt;ul&gt;
+    &lt;li&gt;a
+    &lt;li&gt;b
+    &lt;li&gt;c
+&lt;/ul&gt;
+                    </pre>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <details>
+                    <summary>Opening Example</summary>
+                    <dl>
+                        <dt>css</dt>
+                        <dd>
+                            <pre>
+div.container-unordered-list {
+    width: 80%;
+    margin: 0 auto 10px auto;
+    border-width: 10px;
+    border-style: none none none solid;
+    border-color:lightblue;
+}
+
+div.container-unordered-list ul {
+    list-style-type: none;
+}
+
+div.container-unordered-list  ul li:first-of-type {
+    list-style-type: disc;
+}
+
+div.container-unordered-list ul li:nth-of-type(2) {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+div.container-unordered-list ul li:nth-of-type(3) {
+    list-style-type: square;
+}
+
+div.container-unordered-list ul li:nth-of-type(4) {
+    list-style-type: circle;
+}
+
+div.container-unordered-list ul li:nth-of-type(5) {
+    list-style-image: url(../image/go.png);
+}
+
+div.container-unordered-list ul li::marker {
+    color: blue;
+}
+
+div.container-unordered-list details details {
+    padding-left: 10%;
+}
+
+                            </pre>
+                        </dd>
+                    </dl>
+                </details>
+                <details>
+                    <summary>Example2</summary>
+                    <dl>
+                        <dt>html-1</dt>
+                        <dd>
+                            <pre>
+&lt;ul class="square-bullets"&gt;
+    &lt;li&gt;Javascript&lt;/li&gt;
+    &lt;li&gt;Cascading Style Sheets&lt;/li&gt;
+    &lt;li&gt;C Programming&lt;/li&gt;
+&lt;/ul&gt;
+                        </pre>
+                        </dd>
+                        <dt>html-2</dt>
+                        <dd>
+                            <pre>
+&lt;ul class="image-bullets"&gt;
+    &lt;li&gt;Javascript
+    &lt;li&gt;Cascading Style Sheets
+    &lt;li&gt;C Programming
+&lt;/ul&gt;
+                        </pre>
+                        </dd>
+                        <dt>css</dt>
+                        <dd>
+                            <pre>
+ul.square-bullets {
+    list-style-type: square;
+    float:left;
+}
+ul.image-bullets {
+    list-style-image: url(http://xu/tgdfiles/png/go.png);
+    clear:both;
+}
+                        </pre>
+                        </dd>
+                    </dl>
+                </details>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>WHATWG</dt>
+                    <dd>
+                        <q>
+                            The <code>ul</code> element represents a list of items,
+                            where the order of the items is not important —
+                            that is,
+                            where changing the order would not materially change the meaning of the document.
+                        </q>
+                    </dd>
+                    <dt>Some Tables</dt>
+                    <dd>
+                        <table class="table-template-six">
+                            <!-- <caption>Table <span></span> list-style</caption> -->
+                            <tbody>
+                                <tr>
+                                    <td rowspan="4">list-style</td>
+                                    <td>list-style-type</td>
+                                </tr>
+                                <tr>
+                                    <td>list-style-image</td>
+                                </tr>
+                                <tr>
+                                    <td>list-style-position</td>
+                                </tr>
+                                <tr>
+                                    <td>"tip" (mnemonic)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table-template-six">
+                            <!-- <caption>Table <span></span> list-style</caption> -->
+                            <tbody>
+                                <tr>
+                                    <td rowspan="4">list-style-type</td>
+                                    <td>disc</td>
+                                </tr>
+                                <tr>
+                                    <td>circle</td>
+                                </tr>
+                                <tr>
+                                    <td>square</td>
+                                </tr>
+                                <tr>
+                                    <td>none</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table-template-six">
+                            <!-- <caption>Table <span></span> list-style</caption> -->
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">list-style-position</td>
+                                    <td>inside</td>
+                                </tr>
+                                <tr>
+                                    <td>outside</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table-template-six">
+                            <!-- <caption>Table <span></span> list-style</caption> -->
+                            <tbody>
+                                <tr>
+                                    <td>list-style-image</td>
+                                    <td>url(my-url) <code>// css</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </dd>
+                    <dt>Markers</dt>
+                    <dd>Markers are in left padded area of content box</dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">
+                                MDN: &lt;ul&gt;: The Unordered List element
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">
+                                WHATWG: The <code>ul</code> element
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3schools.com/tags/tag_ul.asp">
+                                W3Schools: HTML &lt;ul&gt; Tag
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

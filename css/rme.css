@@ -1275,7 +1275,92 @@ div.container-void-elements {
 
 .table-template-six {
     table-layout: fixed;
-    margin: auto;
+    /* margin: auto; */
+    empty-cells: hide;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+.table-template-six td {
+    border: 1px solid lightblue;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+.table-template-six caption {
+    font-size: 1rem;
+    background-color: lightcyan;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    counter-increment: table-counter;
+}
+
+.table-template-six caption span:before {
+    content: '('counter(table-counter) ')';
+}
+
+
+.table-template-six tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-template-six tfoot {
+    margin-top: 4rem;
+}
+
+.table-template-six tfoot {
+    border: 10px solid white;
+}
+
+.table-template-six tfoot tr {
+    background-color: antiquewhite;
+}
+
+.table-template-six td[rowspan="9"] {
+    vertical-align: top;
+}
+
+div.container-unordered-list {
+    width: 90%;
+    margin: 1rem auto 1rem auto;
+    padding-left:3rem;
+    border-width: 10px;
+    border-style: none none none solid;
+    border-color: lightblue;
+}
+
+div.container-unordered-list ul {
+    list-style-type: none;
+}
+
+div.container-unordered-list ul li:first-of-type {
+    list-style-type: disc;
+}
+
+div.container-unordered-list ul li:nth-of-type(2) {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+div.container-unordered-list ul li:nth-of-type(3) {
+    list-style-type: square;
+}
+
+div.container-unordered-list ul li:nth-of-type(4) {
+    list-style-type: circle;
+}
+
+div.container-unordered-list ul li:nth-of-type(5) {
+    list-style-image: url(../image/go.png);
+}
+
+div.container-unordered-list ul li::marker {
+    color: blue;
+}
+
+.table-template-six {
+    table-layout: fixed;
+    /* margin: auto; */
     empty-cells: hide;
     margin-top: 1rem;
     border-collapse: collapse;
