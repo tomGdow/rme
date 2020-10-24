@@ -1323,7 +1323,7 @@ div.container-void-elements {
 div.container-unordered-list {
     width: 90%;
     margin: 1rem auto 1rem auto;
-    padding-left:3rem;
+    padding-left: 3rem;
     border-width: 10px;
     border-style: none none none solid;
     border-color: lightblue;
@@ -1403,6 +1403,128 @@ div.container-unordered-list ul li::marker {
 
 .table-template-six td[rowspan="9"] {
     vertical-align: top;
+}
+
+div.container-ordered-list {
+    /* margin: 1rem auto; */
+    /* width: 90%; */
+    counter-reset: table-counter;
+}
+
+.table-template-seven {
+    table-layout: fixed;
+    margin: auto;
+    empty-cells: hide;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    caption-side: bottom;
+    
+}
+
+.table-template-seven th {
+    padding: 1px 2rem 5px 2rem;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.table-template-seven td {
+    border: 1px solid lightblue;
+    padding: 0.2rem 0 0.2em 2rem;
+    padding-left: 2rem;
+}
+
+.table-template-seven caption {
+    font-size: 1rem;
+    background-color: lightcyan;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    counter-increment: table-counter;
+}
+
+.table-template-seven caption span:before {
+    content: '('counter(table-counter) ')';
+}
+
+
+.table-template-seven tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-template-seven tfoot {
+    margin-top: 4rem;
+}
+
+.table-template-seven col:nth-of-type(odd) {
+    background-color: lightgoldenrodyellow;
+}
+
+.table-template-seven tfoot {
+    border: 10px solid white;
+}
+
+.table-template-seven tfoot tr {
+    background-color: antiquewhite;
+}
+
+.table-template-seven td[rowspan="9"] {
+    vertical-align: top;
+}
+
+.table-template-seven col:nth-of-type(odd) {
+    background-color: lightgoldenrodyellow;
+}
+
+.my-decimal-zero {
+    list-style-type: decimal-leading-zero;
+}
+
+.my-decimal-zero li::marker {
+    color: red;
+}
+
+.my-upper-roman {
+    list-style-type: upper-roman;
+}
+
+.my-upper-roman li::marker {
+    color: blue;
+}
+
+.my-lower-roman {
+    list-style-type: lower-roman;
+}
+
+.my-lower-roman li::marker {
+    color: #00FF00;
+}
+
+.my-upper-alpha {
+    list-style-type: upper-alpha;
+}
+
+.my-lower-alpha {
+    list-style-type: lower-alpha;
+}
+
+.my-upper-alpha li::marker {
+    color: aquamarine;
+}
+
+.my-lower-greek {
+    list-style-type: lower-greek;
+}
+
+.my-georgian {
+    list-style-type: georgian;
+}
+
+.my-armenian {
+    list-style-type: armenian;
+}
+
+#ol-value-start-expt
+{
+    padding: 2rem 0 0 2rem;
 }
 
 @font-face {

@@ -1,9 +1,125 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+
+    <style>
+        div.container-ordered-list {
+            margin: 1rem auto;
+            width: 80%;
+            counter-reset: table-counter;
+        }
+
+        .table-template-seven {
+            table-layout: fixed;
+            margin: auto;
+            empty-cells: hide;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        .table-template-seven td {
+            border: 1px solid lightblue;
+            padding: 0.2em 1em 0.2em 1em;
+        }
+
+        .table-template-seven caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            counter-increment: table-counter;
+        }
+
+        .table-template-seven caption span:before {
+            content: '('counter(table-counter) ')';
+        }
+
+
+        .table-template-seven tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table-template-seven tfoot {
+            margin-top: 4rem;
+        }
+
+        .table-template-seven tfoot {
+            border: 10px solid white;
+        }
+
+        .table-template-seven tfoot tr {
+            background-color: antiquewhite;
+        }
+
+        .table-template-seven td[rowspan="9"] {
+            vertical-align: top;
+        }
+
+        .table-template-seven col:nth-of-type(odd) {
+            background-color:lightgoldenrodyellow;
+        }
+
+        .my-decimal-zero {
+            list-style-type: decimal-leading-zero;
+        }
+
+        .my-decimal-zero li::marker {
+            color: red;
+        }
+
+        .my-upper-roman {
+            list-style-type: upper-roman;
+        }
+
+        .my-upper-roman li::marker {
+            color: blue;
+        }
+
+        .my-lower-roman {
+            list-style-type: lower-roman;
+        }
+
+        .my-lower-roman li::marker {
+            color: #00FF00;
+        }
+
+        .my-upper-alpha {
+            list-style-type: upper-alpha;
+        }
+
+        .my-lower-alpha {
+            list-style-type: lower-alpha;
+        }
+
+        .my-upper-alpha li::marker {
+            color: aquamarine;
+        }
+
+        .my-lower-greek {
+            list-style-type: lower-greek;
+        }
+
+        .my-georgian {
+            list-style-type: georgian;
+        }
+
+        .my-armenian {
+            list-style-type: armenian;
+        }
+
+        #ol-value-start-expt {
+            padding: 2rem 0 0 2rem;
+        }
+
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +130,200 @@
             <dl>
                 <dt>ol</dt>
                 <dd>An ordered list, typically rendered as a numbered list</dd>
+                <dt>Attributes</dt>
+                <dd><code>start</code>, <code class="emphasize-me">reversed</code> and <code>type</code></dd>
+                <dd>! <code>type</code> is <em>not</em> deprecated (unlike with <code>li</code>)</dd>
+                <dd><code>reversed</code> is a boolean attribute</dd>
             </dl>
+
+            <div class="container-ordered-list">
+                <table class="table-template-seven">
+                    <caption>Table <span></span>. list-style-type</caption>
+                    <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>decimal-leading-zero</th>
+                            <th>upper-roman</th>
+                            <th>lower-roman</th>
+                            <th>upper-alpha</th>
+                            <th>lower-alpha</th>
+                            <th>lower-greek</th>
+                            <!-- <th>armenian</th>
+                            <th>georgian</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ol start="10" class="my-decimal-zero" reversed>
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ol class="my-upper-roman">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ol start="1" class="my-lower-roman">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ol class="my-upper-alpha" start="10">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ol class="my-lower-alpha" start="2">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td>
+                            <td>
+                                <ol class="my-lower-greek">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td>
+                            <!-- <td>
+                                <ol class="my-armenian">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td> -->
+                            <!-- <td>
+                                <ol class="my-georgian">
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li>item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+                            </td> -->
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="table-template-seven">
+                    <caption>Table <span></span>. An experiment</caption>
+                    <thead>
+                        <tr>
+                            <th>Conditions</th>
+                            <th>List</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="10" id="ol-value-start-expt">
+                                <pre>
+&lt;ol <span class="emphasize-me">start="6" reversed</span>&gt;
+    &lt;li&gt;item-1&lt;/li&gt;
+    &lt;li&gt;item-2&lt;/li&gt;
+    &lt;li&gt;item-3&lt;/li&gt;
+    &lt;li&gt;item-4&lt;/li&gt;
+    &lt;li&gt;item-5&lt;/li&gt;
+    &lt;li&gt;item-6&lt;/li&gt;
+    &lt;li <span class="emphasize-me">value="70"</span>&gt;item-7&lt;/li&gt;
+    &lt;li&gt;item-8&lt;/li&gt;
+    &lt;li&gt;item-9&lt;/li&gt;
+    &lt;li&gt;item-10&lt;/li&gt;
+&lt;/ol&gt;
+                                    
+                                </pre>
+                            </td>
+                            <td>
+                                <ol start="6" reversed>
+                                    <li>item-1</li>
+                                    <li>item-2</li>
+                                    <li>item-3</li>
+                                    <li>item-4</li>
+                                    <li>item-5</li>
+                                    <li>item-6</li>
+                                    <li value="70">item-7</li>
+                                    <li>item-8</li>
+                                    <li>item-9</li>
+                                    <li>item-10</li>
+                                </ol>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </main>
         <div class="syntax">
             <details>
@@ -50,9 +359,9 @@
                     <dd><code>}</code></dd>
                     <dt>Example 2</dt>
                     <dd><code>&lt;ol type="I" start="4" reversed&gt;</code></dd>
-                        <dd><code>&nbsp;&nbsp;&lt;li&gt;First Item&lt;/li&gt;</code></dd>
-                        <dd><code>&nbsp;&nbsp;&lt;li&gt;Second Item&lt;/li&gt;</code></dd>
-                        <dd><code>&nbsp;&nbsp;&lt;li&gt;Third Item&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;First Item&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;Second Item&lt;/li&gt;</code></dd>
+                    <dd><code>&nbsp;&nbsp;&lt;li&gt;Third Item&lt;/li&gt;</code></dd>
                     <dd><code>&lt;/ol&gt;</code></dd>
 
                 </dl>
@@ -62,6 +371,14 @@
             <details>
                 <summary>Notes</summary>
                 <dl>
+                    <dt>start value (whatwg)</dt>
+                    <dd>
+                        The start attribute, if present, must be a valid integer. 
+                    </dd>
+                    <dd>
+                        It is used to determine the starting
+                        value of the list.
+                    </dd>
                     <dt>Six types of Automatic numbering</dt>
                     <dd>
                         <code>Decimal</code>,
@@ -70,7 +387,6 @@
                         <code>Greek</code>,
                         <code>Georgian</code>,
                         <code>Armenian</code>,
-                        </ol>
                     </dd>
                     <dt>markup</dt>
                     <dd>
@@ -106,24 +422,9 @@
                     <dt>latin vs alpha</dt>
                     <dd><code>upper-alpha</code> and <code>upper-latin</code>
                         are identical, as are <code>lower-latin</code> and
-                        <code>lower-alpha</code></dd>
+                        <code>lower-alpha</code>
+                    </dd>
 
-                    <dt>closing tag</dt>
-                    <dd>the closing tag
-                        <code>&lt;/li&gt;</code>
-                        is optional.
-                    </dd>
-                    <dd>
-                        <q>
-                            An
-                            <code>li</code>
-                            element's end tag may be omitted if the
-                            <code>li</code>
-                            element is immediately followed by another
-                            <code>li</code>
-                            element or if there is no more content in the parent element.
-                        </q>
-                    </dd>
                     <dt>start</dt>
                     <dd>Value is always an Arabic number</dd>
                     <dt>type</dt>
@@ -159,19 +460,52 @@
                         vs
                         <code>start</code>
                     </dt>
-                    <dd>It seems that
-                        <code>value</code>
+                    <dd><code>value</code>
                         may be used instead of
                         <code>start</code>
                         as an attribute of the
-                        <em>first</em>
                         <code>li</code>
-                        tag
-                    </dd>
-                    <dd><code>&lt;ul value="2"&gt;</code>
+                        tag, and overrides <code>start</code>
+                        in
+                        <code>ul</code>
                     </dd>
                     <dd>
-                        (MeasureUp, but idiosyncratic)</dd>
+                        (MeasureUp, but idiosyncratic?)</dd>
+                    <dt>Rules for numbering calc (start/value)</dt>
+                    <dd>
+                        The rules may be found at<a
+                            href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">
+                            whatwg: li Element</a>
+                    </dd>
+                    <dd>
+                        <ol>
+                            <li>Let i be 1.</li>
+                            <li>If owner is an ol element, let numbering be owner's starting value. Otherwise, let
+                                numbering be 1</li>
+                            <li>Loop: If i is greater than the number of list items that owner owns, then return</li>
+                            <li>If item is an li element that has a value attribute, then:
+                                <ol>
+                                    <li>Let parsed be the result of parsing the value of the attribute as an integer.
+                                    </li>
+                                    <li>If parsed is not an error, then set numbering to parsed.</li>
+
+                                </ol>
+                            </li>
+                        </ol>
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">
+                                whatwg: the ol element</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">
+                                MDN: The Ordered List element</a>
+                        </p>
+                    </dd>
                 </dl>
             </details>
         </div>
