@@ -1,17 +1,44 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>details/summary</header>
+        <header>details/summary (disclosure)</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt><code>details/summary</code></dt>
+                <dd>
+                    The HTML Details Element creates a disclosure widget in which information is visible
+                    only when the widget is toggled into an "open" state.
+                </dd>
+                <dd>
+                    A summary or label can be provided using the <code>summary</code> element.
+                </dd>
+                <dd>
+                    disclosure widget is typically presented onscreen using a small triangle which rotates (or twists)
+                    to indicate open/closed status, with a label next to the triangle.
+                </dd>
+                <dd>
+                    If the first child of the <code>details</code> element is <code>summary</code>,
+                    the contents of the
+                    <code>summary</code>
+                    element are used as the label for the disclosure widget.
+                </dd>
+                <dt><code>open</code></dt>
+                <dd>
+                    This Boolean attribute indicates whether or not the details - 
+                    that is, the contents of the <code>details</code>
+                        element - are currently visible.
+                </dd>
+                <dd>
+                    The default, false, means the details are not visible.
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +61,19 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">
+                                MDN: &lt;details&gt;: The Details disclosure element
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
