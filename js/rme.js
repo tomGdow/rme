@@ -40,7 +40,6 @@ let pageData = (function () {
     "25_footer_tag.html",
     "26_details_summary.html",
     "27_figure_tag.html",
-    "28_caption_tag.html",
     "29_img_tag.html",
     "30_a_anchor_tag.html",
     "31_targets.html",

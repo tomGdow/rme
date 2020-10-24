@@ -1,17 +1,39 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>figure</header>
+        <header>&lt;figure&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt><code>figure</code></dt>
+                <dd>
+                    The HTML <code>figure</code> (Figure With Optional Caption) element represents self-contained
+                    content,
+                    potentially with an optional caption, which is specified using the <code>figcaption</code> element.
+                </dd>
+                <dd>
+                    The figure, its caption, and its contents are referenced as a single unit.
+                </dd>
+                <dd>
+                    Usually a <code>figure</code> is an image, illustration, diagram, code snippet, etc., that is referenced in the
+                        main flow of a document, but that can be moved to another part of the document or to an appendix
+                        without affecting the main flow
+                </dd>
+                <dt><code>figcaption</code></dt>
+                <dd>
+                    A caption can be associated with the <code>figure</code> element by inserting a
+                     <code>figcaption</code> inside it (as the first or the last child).
+                </dd>
+                <dd>
+                    The first <code>figcaption</code> element found in the figure is presented as the figure's caption.
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +56,24 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">
+                                whatwg: The figure element</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure">
+                                MDN <code>figure</code>: The Figure with Optional Caption element</a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
