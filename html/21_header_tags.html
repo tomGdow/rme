@@ -1,17 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>header</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .container-header {
+            background-color: lightgoldenrodyellow;
+            min-height: 100px;
+            width: 80%;
+            margin: auto;
+
+        }
+
+        .container-header header {
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .container-header img {
+            float: left;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <header>header</header>
+        <header>&lt;header&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>header</dt>
+                <dd>
+                    The HTML <code>header</code> element represents introductory content, typically a group of
+                    introductory or navigational aids
+                </dd>
+                <dd>
+                    It may contain some heading elements but also a logo, a search form, an author name, and other
+                    elements
+                </dd>
+                <dd>Permitted: Flow content, but with no
+                    <code>header</code>
+                    or <code>footer</code>
+                    descendant.
+                </dd>
+                <dd>Both the starting and ending tag are mandatory.</dd>
+                <dd>
+                    Note that a <code>header</code> element must not be a descendant of an <code>address</code>,
+                    <code>footer</code> or another <code>header</code> element.
+                </dd>
+                <dd>
+                    whatwg <q>
+                        A header element is intended to usually contain the section's heading (an
+                        <code>h1–h6</code> element
+                        or an hgroup element), but this is not required.
+                    </q>
+                </dd>
+                <dd>
+                    whatwg <q>
+                        The header element can also be used to wrap a section's table of contents, a search form,
+                        or any relevant logos.
+                    </q>
+                </dd>
+
             </dl>
         </main>
         <div class="syntax">
@@ -26,19 +78,38 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <div class="container-header">
+                    <header>
+                            <img src="../image/bonnie256.jpg" alt="Picture of Bonnie" width="100" height="100"/>
+                        <h1>Page title</h1>
+                    </header>
+
+                </div>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element">
+                                whatwg: header element
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">
+                                MDN: header
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

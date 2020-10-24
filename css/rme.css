@@ -1418,7 +1418,7 @@ div.container-ordered-list {
     margin-top: 1rem;
     border-collapse: collapse;
     caption-side: bottom;
-    
+
 }
 
 .table-template-seven th {
@@ -1522,9 +1522,25 @@ div.container-ordered-list {
     list-style-type: armenian;
 }
 
-#ol-value-start-expt
-{
+#ol-value-start-expt {
     padding: 2rem 0 0 2rem;
+}
+
+.container-header {
+    background-color: lightgoldenrodyellow;
+    min-height: 100px;
+    width: 80%;
+    margin: auto;
+
+}
+
+.container-header header {
+    text-align: center;
+    line-height: 100px;
+}
+
+.container-header img {
+    float: left;
 }
 
 @font-face {
