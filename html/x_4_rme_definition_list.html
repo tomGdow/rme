@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .emphasize-me {
+            background-color:lightgoldenrodyellow;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,11 +18,12 @@
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dd>definition/description list</dd>
+                <dt>definition/description list</dt>
                 <dd>The
                     <code>dl</code>
                     element encloses
-                    <code>dt</code> and
+                    <code>dt</code> 
+                    and
                     <code>dd</code>
                     key-value pairs
                 </dd>
@@ -38,13 +45,49 @@
             <details>
                 <summary>Examples</summary>
                 <dl>
-                    <dt>html</dt>
+                    <dt>Example 1</dt>
                     <dd><code>&lt;dl&gt;</code></dd>
                     <dd><code>&lt;dt&gt; What is HTML5?&lt;/dt&gt;</code></dd>
                     <dd><code>&lt;dd&gt;The latest HyperText markup language&lt;/dd&gt;</code></dd>
                     <dd><code>&lt;dt&gt;When can I use it?&lt;/dt&gt;</code></dd>
                     <dd><code>&lt;dd&gt;Right now!&lt;/dd&gt;</code></dd>
                     <dd><code>&lt;/dl&gt;</code></dd>
+                    <dt>Example 2</dt>
+                    <dd>
+                        <pre>
+&lt;dl&gt;
+    <span class="emphasize-me">&lt;dt&gt;Firefox&lt;/dt&gt;</span>
+    <span class="emphasize-me">&lt;dt&gt;Mozilla Firefox&lt;/dt&gt;</span>
+    <span class="emphasize-me">&lt;dt&gt;Fx&lt;/dt&gt;</span>
+    &lt;dd&gt;
+      A free, open source, cross-platform,
+      graphical web browser developed by the
+      Mozilla Corporation and hundreds of
+      volunteers.
+    &lt;/dd&gt;
+  <!-- Other terms and descriptions -->
+&lt;/dl&gt;
+                        </pre>
+                    </dd>
+                    <dt>Example 3</dt>
+                    <pre>
+ &lt;dl&gt;
+    &lt;div&gt;
+        &lt;dt> Last modified time &lt;/dt&gt;
+        &lt;dd> 2004-12-23T23:33Z &lt;/dd&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;dt> Recommended update interval &lt;/dt&gt;
+        &lt;dd> 60s &lt;/dd&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;dt> Authors &lt;/dt&gt;
+        &lt;dt> Editors &lt;/dt&gt;
+        &lt;dd> Robert Rothman &lt;/dd&gt;
+        &lt;dd> Daniel Jackson &lt;/dd&gt;
+    &lt;/div&gt;
+&lt;/dl&gt;
+                    </pre>
                 </dl>
             </details>
         </div>
@@ -68,6 +111,31 @@
                         and
                         <code>&lt;/dd&gt;</code>
                         are optional.
+                    </dd>
+                    <dt>What is permitted</dt>
+                    <dd><code>dl</code>&RightArrow;<code>dt</code>&rightarrow;<code>dt</code></dd>
+                    <dd>
+                        <code>dl</code>&rightarrow;<code>dt</code>&rightarrow;<code>dt</code>
+                        &rightarrow;<code>dd</code>&rightarrow;<code></code>
+
+                    </dd>
+                    <dd><span class="emphasize-me">No!</span>
+                        <code>dl</code>&rightarrow;<code>dd</code>
+                    </dd>
+                    <dt>References</dt>
+                    <dt>(Bibliography)</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">
+                            whatwg: dl element
+                        </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">
+                            MDN: dl element</a>
+                        </p>
                     </dd>
                 </dl>
             </details>
