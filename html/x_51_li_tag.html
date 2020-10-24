@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>&lt;li&gt;</header>
@@ -12,7 +19,34 @@
         <main>
             <dl>
                 <dt><code>li</code></dt>
-                <dd></dd>
+                <dd>
+                    The HTML <code>li</code> element is used to represent an item in a list
+                </dd>
+                <dd>
+                    It must be contained in a parent element: an ordered list (<code>ol</code>),
+                    an unordered list (<code>ul</code>)</dd>
+                <dd>unordered lists, list items are usually displayed using bullet points</dd>
+                <dd>In ordered lists, they are usually displayed with an ascending counter on the left, such as a number
+                    or letter
+                </dd>
+                <dt><code>value</code></dt>
+                <dd>This
+                    <span class="emphasize-me">integer attribute</span>
+                    indicates the current
+                    <span class="emphasize-me">ordinal value</span> of the list item as
+                    defined by the <code>ol</code> element
+                </dd>
+                <dd>
+                    The only allowed value for this attribute is a number, even if the list is displayed with Roman
+                    numerals or letters.
+                </dd>
+                <dd>
+                     List items that follow this one continue numbering from the value set.
+                </dd>
+                <dd>The value attribute has no meaning for unordered lists</dd>
+                <dt><code>type</code></dt>
+                <dd>deprecated!</dd>
+                <dd><code>type ={a,A,I,i,1}</code></dd>
             </dl>
         </main>
         <div class="syntax">
@@ -48,6 +82,19 @@
                             element or if there is no more content in the parent element.
                         </q>
                     </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">
+                            MDN: ul</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">
+                            whatwg: The li element</a>
+                        </p>
+                    </dd>
                 </dl>
                 <ol>
                     <li>Note-1</li>
@@ -56,4 +103,5 @@
         </div>
     </div>
 </body>
+
 </html>
