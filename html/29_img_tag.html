@@ -1,17 +1,41 @@
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
-        <header>img</header>
+        <header>&lt;img&gt;</header>
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt><code>img</code></dt>
+                <dd>
+                    The HTML <code>img</code> element embeds an image into the document.
+                </dd>
+                <dt><code>src</code></dt>
+                <dd>
+                    the src attribute is required, and contains the path to the image you want to embed.
+                </dd>
+                <dt><code>alt</code></dt>
+                <dd>
+                    The alt attribute holds a text description of the image,
+                    which isn't mandatory but is incredibly useful for accessibility
+                </dd>
+                <dd>
+                    Screen readers read this description out to their users so they know what the image means
+                </dd>
+                <dd>
+                    Alt text is also displayed on the page if the image can't be loaded
+                </dd>
+                <dt><code>srcset</code></dt>
+                <dd>
+                    One or more strings separated by commas, indicating possible image sources for the user agent to
+                    use.
+                </dd>
             </dl>
         </main>
         <div class="syntax">
@@ -34,11 +58,25 @@
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                <ol>
-                    <li>Note-1</li>
-                </ol>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element">
+                            whatwg: The img element
+                        </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img">
+                            MDN <code>img</code>: The Image Embed element</a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>
