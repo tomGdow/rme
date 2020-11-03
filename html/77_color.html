@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,10 +6,44 @@
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
     <style>
+        :root {
+            --col-0: #FF0000;
+            --col-0-2: #800000;
+            --col-0-3: #FF8080;
+            --col-30: #FF7F00;
+            --col-30-2: #803F00;
+            --col-60: #FFFF00;
+            --col-60-2: #808000;
+            --col-90: #7FFF00;
+            --col-90-2: #3F8000;
+            --col-120: #00FF00;
+            --col-120-2: #008000;
+            --col-120-3: #80FF80;
+            --col-150: #00FF7F;
+            --col-150-2: #00803F;
+            --col-180: #00FFFF;
+            --col-180-2: #008080;
+            --col-210: #007FFF;
+            --col-210-2: #003F80;
+            --col-240: #0000FF;
+            --col-240-2: #000080;
+            --col-240-3: #8080FF;
+            --col-270: #7F00FF;
+            --col-270-2: #3F0080;
+            --col-300: #FF00FF;
+            --col-300-2: #800080;
+            --col-330: #FF007F;
+            --col-330-2: #80003F;
+        }
+
+        main {
+
+            counter-reset: table-counter;
+        }
+
         div.container-color {
             margin: 1rem auto;
             width: 80%;
-            counter-reset: table-counter;
         }
 
         .table-template-eight {
@@ -17,16 +52,16 @@
             empty-cells: hide;
             margin-top: 1rem;
             border-collapse: collapse;
-            caption-side: bottom;
-        }
-        .table-template-eight  {
-    
+            counter-reset: item-counter;
             counter-increment: table-counter;
         }
 
-        .table-template-eight td {
-            border: 1px solid lightblue;
-            padding: 0.2em 1em 0.2em 1em;
+        .table-template-eight tbody tr {
+            counter-increment: item-counter;
+        }
+
+        .table-template-eight tbody td:first-of-type::before {
+            content: counter(item-counter);
         }
 
         .table-template-eight caption {
@@ -34,10 +69,15 @@
             background-color: lightcyan;
             padding: 0.5rem 0;
             margin: 0.5rem 0;
+            caption-side: bottom;
         }
 
         .table-template-eight caption span:before {
             content: '('counter(table-counter) ')';
+        }
+
+        .table-template-eight tbody {
+            border-top: 15px solid lightblue;
         }
 
         .table-template-eight tr:hover {
@@ -64,12 +104,20 @@
             background-color: rgb(0, 0, 0);
         }
 
+        .hsl-black {
+            background-color: hsl(0, 0%, 0%);
+        }
+
         .hex-white {
             background-color: #FFFFFF;
         }
 
         .rgb-white {
             background-color: rgb(255, 255, 255);
+        }
+
+        .hsl-white {
+            background-color: hsl(0, 0%, 100%);
         }
 
         .hex-red {
@@ -80,12 +128,20 @@
             background-color: rgb(255, 0, 0)
         }
 
+        .hsl-red {
+            background-color: hsl(0, 100%, 50%);
+        }
+
         .hex-lime {
             background-color: #0F0;
         }
 
         .rgb-lime {
             background-color: rgb(0, 255, 0);
+        }
+
+        .hsl-lime {
+            background-color: hsl(120, 100%, 50%);
         }
 
         .hex-blue {
@@ -97,23 +153,19 @@
         }
 
         .hex-gray {
-            background-color: #A0A0A0;
+            background-color: #808080;
         }
 
         .rgb-gray {
-            background-color: rgb(160, 160, 160);
+            background-color: rgb(128, 128, 128);
         }
 
-        .hsl-red {
-            background-color: hsl(0, 100%, 50%);
+        .hsl-gray {
+            background-color: hsl(0, 0%, 50%);
         }
 
         .hsl-yellow {
             background-color: hsl(60, 100%, 50%);
-        }
-
-        .hsl-lime {
-            background-color: hsl(120, 100%, 50%);
         }
 
         .hsl-cyan {
@@ -130,7 +182,6 @@
 
         .hsl-green {
             background-color: hsl(120, 100%, 25%);
-            /* background-color: rgb(0, 50%, 0); */
         }
 
         .hsl-olive {
@@ -148,6 +199,814 @@
         .hsl-purple {
             background-color: hsl(300, 100%, 25%);
         }
+
+        .hex-maroon {
+            background-color: #800000;
+        }
+
+        .rgb-maroon {
+            background-color: rgb(128, 0, 0);
+        }
+
+        .hsl-maroon {
+            background-color: hsl(0, 100%, 25%);
+        }
+
+        .rgb-silver {
+            background-color: red;
+        }
+
+        .hex-silver {
+            background-color: #c0c0c0;
+        }
+
+        .hsl-silver {
+            background-color: hsl(0, 0%, 75%);
+        }
+
+        .rgb-silver {
+            background-color: rgb(192, 192, 192);
+        }
+
+        .hsl-orange {
+            background-color: hsl(39, 100%, 50%);
+        }
+
+        .hsl-azure {
+            background-color: hsl(180, 100%, 97%);
+        }
+
+        .hsl-chartreuse {
+            background-color: hsl(90, 100%, 50%);
+        }
+
+        .hsl-darkblue {
+            background-color: hsl(240, 100%, 27%);
+        }
+
+        .hsl-darkcyan {
+            background-color: hsl(180, 100%, 27%);
+        }
+
+        .hsl-darkgreen {
+            background-color: hsl(120, 100%, 20%);
+        }
+
+        .hsl-darkorange {
+            background-color: hsl(33, 100%, 50%)
+        }
+
+        .hsl-darkmagenta {
+            background-color: hsl(300, 100%, 27%);
+        }
+
+        .hsl-darkred {
+            background-color: hsl(0, 100%, 27%);
+        }
+
+        .hsl-darkturquoise {
+            background-color: hsl(181, 100%, 41%);
+        }
+
+        .hsl-darkviolet {
+            background-color: hsl(282, 100%, 41%);
+        }
+
+        .hsl-deepskyblue {
+            background-color: hsl(195, 100%, 50%)
+        }
+
+        .hsl-gold {
+            background-color: hsl(51, 100%, 50%)
+        }
+
+        .hsl-lawngreen {
+            background-color: hsl(90, 100%, 49%);
+        }
+
+        .hsl-mediumblue {
+            background-color: hsl(240, 100%, 40%)
+        }
+
+        .hsl-mediumspringgreen {
+            background-color: hsl(157, 100%, 49%);
+        }
+
+        .hsl-orangered {
+            background-color: hsl(16, 100%, 50%);
+        }
+
+        .hsl-rebeccapurple {
+            background-color: hsl(270, 50%, 40%);
+        }
+
+        .ref~dd {
+            counter-increment: item-counter;
+        }
+
+
+        .ref~dd>p::before {
+            content: '('counter(item-counter) ') ';
+        }
+
+        #rgb-wiki-diagram {
+            margin: 2rem auto 1rem auto;
+            text-align: center;
+            counter-reset: item-counter;
+        }
+
+        #rgb-wiki-diagram figcaption {
+            counter-increment: item-counter;
+        }
+
+        #rgb-wiki-diagram span::before {
+            content: counter(item-counter);
+        }
+
+        div.container-colorwheel {
+            margin: auto;
+            width: 50%;
+            /* border: 2px solid red; */
+            position: relative;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        div.container-colorwheel div {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            border-radius: 20%;
+            top: 50%;
+            left: 50%;
+
+        }
+
+        div.container-colorwheel div:hover {
+            color: white;
+        }
+
+        .div0 {
+            background-color: var(--col-0);
+            transform: translate(0, calc(-300%));
+        }
+
+        #results {
+            color: white;
+        }
+
+        :hover~#results {
+            transition-property: background-color, color;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 0.15s;
+        }
+
+        .div0:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(0, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div0:hover~#results::before {
+            content: '#FF0000\Ahsl(0, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div0:hover~#results::after {
+            content: 'rgb(255,0,0)';
+        }
+
+        .div0-2 {
+            background-color: var(--col-0-2);
+            transform: translate(0, calc(-450%));
+            color: white;
+        }
+
+        div.container-colorwheel .div0-2:hover {
+            color: cyan;
+        }
+
+        .div0-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(0, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div0-2:hover~#results::before {
+            content: '#800000\Ahsl(0, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div0-2:hover~#results::after {
+            content: 'rgb(128,0,0)';
+        }
+
+        div.container-colorwheel .div0-3 {
+            border-top: 3vh solid var(--col-0-3);
+            border-radius: 0;
+            transform: translate(0, calc(-150%));
+        }
+
+        .div0-3:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(0, 100%, 75%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div0-3:hover~#results::before {
+            content: '#FF8080\Ahsl(0, 100%, 75%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div0-3:hover~#results::after {
+            content: 'rgb(255, 0, 0)';
+        }
+
+        .div30 {
+            background-color: var(--col-30);
+            transform: translate(calc(0.5*300%), calc(-0.86*300%))
+        }
+
+        .div30:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(30, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div30:hover~#results::before {
+            content: '#FF7F00\Ahsl(30, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div30:hover~#results::after {
+            content: 'rgb(255,127,0)';
+        }
+
+        .div30-2 {
+            background-color: var(--col-30-2);
+            transform: translate(calc(0.5*450%), calc(-0.86*450%))
+        }
+
+        .div30-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(30, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div30-2:hover~#results::before {
+            content: '#803F00\Ahsl(30, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div30-2:hover~#results::after {
+            content: 'rgb(128,63,0)';
+        }
+
+        .div60 {
+            background-color: var(--col-60);
+            transform: translate(calc(0.86*300%), calc(-0.5*300%))
+        }
+
+        div.container-colorwheel .div60:hover {
+            color: red;
+        }
+
+        .div60:hover~#results {
+            color: blue;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(60, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div60:hover~#results::before {
+            content: '#FFFF00 (yellow)\Ahsl(60, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div60:hover~#results::after {
+            content: 'rgb(255, 255, 0)';
+        }
+
+        .div60-2 {
+            background-color: var(--col-60-2);
+            transform: translate(calc(0.86*450%), calc(-0.5*450%));
+            color: white
+        }
+
+        div.container-colorwheel .div60-2:hover {
+            color: blue;
+        }
+
+        .div60-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(60, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div60-2:hover~#results::before {
+            content: '#808000\Ahsl(60, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div60-2:hover~#results::after {
+            content: 'rgb(128, 128, 0)';
+        }
+
+        .div90 {
+            background-color: var(--col-90);
+            transform: translate(300%, 0);
+        }
+
+        .div90:hover~#results {
+            color: rebeccapurple;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(90, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div90:hover~#results::before {
+            content: '#7FFF00 (Chartreuse)\Ahsl(90, 100%, 50%)';
+            white-space: pre-wrap;
+        }
+
+        .div90:hover~#results::after {
+            content: 'rgb(127, 255, 0)';
+        }
+
+        .div90-2 {
+            background-color: var(--col-90-2);
+            transform: translate(450%, 0);
+        }
+
+        .div90-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(90, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div90-2:hover~#results::before {
+            content: '#3F8000\Ahsl(90, 100%, 25%)';
+            white-space: pre-wrap;
+        }
+
+        .div90-2:hover~#results::after {
+            content: 'rgb(63,128,0)';
+        }
+
+        .div120 {
+            background-color: var(--col-120);
+            transform: translate(calc(0.86*300%), calc(0.5*300%))
+        }
+
+        .div120:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(120, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div120:hover~#results::before {
+            content: '#00FF00\Ahsl(120, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div120:hover~#results::after {
+            content: 'rgb(0,255,0)';
+        }
+
+        .div120-2 {
+            color: white;
+            background-color: var(--col-120-2);
+            transform: translate(calc(0.86*450%), calc(0.5*450%))
+        }
+
+
+        .div120-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(120, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div120-2:hover~#results::before {
+            content: '#008000\Ahsl(120, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div120-2:hover~#results::after {
+            content: 'rgb(0, 128, 0)';
+        }
+
+        div.container-colorwheel .div120-3 {
+            color: white;
+            border-radius: 0;
+            /* background-color: var(--col-0); */
+            border-left: 3vh solid var(--col-120-3);
+            transform: translate(calc(0.86*185%), calc(0.5*300%))
+        }
+
+        .div120-3:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(120, 100%, 75%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div120-3:hover~#results::before {
+            content: '#80FF80\Ahsl(120, 100%, 75%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div120-3:hover~#results::after {
+            content: 'rgb(128,255,128)';
+        }
+
+        .div150 {
+            background-color: var(--col-150);
+            transform: translate(calc(0.5*300%), calc(0.86*300%))
+        }
+
+        .div150:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(150, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div150:hover~#results::before {
+            content: '#00FF7F (springgreen)\Ahsl(150, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div150:hover~#results::after {
+            content: 'rgb(0,255,127)';
+        }
+
+        .div150-2 {
+            background-color: var(--col-150-2);
+            transform: translate(calc(0.5*450%), calc(0.86*450%))
+        }
+
+        .div150-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(150, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div150-2:hover~#results::before {
+            content: '#00803F\Ahsl(150, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div150-2:hover~#results::after {
+            content: 'rgb(0, 128, 63)';
+        }
+
+        .div180 {
+            background-color: var(--col-180);
+            transform: translate(0, calc(300%));
+        }
+
+        .div180:hover~#results {
+            color: rebeccapurple;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(180, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div180:hover~#results::before {
+            content: '#00FFFF\Ahsl(180, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div180:hover~#results::after {
+            content: 'rgb(0,255,255)';
+        }
+
+        .div180-2 {
+            color: white;
+            background-color: var(--col-180-2);
+            transform: translate(0, calc(450%));
+
+        }
+
+        div.container-colorwheel .div180-2:hover {
+            color: red;
+        }
+
+        .div180-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(180, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div180-2:hover~#results::before {
+            content: '#008080\Ahsl(180, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div180-2:hover~#results::after {
+            content: 'rgb(0,128,128)';
+        }
+
+
+
+        .div210 {
+            background-color: var(--col-210);
+            transform: translate(calc(-0.5*300%), calc(0.86*300%))
+        }
+
+        .div210:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(210, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div210:hover~#results::before {
+            content: '#007FFF\Ahsl(210, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div210:hover~#results::after {
+            content: 'rgb(0, 127, 255)';
+
+        }
+
+        .div210-2 {
+            background-color: var(--col-210-2);
+            transform: translate(calc(-0.5*450%), calc(0.86*450%))
+        }
+
+        .div210-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(210, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div210-2:hover~#results::before {
+            content: '#003F80\Ahsl(210, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div210-2:hover~#results::after {
+            content: 'rgb(0, 63, 128)';
+        }
+
+        .div240 {
+            background-color: var(--col-240);
+            transform: translate(calc(-0.86*300%), calc(0.5*300%));
+            color: white;
+        }
+
+        .div240:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(240, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div240:hover~#results::before {
+            content: '#0000FF\Ahsl(240, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div240:hover~#results::after {
+            content: 'rgb(0,0,255)';
+        }
+
+        div.container-colorwheel .div240:hover,
+        div.container-colorwheel .div240-2:hover {
+            color: red;
+
+        }
+
+
+        .div240-2 {
+            background-color: var(--col-240-2);
+            transform: translate(calc(-0.86*450%), calc(0.5*450%));
+            color: white;
+        }
+
+        .div240-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(240, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div240-2:hover~#results::before {
+            content: '#000080\Ahsl(240, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div240-2:hover~#results::after {
+            content: 'rgb(0,0,128)';
+        }
+
+        div.container-colorwheel .div240-3 {
+            color: white;
+            border-radius: 0;
+            border-left: 3vh solid var(--col-240-3);
+            transform: translate(calc(-0.86*130%), calc(0.5*300%));
+        }
+
+        .div240-3:hover~#results {
+            color: white;
+            width: 150px;
+            ;
+            height: 150px;
+            background-color: hsl(240, 100%, 75%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div240-3:hover~#results::before {
+            content: '#8080255\Ahsl(240, 100%, 75%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div240-3:hover~#results::after {
+            content: 'rgb(128,255,128)';
+        }
+
+        .div270 {
+            background-color: var(--col-270);
+            transform: translate(-300%, 0);
+        }
+
+        .div270:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(270, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div270:hover~#results::before {
+            content: '#7F00FF\Ahsl(270, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div270:hover~#results::after {
+            content: 'rgb(127, 0, 255)';
+        }
+
+        .div270-2 {
+            background-color: var(--col-270-2);
+            transform: translate(-450%, 0);
+        }
+
+        .div270-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(270, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div270-2:hover~#results::before {
+            content: '#3F0080\Ahsl(270, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div270-2:hover~#results::after {
+            content: 'rgb(63, 0, 128)';
+        }
+
+        .div300 {
+            background-color: var(--col-300);
+            transform: translate(calc(-0.86*300%), calc(-0.5*300%))
+        }
+
+        .div300:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(300, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div300:hover~#results::before {
+            content: '#FF00FF\Ahsl(300, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div300:hover~#results::after {
+            content: 'rgb(255,0,255)';
+        }
+
+        .div300-2 {
+            background-color: var(--col-300-2);
+            transform: translate(calc(-0.86*450%), calc(-0.5*450%));
+            color: white;
+        }
+
+        div.container-colorwheel .div300-2:hover {
+            color: red;
+        }
+
+        .div300-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(300, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div300-2:hover~#results::before {
+            content: '#800080\Ahsl(300, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div300-2:hover~#results::after {
+            content: 'rgb(128,0,128)';
+        }
+
+        .div330 {
+            background-color: var(--col-330);
+            transform: translate(calc(-0.5*300%), calc(-0.86*300%))
+        }
+
+        .div330:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(330, 100%, 50%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div330:hover~#results::before {
+            content: '#FF007F\Ahsl(330, 100%, 50%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div330:hover~#results::after {
+            content: 'rgb(255, 0, 127)';
+        }
+
+        .div330-2 {
+            background-color: var(--col-330-2);
+            transform: translate(calc(-0.5*450%), calc(-0.86*450%))
+        }
+
+        div.container-colorwheel .div330-2:hover {
+            color: red;
+        }
+
+        .div330-2:hover~#results {
+            color: white;
+            width: 150px;
+            height: 150px;
+            background-color: hsl(330, 100%, 25%);
+            transform: translate(-35%, -35%);
+        }
+
+        .div330-2:hover~#results::before {
+            content: '#80003F\Ahsl(330, 100%, 25%)\A';
+            white-space: pre-wrap;
+        }
+
+        .div330-2:hover~#results::after {
+            content: 'rgb(128, 0, 63)';
+        }
+
+        .fig-center {
+            margin: auto;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -157,190 +1016,610 @@
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>hex triplet</dt>
+                <dd>
+                    A hex triplet is a six-digit, three-byte hexadecimal number used in HTML, CSS, SVG, and other
+                    computing applications to represent colors.
+                </dd>
+                <dd>
+                    The bytes represent the red, green and blue components
+                    of the color.
+                </dd>
+                <dd>
+                    One byte represents a number in the range 00 to FF (in hexadecimal notation), or 0 to
+                    255 in decimal notation.
+                </dd>
+                <dd>
+                    This represents the least (0) to the most (255) intensity of each of the
+                    color components. Thus web colors specify colors in the 24-bit RGB color scheme.
+                </dd>
+                <dd>
+                    Thus, there are 24 bits used to specify a web color within the sRGB gamut,
+                    and 16,777,216 (2<sup>24</sup>) colors
+                </dd>
+                <dd>
+                    The RGB color model is an <em>additive</em> color model in which red, green, and blue light are
+                    added
+                    together to reproduce a broad array of colors
+                </dd>
+                <dd><em>Complementary</em>
+                    colors are opposite each other on the color wheel
+                </dd>
+                <dd><em>triads</em>
+                    are a set of three colors forming an equilateral triangle on the color wheel.</dd>
+                </dd>
             </dl>
-            <div class="container-color">
-                <table class="table-template-eight">
-                    <caption>Table <span></span>. Hex and RGB colors</caption>
-                    <colgroup>
-                        <col>
-                        <col>
-                        <col>
-                        <col>
-                        <col>
-                    </colgroup>
-                    <thead>
-                        <th>color</th>
-                        <th>hex</th>
-                        <th>Result</th>
-                        <th>rgb</th>
-                        <th>Result</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>black</td>
-                            <td><code>#000000</code></td>
-                            <td class="hex-black"></td>
-                            <td><code>rgb(0,0,0)</code></td>
-                            <td class="rgb-black"></td>
-                        </tr>
-                        <tr>
-                            <td>white</td>
-                            <td><code>#FFFFFF</code></td>
-                            <td class="hex-white"></td>
-                            <td><code>rgb(255,255,255)</code></td>
-                            <td class="rgb-white"></td>
-                        </tr>
-                        <tr>
-                            <td>red</td>
-                            <td><code>#FF0000</code></td>
-                            <td class="hex-red"></td>
-                            <td><code>rgb(255,0,0)</code></td>
-                            <td class="rgb-red"></td>
-                        </tr>
-                        <tr>
-                            <td>lime</td>
-                            <td><code>#00FF00</code></td>
-                            <td class="hex-lime"></td>
-                            <td><code>rgb(0,255,0)</code></td>
-                            <td class="rgb-lime"></td>
-                        </tr>
-                        <tr>
-                            <td>blue</td>
-                            <td><code>#0000FF</code></td>
-                            <td class="hex-blue"></td>
-                            <td><code>rgb(0,0,255)</code></td>
-                            <td class="rgb-blue"></td>
-                        </tr>
-                        <tr>
-                            <td>gray</td>
-                            <td><code>#A0A0A0</code></td>
-                            <td class="hex-gray"></td>
-                            <td><code>rgb(160,160,160)</code></td>
-                            <td class="rgb-gray"></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table-template-eight">
-                    <caption>Table <span></span>. The rsl system</caption>
-                    <thead>
-                        <tr>
-                            <td>Hue</td>
-                            <td>Saturation</td>
-                            <td>Lightness</td>
-                            <td>Example</td>
-                            <td>name</td>
-                            <td>Hex</td>
-                            <td>rgb</td>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>0</td>
-                        <td>100</td>
-                        <td>50%</td>
-                        <td class="hsl-red"></td>
-                        <td>red</td>
-                        <td><code>#FF0000</code></td>
-                        <td><code>rgb(255,0,0)</code></td>
-                    </tr>
-                    <tr>
-                        <td>60</td>
-                        <td>100</td>
-                        <td>50%</td>
-                        <td class="hsl-yellow"></td>
-                        <td>yellow</td>
-                        <td><code>#FFFF00</code></td>
-                        <td><code>rgb(255, 255, 0)</code></td>
-                    </tr>
 
-                    <tr>
-                        <td>120</td>
-                        <td>100</td>
-                        <td>50%</td>
-                        <td class="hsl-lime"></td>
-                        <td>lime</td>
-                        <td><code>#00FF00</code></td>
-                        <td><code>rgb(0,255,0)</code></td>
-                    </tr>
+            <details>
+                <summary>Color Wheel</summary>
+                <div class="container-colorwheel">
+                    <div class="div0">red</div>
+                    <div class="div30"></div>
+                    <div class="div60">yel</div>
+                    <div class="div90">char</div>
+                    <div class="div120">lime</div>
+                    <div class="div150">sgreen</div>
+                    <div class="div180">cyan</div>
+                    <div class="div210"></div>
+                    <div class="div240">blue</div>
+                    <div class="div270"></div>
+                    <div class="div300">fuchsia</div>
+                    <div class="div330"></div>
 
-                    <tr>
-                        <td>180</td>
-                        <td>100</td>
-                        <td>50%</td>
-                        <td class="hsl-cyan"></td>
-                        <td>cyan</td>
-                        <td><code>#00ffff</code></td>
-                        <td><code>rgb(0,255,255)</code></td>
-                    </tr>
-                    <tr>
-                        <td>240</td>
-                        <td>100</td>
-                        <td>50%</td>
-                        <td class="hsl-blue"></td>
-                        <td>blue</td>
-                        <td><code>#0000FF</code></td>
-                        <td><code>rgb(0,0,255)</code></td>
-                    </tr>
+                    <div class="div0-2">maroon</div>
+                    <div class="div30-2"></div>
+                    <div class="div60-2">olive</div>
+                    <div class="div90-2"></div>
+                    <div class="div120-2">green</div>
+                    <div class="div150-2"></div>
+                    <div class="div180-2">teal</div>
+                    <div class="div210-2"></div>
+                    <div class="div240-2">navy</div>
+                    <div class="div270-2"></div>
+                    <div class="div300-2">purple</div>
+                    <div class="div330-2"></div>
 
-                    <tr>
-                        <td>300</td>
-                        <td>100</td>
-                        <td>50%</td>
-                        <td class="hsl-fuchsia"></td>
-                        <td>fuchsia</td>
-                        <td><code>#FF00FF</code></td>
-                        <td><code>rgb(255,0,255)</code></td>
-                    </tr>
-                    <tr>
-                        <td>60</td>
-                        <td>100</td>
-                        <td>25%</td>
-                        <td class="hsl-olive"></td>
-                        <td>olive</td>
-                        <td><code>#808000</code></td>
-                        <td><code>rgb(128,128,0)</code></td>
-                    </tr>
-                    <tr>
-                        <td>120</td>
-                        <td>100</td>
-                        <td>25%</td>
-                        <td class="hsl-green"></td>
-                        <td>green</td>
-                        <td><code>#008000</code></td>
-                        <td><code>rgb(0,128,0)</code></td>
-                    </tr>
+                    <div class="div0-3"></div>
+                    <div class="div120-3"></div>
+                    <div class="div240-3"></div>
 
-                    <tr>
-                        <td>180</td>
-                        <td>100</td>
-                        <td>25%</td>
-                        <td class="hsl-teal"></td>
-                        <td>teal</td>
-                        <td><code>#008080</code></td>
-                        <td><code>rgb(0,128,128)</code></td>
-                    </tr>
-                    <tr>
-                        <td>240</td>
-                        <td>100</td>
-                        <td>25%</td>
-                        <td class="hsl-navy"></td>
-                        <td>navy</td>
-                        <td><code>#000080</code></td>
-                        <td><code>rgb(0,0,128)</code></td>
-                    </tr>
-                    <tr>
-                        <td>300</td>
-                        <td>100</td>
-                        <td>25%</td>
-                        <td class="hsl-purple"></td>
-                        <td>purple</td>
-                        <td><code>#800080</code></td>
-                        <td><code>rgb(128,0,128)</code></td>
-                    </tr>
+                    <div id="results">
+                    </div>
+                </div>
+            </details>
+            <details>
+                <summary>Table 1 Hex and RGB Colors</summary>
+                <div class="container-color">
+                    <table class="table-template-eight">
+                        <!--table one-->
+                        <caption>Table <span></span>. Hex and RGB colors</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>color</th>
+                                <th>hex</th>
+                                <th>Result</th>
+                                <th>rgb</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>black</td>
+                                <td><code>#000000</code></td>
+                                <td class="hex-black"></td>
+                                <td><code>rgb(0,0,0)</code></td>
+                                <td class="rgb-black"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>white</td>
+                                <td><code>#FFFFFF</code></td>
+                                <td class="hex-white"></td>
+                                <td><code>rgb(255,255,255)</code></td>
+                                <td class="rgb-white"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>gray</td>
+                                <td><code>#808080</code></td>
+                                <td class="hex-gray"></td>
+                                <td><code>rgb(128,128,128)</code></td>
+                                <td class="rgb-gray"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>red</td>
+                                <td><code>#FF0000</code></td>
+                                <td class="hex-red"></td>
+                                <td><code>rgb(255,0,0)</code></td>
+                                <td class="rgb-red"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>lime</td>
+                                <td><code>#00FF00</code></td>
+                                <td class="hex-lime"></td>
+                                <td><code>rgb(0,255,0)</code></td>
+                                <td class="rgb-lime"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>blue</td>
+                                <td><code>#0000FF</code></td>
+                                <td class="hex-blue"></td>
+                                <td><code>rgb(0,0,255)</code></td>
+                                <td class="rgb-blue"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+            <details>
+                <summary>Table 2. CSS Level 1 Colors</summary>
+                <div class="container-color">
 
-                </table>
-            </div>
+                    <table class="table-template-eight">
+                        <!--table two-->
+                        <caption>Table <span></span>. CSS Level 1 Colors</caption>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>H</th>
+                                <th>S</th>
+                                <th>L</th>
+                                <th>Example</th>
+                                <th>name</th>
+                                <th>hex</th>
+                                <th>rgb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-red"></td>
+                                <td>red</td>
+                                <td><code>#FF0000</code></td>
+                                <td><code>rgb(255,0,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>60</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-yellow"></td>
+                                <td>yellow</td>
+                                <td><code>#FFFF00</code></td>
+                                <td><code>rgb(255, 255, 0)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>120</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-lime"></td>
+                                <td>lime</td>
+                                <td><code>#00FF00</code></td>
+                                <td><code>rgb(0,255,0)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>180</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-cyan"></td>
+                                <td>cyan</td>
+                                <td><code>#00ffff</code></td>
+                                <td><code>rgb(0,255,255)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>240</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-blue"></td>
+                                <td>blue</td>
+                                <td><code>#0000FF</code></td>
+                                <td><code>rgb(0,0,255)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>300</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-fuchsia"></td>
+                                <td>fuchsia</td>
+                                <td><code>#FF00FF</code></td>
+                                <td><code>rgb(255,0,255)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>100%</td>
+                                <td>25%</td>
+                                <td class="hsl-maroon"></td>
+                                <td>maroon</td>
+                                <td><code>#800000</code></td>
+                                <td><code>rgb(128,0,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>60</td>
+                                <td>100%</td>
+                                <td>25%</td>
+                                <td class="hsl-olive"></td>
+                                <td>olive</td>
+                                <td><code>#808000</code></td>
+                                <td><code>rgb(128,128,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>120</td>
+                                <td>100%</td>
+                                <td>25%</td>
+                                <td class="hsl-green"></td>
+                                <td>green</td>
+                                <td><code>#008000</code></td>
+                                <td><code>rgb(0,128,0)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>180</td>
+                                <td>100%</td>
+                                <td>25%</td>
+                                <td class="hsl-teal"></td>
+                                <td>teal</td>
+                                <td><code>#008080</code></td>
+                                <td><code>rgb(0,128,128)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>240</td>
+                                <td>100%</td>
+                                <td>25%</td>
+                                <td class="hsl-navy"></td>
+                                <td>navy</td>
+                                <td><code>#000080</code></td>
+                                <td><code>rgb(0,0,128)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>300</td>
+                                <td>100%</td>
+                                <td>25%</td>
+                                <td class="hsl-purple"></td>
+                                <td>purple</td>
+                                <td><code>#800080</code></td>
+                                <td><code>rgb(128,0,128)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td class="hsl-black"></td>
+                                <td>black</td>
+                                <td><code>#000000</code></td>
+                                <td><code>rgb(0,0,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>0%</td>
+                                <td>50%</td>
+                                <td class="hsl-gray"></td>
+                                <td>gray</td>
+                                <td><code>#808080</code></td>
+                                <td><code>rgb(128,128,128)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>0%</td>
+                                <td>75%</td>
+                                <td class="hsl-silver"></td>
+                                <td>silver</td>
+                                <td><code>#c0c0c0</code></td>
+                                <td><code>rgb(192,192,192)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>0%</td>
+                                <td>100%</td>
+                                <td class="hsl-white"></td>
+                                <td>white</td>
+                                <td><code>#FFFFFF</code></td>
+                                <td><code>rgb(255,255,255)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>39</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-orange"></td>
+                                <td>orange</td>
+                                <td><code>#ffa500</code></td>
+                                <td><code>rgb(255,165,0)</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details>
+                <summary>Table 3. More CSS Level 3 Colors</summary>
+
+                <div class="container-color">
+                    <table class="table-template-eight">
+                        <!--table three-->
+                        <caption>Table <span></span>. CSS Level 3 Colors</caption>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>H</th>
+                                <th>S</th>
+                                <th>L</th>
+                                <th>Example</th>
+                                <th>name</th>
+                                <th>hex</th>
+                                <th>rgb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>180</td>
+                                <td>100%</td>
+                                <td>97%</td>
+                                <td class="hsl-azure"></td>
+                                <td>azure</td>
+                                <td><code>#f0ffff</code></td>
+                                <td><code>rgb(240,255,255)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+
+                            <tr>
+                                <td></td>
+                                <td>33</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-darkorange"></td>
+                                <td>darkorange</td>
+                                <td><code>#ff8c00</code></td>
+                                <td><code>rgb(255,140,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>51</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-gold"></td>
+                                <td>gold</td>
+                                <td><code>#ffd700</code></td>
+                                <td><code>rgb(255,215,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>90</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-chartreuse"></td>
+                                <td>chartreuse</td>
+                                <td><code>#7fff00</code></td>
+                                <td><code>rgb(127,255,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>195</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-deepskyblue"></td>
+                                <td>deepskyblue</td>
+                                <td><code> #00bfff</code></td>
+                                <td><code>rgb(0,191,255)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>270</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td class="hsl-rebeccapurple"></td>
+                                <td>rebeccapurple</td>
+                                <td><code>#663399</code></td>
+                                <td><code>rgb(102,51,153)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+
+                            <tr>
+                                <td></td>
+                                <td>240</td>
+                                <td>100%</td>
+                                <td>40%</td>
+                                <td class="hsl-mediumblue"></td>
+                                <td>mediumblue</td>
+                                <td><code>#0000cd</code></td>
+                                <td><code>rgb(0,0,205)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>181</td>
+                                <td>100%</td>
+                                <td>41%</td>
+                                <td class="hsl-darkturquoise"></td>
+                                <td>darkturquoise</td>
+                                <td><code>#00ced1</code></td>
+                                <td><code>rgb(0,206,209)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>282</td>
+                                <td>100%</td>
+                                <td>41%</td>
+                                <td class="hsl-darkviolet"></td>
+                                <td>darkviolet</td>
+                                <td><code>#9400d3</code></td>
+                                <td><code>rgb(148,0,211)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>16</td>
+                                <td>100%</td>
+                                <td>49%</td>
+                                <td class="hsl-orangered"></td>
+                                <td>orangered</td>
+                                <td><code>#ff4500</code></td>
+                                <td><code>rgb(255,69,0)</code></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>90</td>
+                                <td>100%</td>
+                                <td>49%</td>
+                                <td class="hsl-lawngreen"></td>
+                                <td>lawngreen</td>
+                                <td><code>#7cfc00</code></td>
+                                <td><code>rgb(124,252,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>157</td>
+                                <td>100%</td>
+                                <td>49%</td>
+                                <td class="hsl-mediumspringgreen"></td>
+                                <td>mediumspringgreen</td>
+                                <td><code>#00fa9a</code></td>
+                                <td><code>rgb(0,250,154)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>0</td>
+                                <td>100%</td>
+                                <td>27%</td>
+                                <td class="hsl-darkred"></td>
+                                <td>darkred</td>
+                                <td><code>#8b0000</code></td>
+                                <td><code>rgb(139,0,0)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>180</td>
+                                <td>100%</td>
+                                <td>27%</td>
+                                <td class="hsl-darkcyan"></td>
+                                <td>darkcyan</td>
+                                <td><code>#008b8b</code></td>
+                                <td><code>rgb(0,139,139)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>240</td>
+                                <td>100%</td>
+                                <td>27%</td>
+                                <td class="hsl-darkblue"></td>
+                                <td>darkblue</td>
+                                <td><code>#00008b</code></td>
+                                <td><code>rgb(0,0,139)</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>300</td>
+                                <td>100%</td>
+                                <td>27%</td>
+                                <td class="hsl-darkmagenta"></td>
+                                <td>darkmagenta</td>
+                                <td><code>#8b008b</code></td>
+                                <td><code>rgb(139,0,139)</code></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+
+                            <tr>
+                                <td></td>
+                                <td>120</td>
+                                <td>100%</td>
+                                <td>20%</td>
+                                <td class="hsl-darkgreen"></td>
+                                <td>darkgreen</td>
+                                <td><code>#006400</code></td>
+                                <td><code>rgb(0,100,0)</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+            <details>
+                <summary>Fig 1. Venn Diagram of RGB Colors</summary>
+                <figure id="rgb-wiki-diagram">
+                    <a href="https://en.wikipedia.org/wiki/RGB_color_model#Additive_colors">
+                        <img src="../svg/AdditiveColor.svg" alt="Additive color diagram" width=100 height=100></a>
+                    <figcaption>Fig <span></span>. RGB Color Scheme </figcaption>
+                </figure>
+            </details>
+            <details>
+                <summary>tgd diagram</summary>
+                <figure class="fig-center">
+                    <img src="../svg/AdditiveColor.svg" alt="author drawn color tree"
+                        srcset="../image/color_wheel_tgd.png">
+                    <figcaption>Figure <span></span>Hand-drawn color wheel</figcaption>
+                </figure>
+            </details>
+            <details>
+                <summary>Color Wheel (Wikipedia)</summary>
+                <figure class="fig-center">
+                    <img src="../svg/RBG_color_wheel.svg" alt="Color Wheel from Wikipedia"
+                        data-author="mons.wikimedia.org/w/index.php?curid=13427725">
+                    <figcaption>
+                        Fig.2 Color Wheel (
+                        <a href="https://en.wikipedia.org/wiki/Tertiary_color">wikipedia</a>
+                        )
+                    </figcaption>
+                </figure>
+                <dl>
+                    <dt>Azure</dt>
+                    <dd>
+                        Note that in the Wikipedia color wheel <code>azure</code> is a <em>tertiary</em>
+                        color.
+                    </dd>
+                    <dd>But in web colors, azure (
+                        <code>#f0ffff</code>
+                     ) is 
+                        <code>hsl(180,100%,97.1%)</code>
+                         (somewhere 'beyond' teal') and is <code>not</code> a tertiary color!
+                    </dd>
+                </dl>
+            </details>
         </main>
         <div class="syntax">
             <details>
@@ -348,7 +1627,6 @@
                 <ol>
                     <li><code>code</code></li>
                 </ol>
-                <p></p>
             </details>
         </div>
         <div class="examples">
@@ -363,9 +1641,29 @@
             <details>
                 <summary>Notes</summary>
                 <dl>
+                    <dt>secondary color</dt>
+                    <dd>A secondary color is an even combination of any two primaries. Yellow is
+                        <code>#FFFF00</code>
+                    </dd>
+                    <dt>tertiary color color</dt>
+                    <dd>A tertiary color or intermediate color is a color made by mixing full saturation of one primary
+                        color with half saturation of another primary color and none of a third primary color, in a
+                        given
+                        color space such as RGB (<a href="https://en.wikipedia.org/wiki/Tertiary_color">wikipedia</a>)
+                    </dd>
+                    <dd><code>Chartreuse</code> is <code>7FFF00</code>, <code>"orangie</code>is
+                        <code>FF7F00</code></dd>
+                    <dt>Subtractive CMY</dt>
+                    <dd>
+                        The CMY color model is a <em>subtractive</em> color model in which cyan, magenta and yellow
+                        pigments or
+                        dyes are added together in various ways to reproduce a broad array of colors
+                    </dd>
+
                     <dt>transparent</dt>
                     <dd>
-                        The transparent keyword represents a fully transparent color. This makes the background behind
+                        The transparent keyword represents a fully transparent color.
+                        This makes the background behind
                         the colored item completely visible.
                     </dd>
                     <dd>
@@ -373,8 +1671,8 @@
                         <code>rgba(0,0,0,0)</code>
                     </dd>
                     <dt><code>rgb()</code></dt>
-                    <dd>white may be represented by <code> rgb(255,255,2550</code>or 
-                    <code>rgb(100%,100%,100%)</code></dd>
+                    <dd>white may be represented by <code> rgb(255,255,255)</code>or
+                        <code>rgb(100%,100%,100%)</code></dd>
                     <dt>mnemonic</dt>
                     <dd><code>#000000</code> and <code>rgb(0,0,0)</code> are black: <q>A black hole</q></dd>
                     <dt>currentcolor</dt>
@@ -383,7 +1681,9 @@
                     <dd>
                         This lets you use the color value on properties that do not receive it by default.
                     </dd>
-                    <dt>References</dt>
+                    <dt>azure</dt>
+                    <dd>(Merriam-Webster) the blue color of the clear sky. The unclouded sky</dd>
+                    <dt class="ref">References</dt>
                     <dd>
                         <p>
                             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">
@@ -395,6 +1695,43 @@
                             <a href="https://www.w3schools.com/colors/colors_hsl.asp">
                                 w3schools: hsl colors
                             </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://convertacolor.com/">Convertacolor (excellent)</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://colordesigner.io/convert/hextohsl">
+                                ColorDesigner: Hex to hsl (and other converters)</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://en.wikipedia.org/wiki/Web_colors#Web-safe_colors">
+                                Web colors</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://en.wikipedia.org/wiki/RGB_color_model">
+                                RGB color model
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://v6.robweychert.com/blog/2018/02/v6-color/">
+                                V6: Color ( Rob Weychert)</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://www.w3schools.com/cssref/css_colors.asp">
+                                CSS Colors
+                            </a> (W3Schools)
                         </p>
                     </dd>
                 </dl>
