@@ -1,17 +1,90 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+
+    <style>
+        div.container-iframe {
+            width: 80%;
+            margin: auto;
+        }
+
+        .container-iframe iframe {
+            border: 10px solid blue;
+            width: 40%;
+            margin: auto;
+            display: block;
+        }
+
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>iframe</header>
         <div class="counter">xx</div>
         <main>
+
+            <div class="container-iframe">
+                <iframe src="https://rme.tomgdow.com" srcdoc="<h2>hello</h2>" width="300" height="150" name="my_iframe">
+                </iframe>
+
+                <div>
+                    <a href="https://tomgdow.com" target="my_iframe">Add tomgdow.com to iframe!</a>
+                </div>
+            </div>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt><code>iframe</code></dt>
+                <dd>The HTML Inline Frame element (
+                    <code>iframe</code>
+                    ) represents a nested browsing context, embedding another
+                    HTML page into the current one.</dd>
+                <dt>Etymology</dt>
+                <dd>iframe stands for <em>inline</em> frame! (If you want to center,
+                    may need to use <code>display:block!</code>)</dd>
+                <dt><code>allow</code></dt>
+                <dd>defines what features are available to the <code>iframe</code>
+                    based on the origin of the request</dd>
+                <dt><code>allowfullscreen</code></dt>
+                <dd>Obvious</dd>
+                <dt><code>loading</code></dt>
+                <dd>Either <code>eager</code> or <code>lazy</code></dd>
+                <dt> <code>name</code></dt>
+                <dd> A targetable name for the embedded browsing context. </dd>
+                <dd>
+                    This can be used in the target attribute of the
+                    <code>a</code>, <code>form</code>, or <code>base</code> elements;
+                    the
+                    <span class="emphasize-me"><code>formtarget</code></span>
+                    attribute of the <code>input</code> or <code>button</code> elements;
+                    or the <code>windowName</code> parameter in the window.open() method.
+                </dd>
+                <dt><code>height</code></dt>
+                <dd>Default value is 150</dd>
+                <dt><code>referrerpolicy</code></dt>
+                <dd>Indicates which referrer to send when fetching the frame's resource</dd>
+                <dd>For example, <code>no-referrer</code>, <code>origin</code>, <code>same-origin</code></dd>
+                <dt><code>sandbox</code></dt>
+                <dd>Applies extra restrictions to the content in the frame.</dd>
+                <dt>src</dt>
+                <dd>The URL of the page to embed.</dd>
+                <dd>Use a value of <code>about:blank</code>
+                    to embed an empty page that conforms to the same-origin policy.
+                </dd>
+                <dt><code>srcdoc</code></dt>
+                <dd>Inline HTML to embed,
+                    <span class="emphasize-me">overriding the src attribute</span>
+                </dd>
+                <dd>If a browser does not support the <code>srcdoc</code> attribute, it will fall back to the URL in the
+                    <code>src</code> attribute</dd>
+                <dt><code>width</code></dt>
+                <dd>The width of the frame in CSS pixels. Default is 300.</dd>
             </dl>
         </main>
         <div class="syntax">
@@ -26,42 +99,120 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <div>
+                    <details>
+                        <summary>Opening Example</summary>
+                        <pre>
+&lt;iframe 
+    src="https://rme.tomgdow.com" 
+    srcdoc="&lt;h2&gt;hello&lt;/h2&gt;" <span class="emphasize-me">// Note srcdoc over-rides src!</span>
+     width="300" 
+     height="150" 
+     name=<span class="emphasize-me">"my_iframe"</span> &gt;
+&lt;/iframe&gt;
+
+&lt;div&gt;
+    &lt;a 
+        href="https://tomgdow.com" 
+        target="<span class="emphasize-me">my_iframe</span>"&gt;
+        Add tomgdow.com to iframe!
+    &lt; /a&gt;
+&lt;/div&gt;
+                    </pre>
+                    </details>
+                </div>
+                <div>
+                    <details>
+                        <summary>YouTube</summary>
+                        <pre>
+&lt;iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/imy1px59abE" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+
+                    </pre>
+                    </details>
+                </div>
+                <div>
+                    <details>
+                        <summary>Google Maps</summary>
+                        <pre>
+&lt;iframe
+     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19080.618943055015!2d-6.772560840429293!3d53.28814911621078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677c2bcd0c6145%3A0xa00c7a997318440!2sCurryhills%2C%20Prosperous%2C%20Co.%20Kildare!5e0!3m2!1sen!2sie!4v1604437776571!5m2!1sen!2sie"
+     width="600" 
+     height="450" 
+     frameborder="0" 
+     style="border:0;" 
+     allowfullscreen="" 
+     aria-hidden="false"
+     tabindex="0"&gt;FALLBACK
+&lt;/iframe&gt;
+                </pre>
+                    </details>
+                </div>
+                <details>
+                    <summary>Example 3</summary>
+                    <pre>
+&lt;iframe 
+    sandbox 
+    srcdoc="&lt;p&gt;did you get a cover picture yet?" 
+    frameborder="0"&gt;
+&lt;/iframe&gt;
+                </pre>
+                </details>
             </details>
         </div>
         <div class="notes">
             <details>
                 <summary>Notes</summary>
-                 <dl>
-                     <dt>References</dt>
-                     <dd>
-                         <p>
-                             <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">
-                            &lt;iframe&gt;: The Inline Frame element
+                <dl>
+                    <dt><code>Lazy loading</code></dt>
+                    <dd>
+                        <pre>
+&lt;iframe src="https://example.com"
+        <span class="emphasize-me">loading="lazy"</span>
+        width="600"
+        height="400"&gt;
+&lt;/iframe&gt;
+                        </pre>
+                    </dd>
+                    <dd>Native lazy-loading of iframes defers offscreen iframes from being loaded until the user scrolls
+                        near them.</dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">
+                                MDN: &lt;iframe&gt;: The Inline Frame element
                             </a>
-                         </p>
-                     </dd>
-                     <dd>
-                         <p>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
                             <a href="https://addyosmani.com/blog/native-iframe-lazy-loading/">
-                            Native lazy-loading for iframes is here!</a>
-                         </p>
-                     </dd>
-                     <dd>
-                         <p>
-                            <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies">From object to iframe — other embedding technologies</a>
-                         </p>
-                     </dd>
-                     <dd>
-                         <p>
-                             <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/"></a>
-                         </p>
-                     </dd>
-                 </dl>
+                                Native lazy-loading for iframes is here!</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies">
+                                MDN: From object to iframe — other embedding technologies</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a
+                                href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/"></a>
+                        </p>
+                    </dd>
+                </dl>
             </details>
         </div>
     </div>
 </body>
+
 </html>

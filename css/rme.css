@@ -2549,6 +2549,18 @@ div.container-colorwheel .div330-2:hover {
     text-align: center;
 }
 
+div.container-iframe {
+    width: 80%;
+    margin:auto;
+}
+
+.container-iframe iframe {
+    border: 10px solid blue;
+    width: 80%;
+    margin: 1rem auto 1rem;
+    display: block;
+}
+
 @font-face {
     font-family: 'apl';
     src: url('/font/APL386.ttf') format("truetype");
