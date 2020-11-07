@@ -2551,7 +2551,7 @@ div.container-colorwheel .div330-2:hover {
 
 div.container-iframe {
     width: 80%;
-    margin:auto;
+    margin: auto;
 }
 
 .container-iframe iframe {
@@ -2559,6 +2559,17 @@ div.container-iframe {
     width: 80%;
     margin: 1rem auto 1rem;
     display: block;
+}
+
+div.container-srcset {
+    background-color: lightgoldenrodyellow;
+    margin: auto;
+    width: 80%;
+}
+
+div.container-srcset img {
+    display: block;
+    margin: auto;
 }
 
 @font-face {

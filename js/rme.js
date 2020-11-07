@@ -41,6 +41,7 @@ let pageData = (function () {
     "26_details_summary.html",
     "27_figure_tag.html",
     "29_img_tag.html",
+    "x_52_srcset.html",
     "30_a_anchor_tag.html",
     "31_targets.html",
     "32_bookmarks.html",

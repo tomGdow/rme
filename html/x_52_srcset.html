@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.container-srcset {
+            background-color: lightgoldenrodyellow;
+            margin: auto;
+            width: 80%;
+        }
+
+        .indent {
+            text-indent: 2vw;
+        }
+
+        div.container-srcset img {
+            display: block;
+            margin: auto;
+        }
+
+        @media screen and (min-width: 500px) and (max-width: 599px) {
+            div.container-srcset {
+                background-color: lightgreen;
+            }
+        }
+
+        @media screen and (min-width:600px) {
+            div.container-srcset {
+                background-color: lightblue;
+            }
+        }
+
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header><code>srcset</code></header>
+        <div class="counter">xx</div>
+        <main>
+            <div class="container-srcset">
+                <img src="../image/flamingo-fallback.jpg"
+                    srcset="../image/flamingo4x.jpg 4x, ../image/flamingo3x.jpg 3x, ../image/flamingo2x.jpg 2x"
+                    alt="Picture of Flamingo" width="300" height="200">
+            </div>
+            <dl>
+                <dt><code>srcset</code></dt>
+                <dd>
+                    <code>srcset</code>
+                    is a <em>string</em> which identifies one or more image candidate
+                    strings, separated using commas
+                    each specifying image resources to use under given
+                    circumstances.
+                </dd>
+                <dd>
+                    Each image candidate string contains an image URL and an optional
+                    <span class="emphasize-me">width</span>
+                    or
+                    <span class="emphasize-me">pixel density </span>
+                    descriptor
+                    that indicates the conditions under which that candidate should be used instead of the image
+                    specified by the
+                    <code>src</code>
+                    property
+                </dd>
+                <dd>
+                    To define pixel density, add an
+                    <code>x</code>
+                    to the
+                    density number
+                    for the image
+                </dd>
+                <dd>
+                    The image defined with the
+                    <code>src</code>
+                    attribute is assumed to be <code>1x</code>
+                </dd>
+                <dd>
+                    When the
+                    <code>srcset</code>
+                    attribute was first specified,we could only provide images of different
+                    pixel densities,
+                </dd>
+                <dd>
+                    Now can also use the
+                    <code>width</code>
+                    value
+                </dd>
+                <dd>
+                    To assign the width of the image, add a
+                    <code>w</code>
+                    to the pixel width number for the image.
+                </dd>
+                <dd>
+                    Only when using the width version of the
+                    <code>srcset</code>
+                    attribute, can it be accompanied with the
+                    <code>sizes</code>
+                    attribute.
+                </dd>
+                <dt>sizes</dt>
+                <dd>
+                    <code>sizes</code>
+                    allows you to specify the layout width of the image for each of
+                    a list of media conditions.
+                </dd>
+                <dd>
+                    This provides the ability to automatically select among different images — even images of different
+                    orientations or aspect ratios — as the document state changes to match different media conditions.
+                </dd>
+
+                <dd>
+                    The 
+                    <code>sizes </code>
+                    attribute allows us to explicitly define the size the image should be according to a set
+                    of media conditions.
+                </dd>
+            </dl>
+        </main>
+        <div class="syntax">
+            <details>
+                <summary>Syntax</summary>
+                <pre>
+&lt;img src="one.png"
+    srcset="two.png 100w, three.png 500w, four.png 1000w"
+
+     sizes="&lt;media condition&gt; &lt;width&gt;,
+            &lt;media condition&gt; &lt;width&gt;,
+            &lt;<span class="emphasize-me">optional default image width</span>&gt;"&gt;
+                </pre>
+            </details>
+        </div>
+        <div class="examples">
+            <details>
+                <summary>Examples</summary>
+                <details class="indent">
+                    <summary>Actual Example: <code>sizes</code></summary>
+                    <div class="container-srcset">
+                        <img src="../image/flamingo-fallback.jpg" alt="Pict of flamingo"
+                            srcset="../image/flamingo4x.jpg 4025w, ../image/flamingo2x.jpg 2013w,../image/flamingo1x.jpg 1006w"
+                            sizes="(min-width: 600px) 30em,  (min-width:501px) and (max-width: 599px) 20em,(max-width: 499px) 15em">
+
+                    </div>
+                </details>
+                <details class="indent">
+                    <summary>Source Code: Opening Example</summary>
+                    <pre>
+&lt;img 
+    src="../image/flamingo-fallback.jpg"
+
+    srcset="../image/flamingo4x.jpg 4x, 
+            ../image/flamingo3x.jpg 3x, 
+            ../image/flamingo2x.jpg 2x"
+
+    alt="Picture of Flamingo" 
+    width="300" 
+    height="200"
+&gt;
+                </pre>
+                </details>
+                <details class="indent">
+                    <summary>Source Code: Sizes Example</summary>
+                    <pre>
+&lt;img 
+    src="../image/flamingo-fallback.jpg" 
+    alt="Pict of flamingo"
+
+    srcset="../image/flamingo4x.jpg 4025w, 
+            ../image/flamingo2x.jpg 2013w,
+            ../image/flamingo1x.jpg 1006w"
+            
+    sizes="(min-width: 600px) 30em,  
+           (min-width:501px) and (max-width: 599px) 20em,
+           (max-width: 499px) 15em"
+&gt;
+                </pre>
+                </details>
+                <details class="indent">
+                <summary>Static Example</summary>
+                <pre>
+&lt;img src="one.png"
+     srcset="two.png 100w, three.png 500w, four.png 1000w"
+
+     sizes="(min-width: 900px) 1000px,
+            (max-width: 900px) and (min-width: 400px) 50em,
+            ( not (orientation: portrait) ) 300px,
+            ( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
+            100vw"
+&gt;
+                </pre>
+                </details>
+            </details>
+        </div>
+        <div class="notes">
+            <details>
+                <summary>Notes</summary>
+                <dl>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a href="https://html.com/attributes/img-srcset/">
+                                HTML5.com: What Img Srcset Does In HTML5: A Quick & Simple Guide</a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset">
+                                MDN: HTMLImageElement.srcset
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes">
+                                HTMLImageElement.sizes
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://css-tricks.com/responsive-images-css/">
+                                CSS-Tricks: Responsive Images in CSS
+                            </a>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <a href="https://bitsofco.de/the-srcset-and-sizes-attributes/">
+                                codebits: Responsive Images - The srcset and sizes Attributes</a>
+                        </p>
+                    </dd>
+                </dl>
+            </details>
+        </div>
+    </div>
+</body>
+
+</html>

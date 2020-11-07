@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>my Picture Practice</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="my site">
+        <style>
+            div.container {
+                border: 2px solid green;
+                margin: auto;
+                width: 80%;
+            }
+            div.container img {
+                display:block;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <picture>
+                <source srcset="../image/kitten-large.png 500w" media="(min-width: 500px)" sizes="(min-width:500px) 500w">
+                <source srcset="../image/kitten-small.png 400w" media="(max-width:500px)" sizes="(max-width:500px) 300w">
+                <img src="../image/bonnie256.jpg" alt="Picture of kitten" width="500" height="250">
+            </picture>
+        </div>
+        
+
+    </body>
+</html>
