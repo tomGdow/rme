@@ -4,17 +4,232 @@
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        div.container-units-css {
+            margin: 1rem auto;
+            width: 80%;
+            counter-reset: table-counter;
+        }
+
+        .table-template-nine {
+            table-layout: fixed;
+            margin: auto;
+            empty-cells: hide;
+            margin-top: 1rem;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        .table-template-nine td {
+            border: 1px solid lightblue;
+            padding: 0.2em 1em 0.2em 1em;
+        }
+
+        .table-template-nine caption {
+            font-size: 1rem;
+            background-color: lightcyan;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            counter-increment: table-counter;
+        }
+
+        .table-template-nine caption span:before {
+            content: '('counter(table-counter) ')';
+        }
+
+
+        .table-template-nine tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table-template-nine tfoot {
+            margin-top: 4rem;
+        }
+
+        .table-template-nine tfoot {
+            border: 10px solid white;
+        }
+
+        .table-template-nine tfoot tr {
+            background-color: antiquewhite;
+        }
+
+        .table-template-nine [colspan="3"] {
+            text-align: center;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <header>CSS Measure Unit</header>
+        <header>CSS Measure Units</header>
         <div class="counter">xx</div>
         <main>
-            <dl>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <div class="container-units-css">
+                <table class="table-template-nine">
+                    <caption> Table <span></span>. CSS Units of Measurement</caption>
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Description</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3">Absolute lengths</td>
+                        </tr>
+                        <tr>
+                            <td>cm</td>
+                            <td>centimetres</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>mm</td>
+                            <td>millimeters</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>in</td>
+                            <td>inches</td>
+                            <td>
+                                <code>
+                                    1in = 96px = 72pt = 2.54cm
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>px</td>
+                            <td>pixels</td>
+                            <td>
+                                <code>
+                                    1 px = 1/96 of 1in
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>pt</td>
+                            <td>point</td>
+                            <td><code>1 pt = 1/72 in</code></td>
+                        </tr>
+                        <tr>
+                            <td>pc</td>
+                            <td>picas</td>
+                            <td><code>1 pc = 12 pt</code></td>
+                        </tr>
+                        <tr>
+                            <td>Q</td>
+                            <td>Quarter-millimeters</td>
+                            <td><code>1Q = 1/40<sup>th</sup> of 1cm</code></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Relative lengths</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">em</td>
+                            <td colspan="2">
+                                Relative to the
+                                <code class="emphasize-me">font-size</code>
+                                of the <em>parent element</em>
+                                in terms of typographical elements like <code>font-size</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><code>em</code> (unlike percentage) is always relative to
+                                <code>font-size</code>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Relative to the <span class="emphasize-me"><code>font-size</code></span> of the
+                                element itself in terms of other properties such as <code>width</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ex</td>
+                            <td>relative to the x-height of element's font</td>
+                            <td>rare</td>
+                        </tr>
+                        <tr>
+                            <td>ch</td>
+                            <td colspan="2">relative to the width of of the glyph "0" (zero) of the element's font.</td>
+                        </tr>
+                        <tr>
+                            <td>rem</td>
+                            <td colspan="2">relative to the root element</td>
+                        </tr>
+                        <tr>
+                            <td>vw</td>
+                            <td>Relative to 1% of the width of viewport</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>vh</td>
+                            <td>Relative to 1% of the height of viewport</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>vmin</td>
+                            <td>Relative to 1% of viewport's smaller dimension</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>vmax</td>
+                            <td>relative to 1% of viewport's larger dimension</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">&percnt;</td>
+                            <td colspan="2">relative to the <em>parent</em> element</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                if you set an element's
+                                <code>font-size</code>
+                                as a
+                                <span class="emphasize-me">percentage</span> it will be a percentage of the
+                                <code class="emphasize-me">font-size</code>
+                                of the element's
+                                <span class="emphasize-me">parent</span>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Percents depends on context. For example, if they're used in <code>font-size</code>, they will be
+                                relative to the current font-size; 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                if it's in <code>height</code>, they will be relative to the
+                                height.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                If you use a
+                                percentage
+                                for a
+                                <code class="emphasize-me">width</code>
+                                value, it will be a percentage of the
+                                width
+                                of the
+                                <span class="emphasize-me">parent</span>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>lh</td>
+                            <td>line-height</td>
+                            <td>relative to the line-height of the element</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <div class="syntax">
             <details>
@@ -43,6 +258,15 @@
                     <dd>A pixel is 1/96 of an inch</dd>
                     <dd>mnemonic:
                         pi<em>x</em>el and si<em>x</em>
+                    </dd>
+                    <dt>References</dt>
+                    <dd>
+                        <p>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units">
+                                CSS values and units
+                            </a>
+                        </p>
                     </dd>
                 </dl>
             </details>
