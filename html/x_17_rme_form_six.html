@@ -1,15 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
         <header>form/textarea</header>
         <div class="counter">xx</div>
         <main>
-            <form  name="form_six" id="form_six">
+            <form name="form_six" id="form_six">
                 <fieldset>
                     <legend>Information</legend>
                     <div>
@@ -46,10 +49,61 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <details class="indent-me">
+                    <summary>HTML</summary>
+                    <pre>
+
+            &lt;form  name="form_six" id="form_six"&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Information&lt;/legend&gt;
+                    &lt;div&gt;
+                        &lt;label for="uname6"&gt;Name&lt;/label&gt;
+                        &lt;input type="text" name="uname6" id="uname6" autofocus&gt;
+                        &lt;span class="msg_nam e"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;label for="txtarea"&gt;Comment&lt;/label&gt;
+                    &lt;textarea name="txtarea" id="txtarea" cols="30" rows="3" maxlength="250"&gt;Type a comment
+                    &lt;/textarea&gt;
+                    &lt;div&gt;
+                        &lt;!-- &lt;input type="submit" value="submit"&gt; --&gt;
+                        &lt;input type="image" src="http://xu/tgdfiles/png/go.png" alt="Go!"&gt;
+                    &lt;/div&gt;
+                &lt;/fieldset&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Response&lt;/legend&gt;
+                    &lt;div class="output"&gt;
+                        &lt;output for="txtarea" id="out-txtarea"&gt;&lt;/output&gt;
+                        &lt;output for="txtarea" id="out-txtarea-user-comment"&gt;&lt;/output&gt;
+                    &lt;/div&gt;
+                &lt;/fieldset&gt;
+            &lt;/form&gt;
+                </pre>
+                </details>
+
+                <details class="indent">
+                <summary>JS</summary>
+                <pre>
+
+    if (document.getElementById('form_six')) {
+      document.getElementById('form_six').addEventListener('submit', function (event) {
+        if (true) {
+          event.preventDefault();
+          let name = document.getElementById('form_six')[1].value;
+          let txt = document.getElementById('form_six')[2].innerHTML;
+
+          console.log("%c %s", "background-color:blue", name);
+          var param2 = txt;
+          var params = generateParams('name', name, 'param2', param2);
+          makePostRequest("http://php.tomgdow.com", params, ajaxCallMe6());
+
+        }
+
+      });
+    }
+                </pre>
+                </details>
             </details>
+
         </div>
         <div class="notes">
             <details>
@@ -61,4 +115,5 @@
         </div>
     </div>
 </body>
+
 </html>
