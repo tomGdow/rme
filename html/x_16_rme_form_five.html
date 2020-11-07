@@ -89,9 +89,99 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <details class="indent-me">
+                <summary>HTML</summary>
+                <pre>
+
+&lt;form name="form_five" id="form_five"&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Information&lt;/legend&gt;
+    &lt;div&gt;
+        &lt;label for="uname5"&gt;Name&lt;/label&gt;
+        &lt;input type="text" name="uname5" id="uname5"&gt;
+        &lt;span class="msg_name"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="select-group"&gt;
+        &lt;p class="select-message"&gt;What is your favourite county?&lt;/p&gt;
+        &lt;select name="select-county" id="select-county"&gt;
+            &lt;optgroup label="Connaught"&gt;
+                &lt;option value="galway"&gt;Galway&lt;/option&gt;
+                &lt;option value="leitrim"&gt;Leitrim&lt;/option&gt;
+                &lt;option value="mayo"&gt;Mayo&lt;/option&gt;
+                &lt;option value="roscommon"&gt;Roscommon&lt;/option&gt;
+                &lt;option value="sligo"&gt;Sligo&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label="leinster"&gt;
+                &lt;option value="carlow"&gt;Carlow&lt;/option&gt;
+                &lt;option value="dublin"&gt;Dublin&lt;/option&gt;
+                &lt;option value="kildare"&gt;Kildare&lt;/option&gt;
+                &lt;option value="kilkenny"&gt;Kilkenny&lt;/option&gt;
+                &lt;option value="laois"&gt;Laois&lt;/option&gt;
+                &lt;option value="longford"&gt;Longford&lt;/option&gt;
+                &lt;option value="louth"&gt;Louth&lt;/option&gt;
+                &lt;option value="meath"&gt;Meath&lt;/option&gt;
+                &lt;option value="offaly"&gt;Offaly&lt;/option&gt;
+                &lt;option value="westmeath"&gt;Westmeath&lt;/option&gt;
+                &lt;option value="wexford"&gt;Wexford&lt;/option&gt;
+                &lt;option value="wicklow"&gt;Wicklow&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label="Munster"&gt;
+                &lt;option value="clare"&gt;Clare&lt;/option&gt;
+                &lt;option value="cork"&gt;Cork&lt;/option&gt;
+                &lt;option value="kerry"&gt;Kerry&lt;/option&gt;
+                &lt;option value="limerick"&gt;Limerick&lt;/option&gt;
+                &lt;option value="tipperary"&gt;Tipperary&lt;/option&gt;
+                &lt;option value="waterford"&gt;Waterford&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label="Ulster"&gt;
+                &lt;option value="armagh"&gt;Armagh&lt;/option&gt;
+                &lt;option value="antrim"&gt;Antrim&lt;/option&gt;
+                &lt;option value="cavan"&gt;Cavan&lt;/option&gt;
+                &lt;option value="derry"&gt;Derry&lt;/option&gt;
+                &lt;option value="donegal"&gt;Donegal&lt;/option&gt;
+                &lt;option value="down"&gt;Down&lt;/option&gt;
+                &lt;option value="fermanagh"&gt;Fermanagh&lt;/option&gt;
+                &lt;option value="monaghan"&gt;Monaghan&lt;/option&gt;
+                &lt;option value="tyrone"&gt;Tyrone&lt;/option&gt;
+            &lt;/optgroup&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class="output"&gt;
+    &lt;legend&gt;Response&lt;/legend&gt;
+    &lt;div&gt;
+        &lt;output for="county" id="out-county"&gt;&lt;/output&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+
+&lt;/form&gt;
+
+                </pre>
+                </details>
+                <details class="indent-me">
+                <summary>JS</summary>
+                <pre>
+    if (document.getElementById('form_five')) {
+      document.getElementById('form_five').addEventListener('submit', function (event) {
+        if (checkField(event, 'uname5')) {
+          event.preventDefault();
+          let name = document.getElementById('form_five')[1].value;
+          let county = document.getElementById('form_five')[2].value;
+
+          // console.log("%c %s", "color:red", name);
+          var param2 = county;
+          var params = generateParams('name', name, 'param2', param2);
+          makePostRequest("http://php.tomgdow.com", params, ajaxCallMe5());
+
+        }
+
+      });
+    }
+                </pre>
+                </details>
             </details>
         </div>
         <div class="notes">
