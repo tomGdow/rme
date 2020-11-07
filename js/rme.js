@@ -418,7 +418,7 @@ let pageData = (function () {
           }
           var param2 = color_val;
           var params = generateParams('name', name, 'param2', param2);
-          // console.log('%c %s', 'color:red', params);
+          console.log('%c %s', 'color:red', params);
           makePostRequest("http://php.tomgdow.com", params, ajaxCallMe3());
         }
 

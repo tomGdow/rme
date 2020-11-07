@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
 </head>
+
 <body>
     <div class="container">
         <header>Form/Radio</header>
@@ -13,31 +15,31 @@
             <form name="form_three" id="form_three">
                 <fieldset>
                     <legend>Information</legend>
-                        <div>
-                            <label for="uid">Name</label>
-                            <input type="text" name="uname2" id="uname2" placeholder=" name">
-                            <span class="msg_name"></span>
+                    <div>
+                        <label for="uid">Name</label>
+                        <input type="text" name="uname2" id="uname2" placeholder=" name">
+                        <span class="msg_name"></span>
+                    </div>
+                    <div>
+                        <p class="radio-message">What is your fav color?</p>
+                        <div class="radio-lst">
+                            <label for="blue">Blue</label>
+                            <input type="radio" name="color" id="blue" value="blue">
+                            <label for="green">Green</label>
+                            <input type="radio" name="color" id="green" value="green">
+                            <label for="red">Red</label>
+                            <input type="radio" name="color" id="red" checked value="red">
                         </div>
-                        <div>
-                            <p class="radio-message">What is your fav color?</p>
-                            <div class="radio-lst">
-                                <label for="blue">Blue</label>
-                                <input type="radio" name="color" id="blue" value="blue">
-                                <label for="green">Green</label>
-                                <input type="radio" name="color" id="green" value="green">
-                                <label for="red">Red</label>
-                                <input type="radio" name="color" id="red" checked value="red">
-                            </div>
-                            <input type="submit" value="submit">
-                        </div>
+                        <input type="submit" value="submit">
+                    </div>
                 </fieldset>
-                    <fieldset class="output">
-                        <legend>Response</legend>
-                        <div>
-                            <output for="uname2" id="out-name-two"></output>
-                            <output for="blue green red" id="name-color"></output>
-                        </div>
-                        </fieldset>
+                <fieldset class="output">
+                    <legend>Response</legend>
+                    <div>
+                        <output for="uname2" id="out-name-two"></output>
+                        <output for="blue green red" id="name-color"></output>
+                    </div>
+                </fieldset>
             </form>
         </main>
         <div class="syntax">
@@ -52,9 +54,70 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <details class="indent-me">
+                    <summary>HTML</summary>
+                    <pre>
+
+&lt;form name="form_three" id="form_three"&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Information&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;label for="uid"&gt;Name&lt;/label&gt;
+            &lt;input type="text" name="uname2" id="uname2" placeholder=" name"&gt;
+            &lt;span class="msg_name"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;p class="radio-message"&gt;What is your fav color?&lt;/p&gt;
+            &lt;div class="radio-lst"&gt;
+                &lt;label for="blue"&gt;Blue&lt;/label&gt;
+                &lt;input type="radio" name="color" id="blue" value="blue"&gt;
+                &lt;label for="green"&gt;Green&lt;/label&gt;
+                &lt;input type="radio" name="color" id="green" value="green"&gt;
+                &lt;label for="red"&gt;Red&lt;/label&gt;
+                &lt;input type="radio" name="color" id="red" checked value="red"&gt;
+            &lt;/div&gt;
+            &lt;input type="submit" value="submit"&gt;
+        &lt;/div&gt;
+&lt;/fieldset&gt;
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;output for="uname2" id="out-name-two"&gt;&lt;/output&gt;
+            &lt;output for="blue green red" id="name-color"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;/fieldset&gt;
+&lt;/form&gt;
+                </pre>
+                </details>
+                <details class="indent-me">
+                    <summary>JS</summary>
+                    <pre>
+      document.getElementById('form_three').addEventListener('submit', function (event) {
+        if (checkField(event, 'uname2')) {
+          event.preventDefault();
+          var name = document.getElementById('form_three')[1].value;
+          var colors = document.getElementsByName('color');
+          var color_val;
+          for (var i = 0; i < colors.length; i++) {
+            if (colors[i].checked) {
+              color_val = colors[i].value;
+            }
+          }
+          var param2 = color_val;
+          var params = generateParams('name', name, 'param2', param2);
+          console.log('%c %s', 'color:red', params);
+          makePostRequest("http://php.tomgdow.com", params, ajaxCallMe3());
+        }
+                </pre>
+                </details>
+
+
+                <details class="indent">
+                    <summary>Params (POST)</summary>
+                    <pre>
+                    name=thomas&amp;param2=blue
+                </pre>
+                </details>
             </details>
         </div>
         <div class="notes">
@@ -67,4 +130,5 @@
         </div>
     </div>
 </body>
+
 </html>
