@@ -385,6 +385,7 @@ let pageData = (function () {
           var name = document.getElementById('form_one')[1].value;
           var param2 = document.getElementById('form_one')[2].value;
           var params = generateParams('name', name, 'param2', param2);
+          console.log("%c %s", "color:red", params)
           makePostRequest("http://php.tomgdow.com", params, ajaxCallMe());
         }
       });

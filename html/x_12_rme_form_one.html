@@ -51,9 +51,58 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <details class="indent">
+                <summary>HTML</summary>
+                <pre>
+&lt;form name="form_one" id="form_one"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Information&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;label for="uid"&gt;Name&lt;/label&gt;
+            &lt;input type="text" name="uname" id="uid" placeholder=" name"&gt;
+            &lt;span class="msg_name"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="eid"&gt;email&lt;/label&gt;
+            &lt;input type="email" name="ename" id="eid" placeholder=" email" required&gt;
+            &lt;input type="submit" value="submit"&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;output for="uid" id="out-name"&gt;&lt;/output&gt;
+        &lt;div&gt;
+            &lt;output for="eid" id="out-email"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                </pre>
+                </details>
+                <details class="indent">
+                <summary>JS</summary>
+                <pre>
+  function form() {
+    if (document.getElementById('form_one')) {
+      document.getElementById('form_one').addEventListener('submit', function (event) {
+        if (checkField(event, 'uid')) {
+          event.preventDefault();
+          var name = document.getElementById('form_one')[1].value;
+          var param2 = document.getElementById('form_one')[2].value;
+          var params = generateParams('name', name, 'param2', param2);
+          console.log("%c %s", "color:red", params)
+          makePostRequest("http://php.tomgdow.com", params, ajaxCallMe());
+        }
+      });
+    }
+                </pre>
+                </details>
+                <details class="indent">
+                <summary>params (POST method)</summary>
+                <pre>
+  name=Thomas Dowling&amp;param2=thomasgdowling&commat;gmail.com
+                </pre>
+                </details>
             </details>
         </div>
         <div class="notes">
