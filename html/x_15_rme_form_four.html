@@ -17,12 +17,13 @@
                     <div>
                         <label for="uname4">Name</label>
                         <input type="text" name="uname4" id="uname4" placeholder="name">
-                            <span class="msg_name"></span>
+                        <span class="msg_name"></span>
                     </div>
                     <div class="checkbox-group">
                         <p class="checkbox-message">What are your favourite languages?</p>
                         <label for="clang-html">HTML</label>
-                        <input type="checkbox" class="clang-checkbox" name="clang-one" id="clang-html" value="html" checked>
+                        <input type="checkbox" class="clang-checkbox" name="clang-one" id="clang-html" value="html"
+                            checked>
 
                         <label for="clang-css">CSS</label>
                         <input type="checkbox" class="clang-checkbox" name="clang-two" id="clang-css" value="css">
@@ -35,12 +36,12 @@
                         <input type="submit" value="submit">
                     </div>
                 </fieldset>
-                    <fieldset class="output">
-                        <legend>Response</legend>
-                        <div>
-                            <output for="name clang-html clang-css clang-js" id="out-name-clang"></output>
-                        </div>
-                        </fieldset>
+                <fieldset class="output">
+                    <legend>Response</legend>
+                    <div>
+                        <output for="name clang-html clang-css clang-js" id="out-name-clang"></output>
+                    </div>
+                </fieldset>
             </form>
         </main>
         <div class="syntax">
@@ -55,9 +56,71 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <details class="indent-me">
+                    <summary>HTML</summary>
+                    <pre>
+
+&lt;form name="form_four" id="form_four"&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Information&lt;/legend&gt;
+    &lt;div&gt;
+        &lt;label for="uname4"&gt;Name&lt;/label&gt;
+        &lt;input type="text" name="uname4" id="uname4" placeholder="name"&gt;
+            &lt;span class="msg_name"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="checkbox-group"&gt;
+        &lt;p class="checkbox-message"&gt;What are your favourite languages?&lt;/p&gt;
+        &lt;label for="clang-html"&gt;HTML&lt;/label&gt;
+        &lt;input type="checkbox" class="clang-checkbox" name="clang-one" id="clang-html" value="html" checked&gt;
+
+        &lt;label for="clang-css"&gt;CSS&lt;/label&gt;
+        &lt;input type="checkbox" class="clang-checkbox" name="clang-two" id="clang-css" value="css"&gt;
+
+        &lt;label for="clang-js"&gt;JavaScript&lt;/label&gt;
+        &lt;input type="checkbox" class="clang-checkbox" name="clang-three" id="clang-js"
+            value="javascript"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="submit" value="submit"&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;output for="name clang-html clang-css clang-js" id="out-name-clang"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+        &lt;/fieldset&gt;
+&lt;/form&gt;
+                </pre>
+                </details>
+                <details class="indent-me">
+                    <summary>JS</summary>
+                    <pre>
+    if (document.getElementById('form_four')) {
+      document.getElementById('form_four').addEventListener('submit', function (event) {
+        if (checkField(event, 'uname4')) {
+          event.preventDefault();
+          var name = document.getElementById('form_four')[1].value;
+          let cbox = document.querySelectorAll('.clang-checkbox');
+
+          var tmparr = [];
+          for (let i = 0; i < cbox.length; i++) {
+            if (cbox[i].checked) {
+              tmparr.push(cbox[i].name);
+              tmparr.push(cbox[i].value);
+            }
+          }
+
+          makeRequest(
+            addQueryStringToUrl('http://phptwo.tomgdow.com', 'name', name, ...tmparr), ajaxCallMe4()
+          );
+        }
+
+      });
+    }
+
+            </pre>
+                </details>
             </details>
         </div>
         <div class="notes">
