@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container {
+            width: 80%;
+            margin: 2px solid green;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form name="form_two" id="form_two">
+        <fieldset>
+            <legend>info</legend>
+            <div>
+                <label for="uid">Name</label>
+                <input type="text" name="uname" id="uid">
+            </div>
+            <div>
+                <label for="county">county</label>
+                <input type="text" list="county_list" name="county" placeholder="county" id="county">
+               <datalist id="county_list">
+                   <option value="antrim">Antrim</option>
+                   <option value="kildare">Kildare</option>
+                   <option value="dublin">Dublin</option>
+               </datalist>
+            <input type="submit" value="submit">
+            </div>
+
+        </fieldset>
+        </form>
+    </div>
+    <script>
+
+      document.getElementById('form_two').addEventListener('submit', function (event) {
+          event.preventDefault();
+          var name = document.getElementById('form_two')[1].value;
+          var param2 = document.getElementById('form_two')[2].value;
+            var tom=addQueryStringToUrl('http://phptwo.tomgdow.com', 'name', name, 'param2', param2)
+            console.log("%c %s", "color:blue", tom);
+      });
+
+  function addQueryStringToUrl(url, ...args) {
+    var tmp = url + '?=';
+    if (args.length < 3) {
+      // console.log(args);
+      tmp = `${tmp}${args[0]}=${args[1]}`;
+    }
+    else {
+      tmp = `${tmp}${args[0]}=${args[1]}`;
+      for (let i = 2; i < args.length; i += 2) {
+        tmp += `&${args[i]}=${args[i + 1]}`;
+      }
+    }
+    return tmp;
+  }
+    </script>
+    
+</body>
+</html>

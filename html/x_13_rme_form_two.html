@@ -78,9 +78,90 @@
         <div class="examples">
             <details>
                 <summary>Examples</summary>
-                <ol>
-                    <li><code>code</code></li>
-                </ol>
+                <details class="indent-me">
+                <summary>HTML</summary>
+                <pre>
+
+&lt;form name="form_two" id="form_two"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Information&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;label for="uid"&gt;Name&lt;/label&gt;
+            &lt;input type="text" name="uname" id="uname" placeholder=" name"&gt;
+            &lt;span class="msg_name"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="county"&gt;county&lt;/label&gt;
+            &lt;input type="text" list="county_list" name="county" id="county" placeholder=" county" required&gt;
+            &lt;datalist id="county_list"&gt;
+                &lt;option value="antrim"&gt;Antrim&lt;/option&gt;
+                &lt;option value="armagh"&gt;Armagh&lt;/option&gt;
+                &lt;option value="carlow"&gt;Carlow&lt;/option&gt;
+                &lt;option value="cavan"&gt;Cavan&lt;/option&gt;
+                &lt;option value="clare"&gt;Clare&lt;/option&gt;
+                &lt;option value="cork"&gt;Cork&lt;/option&gt;
+                &lt;option value="donegal"&gt;Donegal&lt;/option&gt;
+                &lt;option value="down"&gt;Down&lt;/option&gt;
+                &lt;option value="dublin"&gt;Dublin&lt;/option&gt;
+                &lt;option value="fermanagh"&gt;Fermanagh&lt;/option&gt;
+                &lt;option value="galway"&gt;Galway&lt;/option&gt;
+                &lt;option value="kerry"&gt;Kerry&lt;/option&gt;
+                &lt;option value="kildare" selected&gt;Kildare&lt;/option&gt;
+                &lt;option value="kilkenny"&gt;Kilkenny&lt;/option&gt;
+                &lt;option value="laois"&gt;Laois&lt;/option&gt;
+                &lt;option value="leitrim"&gt;Leitrim&lt;/option&gt;
+                &lt;option value="limerick"&gt;Limerick&lt;/option&gt;
+                &lt;option value="derry"&gt;Derry&lt;/option&gt;
+                &lt;option value="longford"&gt;Longford&lt;/option&gt;
+                &lt;option value="louth"&gt;Louth&lt;/option&gt;
+                &lt;option value="mayo"&gt;Mayo&lt;/option&gt;
+                &lt;option value="meath"&gt;Meath&lt;/option&gt;
+                &lt;option value="monaghan"&gt;Monaghan&lt;/option&gt;
+                &lt;option value="Offaly"&gt;Offaly&lt;/option&gt;
+                &lt;option value="sligo"&gt;Sligo&lt;/option&gt;
+                &lt;option value="tipperary"&gt;Tipperary&lt;/option&gt;
+                &lt;option value="tyrone"&gt;Tyrone&lt;/option&gt;
+                &lt;option value="waterford"&gt;Waterford&lt;/option&gt;
+                &lt;option value="westmeath"&gt;Westmeath&lt;/option&gt;
+                &lt;option value="wexford"&gt;Wexford&lt;/option&gt;
+                &lt;option value="wicklow"&gt;Wicklow&lt;/option&gt;
+            &lt;/datalist&gt;
+            &lt;input type="submit" value="submit"&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="output"&gt;
+        &lt;legend&gt;Response&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;output for="unname county" id="name-county"&gt;&lt;/output&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+
+                </pre>
+                </details>
+                <details class="indent-me">
+                <summary>JS</summary>
+                <pre>
+    if (document.getElementById('form_two')) {
+      document.getElementById('form_two').addEventListener('submit', function (event) {
+        if (checkField(event, 'uname')) {
+          event.preventDefault();
+          var name = document.getElementById('form_two')[1].value;
+          var param2 = document.getElementById('form_two')[2].value;
+          makeRequest(
+            addQueryStringToUrl('http://phptwo.tomgdow.com', 'name', name, 'param2', param2), ajaxCallMe2()
+          );
+        }
+      });
+    }
+                </pre>
+                </details>
+                <details>
+                <summary>Query String (SEND method)</summary>
+                <pre>
+                     http://phptwo.tomgdow.com?=name=Thomas Dowling&amp;param2=kildare
+                </pre>
+                </details>
             </details>
         </div>
         <div class="notes">
