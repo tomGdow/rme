@@ -1,8 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Template</title>
     <link rel="icon" href="http://xu/tgdfiles/icon/bonnie.ico">
+    <style>
+        .emphasize-me {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -10,8 +16,14 @@
         <div class="counter">xx</div>
         <main>
             <dl>
-                <dt></dt>
-                <dd></dd>
+                <dt>fixed</dt>
+                <dd>The element is removed from the normal document flow, 
+                    and no space is created for the element in the page layout
+                </dd>
+                <dd>
+                    It is positioned relative to the initial containing block 
+                    <span class="emphasize-me">established by the viewport</span>
+                </dd>
             </dl>
         </main>
         <div class="syntax">
